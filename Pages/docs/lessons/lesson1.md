@@ -124,7 +124,16 @@ and unpack this zip file to this folder of web server.
 
 ## Setup of Virto Commerce Storefront
 
-### Configure Web API base URL
+### Configure Web API credentials
+
+* Open the **C:\inetpub\wwwroot\storefront\Web.config** in a text editor.
+* In the **appSettings** section find the **add** nodes named **vc-public-ApiAppId** and **vc-public-ApiSecretKey** and change its values to values generated in **VirtoCommerce Platform** application.
+    ```
+        <add key="vc-public-ApiAppId" value="change this" />
+        <add key="vc-public-ApiSecretKey" value="change this" />
+    ```
+
+### Configure Web API base URL (optional)
 
 * Open the **C:\inetpub\wwwroot\storefront\Web.config** in a text editor.
 * In the **connectionStrings** section find the **add** node named **VirtoCommerceBaseUrl**. Make sure that its **connectionString** attribute value is **http://localhost/admin**. 
@@ -132,7 +141,7 @@ and unpack this zip file to this folder of web server.
     <add name="VirtoCommerceBaseUrl" connectionString="http://localhost/admin" />
     ```
 
-### Configure CMS content storage
+### Configure CMS content storage (optional)
 
 * Open the **C:\inetpub\wwwroot\storefront\Web.config** in a text editor.
 * In the **connectionStrings** section find the **add** node named **ContentConnectionString**. Make sure that its **connectionString** attribute rootPath value is **~/App_Data/cms-content**.
