@@ -6787,7 +6787,8 @@ ul.tags-list
 }
 
 h3,
-.advantages .list-item .title
+.advantages .list-item .title,
+h2.subheader
 {
     color: inherit;
     font-size: 24px;

@@ -2,10 +2,10 @@
 title: Top 4 Enterprise Ecommerce Challenges
 description: In general view, enterprise e-commerce is essentially just a bigger version of a normal online store. Technically it is correct. However,running a business at an enterprise level is a whole new adventure. There are multiple factors that come into play once a business grows to this kind of scale. This makes the transition a real challenge! In this whitepaper we'll provide top 4 challenges that enterprise ecommerce websites face and their best solutions.
 date: 2017-05-04
-permalink: download-enterprise-whitepaper
+permalink: enterprise-ecommerce-whitepaper
 ---
 <div class="roadmap __responsive">
-	<h1 class="head-title">Download Whitepaper</h1>
+	<h1 class="head-title">Enterprise Ecommerce Whitepaper</h1>
 	<div class="columns">
 		<div class="column">
 			<div class="block">
@@ -64,9 +64,9 @@ permalink: download-enterprise-whitepaper
 		</div>
 		<div class="column">
 			<div class="block">
-				<h3>Top 4 Enterprise Ecommerce Challenges</h3>
+				<h2 class="subheader">Top 4 Enterprise Ecommerce Challenges</h2>
 				<p class="text">
-                    In general view, enterprise e-commerce is esentially just a bigger version of a normal online store. Technically it is correct. However,running a business at an enterprise level is a whole new adventure. There are multiple factors that come into play once a business grows to this kind of scale. This makes the transition a real challenge! In this whitepaper we'll provide top 4 challenges that enterprise ecommerce websites face and their best solutions.
+                    In general view, enterprise e-commerce is essentially just a bigger version of a normal online store. Technically it is correct. However,running a business at an enterprise level is a whole new adventure. There are multiple factors that come into play once a business grows to this kind of scale. This makes the transition a real challenge! In this whitepaper we'll provide top 4 challenges that enterprise ecommerce websites face and their best solutions.
                 </p>
 				<p style="margin-top: 100px; text-align: center;">
 					<img src="../assets/images/whitepaper-download.png" />

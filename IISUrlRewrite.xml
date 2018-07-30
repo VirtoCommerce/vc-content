@@ -180,6 +180,8 @@
             <add key="/blog/become-partner" value="/partners/become-partner" />
             <add key="/blog/list-of-partners" value="/partners/list-of-partners" />
             <add key="/blog/best-ecommerce-platforms" value="/glossary/best-ecommerce-platforms" />
+            <add key="/download-enterprise-whitepaper" value="/enterprise-ecommerce-whitepaper" />
+            <add key="/our-offers/enterprise-edition" value="/our-offers/enterprise-ecommerce-platform" />
         </rewriteMap>
     </rewriteMaps>
     <rules>
