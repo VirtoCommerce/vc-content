@@ -259,7 +259,9 @@
             "online": "Online",
             "software": "Software",
             "solution": "Solution",
-            "technology": "Technology"
+            "technology": "Technology",
+            "business": "Business",
+            "strategy": "Strategy"
         },
         "categories": {
             "virtocommerce-news": "Virto Commerce News",
