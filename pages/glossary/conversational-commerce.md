@@ -173,7 +173,7 @@ tags :
                         <div style="float:right;padding:10px;margin-top:7%">
                             <p class="text" style="width:400px;font-weight:bold;font-size:22px">Chat with your customers using automated bot.</p>
                             <p class="text" style="width:400px;">Deliver the products instantly with personal, detailed messages about order options.</p>
-                            <button class="button fill">Trial&Demo</button>
+                            <button class="button fill" onclick="openContactUs(event)">Trial&Demo</button>
                         </div>
                     </div>
                 </div>
