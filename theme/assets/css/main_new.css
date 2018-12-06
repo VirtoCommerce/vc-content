@@ -2788,6 +2788,18 @@ ul.breadcrumbs>li+li::before {
     width: 25%;
 }
 
+.list-studios .list-item #anchor .list-item {
+    box-sizing: border-box;
+    padding: 0px;
+    width: 25%;
+}
+
+.list-studios .list-item #anchor-part-2 .list-item {
+    box-sizing: border-box;
+    padding: 0px;
+    width: 25%;
+}
+
 @media (min-width: 768px) and (max-width: 1019px) {
 
     .list-studios .list-item,
