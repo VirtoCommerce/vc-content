@@ -32,9 +32,6 @@ tags:
                 <h1 itemprop="headline" class="glosary-t">Magento alternative. 8 best Magento competitors. The best alternatives to Magento in 2017-2018.</h1>
             </div>
             <div class="glossary-article">
-                <div style="text-align: center;">
-                    <iframe width="400" height="315" src="https://www.youtube.com/embed/22BMH86RQys?ecver=1" frameborder="0" allowfullscreen></iframe>
-                </div>
                 <div class="text">
                     {% include 'vc-magento-banner' with current_url : 'glossary/magento-alternatives' %}
                     <p>Magento can be easily named among the top most popular ecommerce platforms in the world. It is the moving force of innovation in its market segment, providing its customers with three distinct platforms: Magento Community Edition, Magento Enterprise Edition, and Magento Enterprise Cloud Edition. This platform easily attracts businesses of all sizes and areas, and there are many reasons why it does. While Magento markets itself as the perfect solution for any of your business’ ecommerce goals, which it certainly is, it can be very frustrating to manage for a new user without any coding or web developing experience. The advantages of using Magento include the opportunity to create a fully customizable web store if your coding knowledge and expertise give you the ability to use its robust open source framework. Moreover, the paid extensions and enterprise solutions that Magento offers are second to none. Also, Magento takes great pride in providing its clients with the best possible customer support on the market, which has helped attract more than 600 big enterprise customers. However, if you are a small business owner who is currently in search of a much simpler solution or you do not have an experience in Magento’s coding base and you do not want to hire an IT manager, you might want to check out some of the best Magento competitors that are currently available in the market of shopping-cart software.</p>
@@ -89,6 +86,91 @@ tags:
                     </span>
                     Virto Commerce is a unique open source platform that allows you to quickly set up your website and start selling products or services in no time. It is based on a .NET 4.6 framework and uses cutting-edge web technologies like AngularJS, Liquid and many others. Just like Magento, it markets itself as both a small-business and an enterprise-level ecommerce solution. The platform allows you to launch your website via Microsoft cloud and scale it up in no time using Virto Commerce’s multichannel solutions. The company has been long-time valued for its creative problem-solving approaches, flexible pricing models, ecommerce integrations and interchanges as well as great partner selection and website delivery. By using Virto Commerce as an alternative to Magento, you can enjoy its open source and agile features that will allow you to achieve maximum customer satisfaction. Agile features of the platform are the topic of another discussion, but with them, you can scale up your market outreach with a single click without hiring an entire team of IT professionals. Take advantage of Virto Commerce’s practices and start selling beyond your business hours as we consider this platform to be the most suited for large and small businesses alike out of all the alternatives to Magento.
                 </div>
+                <h2 class="glosary-sub-t">B2B Ecommerce Case Studies from Virto Commerce</h2>
+                <div class="glosary-article">
+                    <ul class="list list-studios">
+                        <li class="list-item">
+                            <div class="list-inner">
+                                <div class="list-head">
+                                    <img src="assets/images/casestudies/proffs.png" alt="" class="list-pic">
+                                </div>
+                                <div class="list-body">
+                                    <div class="list-t">Retail equipment</div>
+                                    <div class="list-text">Objective: B2C/B2B Online Store</div>
+                                    <div class="list-descr">
+                                        Providing maximum
+                                        scalability and
+                                        centralizationfor
+                                        expanding business
+                                        internationally.
+                                    </div>
+                                </div>
+                                <div class="list-foot">
+                                    <a href="../assets/files/case-study-proffs.pdf" target="_blank" class="button fill">Read case study</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-inner">
+                                <div class="list-head">
+                                    <img src="assets/images/casestudies/gc-logo.jpg" alt="" class="list-pic">
+                                </div>
+                                <div class="list-body">
+                                    <div class="list-t">B2B Gifts</div>
+                                    <div class="list-text">Objective: Platform</div>
+                                    <div class="list-descr">
+                                        Consolidate various system using single
+                                        platform to manage gift certificates for largest companies in the world. Provides both B2C and B2B solutions.
+                                    </div>
+                                </div>
+                                <div class="list-foot">
+                                    <a href="../assets/files/gc-case-study.pdf" target="_blank" class="button fill">Read case study</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-inner">
+                                <div class="list-head">
+                                    <img src="assets/images/casestudies/belysnings-design-logo.png" alt="" class="list-pic">
+                                </div>
+                                <div class="list-body">
+                                    <div class="list-t">Retail lighting</div>
+                                    <div class="list-text">Objective: B2C Online Store</div>
+                                    <div class="list-descr">
+                                        Create value through growth in profits by
+                                        expanding the existing stores.
+                                    </div>
+                                </div>
+                                <div class="list-foot">
+                                    <a href="../assets/files/sd-case-study.pdf" target="_blank" class="button fill">Read case study</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-inner">
+                                <div class="list-head">
+                                    <img src="assets/images/casestudies/budget-blinds.png" alt="" class="list-pic">
+                                </div>
+                                <div class="list-body">
+                                    <div class="list-t">Retail blinds</div>
+                                    <div class="list-text">Objective: B2C/B2B Online Store</div>
+                                    <div class="list-descr">
+                                        Flexible solution with
+                                        maximum customization for the online window-treatment website.
+                                    </div>
+                                </div>
+                                <div class="list-foot">
+                                    <a href="../assets/files/case-study-budget-blinds.pdf" target="_blank" class="button fill">Read case study</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glosary-article">
+                    <div class="glosary-videos center">
+                        <a class="button striped" href="/case-studies">Read More Case Studies</a>
+                    </div>
+                </div>
                 <div class="text">
                     <strong>Wordpress + WooCommerce</strong>
                 </div>
@@ -124,6 +206,9 @@ tags:
                 <p class="text">3dcart is an appealing Magento alternative in a sense that it doesn’t include any transaction fees, allows you to upload unlimited products and have unlimited bandwidth. With the basic plan for $29 per month, you receive a vast amount of features that can help you to set up a solid store and market it successfully with rich SEO features. Plus plan for $79 offers you CRM features, allows you to create customer deals and open up to 5 manager accounts. The ultimate ecommerce solution is 3dcart’s Pro plan for $229/month which gives you more sales management over your web store. </p>
                 {% include 'micro-mark-publisher' %}
                 {% include 'micro-mark-rating', bestRating: 5, ratingValue: 4, ratingCount: 485 %}
+                <div style="text-align: center;">
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/22BMH86RQys?ecver=1" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <div class="buttons" style="margin-bottom:20px">
                     <a class="button fill" href="/try-now">Try It Now</a>
                     <a class="button fill" href="/contact-us">Request Information & Demo</a>
