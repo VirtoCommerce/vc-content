@@ -106,8 +106,7 @@ permalink: case-studies
                     </div>
                     <div class="list-t">MARKETPLACE</div>
                     <div class="list-text">Objective: Platform</div>
-                    <div class="list-descr">Created platform that allows sellers from china sell to the eastern europe countries. Integrated warehouse, merchandising, customer support and marketing.</div>
-                    <a class="list-link">Play video</a>
+                    <div class="list-descr">Created platform that allows sellers from China to sell to the Eastern Europe countries. Integrated warehouse, merchandising, customer support and marketing.</div>
                     <div class="list-btn">
                         <a class="button fill" href="case-studies/kupinatao">View case study</a>
                     </div>
