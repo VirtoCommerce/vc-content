@@ -167,11 +167,11 @@ tags :
                 <div class="text">
                     So, if you are using an Uber app, when you contact your driver, he or she knows who you are, and what you require. It’s also important to mention that the ‘chats in apps’ platform is different from other messaging services. When the chat is in the app, as the customer, the only person you will be talking to is the company. This ensures credibility and efficiency of this remarkable conversational commerce system.
                 </div>
-                <div style="float:left;width:100%;padding:20px;text-align:center;margin:15px 0">
-                    <div style="float:left;position:relative;left:50%;top:50%;transform:translate(-50%);background-color:#eee;padding:10px">
+                <div id="order-wise">
+                    <div id="order-wise-inner">
                         <img src="assets/images/orderwise-flow2.gif" width="300" height="100%" />
-                        <div style="float:right;padding:10px;margin-top:7%">
-                            <p class="text" style="width:400px;font-weight:bold;font-size:22px">Chat with your customers using automated bot.</p>
+                        <div id="order-wise-text">
+                            <p id="order-wise-title" class="text">Chat with your customers using automated bot.</p>
                             <p class="text" style="width:400px;">Deliver the products instantly with personal, detailed messages about order options.</p>
                             <button class="button fill" onclick="openContactUs(event)">Trial&Demo</button>
                         </div>

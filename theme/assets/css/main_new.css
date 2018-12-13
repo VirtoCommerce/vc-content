@@ -3218,6 +3218,11 @@ input.ng-dirty.ng-invalid {
     text-transform: uppercase;
 }
 
+.bg-bosch {
+    background: url(bosch.jpg) no-repeat;
+    background-size: cover;
+}
+
 .bg-proffsmagasinet {
     background: url(proffsmagasinet.jpg) no-repeat;
     background-size: cover;
@@ -3271,4 +3276,37 @@ input.ng-dirty.ng-invalid {
 
 .text-14 {
     font-size: 13px;
+}
+
+#order-wise {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+#order-wise-inner {
+    float: left;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    background-color: #eee;
+    padding: 10px;
+}
+
+#order-wise-text {
+    float: right;
+    padding: 10px;
+    margin-top: 7%;
+}
+
+#order-wise-title {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#order-wise-text .text {
+    width: 400px;
 }

@@ -5,7 +5,7 @@ date: 2018-11-07
 permalink: case-studies/bosch
 ---
 <div class="case-studies" ng-controller="caseStudyController">
-    <div class="header bg-proffsmagasinet ">
+    <div class="header bg-bosch">
         <div class="bg-container">
             <div class="inner">
                 <h2>Bosch success story</h2>
