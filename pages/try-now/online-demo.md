@@ -44,15 +44,6 @@ tags :
         <div class="column">
             <div class="block">
                 <div class="img-300">
-                    <img alt="Virto Commerce frontend accelerator" src="../assets/images/demo/mobile.png" class="border">
-                </div>
-                <h3>Mobile App (iOS & Android)</h3>
-                <p class="text">To launch, download Install <a href="http://view.ionic.io" target="_blank">Ionic View</a> on your phone and sign up / log in to Ionic, then Tap PREVIEW APP and enter app id <b>9eb6619b</b></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="block">
-                <div class="img-300">
                     <img alt="B2B store" src="../assets/images/demo/00000982.png" class="border">
                 </div>
                 <h3>B2B store</h3>
