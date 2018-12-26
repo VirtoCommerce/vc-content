@@ -1,5 +1,5 @@
 ---
-title: A Simple Look at the Key Components of Conversational Commerce
+title: Conversational Commerce Definition and Meaning | Glossary VirtoCommerce
 description: A Simple Look at the Key Components of Conversational Commerce.
 date: 2018-11-21
 canonical: https://virtocommerce.com/glossary/conversational-commerce
@@ -27,7 +27,7 @@ tags :
                 <li><a href="/glossary/conversational-commerce">A Simple Look at the Key Components of Conversational Commerce</a></li>
             </ul>
             <div itemprop="mainEntityOfPage">
-                <h1 itemprop="headline" class="glosary-t">A Simple Look at the Key Components of Conversational Commerce</h1>
+                <h1 itemprop="headline" class="glosary-t">Conversational Commerce Definition and Meaning. A Simple Look at the Key Components of Conversational Commerce</h1>
             </div>
             <div class="glossary-article">
                 <div class="col-w">
@@ -169,7 +169,7 @@ tags :
                 </div>
                 <div id="order-wise">
                     <div id="order-wise-inner">
-                        <img src="assets/images/orderwise-flow2.gif" width="300" height="100%" />
+                        <img src="assets/images/orderwise-flow2.gif" width="300" height="100%" title="Conversational Commerce" />
                         <div id="order-wise-text">
                             <p id="order-wise-title" class="text">Chat with your customers using automated bot.</p>
                             <p class="text" style="width:400px;">Deliver the products instantly with personal, detailed messages about order options.</p>
@@ -183,6 +183,7 @@ tags :
                 <div class="text" style="margin-bottom:25px">
                     Conversational commerce is something that will continue to improve with time. By understanding these trends, we can all humanize our communications with different companies. Such conversations may take place via voice call, text message, with a dedicated app or bot. All that matters is that you’ll be talking to businesses the same way you would communicate with a group of friends or anyone else.
                 </div>
+                {% include 'disqus' %}
             </div>
         </div>
     </div>

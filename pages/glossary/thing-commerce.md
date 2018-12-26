@@ -1,5 +1,5 @@
 ---
-title: How is "Thing Commerce" Transforming the Way We Do Business?
+title: Thing Commerce Definition and Meaning | Glossary VirtoCommerce
 description: How is "Thing Commerce" Transforming the Way We Do Business?
 date: 2018-12-06
 canonical: https://virtocommerce.com/glossary/thing-commerce
@@ -26,11 +26,11 @@ tags :
                 <li><a href="/glossary/thing-commerce">How is "Thing Commerce" Transforming the Way We Do Business?</a></li>
             </ul>
             <div itemprop="mainEntityOfPage">
-                <h1 itemprop="headline" class="glosary-t">How is "Thing Commerce" Transforming the Way We Do Business?</h1>
+                <h1 itemprop="headline" class="glosary-t">Thing Commerce Definition and Meaning. How is Thing Commerce Transforming the Way We Do Business?</h1>
             </div>
             <div class="glossary-article">
                 <div style="text-align:center">
-                    <img src="/assets/images/internet-of-things.jpg" height="485" width="485" />
+                    <img src="/assets/images/internet-of-things.jpg" title="Thing Commerce" height="485" width="485" />
                 </div>
                 <div class="text">
                     Have you heard of the Internet of Things or IoT? Well, it’s been one of the hottest trends in the IT sector over the past couple of years. IoT touches on every aspect of our lives but what’s shocking is its continued growth in the world of e-commerce leading to what we are now calling, "Thing Commerce".
@@ -88,6 +88,7 @@ tags :
                 <div class="text" style="margin-bottom:25px">
                     While the rise of thing commerce in the era of the internet of things is not without challenges, the above opportunities make it worth the investment. Lastly, as a company head or business owner, remember that it’s always good to give your customers what they want, when they want it, before anyone else. Thanks to these innovations, you’ll have taken your market share before your competitors start catching up.
                 </div>
+                {% include 'disqus' %}
             </div>
         </div>
     </div>
