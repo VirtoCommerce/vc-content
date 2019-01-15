@@ -177,6 +177,19 @@ permalink: case-studies
                     </div>
                 </div>
             </li>
+            <li class="list-item">
+                <div class="list-inner">
+                    <div class="list-img">
+                        <img src="../assets/images/casestudies/estatespain-logo.png" alt="eminent">
+                    </div>
+                    <div class="list-t">REAL ESTATE AGENCY</div>
+                    <div class="list-text">Objective: Platform</div>
+                    <div class="list-descr">Specializes in the sale of residential and commercial real estate on the best coasts of Spain.</div>
+                    <div class="list-btn">
+                        <a class="button fill" href="case-studies/estatespain">View case study</a>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </div>

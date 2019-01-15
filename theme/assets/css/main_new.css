@@ -3273,6 +3273,11 @@ input.ng-dirty.ng-invalid {
     background-size: cover;
 }
 
+.bg-estatespain {
+    background: url(estatespain.png) no-repeat;
+    background-size: cover;
+}
+
 .download-pdf {
     background: url(pdf-download.png) no-repeat;
     padding-top: 140px;
