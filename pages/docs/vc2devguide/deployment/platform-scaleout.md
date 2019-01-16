@@ -46,7 +46,7 @@ After you create a Redis cache, use the portal or the command line to configure 
 
 **Platform**
 
-To start using Redis cache with Virto Commerce application just remove a comment from Redis connection string in platform web.config file
+To start using Redis cache with Virto Commerce application just remove a comment from Redis connection string and set a correct value for it in platform web.config file
 
 ```xml
 <connectionStrings>
