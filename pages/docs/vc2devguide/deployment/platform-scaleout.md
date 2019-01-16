@@ -31,7 +31,7 @@ Redis is an open-source, networked, in-memory, key-value data store with optiona
 
 Redist cache feature was implemented in Virto Commerce Platform since version 2.13.4.
 
-**Redist**
+**Redis**
 
 First you should сreate a Redis cache using the Microsoft Azure portal (basic free plan).
  
@@ -46,41 +46,14 @@ After you create a Redis cache, use the portal or the command line to configure 
 
 **Platform**
 
-To start using Redis cache with Virto Commerce application add to platform web.config file next lines 
+To start using Redis cache with Virto Commerce application just remove a comment from Redis connection string in platform web.config file
 
 ```xml
-<configSections>
-  <section name="cacheManager.Redis" type="CacheManager.Redis.RedisConfigurationSection, CacheManager.StackExchange.Redis" />
-</configSections>
-```
-
-```xml
-<cacheManager.Redis>
-  <connections>
-    <connection id="redisConnectionString" database="0" connectionString="{ redis-host:port },password={ secret },ssl=True,abortConnect=False,allowAdmin=true" />
-  </connections>
-</cacheManager.Redis>
-
-<cacheManager>
-  <managers>
-    <cache name="platformCache" enableStatistics="true" backplaneName="redisConnectionString" backplaneType="VirtoCommerce.Platform.Web.Cache.RedisCacheBackplane2, VirtoCommerce.Platform.Web">
-      <handle name="memCacheHandle" ref="memCacheHandle" expirationMode="Sliding" timeout="10m" />
-      <handle name="redisConnectionString" ref="redisHandle" isBackplaneSource="true" />
-    </cache>          
-  </managers>
-  <cacheHandles>
-    <handleDef id="redisHandle" type="VirtoCommerce.Platform.Web.Cache.RedisCacheHandle2`1,  VirtoCommerce.Platform.Web" />
-    <handleDef id="memCacheHandle" type="CacheManager.SystemRuntimeCaching.MemoryCacheHandle`1, CacheManager.SystemRuntimeCaching" />
-  </cacheHandles>
-</cacheManager>
-
-<system.runtime.caching>
-  <memoryCache>
-    <namedCaches>
-      <add name="memCacheHandle" physicalMemoryLimitPercentage="95" pollingInterval="00:00:30" />
-    </namedCaches>
-  </memoryCache>
-</system.runtime.caching>
+<connectionStrings>
+...
+    <add name="RedisConnectionString" connectionString="..." />
+...
+</connectionStrings>
 ```
 
 **Scale out Platform on Windows Azure**
