@@ -15,12 +15,12 @@ permalink: case-studies/estatespain
     <div class="body responsive">
         <div class="col-w">
             <div class="col __col-70">
-                <blockquote>
-                    "We selected Virto Commerce to replace our ecommerce solution because of its ability to scale quickly to other countries and languages - and for its ability to create and maintain a large property catalog. Virto allowed us to maintain 24/7 availability, which is critical to our international business." said Olga Lomko, CEO of Estate-Spain.com
-                </blockquote>
                 <p>
                     Estate Spain wanted to build an online real estate site to serve an unmet need in providing digital commerce to a specific Russian-speaking audience. When this project started in 2016, no other websites in this market provided a comprehensive site for searching, viewing, and purchasing property. The market was ripe for ecommerce disruption to provide a premium user experience.
                 </p>
+                <blockquote>
+                    "We selected Virto Commerce to replace our ecommerce solution because of its ability to scale quickly to other countries and languages - and for its ability to create and maintain a large property catalog. Virto allowed us to maintain 24/7 availability, which is critical to our international business." said Olga Lomko, CEO of Estate-Spain.com
+                </blockquote>
                 <p>
                     Estate-Spain.com started with a basic site builder and quickly outgrew it. They found Virto Commerce in their search for a replacement ecommerce solution that could scale with its explosive growth, offer better functionality, and provide a cleaner user experience.
                 </p>
