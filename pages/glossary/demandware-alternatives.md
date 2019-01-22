@@ -1,11 +1,11 @@
 ---
-title: Demandware alternatives and competitors
-description: Demandware is definitely one of the best enterprise solutions on the market, it offers such features as channel management, multi-store management, inventory management and shopping cart, but just like any other platform, it has its downsides. So let's look at Demandware alternatives and competitors.
+title: Salesforce Commerce Cloud alternatives and competitors
+description: Salesforce Commerce Cloud is definitely one of the best enterprise solutions on the market, it offers such features as channel management, multi-store management, inventory management and shopping cart, but just like any other platform, it has its downsides. So let's look at Salesforce Commerce Cloud alternatives and competitors.
 date: 2017-09-06
 canonical: https://virtocommerce.com/glossary/demandware-alternatives
 permalink: glossary/demandware-alternatives
 ogimage: ../../assets/images/demandware-alternatives.jpg
-ogtitle: Demandware alternatives
+ogtitle: Salesforce Commerce Cloud alternatives
 ogsitename: Virtocommerce
 twittercard: summary
 twittertitle: Virto Commerce
@@ -39,7 +39,7 @@ tags :
             Its capabilities are broad and allow for great control over the process of creating your web store, without having to wrap your head around the technical aspects of the platform, its databases or networks.
         </p>
         <p class="text">
-            Demandware offers certain features that make it stand out from other platforms, such as channel management, multi-store management, <a href="{{ '/glossary/what-is-inventory-management' | absolute_url }}">inventory management</a> and <a href="{{ '/glossary/hosted-shopping-cart' | absolute_url }}">shopping cart</a>.
+            Salesforce Commerce Cloud (formerly Demandware) offers certain features that make it stand out from other platforms, such as channel management, multi-store management, <a href="{{ '/glossary/what-is-inventory-management' | absolute_url }}">inventory management</a> and <a href="{{ '/glossary/hosted-shopping-cart' | absolute_url }}">shopping cart</a>.
         </p>
         <p class="text">
             Another great thing about this solution is the fact that it is a <a href="{{ '/glossary/saas-ecommerce' | absolute_url }}">SaaS platform</a>, which means you won’t have to worry about maintaining its infrastructure. This platform is a simple and easy to use tool with outstanding customer support and community. This is definitely one of the best enterprise solutions on the market, but just like any other platform, it has its downsides.
@@ -48,7 +48,7 @@ tags :
             Among the most common disadvantages of this particular platform is the fact that it requires a lot of development resources from its users in order to maintain the web store. Besides, there are few people who actually know how to code in it, therefore they are really expensive.
         </p>
         <p class="text">
-            If you see a potential issue with this like we do, we would love to explore some of the Demandware alternatives.
+            If you see a potential issue with this like we do, we would love to explore some Salesforce Commerce Cloud alternatives.
         </p>
         {% include 'vc-magento-banner' with current_url : 'glossary/demandware-alternatives' %}
         <div class="section-title">Magento </div>
