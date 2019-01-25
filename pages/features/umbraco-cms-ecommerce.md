@@ -12,7 +12,7 @@ permalink: features/umbraco-cms-ecommerce
 		<div class="responsive">
 			<div class="feature-descr">
 				Umbraco CMS is a leading ASP.NET based content management system and Virto Commerce is the most cutting edge eCommerce product. Both are open-source and 
-				is a great fit (both using MVC rendering). Virto Commerce for Umbraco CMS allows seamless integration of ecommerce capabilities within Umbraco CMS. 
+				is a great fit (both using MVC rendering). Please <a href="http://help.virtocommerce.com/support/tickets/newcontact">contact our product team</a> if you are interested in requesting a seamless integration of ecommerce capabilities within Umbraco CMS.
 			</div>
 		</div>
 	</div>
@@ -20,7 +20,7 @@ permalink: features/umbraco-cms-ecommerce
 		<div class="responsive">
 			<div class="column">
 				<div class="feature-info">
-					<p>Status: Development</p>
+					<p>Status: Feature Request</p>
 					<p>Versions: 2.x</p>
 				</div>
 				<a class="button white large" href="http://help.virtocommerce.com/support/discussions/topics/4000321531" target="_blank">Vote and discuss!</a>
@@ -70,7 +70,7 @@ permalink: features/umbraco-cms-ecommerce
 			<li class="list-item">
 				<span class="title">Stay ahead of your competitors with Open Platform</span>
 				<span class="descr">
-					Don't get stuck using closed source e-Commerce product or platform. eCommerce and especially B2B eCommerce is constantly evolving and you can't afford to wait for your vendor to release that crucial new feature. Stay ahead of your competition by utilizing our open source platform that is constantly (daily!) evolving.
+					Don't get stuck using closed source e-Commerce products or platforms. eCommerce and especially B2B eCommerce is constantly evolving and you can't afford to wait for your vendor to release that crucial new feature. Stay ahead of your competition by utilizing our open source platform that is constantly evolving – even on a daily basis.
 				</span>
 			</li>
 		</ul>
