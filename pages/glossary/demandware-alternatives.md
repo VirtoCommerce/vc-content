@@ -28,7 +28,7 @@ tags :
             <h1 itemprop="headline" class="title">Demandware alternatives and competitors</h1>
         </div>
         <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <img itemprop="url contentUrl" alt="Demandware alternatives and competitors" src="assets/images/demandware-alternatives.jpg" />
+            <img itemprop="url contentUrl" alt="Salesforce Commerce Cloud alternatives and competitors" src="assets/images/demandware-alternatives.jpg" />
             <meta itemprop="width" content="500">
             <meta itemprop="height" content="250">
         </span>
