@@ -14,7 +14,7 @@ tags :
 		<ul class="list">
 			<li class="list-item">
 				<div class="roadmap-ico"></div>
-				<p class="roadmap-title">2019</p>
+				<p class="roadmap-title">Updated in January 2019</p>
 				<p class="roadmap-descr">Our roadmap is defined on Virto Commerce GitHub page <a href="https://github.com/VirtoCommerce/vc-platform" rel="nofollow" target="_blank">GitHub page</a>. You can submit your suggestions or discuss specific features there. Below are just some highlights of what has been done and what is planned.</p>
 				<div class="columns">
 					<div class="column">
@@ -25,16 +25,16 @@ tags :
 									<span class="descr">Migrate core storefront and platform to the latest .NET Core Framework.</span>
 								</li>
 								<li> 
-									<span class="title"><a href="https://github.com/VirtoCommerce/vc-platform/issues/565" rel="nofollow">Webhooks Implementation</a></span>
+									<span class="title"><a href="https://github.com/VirtoCommerce/vc-platform/issues/565" rel="nofollow">Webhooks Implementation for Orders module</a></span>
 									<span class="descr">Create Web Hooks API to allow for easier integration with external systems.</span>
 								</li>
 								<li>
-									<span class="title">Migration to TypeScript/Angular6</span>
+									<span class="title">Migration to TypeScript/Angular7</span>
 									<span class="descr">We will be migrating all backend modules to the latest TypeScript framework.</span>
 								</li>			
 								<li>
-									<span class="title">Publishing workflow</span>
-									<span class="descr">Introduce publishing workflow for CMS and Product contents.</span>
+									<span class="title">Drastic Performance Improvement</span>
+									<span class="descr">Order creation, catalog browsing, cart management, indexed search and some other functions will work even faster.</span>
 								</li>														
 							</ul>
 						</div>
@@ -47,17 +47,29 @@ tags :
 									<span class="descr">GUI Editor to allow marketing team to quickly build landing pages.</span>
 								</li>	
 								<li>
-									<span class="title">Marketing Campaign</span>
-									<span class="descr">Introduction of marketing campaign manager that allows grouping multiple discounts under single campaign with its own start and end dates.</span>
+									<span class="title">Generic Data Export and Import/span>
+									<span class="descr">Export and import data ranges related to any module by using files in csv, json or other formats.</span>
 								</li>	
 								<li>
-									<span class="title">Product data versioning</span>
+									<span class="title">Product Data Versioning</span>
 									<span class="descr">Persist multiple versions of the product data and allow reverting to previous version if needed.</span>
 								</li>	
 								<li>
-									<span class="title">Order approval workflow</span>
+									<span class="title">Order Approval Workflow</span>
 									<span class="descr">This functionality has been used by many of our existing clients and we will now include it as part of the default feature in Virto Commerce.</span>
-								</li>		
+								</li>
+                                <li>
+									<span class="title">Bulk Product Editing</span>
+									<span class="descr">Bulk updates to product data in the UI.</span>
+								</li>
+                                  <li>
+									<span class="title">Bulk Product Editing</span>
+									<span class="descr">Bulk updates to product data in the UI.</span>
+								</li>
+                                 <li>
+									<span class="title">Property Management Improvements/span>
+									<span class="descr">Property role-based access, property render type management, properties grouping.</span>
+								</li>
 								<!--		
 								<li>
 									<span class="title">PunchOut Support</span>
