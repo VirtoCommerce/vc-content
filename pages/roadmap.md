@@ -47,7 +47,7 @@ tags :
 									<span class="descr">GUI Editor to allow marketing team to quickly build landing pages.</span>
 								</li>	
 								<li>
-									<span class="title">Generic Data Export and Import/span>
+									<span class="title">Generic Data Export and Import</span>
 									<span class="descr">Export and import data ranges related to any module by using files in csv, json or other formats.</span>
 								</li>	
 								<li>
