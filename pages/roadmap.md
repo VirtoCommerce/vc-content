@@ -33,7 +33,7 @@ tags :
 									<span class="descr">We will be migrating all backend modules to the latest TypeScript framework.</span>
 								</li>			
 								<li>
-									<span class="title">Drastic Performance Improvement</span>
+									<span class="title">Drastic Performance Improvements</span>
 									<span class="descr">Order creation, catalog browsing, cart management, indexed search and some other functions will work even faster.</span>
 								</li>														
 							</ul>
@@ -63,8 +63,12 @@ tags :
 									<span class="descr">Bulk updates to product data in the UI.</span>
 								</li>
                                   <li>
-									<span class="title">Bulk Product Editing</span>
-									<span class="descr">Bulk updates to product data in the UI.</span>
+									<span class="title">Direct Links to Entities</span>
+									<span class="descr">Direct URLs for key entities: products, categories, contacts, orders.</span>
+								</li>
+                                     <li>
+									<span class="title">Full Context Searching in a Storefront</span>
+									<span class="descr">Use a generic search engine to search a storefront for both products and text.</span>
 								</li>
                                  <li>
 									<span class="title">Property Management Improvements/span>
