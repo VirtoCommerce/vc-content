@@ -71,7 +71,7 @@ tags :
 									<span class="descr">Use a generic search engine to search a storefront for both products and text.</span>
 								</li>
                                  <li>
-									<span class="title">Property Management Improvements/span>
+									<span class="title">Property Management Improvements</span>
 									<span class="descr">Property role-based access, property render type management, properties grouping.</span>
 								</li>
 								<!--		
