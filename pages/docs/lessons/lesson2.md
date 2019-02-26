@@ -12,8 +12,8 @@ Use this guide to import new products into Virto Commerce Platform (backend) cat
 ## Prerequisites
 
 * You need to have locally preinstalled Virto Commerce Platform (backend) and Virto Commerce Storefront (frontend) - see how to deploy and open them in <a href="https://github.com/VirtoCommerce/vc-content/tree/lesson2/Pages/docs/lessons/lesson1.md" target="_blank">Lesson 1</a>.
-* Download the <a href="https://github.com/VirtoCommerce/vc-content/tree/lesson2/pages/docs/lessons/electronics-new-products-example.csv" target="_blank">electronics-new-products-example.csv</a> file with new products.
-* Download the <a href="https://github.com/VirtoCommerce/vc-content/tree/lesson2/pages/docs/lessons/images-example.zip" target="_blank">images-example.zip</a> file and extract the content. There will be 15 images of new products.
+* Download the <a href="https://github.com/VirtoCommerce/vc-content/blob/deploy/pages/docs/lessons/electronics-new-products-example.csv" target="_blank">electronics-new-products-example.csv</a> file with new products.
+* Download the <a href="https://github.com/VirtoCommerce/vc-content/blob/deploy/pages/docs/lessons/images-example.zip" target="_blank">images-example.zip</a> file and extract the content. There will be 15 images of new products.
 * Microsoft Excel, <a href="https://www.libreoffice.org/" target="_blank">LibreOffice(*free*)</a> or any other .csv file editor.
 
 ## Create catalog data file in .csv format
