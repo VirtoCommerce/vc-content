@@ -137,9 +137,9 @@ New-Item -ItemType directory -Path $folder -Force
 
 ## Initial configuration of VirtoCommerce Storefront (frontend).
 
-Navigate to the <a href="https://github.com/VirtoCommerce/vc-storefront/releases">Releases section of Virto Commerce Storefront in GitHub.</a>
+Navigate to the <a href="https://github.com/VirtoCommerce/vc-storefront-core/releases">Releases section of Virto Commerce Storefront in GitHub.</a>
 
-You will find and download **VirtoCommerce.Storefront.2.x.x.zip** file.
+You will find and download **VirtoCommerce.Storefront.4.x.x.zip** file.
 
 Create new folder named **storefront** in IIS application root directory **C:\inetpub\wwwroot** manually or with PowerShell commands:
 ```
