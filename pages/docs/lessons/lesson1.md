@@ -13,25 +13,28 @@ Use this guide to <a class="crosslink" href="https://virtocommerce.com/ecommerce
 * <a href="https://www.youtube.com/watch?v=oRL2jxv2Knc" target="_blank">Part 1. How to deploy and configure Virto Commerce Platform</a>
 * <a href="https://www.youtube.com/watch?v=QuA1ATgzWwc" target="_blank">Part 2. How to deploy and configure Virto Commerce Storefront</a>
 
-
 ## Prerequisites
 
-* <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016" target="_blank">Windows Server 2008 R2 SP1 or later</a>
-* Enable Internet Information Services. You may use PowerShell command: 
+* [Windows Server 2008 R2 SP1 or later](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)
+* Enable Internet Information Services. You may use PowerShell command:
+
 ```
 Install-WindowsFeature -name Web-Server -IncludeAllSubFeature
 ```
-* <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49981" target="_blank">Microsoft .NET Framework 4.6.1</a>
-* <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2017-rtm" target="_blank">Microsoft SQL Server 2008 or later with SQL Management Studio(free MS SQL Express would be enough)</a>
-* <a href="https://go.microsoft.com/fwlink/?LinkId=746572" target="_blank">Visual C++ Redistributable Packages for Visual Studio</a>
 
-## Initial configuration of VirtoCommerce Platform (backend).
+* [Microsoft .NET Framework 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49981)
+* [Microsoft SQL Server 2008 or later](https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2017-rtm) with SQL Management Studio(free MS SQL Express would be enough)
+* [Visual C++ Redistributable Packages for Visual Studio](https://go.microsoft.com/fwlink/?LinkId=746572)
+* [Prerequisites for .NET Core on Windows](https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites)
+
+## Initial configuration of VirtoCommerce Platform (backend)
 
 Navigate to the <a href="https://github.com/VirtoCommerce/vc-platform/releases" rel="nofollow">Releases section of Virto Commerce Platform in GitHub.</a>
 
 You will find and download **VirtoCommerce.Platform.2.x.x.zip** file.
 
 Unpack follow zip to the web server in IIS application root directory **C:\inetpub\wwwroot\admin**. If there is no **admin** directory inside **wwwroot**, create it manually or with PowerShell commands:
+
 ```
 $folder="C:\inetpub\wwwroot\admin"
 New-Item -ItemType directory -Path $folder -Force
@@ -45,9 +48,10 @@ New-Item -ItemType directory -Path $folder -Force
 * In the **connectionStrings** section find the **add** node:
   
   **VirtoCommerce**: parameters for  SQL server database. Change (local) to IP address of your SQL Server. For locally running instance   SQL Express set **Data Source=.\SQLEXPRESS**.
-  ```
+  
+```
   <add name="VirtoCommerce" connectionString="Data Source=(local);Initial Catalog=VirtoCommerce2;Persist Security Info=True;User       ID=virto;Password=virto;MultipleActiveResultSets=True;Connect Timeout=420" providerName="System.Data.SqlClient" />
-  ```
+```
 
 ### Create virto user in SQL Server Manager
 
@@ -60,6 +64,7 @@ Open properties for **C:\inetpub\wwwroot\admin** folder and give permission *
 ![Setting admin folder security options](../../assets/images/docs/iis_iusrs-rights-on-admin-folder.png "Setting admin folder security options")
 
 The same can be done with PowerShell commands:
+
 ```
 $acl = Get-Acl $folder
 $acl.SetAccessRuleProtection($True, $True)
@@ -79,6 +84,7 @@ $acl | Set-Acl $folder
 
 * Select application pool named DefaultAppPool which uses **.NET CLR Version 4.0** and **Integrated** pipeline mode
 * Inside the admin application add the new virtual directory with alias **assets** and physical path **C:\inetpub\wwwroot\admin\App_Data\Assets**. If there is no **Assets** directory inside **App_Data**, create it manually or with PowerShell commands:
+
 ```
 $folder="C:\inetpub\wwwroot\admin\App_Data\Assets"
 New-Item -ItemType directory -Path $folder -Force
@@ -141,9 +147,10 @@ Navigate to the <a href="https://github.com/VirtoCommerce/vc-storefront-core/rel
 
 You will find and download **VirtoCommerce.Storefront.4.x.x.zip** file.
 
-Create new folder named **storefront** in IIS application root directory **C:\inetpub\wwwroot** manually or with PowerShell commands:
+Create new folder named **C:\vc-storefront-core** manually or with PowerShell commands:
+
 ```
-$folder="C:\inetpub\wwwroot\storefront"
+$folder="C:\vc-storefront-core"
 New-Item -ItemType directory -Path $folder -Force
 ```
 
@@ -151,51 +158,65 @@ and unpack this zip file to this folder of web server.
 
 ## Setup of Virto Commerce Storefront
 
-### Configure Web API base URL
+### Configuring VirtoCommerce Platform Endpoint
 
-* Open the **C:\inetpub\wwwroot\storefront\Web.config** in a text editor.
-* In the **connectionStrings** section find the **add** node named **VirtoCommerceBaseUrl**. Make sure that its **connectionString** attribute value is **http://localhost/admin**.
-  ```
-  <add name="VirtoCommerceBaseUrl" connectionString="http://localhost/admin" />
-  ```
+* Open the **C:\vc-storefront-core\appsettings.json** in a text editor.
+* In the **VirtoCommerce** section find the node named **Endpoint**. Make sure that its **Url** attribute value is **http://localhost/admin**.
+* Make sure that **AppId** and **SecretKey** attributes values is set to the values obtained earlier in the [Change API credentials for storefront application](#Change-API-credentials-for-storefront-application) step..
+  
+```
+...
+"VirtoCommerce": {
+    "Endpoint": {
+        //Virto Commerce platform manager url
+        "Url": "http://localhost/admin",
+        //HMAC authentification user credentials on whose behalf the API calls will be made.
+        "AppId": "Enter your AppId here",
+        "SecretKey": "Enter your SecretKey here",
+    }
+...
+```
 
 ### Configure CMS content storage
 
-* Open the **C:\inetpub\wwwroot\storefront\Web.config** in a text editor.
-* In the **connectionStrings** section find the **add** node named **ContentConnectionString**. Make sure that its **connectionString** attribute rootPath value is **~/App_Data/cms-content**.
-  ```
-  <add name="ContentConnectionString" connectionString="provider=LocalStorage;rootPath=~/App_Data/cms-content" />
-  ```
+* Open the **appsettings.json** in a text editor.
+* In the **ConnectionStrings** section find the attribute named **ContentConnectionString**. Make sure that its rootPath value is **~/App_Data/cms-content**.
 
-### Configure Api credentials
-
-* Open the **C:\inetpub\wwwroot\storefront\Web.config** in a text editor.
-* In the **appSettings** section find the **add** node with key attribute named **vc-public-ApiSecretKey**. Make sure that its **value** attribute is set to the value obtained earlier in the 'Change API credentials for storefront application' step.
-  ```
-  <add key="vc-public-ApiSecretKey" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
-  ```
-
-### Configure IIS
-
-* Open the **IIS Manager** and add a new application named **storefront** inside an existing **Default Web Site**.
-* In the **Physical path** field enter the full path to the **C:\inetpub\wwwroot\storefront** folder:
-
-![Add application in IIS](../../assets/images/docs/add-application-storefront.png "Add application in IIS")
-
-* Select application pool named DefaultAppPool which uses **.NET CLR Version 4.0** and **Integrated** pipeline mode
-
-## Add default themе for **VirtoCommerce Storefront**
-
-* Open the **IIS Manager** and add a new virtual directory named **cms-content** inside **C:\inetpub\wwwroot\storefront\App_Data**.
-* Physical path is **C:\inetpub\wwwroot\admin\App_Data\cms-content**.
-
-![Add virtual directory cms-content](../../assets/images/docs/add-virtual-directory-cms-content.png "Add virtual directory cms-content")
-
-The same can be done with PowerShell commands:
 ```
-New-Item -Path C:\inetpub\wwwroot\storefront\App_Data\cms-content -ItemType SymbolicLink -Value C:\inetpub\wwwroot\admin\App_Data\cms-content
+...
+"ConnectionStrings": {
+    //For themes stored in local file system
+    "ContentConnectionString": "provider=LocalStorage;rootPath=~/cms-content"
+  }
+...
 ```
 
-Now you could first open the **VirtoCommerce Storefront** application in the browser after full modules and sample data installation on **Virtocommerce Platform** - in  the **IIS Manager** select **storefront** and click on right column to "Browse *:80(http)".
+Platform already contains `~/App_Data/cms-content` folder with themes for sample stores it was configured earlier in the [Configure IIS](#Configure-IIS) step
+You need to make symbolic link to this folder by this command:
+
+```
+mklink /d C:\vc-storefront-core\wwwroot\cms-content C:\inetpub\wwwroot\admin\App_Data\cms-content
+```
+
+### Running the storefont by CLI "dotnet run"
+
+* Open command prompt console
+* Change working directory to the **C:\vc-storefront-core**
+
+```
+cd C:\vc-storefront-core
+```
+
+* Run the storefront by  follow command
+
+``` 
+dotnet.exe C:\vc-storefront-core\VirtoCommerce.Storefront.dll
+```
+The output in the console will say something like:
+```
+Now listening on: http://localhost:5000
+```
+
+Now you could first open the **VirtoCommerce Storefront** application in the browser after full modules and sample data installation on **Virtocommerce Platform** - open in your browser http://localhost:5000.
 
 ![First storefront page](../../assets/images/docs/storefront.png "First storefront page")
