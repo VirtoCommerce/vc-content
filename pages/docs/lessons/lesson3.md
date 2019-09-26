@@ -2,7 +2,9 @@
 
 ## Summary
 
-Use this guide to create a custom module for Virto Commerce Platform Manager. As an example, the created module will manage customer reviews. Hereinafter, this module will be called as "Customer Reviews" module. After completing this lesson, you can create a module that contains:
+Use this guide to create a custom module for Virto Commerce Platform Manager. As an example, in the new module will create API for manage customer reviews for products: create, update, delete, search customer reviews. Hereinafter, this module will be called as "Customer Reviews" module.
+
+After completing this lesson, you can create a module that contains:
 
 * module API for create, delete, update and search customer reviews;
 * test project for testing module API.
@@ -13,16 +15,16 @@ https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601
 
 ## Prerequisites
 
-* Installed Virto Commerce Platform Manager
-* Basic C# knowledge
-* Visual Studio 2017 or higher
+* Installed Virto Commerce Platform Manager;
+* Basic C# knowledge;
+* Visual Studio 2017 or higher.
 
 ## Glossary
 
-VC – Virto Commerce
-Platform Manager – Virto Commerce Platform Manager
-JS – Java Script
-VS – Visual Studio
+VC – Virto Commerce;
+Platform Manager – Virto Commerce Platform Manager;
+JS – Java Script;
+VS – Visual Studio.
 
 ## Create a new module
 
@@ -37,8 +39,8 @@ Open Visual Studio, go to **Tools > Extensions and Updates**. Search for **Virto
 Install it and restart Visual Studio.
 Now, in Visual Studio click **New Project**, search for an existing **Virto Commerce 2.x Module project**. Name it, according to the naming convention. For example:
 
-* "Name": **CustomerReviewsModule**
-* "Solution name": **CustomerReviewsModule**
+* "Name": **CustomerReviewsModule**;
+* "Solution name": **CustomerReviewsModule**.
 
 ![VS New Project](../../assets/images/docs/screen-vs-new-project.png)
 
@@ -57,14 +59,14 @@ After new module created fill in title, description and authors attributes in *m
 <module>
 ```
 
-*module.manifest* main file that indicating that a new module defined. This is entry point where described all necessary information to connect a new module to the Virto Commerce Platform.
+*module.manifest* is entry point where described all necessary information to connect a new module to the Virto Commerce Platform.
 
 ## Connect new module with the platform
 
 Now, need to tell the platform that a new module added. For that, connect newly created solution folder to the Platform Manager ~/Modules via the symbolic link:
 
-1. Run Command Prompt as an administrator
-1. Navigate to the physical location folder of Manager's ~/Modules virtual directory
+1. Run Command Prompt as an administrator;
+1. Navigate to the physical location folder of Manager's ~/Modules virtual directory;
 1. Run the following command:
 
 ```cmd
@@ -84,16 +86,16 @@ Click on **CustomerReviewsModule.Web** and you should see "Hello world" blade
 
 ![Hellow world! blade](../../assets/images/docs/screen-hellow-world-blade.png)
 
-## Compile and debug
+## First compile and debug
 
 To debug C# code at run-time you have to attach debugger to IIS instance.
 In Visual Studio:
 
-1. Click "Debug" from the menu bar
-2. Click "Attach to Process"
-3. Check the "Show processes from all users" checkbox in the bottom left corner
-4. Select aspnet_wp.exe, w3p.exe, or w3wp.exe from the process list
-5. Click "Attach"
+1. Click "Debug" from the menu bar;
+2. Click "Attach to Process";
+3. Check the "Show processes from all users" checkbox in the bottom left corner;
+4. Select aspnet_wp.exe, w3p.exe, or w3wp.exe from the process list;
+5. Click "Attach".
 
 To debug JS code at run-time use special debugging tools in browser.  You can read more about Chrome debug tools and how to debug any JS issue in this [article](https://javascript.info/debugging-chrome).
 To simplify debugging of java script in a module, change platform Web.config, app settings VirtoCommerce:EnableBundlesOptimizations to false:
@@ -124,21 +126,21 @@ When the new module is generated from a template, there is only one endpoint **a
 "Customer review" solution consists of 4 logically divided parts (projects):
 
 * **CustomerReviewsModule.Core** – this is where keep the models and abstractions of module services. **CustomerReviewsModule.Core** project has following folder structure:
-  * Models
-  * Services
+  * Models;
+  * Services.
 * **CustomerReviewsModule.Data** – here you can find all the service implementations, repositories, entity models, migration data and configurations. **CustomerReviewsModule.Data** project has following folder structure:
-  * Migrations
-  * Models
-  * Repositories
-  * Services
+  * Migrations;
+  * Models;
+  * Repositories;
+  * Services.
 * **CustomerReviewsModule.Web** – contains the module definition, WEB API, Scripts and Localization resources. **CustomerReviewsModule.Web** project has following folder structure:
   * Controllers:
-    * API
+    * API.
   * Scripts:
-    * blades
-    * Resources
-  * Content
-* **CustomerReviewsModule.Test** – for testing the service and repository layer methods with Unit test
+    * blades;
+    * Resources.
+  * Content.
+* **CustomerReviewsModule.Test** – for testing the service and repository layer methods with Unit test.
 
 This structure sets up automatically when module solution created from Virto Commerce template.
 
@@ -148,12 +150,12 @@ All the abstractions are defined in the **CustomerReviewsModule.Core** project.
 
 Typical structure of **Core** project is:
 
-* Models - contains domain models that you want to introduce to VirtoCommerce platform and Search Criteria for support search.
-  * Entities
-  * Search Criteria
-* Services - declaration of CRUD and search services without implementations
-  * CRUD service interface
-  * Search interface
+* Models - contains domain models that you want to introduce to VirtoCommerce platform and Search Criteria for support search:
+  * Entities;
+  * Search Criteria.
+* Services - declaration of CRUD and search services without implementations:
+  * CRUD service interface;
+  * Search interface.
 
 ### Preinstalled NuGet packages
 
@@ -351,10 +353,10 @@ This is most important project in the solution.
 
 Typical structure of **Web** project is:
 
-* Controllers - API controllers, all methods defined here wil be available from platform instance
-* Scripts - entry point for Platform manager user interface
-* Module.manifest - main file that indicating that a new module defined
-* Module.cs - main entry point for module backend, contain database initialization, registration of new repositories, services, model types and overrides
+* Controllers - API controllers, all methods defined here wil be available from platform instance;
+* Scripts - entry point for Platform Manager user interface;
+* Module.manifest - main file that indicating that a new module defined;
+* Module.cs - main entry point for module backend, contain database initialization, registration of new repositories, services, model types and overrides.
 
 ### Preinstalled NuGet packages
 
@@ -374,20 +376,20 @@ After the project is created from the template, the following NuGet packages wil
 
 Typical *module.manifest* structure is:
 
-* Identifier - a new module identifier for Platform manager, each modules identifier should be unique
+* Identifier - a new module identifier for Platform Manager, each modules identifier should be unique:
 
 ```xml
 <id>CustomerReviews.Web</id>
 ```
 
-* Versioning - actual version of a new module and required Platform Manager version
+* Versioning - actual version of a new module and required Platform Manager version:
 
 ```xml
 <version>1.0.0</version>
 <platformVersion>2.13.9</platformVersion>
 ```
 
-* Dependencies - list of modules with versions whose functions will be used in a new module
+* Dependencies - list of modules with versions whose functions will be used in a new module:
 
 ```xml
 <dependencies>
@@ -395,14 +397,14 @@ Typical *module.manifest* structure is:
 </dependencies>
 ```
 
-* Title and description - name and description of a new module that will be displayed in the Platform Manager and Swagger
+* Title and description - name and description of a new module that will be displayed in the Platform Manager and Swagger:
 
 ```xml
 <title>Sample Customer reviews module</title>
 <description>Sample module demonstrating best practices in a real life example.</description>
 ```
 
-* Authors - names of programmers who wrote a new module
+* Authors - names of programmers who wrote a new module:
 
 ```xml
 <authors>
@@ -410,14 +412,14 @@ Typical *module.manifest* structure is:
 </authors>
 ```
 
-* AssemblyFile and ModuleType - auto generated data witch Platform Manager use under the hood to connect a new module
+* AssemblyFile and ModuleType - auto generated data witch Platform Manager use under the hood to connect a new module:
 
 ```xml
 <assemblyFile>CustomerReviews.Web.dll</assemblyFile>
 <moduleType>CustomerReviews.Web.Module, CustomerReviews.Web</moduleType>
 ```
 
-* Styles - path for additional stiles for a new module user interface
+* Styles - path for additional stiles for a new module user interface:
 
 ```xml
 <styles>
@@ -425,7 +427,7 @@ Typical *module.manifest* structure is:
 </styles>
 ```
 
-* Scripts - path for a new module user interface scripts
+* Scripts - path for a new module user interface scripts:
 
 ```xml
 <scripts>
@@ -433,7 +435,7 @@ Typical *module.manifest* structure is:
 </scripts>
 ```
 
-* Settings - define custom settings for a new module
+* Settings - define custom settings for a new module:
 
 ```xml
 <settings>
@@ -449,7 +451,7 @@ Typical *module.manifest* structure is:
 </settings>
 ```
 
-* Permissions - define custom permissions for a new module
+* Permissions - define custom permissions for a new module:
 
 ```xml
 <permissions>
@@ -485,12 +487,11 @@ public override void Initialize()
 
 the method registers a specific signature for the type that will be injected for the ICustomerReviewRepository interface with a predefined connection string with the database, Id generator and interceptors (for uniformity of work with the database). An instance of CustomerReviewRepository is created and what it wrote will be passed to it as parameters.
 
-
 This is called a loose coupling mechanism.
 
 #### Setup Database
 
-Next registry repositories defined in **Data** project and initialize database.
+Next step is to registry repositories defined in **Data** project and initialize database.
 
 ```c#
 public override void SetupDatabase()
