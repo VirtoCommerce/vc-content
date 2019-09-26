@@ -504,7 +504,7 @@ public override void SetupDatabase()
 }
 ```
 
-### Module settings
+#### Module settings
 
 Module settings needed to check if a specific feature is enabled, or to determine which search engine to use in CustomerReviews module.
 
