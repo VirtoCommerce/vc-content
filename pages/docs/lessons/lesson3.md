@@ -125,22 +125,47 @@ When the new module is generated from a template, there is only one endpoint **a
 
 "Customer review" solution consists of 4 logically divided parts (projects):
 
-* **CustomerReviewsModule.Core** – this is where keep the models and abstractions of module services. **CustomerReviewsModule.Core** project has following folder structure:
+* **CustomerReviewsModule.Core** with following folder structure:
   * Models;
   * Services.
-* **CustomerReviewsModule.Data** – here you can find all the service implementations, repositories, entity models, migration data and configurations. **CustomerReviewsModule.Data** project has following folder structure:
+* **CustomerReviewsModule.Data** with following folder structure:
   * Migrations;
   * Models;
   * Repositories;
   * Services.
-* **CustomerReviewsModule.Web** – contains the module definition, WEB API, Scripts and Localization resources. **CustomerReviewsModule.Web** project has following folder structure:
+* **CustomerReviewsModule.Web** with following folder structure:
   * Controllers:
     * API.
   * Scripts:
     * blades;
     * Resources.
   * Content.
-* **CustomerReviewsModule.Test** – for testing the service and repository layer methods with Unit test.
+* **CustomerReviewsModule.Test**.
+
+In the solution, each project has its own responsibilities. Thus, certain types belong to each project, and you can always find the folders corresponding to these types in the corresponding project.
+
+The figure below shows a representation of the layers of architecture. Notice that the solid arrows correspond to the compile-time dependencies, and the dashed arrows to the dependencies that exist only at run time. As part of the current architecture, a Web project works with interfaces that are defined in the Core project at compile time, and ideally should not know anything about the implementation types defined in the Data project. But at run time, these types of implementations are necessary to run the application, so they must exist and be tied to the interfaces of the Core project through dependency injection.
+
+![Solution arch scheme](../../assets/images/docs/scheme-solution-arch.png)
+
+### .Core Business/Application Model
+
+The project must contain a business model, services and interfaces. These interfaces should include abstractions for operations that will be performed using infrastructure, such as data access, file system access, network calls, etc. In addition, services or interfaces defined at this level can work with non-object types. that are independent of the user. interface or infrastructure and are defined as simple data transfer objects (DTO).
+
+### .Data Data Access Logic
+
+The project includes the implementation of data access. Namely, the data access implementation classes (Repositories), any EF Migration objects that have been defined, and EF Entities models. In addition to the data access implementations, the project must contain service implementations that must interact with infrastructure problems. These services must implement the interfaces defined in Core, and therefore the project must have a reference to the Core project.
+
+### .Web Presentation Logic and Entry Point
+
+The user interface level in an ASP.NET MVC application is the entry point for the application. This project must refer to the Core project, and its types must interact with the data layer strictly through the interfaces defined in Core. Direct creation or static calls for user-level data types are not allowed at the user interface level.
+
+The Startup class is responsible for setting up the application and connecting the implementation types to the interfaces, which allows you to correctly inject dependencies at runtime. And to enable dependency injection in ConfigureServices in the Startup.cs file of the user interface project, it refers to data projects.
+
+### .Test project
+
+**.Test project** uses for testing the service and repository layer methods with Unit test.
+
 
 This structure sets up automatically when module solution created from Virto Commerce template.
 
@@ -504,7 +529,7 @@ public override void SetupDatabase()
 }
 ```
 
-### Module settings
+#### Module settings
 
 Module settings needed to check if a specific feature is enabled, or to determine which search engine to use in CustomerReviews module.
 
