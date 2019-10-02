@@ -2,9 +2,9 @@
 
 ## Summary
 
-Use this guide to create a custom module for Virto Commerce Platform Manager. As an example, in the new module will create API for manage customer reviews for products: create, update, delete, search customer reviews. Hereinafter, this module will be called as "Customer Reviews" module.
+Use this guide to create a custom module for Virto Commerce Platform. There will be an API created for product reviews management: create, update, delete, search. Hereinafter, this module will be called as "Customer Reviews" module.
 
-After completing this lesson, you can create a module that contains:
+After completing this lesson, a new module will be created, including:
 
 * module API for create, delete, update and search customer reviews;
 * test project for testing module API.
@@ -23,7 +23,7 @@ https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601
 
 VC – Virto Commerce;
 Platform Manager – Virto Commerce Platform Manager;
-JS – Java Script;
+JS – JavaScript;
 VS – Visual Studio.
 
 ## Create a new module
@@ -32,12 +32,12 @@ New module should be created from a special VC module template in Visual Studio.
 
 ## Virto Commerce template
 
-Open Visual Studio, go to **Tools > Extensions and Updates**. Search for **Virto Commerce 2.x Module**.
+Open Visual Studio, go to **Tools > Extensions and Updates**. Search for **Virto Commerce 2.x Module Templates**.
 
 ![VS Extensions and Updates](../../assets/images/docs/screen-vs-extensions-and-updates.png)
 
 Install it and restart Visual Studio.
-Now, in Visual Studio click **New Project**, search for an existing **Virto Commerce 2.x Module project**. Name it, according to the naming convention. For example:
+Now, in Visual Studio click **New Project**, search for an existing **Virto Commerce 2.x Module**. Name it, according to the naming convention. For example:
 
 * "Name": **CustomerReviewsModule**;
 * "Solution name": **CustomerReviewsModule**.
@@ -59,14 +59,14 @@ After new module created fill in title, description and authors attributes in *m
 <module>
 ```
 
-*module.manifest* is entry point where described all necessary information to connect a new module to the Virto Commerce Platform.
+*module.manifest* is entry point for a VC module. It entirely defines the module, so that Virto Commerce Platform can install and run the module.
 
 ## Connect new module with the platform
 
 Now, need to tell the platform that a new module added. For that, connect newly created solution folder to the Platform Manager ~/Modules via the symbolic link:
 
 1. Run Command Prompt as an administrator;
-1. Navigate to the physical location folder of Manager's ~/Modules virtual directory;
+1. Navigate to the physical location folder of Manager's ~/Modules directory;
 1. Run the following command:
 
 ```cmd
@@ -91,14 +91,15 @@ Click on **CustomerReviewsModule.Web** and you should see "Hello world" blade
 To debug C# code at run-time you have to attach debugger to IIS instance.
 In Visual Studio:
 
+1. Run Studio as an administrator;
 1. Click "Debug" from the menu bar;
-2. Click "Attach to Process";
-3. Check the "Show processes from all users" checkbox in the bottom left corner;
-4. Select aspnet_wp.exe, w3p.exe, or w3wp.exe from the process list;
-5. Click "Attach".
+1. Click "Attach to Process";
+1. Check the "Show processes from all users" checkbox in the bottom left corner;
+1. Select aspnet_wp.exe, w3p.exe, or w3wp.exe from the process list;
+1. Click "Attach".
 
 To debug JS code at run-time use special debugging tools in browser.  You can read more about Chrome debug tools and how to debug any JS issue in this [article](https://javascript.info/debugging-chrome).
-To simplify debugging of java script in a module, change platform Web.config, app settings VirtoCommerce:EnableBundlesOptimizations to false:
+In order to enable JS debugging, change platform's Web.config, app setting **VirtoCommerce:EnableBundlesOptimizations** value to false:
 
 ```xml
 <add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
@@ -140,7 +141,7 @@ When the new module is generated from a template, there is only one endpoint **a
     * blades;
     * Resources.
   * Content.
-* **CustomerReviewsModule.Test**.
+* **CustomerReviewsModule.Tests**.
 
 In the solution, each project has its own responsibilities. Thus, certain types belong to each project, and you can always find the folders corresponding to these types in the corresponding project.
 
@@ -162,10 +163,9 @@ The user interface level in an ASP.NET MVC application is the entry point for th
 
 The Startup class is responsible for setting up the application and connecting the implementation types to the interfaces, which allows you to correctly inject dependencies at runtime. And to enable dependency injection in ConfigureServices in the Startup.cs file of the user interface project, it refers to data projects.
 
-### .Test project
+### .Tests project
 
-**.Test project** uses for testing the service and repository layer methods with Unit test.
-
+**.Tests project** uses for testing the service and repository layer methods with Unit test.
 
 This structure sets up automatically when module solution created from Virto Commerce template.
 
@@ -380,7 +380,7 @@ Typical structure of **Web** project is:
 
 * Controllers - API controllers, all methods defined here wil be available from platform instance;
 * Scripts - entry point for Platform Manager user interface;
-* Module.manifest - main file that indicating that a new module defined;
+* Module.manifest - the main file containing new module definition;
 * Module.cs - main entry point for module backend, contain database initialization, registration of new repositories, services, model types and overrides.
 
 ### Preinstalled NuGet packages
@@ -444,7 +444,7 @@ Typical *module.manifest* structure is:
 <moduleType>CustomerReviews.Web.Module, CustomerReviews.Web</moduleType>
 ```
 
-* Styles - path for additional stiles for a new module user interface:
+* Styles - path for additional styles for a new module user interface:
 
 ```xml
 <styles>
@@ -510,7 +510,7 @@ public override void Initialize()
 }
 ```
 
-the method registers a specific signature for the type that will be injected for the ICustomerReviewRepository interface with a predefined connection string with the database, Id generator and interceptors (for uniformity of work with the database). An instance of CustomerReviewRepository is created and what it wrote will be passed to it as parameters.
+The method registers a specific signature for the type that will be injected for the ICustomerReviewRepository interface with a predefined connection string with the database, Id generator and interceptors (for uniformity of work with the database). By calling this line only a factory method registered to be executed during the DI.
 
 This is called a loose coupling mechanism.
 
@@ -619,13 +619,13 @@ After the project is created from the template, the following NuGet packages wil
 
 ### Project references
 
-**CustomerReviewsModule.Test** project has reference to **CustomerReviewsModule.Core** and **CustomerReviewsModule.Data** projects.
+**CustomerReviewsModule.Tests** project has reference to **CustomerReviewsModule.Core** and **CustomerReviewsModule.Data** projects.
 
 ### Tests implementation
 
 We recommend to use ["Unit testing best practices with .NET Core and .NET Standard"](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices) in tests development.
 
-Actual code for CustomerReviewsModule.Test project you can find in the sample [repository](https://github.com/VirtoCommerce/vc-samples/tree/master/CustomerReviews).
+Actual code for CustomerReviewsModule.Tests project you can find in the sample [repository](https://github.com/VirtoCommerce/vc-samples/tree/master/CustomerReviews).
 
 ## Pack and release/deployment
 
