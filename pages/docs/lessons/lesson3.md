@@ -82,11 +82,13 @@ Compile solution and restart IIS (use iisreset.exe command). After that, Custome
 
 ![CustomerReviesModule in Platform Manager](../../assets/images/docs/screen-customerreviesmodule-in-platform-manager.png)
 
-Click on **CustomerReviewsModule.Web** and you should see "Hello world" blade
+Click on **CustomerReviewsModule** and you should see "Hello world" blade
 
 ![Hellow world! blade](../../assets/images/docs/screen-hellow-world-blade.png)
 
-## First compile and debug
+## Debugging
+
+### Debugging C# code
 
 To debug C# code at run-time you have to attach debugger to IIS instance.
 In Visual Studio:
@@ -105,9 +107,9 @@ In order to enable JS debugging, change platform's Web.config, app setting **Vir
 <add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
 ```
 
-## Debugging module Rest API
+### Debugging module Rest API
 
-### Swagger API
+#### Swagger API
 
 You can test CustomerReviews module API endpoints by using "REST API documentation" (Swagger) UI. Browse **[localhost/admin/docs/ui/index]** URL:
 
@@ -115,10 +117,10 @@ You can test CustomerReviews module API endpoints by using "REST API documentati
 
 Here you can find all the API methods, exposed by Platform and installed modules as well.
 
-### Testing module Rest API Endpoints
+#### Testing module Rest API Endpoints
 
 Click on "Sample Customer reviews module" to see the available endpoints.
-When the new module is generated from a template, there is only one endpoint **api/CustomerReviewsModule.Web** included, returning "Hello, world!":
+When the new module is generated from a template, there is only one endpoint **api/CustomerReviewsModule** included, returning "Hello, world!":
 
 ![Swagger Get API](../../assets/images/docs/screen-swagger-get-api.png)
 
@@ -488,11 +490,33 @@ Typical *module.manifest* structure is:
 </permissions>
 ```
 
-### The Main class
+### Module.cs and initialization flow
 
-All the classes used here are registered inside of a base class Module. Which is the base class for the entire module. In this case, it’s Customer Reviews module.
+*Module.cs* is the main entry point of managed code, the base class for the entire module. In this case, it’s Customer Reviews module. Module initialization flow contains several steps:
 
-#### Dependency Injection
+* Setup Database;
+* Initialization:
+  * Services registration;
+* Post initialization:
+  * Override registrations;
+  * Store dependent settings registration.
+
+#### Setup Database
+
+First step is to registry repositories defined in **Data** project (including migrations) and initialize database. The database is initialized in the **SetupDatabase()** method:
+
+```c#
+public override void SetupDatabase()
+{
+    using (var db = new CustomerReviewRepository(_connectionString, _container.Resolve<AuditableInterceptor>()))
+    {
+        var initializer = new SetupDatabaseInitializer<CustomerReviewRepository, Data.Migrations.Configuration>();
+        initializer.InitializeDatabase(db);
+    }
+}
+```
+
+#### Initialization
 
 Interfaces are using in services in CustomerReviews module. That’s because a dependency injection always used. Inside of **Initialize()** method in the Main class register the Service implementations of the module and link them with the interfaces:
 
@@ -514,26 +538,15 @@ The method registers a specific signature for the type that will be injected for
 
 This is called a loose coupling mechanism.
 
-#### Setup Database
+#### Post initialization
 
-Next step is to registry repositories defined in **Data** project and initialize database.
+If you need to override existing registrations or register new store dependent settings you can do this in **PostInitialize()** method.
 
-```c#
-public override void SetupDatabase()
-{
-    using (var db = new CustomerReviewRepository(_connectionString, _container.Resolve<AuditableInterceptor>()))
-    {
-        var initializer = new SetupDatabaseInitializer<CustomerReviewRepository, Data.Migrations.Configuration>();
-        initializer.InitializeDatabase(db);
-    }
-}
-```
+### Module settings
 
-#### Module settings
+A setting is a parameter that a module accepts. More details on settings: https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/extending-functionality/managing-module-settings
 
-Module settings needed to check if a specific feature is enabled, or to determine which search engine to use in CustomerReviews module.
-
-First of all define custom settings in *module.manifest*.
+First of all define *CustomerReviews.CustomerReviewsEnabled* setting in *module.manifest* like this:
 
 ```xml
 <settings>
@@ -549,11 +562,12 @@ First of all define custom settings in *module.manifest*.
 </settings>
 ```
 
-Next define module settings with the Setting manager:
+A new, global module setting is defined. Make the Reviews enabled/disabled setting value configurable for each individual store (scope-bounded):
 
-* register the **ISettingsManager**;
-* get module settings from *module.manifest*;
-* create key, value associations:
+* get instance of **ISettingsManager**;
+* define a list of settings that will be scope-bounded;
+* get the actual definitions of those settings;
+* register the settings as scope-bounded in "VirtoCommerce.Store" module:
 
 ```c#
 public override void PostInitialize()
@@ -601,7 +615,7 @@ From the backend side methods protected with CheckPermission:
 ### Testing Rest API Endpoints in Swagger
 
 Besides the JavaScript, you can test module API endpoints, with the Swagger. Compile solution and restart IIS (use iisreset.exe command). Open the Swagger interface URL: **[localhost://admin/docs/ui/index]** and click on "Customer reviews module" to see the available endpoints.
-You can test the search functionality for instance. Under the **api/CustomerReviewsModule.Web/search** endpoint you can create simple or nested, compound criteria. It accepts the criteria as a simple object. After providing the criteria hit the "Try it out" button.
+You can test the search functionality for instance. Under the **api/CustomerReviewsModule/search** endpoint you can create simple or nested, compound criteria. It accepts the criteria as a simple object. After providing the criteria hit the "Try it out" button.
 
 ![Swagger Search API](../../assets/images/docs/screen-swagger-search-api.png)
 
@@ -635,8 +649,6 @@ To deploy CustomerReviews module to other platforms use the package manager tool
 compress-module
 ```
 
-After execution, the command will create the .zip module package. You can deploy it to the other environment.
-
-Try it in [admin-demo](https://admin-demo.virtocommerce.com) application. Go to **Modules>Advanced>Install/update module from file**. Upload the .zip file that created with package manager. After checking, the upload details hit the **Install** button. **Restart** the application.
+After execution, the command will create the .zip module package. You can deploy it to the other environment. Go to **Modules>Advanced>Install/update module from file**. Upload the .zip file that created with package manager. After checking, the upload details hit the **Install** button. **Restart** the application.
 
 Under the hood, the application will unzip the file, check the structure, and copy all the required classes to the Modules folder of the current application.
