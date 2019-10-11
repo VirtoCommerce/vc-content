@@ -53,7 +53,7 @@ After new module created fill in title, description and authors attributes in *m
     <title>Sample Customer reviews module</title>
     <description>Sample module demonstrating best practices in a real life example.</description>
     <authors>
-        <author>Egidijus Mazeika</author>
+        <author>If you read this text, replace it with your name</author>
     </authors>
     ....
 <module>
