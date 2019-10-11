@@ -109,13 +109,15 @@ In order to enable JS debugging, change platform's Web.config, app setting **Vir
 
 ### Debugging module Rest API
 
-#### Swagger API
+#### Swagger UI
 
-You can test CustomerReviews module API endpoints by using "REST API documentation" (Swagger) UI. Browse **[localhost/admin/docs/ui/index]** URL:
+"REST API documentation" (Swagger) UI is automatically generated page. It enables to make requests to all the REST API endpoints exposed by Platform and installed modules as well. Browse **[localhost/admin/docs/ui/index]** URL:
 
-![Swagger API](../../assets/images/docs/screen-swagger-api.png)
+![Swagger UI](../../assets/images/docs/screen-swagger-ui.png)
 
-Here you can find all the API methods, exposed by Platform and installed modules as well.
+#### Authorization
+
+Call Authorize button on the top of the page, enter username and password, submit the form in order to be able to use the secured API methods.
 
 #### Testing module Rest API Endpoints
 
@@ -619,7 +621,7 @@ You can test the search functionality for instance. Under the **api/CustomerRevi
 
 ![Swagger Search API](../../assets/images/docs/screen-swagger-search-api.png)
 
-## Test project
+## Tests project
 
 xUnit testing framework used for test project in module solution.
 
