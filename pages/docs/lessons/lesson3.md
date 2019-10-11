@@ -1,5 +1,57 @@
 # How to create Virto commerce module (API)
 
+  * [Summary](#summary)
+  * [Video](#video)
+  * [Prerequisites](#prerequisites)
+  * [Glossary](#glossary)
+  * [Create new module](#create-new-module)
+  * [Virto Commerce template](#virto-commerce-template)
+  * [Connect new module with the platform](#connect-new-module-with-the-platform)
+  * [Debugging](#debugging)
+    + [Debugging C# code](#debugging-c--code)
+    + [Swagger UI](#swagger-ui)
+      - [Authorization](#authorization)
+      - [Testing module Rest API Endpoints](#testing-module-rest-api-endpoints)
+    + [Scripts debugging](#scripts-debugging)
+  * [The VC module solution structure](#the-vc-module-solution-structure)
+    + [.Core Business/Application Model](#core-business-application-model)
+    + [.Data Data Access Logic](#data-data-access-logic)
+    + [.Web Presentation Logic and Entry Point](#web-presentation-logic-and-entry-point)
+    + [.Tests project](#tests-project)
+  * [Core project](#core-project)
+    + [Preinstalled NuGet packages](#preinstalled-nuget-packages)
+    + [Domain models](#domain-models)
+      - [Entity](#entity)
+      - [Search criteria](#search-criteria)
+    + [Services](#services)
+    + [Permissions](#permissions)
+    + [Declaring new permissions in module.manifest](#declaring-new-permissions-in-modulemanifest)
+  * [Data project (Persistence layer)](#data-project--persistence-layer-)
+    + [Preinstalled NuGet packages](#preinstalled-nuget-packages-1)
+    + [Project references](#project-references)
+    + [Entity and mapping](#entity-and-mapping)
+    + [Repositories](#repositories)
+    + [Services](#services-1)
+    + [Migrations](#migrations)
+      - [Initial migration](#initial-migration)
+  * [Web project](#web-project)
+    + [Preinstalled NuGet packages](#preinstalled-nuget-packages-2)
+    + [Project references](#project-references-1)
+    + [Module.manifest](#modulemanifest)
+    + [Module.cs and initialization flow](#modulecs-and-initialization-flow)
+      - [Setup Database](#setup-database)
+      - [Initialization](#initialization)
+      - [Post initialization](#post-initialization)
+    + [Module settings](#module-settings)
+    + [WEB API layer](#web-api-layer)
+    + [WEB API endpoints protection](#web-api-endpoints-protection)
+    + [Testing Rest API Endpoints in Swagger](#testing-rest-api-endpoints-in-swagger)
+  * [Tests project](#tests-project)
+    + [Preinstalled NuGet packages](#preinstalled-nuget-packages-3)
+    + [Project references](#project-references-2)
+    + [Tests implementation](#tests-implementation)
+  * [Pack and release/deployment](#pack-and-release-deployment)
+
 ## Summary
 
 Use this guide to create a custom module for Virto Commerce Platform. There will be an API created for product reviews management: create, update, delete, search. Hereinafter, this module will be called as "Customer Reviews" module.
@@ -15,20 +67,21 @@ https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601
 
 ## Prerequisites
 
-* Installed Virto Commerce Platform Manager;
+* Installed Virto Commerce Platform;
 * Basic C# knowledge;
 * Visual Studio 2017 or higher.
 
 ## Glossary
 
-VC – Virto Commerce;
-Platform Manager – Virto Commerce Platform Manager;
-JS – JavaScript;
-VS – Visual Studio.
+* VC – Virto Commerce;
+* Platform - Virto Commerce Platform;
+* Platform Manager – Virto Commerce Platform Manager, UI for Platform managing;
+* JS – JavaScript;
+* VS – Visual Studio.
 
-## Create a new module
+## Create new module
 
-New module should be created from a special VC module template in Visual Studio. The template is available as a Visual Studio extension online. 
+New module should be created from a special VC module template in Visual Studio. The template is available as a Visual Studio extension online.
 
 ## Virto Commerce template
 
@@ -63,10 +116,10 @@ After new module created fill in title, description and authors attributes in *m
 
 ## Connect new module with the platform
 
-Now, need to tell the platform that a new module added. For that, connect newly created solution folder to the Platform Manager ~/Modules via the symbolic link:
+Now, need to tell the platform that a new module added. For that, connect newly created solution folder to the Platform ~/Modules via the symbolic link:
 
 1. Run Command Prompt as an administrator;
-1. Navigate to the physical location folder of Manager's ~/Modules directory;
+1. Navigate to the physical location folder of Platform's ~/Modules directory;
 1. Run the following command:
 
 ```cmd
@@ -100,16 +153,7 @@ In Visual Studio:
 1. Select aspnet_wp.exe, w3p.exe, or w3wp.exe from the process list;
 1. Click "Attach".
 
-To debug JS code at run-time use special debugging tools in browser.  You can read more about Chrome debug tools and how to debug any JS issue in this [article](https://javascript.info/debugging-chrome).
-In order to enable JS debugging, change platform's Web.config, app setting **VirtoCommerce:EnableBundlesOptimizations** value to false:
-
-```xml
-<add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
-```
-
-### Debugging module Rest API
-
-#### Swagger UI
+### Swagger UI
 
 "REST API documentation" (Swagger) UI is automatically generated page. It enables to make requests to all the REST API endpoints exposed by Platform and installed modules as well. Browse **[localhost/admin/docs/ui/index]** URL:
 
@@ -125,6 +169,15 @@ Click on "Sample Customer reviews module" to see the available endpoints.
 When the new module is generated from a template, there is only one endpoint **api/CustomerReviewsModule** included, returning "Hello, world!":
 
 ![Swagger Get API](../../assets/images/docs/screen-swagger-get-api.png)
+
+### Scripts debugging
+
+To debug JS code at run-time use special debugging tools in browser.  You can read more about Chrome debug tools and how to debug any JS issue in this [article](https://javascript.info/debugging-chrome).
+In order to enable JS debugging, change platform's Web.config, app setting **VirtoCommerce:EnableBundlesOptimizations** value to false:
+
+```xml
+<add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
+```
 
 ## The VC module solution structure
 
@@ -385,7 +438,7 @@ Typical structure of **Web** project is:
 * Controllers - API controllers, all methods defined here wil be available from platform instance;
 * Scripts - entry point for Platform Manager user interface;
 * Module.manifest - the main file containing new module definition;
-* Module.cs - main entry point for module backend, contain database initialization, registration of new repositories, services, model types and overrides.
+* Module.cs - main entry point for module backend, containing database initialization, registration of new repositories, services, model types and overrides.
 
 ### Preinstalled NuGet packages
 
@@ -401,17 +454,17 @@ After the project is created from the template, the following NuGet packages wil
 
 ### Module.manifest
 
-*module.manifest* contains various attributes describing the module and its contents which is necessary for the Platform Manager to connect the module to the platform. The Platform Manager searches for CustomerReviewModule *module.manifest* file, gets the entry point and connects the module to the platform.
+*module.manifest* contains various attributes describing the module and its contents which is necessary for the Platform to connect the module to the platform. The Platform searches for CustomerReviewModule *module.manifest* file, gets the entry point and connects the module to the platform.
 
 Typical *module.manifest* structure is:
 
-* Identifier - a new module identifier for Platform Manager, each modules identifier should be unique:
+* Identifier - a new module identifier for Platform, each modules identifier should be unique:
 
 ```xml
 <id>CustomerReviews.Web</id>
 ```
 
-* Versioning - actual version of a new module and required Platform Manager version:
+* Versioning - actual version of a new module and required Platform version:
 
 ```xml
 <version>1.0.0</version>
@@ -441,7 +494,7 @@ Typical *module.manifest* structure is:
 </authors>
 ```
 
-* AssemblyFile and ModuleType - auto generated data witch Platform Manager use under the hood to connect a new module:
+* AssemblyFile and ModuleType - auto generated data witch Platform use under the hood to connect a new module:
 
 ```xml
 <assemblyFile>CustomerReviews.Web.dll</assemblyFile>
@@ -608,7 +661,7 @@ The API endpoints are all accessed from the JavaScript code written in the **Cus
 
 ### WEB API endpoints protection
 
-From the backend side methods protected with CheckPermission:
+Protecting API controller methods with CheckPermission attribute:
 
 ```c#
 [CheckPermission(Permission = Permissions.Read)]
@@ -616,7 +669,7 @@ From the backend side methods protected with CheckPermission:
 
 ### Testing Rest API Endpoints in Swagger
 
-Besides the JavaScript, you can test module API endpoints, with the Swagger. Compile solution and restart IIS (use iisreset.exe command). Open the Swagger interface URL: **[localhost://admin/docs/ui/index]** and click on "Customer reviews module" to see the available endpoints.
+Besides the JavaScript, you can test module API endpoints, with the Swagger. Compile solution and restart IIS (use iisreset.exe command). Open the Swagger interface URL: **[localhost//admin/docs/ui/index]** and click on "Customer reviews module" to see the available endpoints.
 You can test the search functionality for instance. Under the **api/CustomerReviewsModule/search** endpoint you can create simple or nested, compound criteria. It accepts the criteria as a simple object. After providing the criteria hit the "Try it out" button.
 
 ![Swagger Search API](../../assets/images/docs/screen-swagger-search-api.png)
