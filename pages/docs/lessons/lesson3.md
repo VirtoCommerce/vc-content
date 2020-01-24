@@ -7,58 +7,6 @@ priority: 3
 ---
 # How to create Virto commerce module (API)
 
-  * [Summary](/docs/lessons/lesson3#summary)
-  * [Video](/docs/lessons/lesson3#video)
-  * [Prerequisites](/docs/lessons/lesson3#prerequisites)
-  * [Glossary](/docs/lessons/lesson3#glossary)
-  * [Create new module](/docs/lessons/lesson3#create-new-module)
-  * [Virto Commerce template](/docs/lessons/lesson3#virto-commerce-template)
-  * [Connect new module with the platform](/docs/lessons/lesson3#connect-new-module-with-the-platform)
-  * [Debugging](/docs/lessons/lesson3#debugging)
-    + [Debugging C# code](/docs/lessons/lesson3#debugging-c--code)
-    + [Swagger UI](/docs/lessons/lesson3#swagger-ui)
-      - [Authorization](/docs/lessons/lesson3#authorization)
-      - [Testing module Rest API Endpoints](/docs/lessons/lesson3#testing-module-rest-api-endpoints)
-    + [Scripts debugging](/docs/lessons/lesson3#scripts-debugging)
-  * [The VC module solution structure](/docs/lessons/lesson3#the-vc-module-solution-structure)
-    + [.Core Business/Application Model](/docs/lessons/lesson3#core-business-application-model)
-    + [.Data Data Access Logic](/docs/lessons/lesson3#data-data-access-logic)
-    + [.Web Presentation Logic and Entry Point](/docs/lessons/lesson3#web-presentation-logic-and-entry-point)
-    + [.Tests project](/docs/lessons/lesson3#tests-project)
-  * [Core project](/docs/lessons/lesson3#core-project)
-    + [Preinstalled NuGet packages](/docs/lessons/lesson3#preinstalled-nuget-packages)
-    + [Domain models](/docs/lessons/lesson3#domain-models)
-      - [Entity](/docs/lessons/lesson3#entity)
-      - [Search criteria](/docs/lessons/lesson3#search-criteria)
-    + [Services](/docs/lessons/lesson3#services)
-    + [Permissions](/docs/lessons/lesson3#permissions)
-    + [Declaring new permissions in module.manifest](/docs/lessons/lesson3#declaring-new-permissions-in-modulemanifest)
-  * [Data project (Persistence layer)](/docs/lessons/lesson3#data-project--persistence-layer-)
-    + [Preinstalled NuGet packages](/docs/lessons/lesson3#preinstalled-nuget-packages-1)
-    + [Project references](/docs/lessons/lesson3#project-references)
-    + [Entity and mapping](/docs/lessons/lesson3#entity-and-mapping)
-    + [Repositories](/docs/lessons/lesson3#repositories)
-    + [Services](/docs/lessons/lesson3#services-1)
-    + [Migrations](/docs/lessons/lesson3#migrations)
-      - [Initial migration](/docs/lessons/lesson3#initial-migration)
-  * [Web project](/docs/lessons/lesson3#web-project)
-    + [Preinstalled NuGet packages](/docs/lessons/lesson3#preinstalled-nuget-packages-2)
-    + [Project references](/docs/lessons/lesson3#project-references-1)
-    + [Module.manifest](/docs/lessons/lesson3#modulemanifest)
-    + [Module.cs and initialization flow](/docs/lessons/lesson3#modulecs-and-initialization-flow)
-      - [Setup Database](/docs/lessons/lesson3#setup-database)
-      - [Initialization](/docs/lessons/lesson3#initialization)
-      - [Post initialization](/docs/lessons/lesson3#post-initialization)
-    + [Module settings](/docs/lessons/lesson3#module-settings)
-    + [WEB API layer](/docs/lessons/lesson3#web-api-layer)
-    + [WEB API endpoints protection](/docs/lessons/lesson3#web-api-endpoints-protection)
-    + [Testing Rest API Endpoints in Swagger](/docs/lessons/lesson3#testing-rest-api-endpoints-in-swagger)
-  * [Tests project](/docs/lessons/lesson3#tests-project)
-    + [Preinstalled NuGet packages](/docs/lessons/lesson3#preinstalled-nuget-packages-3)
-    + [Project references](/docs/lessons/lesson3#project-references-2)
-    + [Tests implementation](/docs/lessons/lesson3#tests-implementation)
-  * [Pack and release/deployment](/docs/lessons/lesson3#pack-and-release-deployment)
-
 ## Summary
 
 Use this guide to create a custom module for Virto Commerce Platform. There will be an API created for product reviews management: create, update, delete, search. Hereinafter, this module will be called as "Customer Reviews" module.
@@ -176,15 +124,6 @@ Click on "Sample Customer reviews module" to see the available endpoints.
 When the new module is generated from a template, there is only one endpoint **api/CustomerReviewsModule** included, returning "Hello, world!":
 
 ![Swagger Get API](../../assets/images/docs/screen-swagger-get-api.png)
-
-### Scripts debugging
-
-To debug JS code at run-time use special debugging tools in browser.  You can read more about Chrome debug tools and how to debug any JS issue in this [article](https://javascript.info/debugging-chrome).
-In order to enable JS debugging, change platform's Web.config, app setting **VirtoCommerce:EnableBundlesOptimizations** value to false:
-
-```xml
-<add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
-```
 
 ## The VC module solution structure
 

@@ -5,16 +5,16 @@ layout: docs
 date: 2020-01-20
 priority: 3
 ---
-# How to build and customize platform manager Web UI (Angular)
+# How to build and customize Platform Manager Web UI (Angular)
 
 ## Summary
 
-Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](/lesson3.md)). There will be an UI created for list and view the number of product reviews.
+Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](/lesson3.md)). There will be a UI created for the list and view product reviews.
 
 After completing this lesson, a Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created, including:
 
-* blade with the list of customer reviews for products;
-* widget on the product page to view the number of reviews.
+* blade with the customer reviews list for products;
+* widget on the product page to view the number of reviews and open the new reviews blade for the product.
 
 ## Video
 
@@ -36,15 +36,22 @@ https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601
 * VS – Visual Studio;
 * UI – User Interface.
 
-## Platform UI elements
+## Platform Manager UI elements
+
+Platform Manager provides following UI elements:
+
+* Blade
+* Toolbar
+* Metaform
+* Widget container
+
+Please review this UI elements before you start creating "Customer Reviews" module UI.
 
 ### Blade
 
 Blade is a main UI element of the Platform Manager. Every blade has basic parts such as Maximize, Close buttons on the top and the title, toolbar, main content placeholders following down. You can find out all the blade features on the [Blade constructor](https://virtocommerce.com/guides/blade-constructor)
 
 Read more about blades in the [Blades and navigation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blades-and-navigation) article.
-
-### Main menu
 
 ### Toolbar
 
@@ -55,8 +62,6 @@ Read more about toolbar in the [Blade toolbar](https://virtocommerce.com/docs/vc
 ### Metaform
 
 A metaform is a placeholder (container) control that renders UI content based on provided metadata.
-
-A meta-field is a JavaScript object defining metadata for a single logical element inside metaform being rendered.
 
 Read more about metaform in the [Metaform](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/metaform) article.
 
@@ -81,7 +86,20 @@ To debug JS code at run-time use special debugging tools in browser. You can rea
 <add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
 ```
 
-## How to define blade for Customers review module
+## Build "Customer reviews" module Web UI
+
+Platform Manager UI elements placed in **\CustomerReviewsModule.Web\Scripts** folder.
+
+Typical structure of this folder is:
+
+* Scripts entry point for Platform Manager user interface;
+  * blades - folder contains AngularJS controllers and markup for the module blades;
+  * widgets - folder contains AngularJS controllers and markup for the module widgets;
+  * module.js - main entry point for the module UI, containing AngularJS module definition, blades and widgets registrations.
+
+The Platform Manager also allows localizing UI elements. Localization based on resources (translation files) files placed in *\CustomerReviewsModule.Web\Localizations* folder.
+
+### How to define blade for Customers review module
 
 1. To get and update data from backend define *search* and *update* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file.
 
@@ -257,7 +275,7 @@ Save all changes, restart application and open blade in main menu. You should se
 
 ![Reviews list blade](../../assets/images/docs/reviews-list-blade.png)
 
-## How to define widget for Customers review module
+### How to define widget for Customers review module
 
 1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder
 
@@ -344,7 +362,7 @@ Save all changes, restart application and open Product detail blade. You should 
 
 ![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
 
-## How to create localization for Customers review module
+### How to create localization for Customers review module
 
 In order to localize a module content, you need to create a *en.CustomerReviewsModule.json* translation file in *\Localizations* folder.
 Add blade fields and widget title description to the *\Localizations\en.CustomerReviewsModule.json* file
