@@ -93,6 +93,7 @@ Platform Manager UI elements placed in **\CustomerReviewsModule.Web\Scripts** fo
 Typical structure of this folder is:
 
 * Scripts entry point for Platform Manager user interface;
+  * resources - folder contains definitions for the resources (services) available inside AngularJS module;
   * blades - folder contains AngularJS controllers and markup for the module blades;
   * widgets - folder contains AngularJS controllers and markup for the module widgets;
   * module.js - main entry point for the module UI, containing AngularJS module definition, blades and widgets registrations.
@@ -101,7 +102,7 @@ The Platform Manager also allows localizing UI elements. Localization based on r
 
 ### How to define blade for "Customer reviews" module
 
-1. To get and update data from backend define *search* and *update* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file.
+1. To get and update data from backend define *search* and *update* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -114,9 +115,7 @@ angular.module('customerReviewsModule')
 
 ```
 
-2. To show a Customer reviews list in a blade create a new *reviews-list.tpl.html* blade template file in *\CustomerReviewsModule.Web\Scripts\blades* folder .
-
-3. Add code to *reviews-list.tpl.html* blade template :
+2. To show a Customer reviews list in a blade create a new *reviews-list.tpl.html* blade markup file in *\CustomerReviewsModule.Web\Scripts\blades* folder:
 
 ```html
 <div class="blade-static">
@@ -153,9 +152,7 @@ angular.module('customerReviewsModule')
 </script>
 ```
 
-3. To fulfill data into the blade create a new *reviews-list.js* blade JS file in *\CustomerReviewsModule.Web\Scripts\blades* folder to show a Customer reviews list.
-
-4. Define *customerReviewsModule.reviewsListController* by adding code to the *reviews-list.js* file:
+3. Create a new *reviews-list.js* blade JS file in *\CustomerReviewsModule.Web\Scripts\blades* folder and define *customerReviewsModule.reviewsListController* by adding code to the *reviews-list.js* file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -219,7 +216,7 @@ angular.module('customerReviewsModule')
         }]);
 ```
 
-5. Register a created controller in the Angular module by editing *\CustomerReviewsModule.Web\Scripts\module.js*
+4. Register a created controller in the Angular module by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
 ```JS
 ~~~
@@ -248,7 +245,7 @@ angular.module(moduleName, [])
 ~~~
 ```
 
-6. Define controller permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*
+5. Define controller permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
 ```JS
  ~~~
@@ -269,7 +266,7 @@ angular.module(moduleName, [])
 ~~~
 ```
 
-7. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files
+6. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files
 
 Save all changes, restart application and open blade in main menu. You should see existing Customer reviews list.
 
@@ -277,9 +274,9 @@ Save all changes, restart application and open blade in main menu. You should se
 
 ### How to define widget for "Customer reviews" module
 
-1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder
+1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder.
 
-2. Define *customerReviewsModule.customerReviewWidgetController* by adding code to the *customerReviewWidget.js* file in *\CustomerReviewsModule.Web\Scripts\widgets* folder
+2. Create a new *customerReviewWidget.js* widget JS file in *\CustomerReviewsModule.Web\Scripts\widgets* folder and define *customerReviewsModule.customerReviewWidgetController* by adding code to the *customerReviewWidget.js*:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -318,7 +315,7 @@ angular.module('customerReviewsModule')
 ```
 
 
-3. To show a Customer reviews widget in a blade create a new *customerReviewWidget.tpl.html* widget template file in *\CustomerReviewsModule.Web\Scripts\widgets* folder
+3. Create a new *customerReviewWidget.tpl.html* widget markup file in *\CustomerReviewsModule.Web\Scripts\widgets* folder:
 
 ```html
 <div class="gridster-cnt" ng-click="openBlade()">
@@ -330,7 +327,7 @@ angular.module('customerReviewsModule')
 </div>
 ```
 
-4. Add widget to a Product detail blade, register a new widget in *module.js*
+4. Add widget to a Product detail blade, register a new widget in *module.js*:
 
 ```JS
 ~~~
@@ -358,14 +355,13 @@ angular.module('customerReviewsModule')
 ~~~
 ```
 
-Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
+6. Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
 
 ![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
 
 ### How to create localization for "Customer reviews" module
 
-In order to localize a module content, you need to create a *en.CustomerReviewsModule.json* translation file in *\Localizations* folder.
-Add blade fields and widget title description to the *\Localizations\en.CustomerReviewsModule.json* file
+In order to localize a module content, you need to create blade fields and widget title description translation file in *\Localizations\en.CustomerReviewsModule.json* file.
 
 ```JSON
 {
