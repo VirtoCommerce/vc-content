@@ -99,7 +99,7 @@ Typical structure of this folder is:
 
 The Platform Manager also allows localizing UI elements. Localization based on resources (translation files) files placed in *\CustomerReviewsModule.Web\Localizations* folder.
 
-### How to define blade for Customers review module
+### How to define blade for "Customer reviews" module
 
 1. To get and update data from backend define *search* and *update* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file.
 
@@ -275,7 +275,7 @@ Save all changes, restart application and open blade in main menu. You should se
 
 ![Reviews list blade](../../assets/images/docs/reviews-list-blade.png)
 
-### How to define widget for Customers review module
+### How to define widget for "Customer reviews" module
 
 1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder
 
@@ -362,7 +362,7 @@ Save all changes, restart application and open Product detail blade. You should 
 
 ![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
 
-### How to create localization for Customers review module
+### How to create localization for "Customer reviews" module
 
 In order to localize a module content, you need to create a *en.CustomerReviewsModule.json* translation file in *\Localizations* folder.
 Add blade fields and widget title description to the *\Localizations\en.CustomerReviewsModule.json* file
