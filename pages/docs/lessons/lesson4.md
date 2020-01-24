@@ -120,12 +120,12 @@ angular.module('customerReviewsModule')
                     useExternalSorting: true,
                     rowTemplate: 'list.row.html',
                     columnDefs: [
-                                { name: 'content', displayName: 'customerReviews.blades.review-list.labels.content' },
-                                { name: 'modifiedDate', displayName: 'customerReviews.blades.review-list.labels.modifiedDate', sort: { direction: uiGridConstants.DESC }}
+                                { name: 'content', displayName: 'customerReviewsModule.blades.review-list.labels.content' },
+                                { name: 'modifiedDate', displayName: 'customerReviewsModule.blades.review-list.labels.modifiedDate', sort: { direction: uiGridConstants.DESC }}
                         ]})">
                 <div ui-grid="gridOptions" ui-grid-auto-resize ui-grid-save-state ui-grid-selection ui-grid-resize-columns ui-grid-move-columns ui-grid-pinning ui-grid-height></div>
             </div>
-            <p class="note" ng-if="!blade.currentEntities.length">{{ 'customerReviews.blades.review-list.labels.no-review' | translate }}</p>
+            <p class="note" ng-if="!blade.currentEntities.length">{{ 'customerReviewsModule.blades.review-list.labels.no-review' | translate }}</p>
         </div>
     </div>
 </div>
@@ -265,7 +265,7 @@ Save all changes, restart application and open blade in main menu. You should se
 
 ```JS
 angular.module('customerReviewsModule')
-    .controller('customerReviewsModule.customerReviewWidgetController', ['$scope', 'customerReviewsModule.WebApi', 'platformWebApp.bladeNavigationService', function ($scope, reviewsApi, bladeNavigationService) {
+    .controller('customerReviewsModule.customerReviewWidgetController', ['$scope', 'customerReviewsModule.webApi', 'platformWebApp.bladeNavigationService', function ($scope, reviewsApi, bladeNavigationService) {
         var blade = $scope.blade;
         var filter = { take: 0 };
 
@@ -331,8 +331,8 @@ angular.module('customerReviewsModule')
 
         //Register reviews widget inside product blade
         var itemReviewsWidget = {
-            controller: 'CustomerReviews.Web.customerReviewWidgetController',
-            template: 'Modules/$(CustomerReviews.Web)/Scripts/widgets/customerReviewWidget.tpl.html'
+            controller: 'customerReviewsModule.customerReviewWidgetController',
+            template: 'Modules/$(CustomerReviewsModule)/Scripts/widgets/customerReviewWidget.tpl.html'
         };
         widgetService.registerWidget(itemReviewsWidget, 'itemDetail');
     }
@@ -340,6 +340,34 @@ angular.module('customerReviewsModule')
 ~~~
 ```
 
-Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number o existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for thre product.
+Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
+
+![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
 
 ## How to create localization for Customers review module
+
+In order to localize a module content, you need to create a *en.CustomerReviewsModule.json* translation file in *\Localizations* folder.
+Add blade fields and widget title description to the *\Localizations\en.CustomerReviewsModule.json* file
+
+```JSON
+{
+  "customerReviewsModule": {
+    "blades": {
+      "review-list": {
+        "labels": {
+          "content": "Content",
+          "modifiedDate": "Last updated",
+          "no-review": "No Customer Reviews found"
+        }
+      }
+    },
+    "widgets": {
+      "item-detail": {
+        "title": "Customer reviews"
+      }
+    }
+  }
+}
+```
+
+Read more about localization in the [Localization implementation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/localization-implementation) article.
