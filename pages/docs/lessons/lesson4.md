@@ -47,17 +47,24 @@ Please review this UI elements before you start creating "Customer Reviews" modu
 
 Blade is a main UI element of the Platform Manager. Every blade has basic parts such as Maximize, Close buttons on the top and the title, toolbar, main content placeholders following down. You can find out all the blade features on the [Blade constructor](https://virtocommerce.com/guides/blade-constructor)
 
+![Blade](../../assets/images/docs/lesson4-blade.png)
+
 Read more about blades in the [Blades and navigation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blades-and-navigation) article.
+
 
 ### Toolbar
 
 A blade toolbar is a dedicated area inside blade for adding commands. Hereinafter, the toolbar commands shall be referenced to as toolbar items.
+
+![Toolbar](../../assets/images/docs/lesson4-blade-toolbar.png)
 
 Read more about toolbar in the [Blade toolbar](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blade-toolbar) article.
 
 ### Metaform
 
 A metaform is a placeholder (container) control that renders UI content based on provided metadata.
+
+![Metaform](../../assets/images/docs/lesson4-blade-metaform.png)
 
 Read more about metaform in the [Metaform](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/metaform) article.
 
@@ -71,6 +78,8 @@ A widget is a relatively simple and intuitive web UI component in Platform Manag
 * is reusable and can be added to many blades (widget containers) in various places.
 
 A widget container is a placeholder control for widgets.
+
+![Widgetcontainer](../../assets/images/docs/lesson4-blade-widgetcontainer.png)
 
 Read more about widget container in the [Widgets](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/widgets) article.
 
@@ -180,7 +189,6 @@ angular.module('customerReviewsModule')
 
 
             blade.headIcon = 'fa-comments';
-            blade.title = 'customerReviewsModule.blades.review-list.title'
 
             blade.toolbarCommands = [
                 {
@@ -266,6 +274,7 @@ angular.module(moduleName, [])
                         '$scope', 'platformWebApp.bladeNavigationService', function ($scope, bladeNavigationService) {
                             var newBlade = {
                                 id: 'reviewsList',
+                                title: 'customerReviewsModule.blades.review-list.title',
                                 controller: 'customerReviewsModule.reviewsListController',
                                 template: 'Modules/$(CustomerReviewsModule)/Scripts/blades/reviews-list.tpl.html',
                                 isClosingDisabled: true
@@ -350,7 +359,6 @@ angular.module('customerReviewsModule')
         });
     }]);
 ```
-
 
 3. Create a new *customerReviewWidget.tpl.html* widget template file in *\CustomerReviewsModule.Web\Scripts\widgets* folder:
 
