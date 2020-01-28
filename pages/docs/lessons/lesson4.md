@@ -16,14 +16,10 @@ After completing this lesson, a Platform Manager UI for the Virto Commerce "Cust
 * blade with the customer reviews list for products;
 * widget on the product page to view the number of reviews and open the new reviews blade for the product.
 
-## Video
-
-https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601  
-
 ## Prerequisites
 
 * Installed Virto Commerce Platform Manager
-* Visual Studio 2017 or higher
+* Visual Studio 2019 or higher
 * Basic JavaScript (Angular) knowledge
 * Passed [Lesson 3](/lesson3.md)
 
@@ -88,71 +84,72 @@ To debug JS code at run-time use special debugging tools in browser. You can rea
 
 ## Build "Customer reviews" module Web UI
 
-Platform Manager UI elements placed in **\CustomerReviewsModule.Web\Scripts** folder.
+Platform Manager UI elements should be placed in **\CustomerReviewsModule.Web\Scripts** folder.
 
 Typical structure of this folder is:
 
-* Scripts entry point for Platform Manager user interface;
-  * resources - folder contains definitions for the resources (services) available inside AngularJS module;
-  * blades - folder contains AngularJS controllers and markup for the module blades;
-  * widgets - folder contains AngularJS controllers and markup for the module widgets;
-  * module.js - main entry point for the module UI, containing AngularJS module definition, blades and widgets registrations.
+* **Scripts** - the *root* folder for Platform Manager UI related content:
+  * **blades** - folder containing AngularJS controllers and templates for the module blades;
+  * **resources** - folder contains definitions for the resources (services) available inside AngularJS module;
+  * **widgets** - folder contains AngularJS controllers and markup for the module widgets;
+  * **module.js** -  the main entry point for the module UI, containing AngularJS module definition, registrations for menus, widgets, etc.
 
 The Platform Manager also allows localizing UI elements. Localization based on resources (translation files) files placed in *\CustomerReviewsModule.Web\Localizations* folder.
 
-### How to define blade for "Customer reviews" module
+Read more about localization in the [Localization implementation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/localization-implementation) article.
 
-1. To get and update data from backend define *search* and *update* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file:
+### Create localization for "Customer reviews" module
+
+First of all define following names for blade and widget:
+
+* blade title;
+* blade labels (column names, "no-review" title);
+* widget title.
+
+In order to localize defined names, you need to create translation file in *\Localizations\en.CustomerReviewsModule.json* file.
+
+```JSON
+{
+    "customerReviewsModule": {
+        "blades": {
+            "title": "Customer Reviews",
+            "review-list": {
+                "labels": {
+                    "content": "Content",
+                    "modifiedDate": "Last updated",
+                    "no-review": "No Customer Reviews found"
+                    }
+                }
+            },
+        "widgets": {
+            "item-detail": {
+                "title": "Customer reviews"
+                }
+            }
+        }
+}
+```
+
+These translations will be used in blade and widget to defining title and fields name in Platform Manager UI.
+
+### Define API controller for "Customer reviews" module
+
+To get data from backend define *search* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file:
 
 ```JS
 angular.module('customerReviewsModule')
     .factory('customerReviewsModule.webApi', ['$resource', function ($resource) {
         return $resource('api/CustomerReviewsModule', {}, {
-            search: { method: 'POST', url: 'api/customerReviewsModule/search' },
-            update: { method: 'PUT' }
+            search: { method: 'POST', url: 'api/customerReviewsModule/search' }
         });
 }]);
-
 ```
 
-2. To show a Customer reviews list in a blade create a new *reviews-list.tpl.html* blade markup file in *\CustomerReviewsModule.Web\Scripts\blades* folder:
+More info in [$resource](https://docs.angularjs.org/api/ngResource/service/$resource) article.
 
-```html
-<div class="blade-static">
-    <div class="form-group">
-        <div class="form-input __search">
-            <input placeholder="{{'platform.placeholders.search-keyword' | translate}}" ng-model="filter.keyword" ng-keyup="$event.which === 13 && filter.criteriaChanged()" />
-            <button class="btn __other" style="position: relative;right: 45px;">
-                <i class="btn-ico fa fa-times-circle" title="Clear" ng-click="filter.keyword=null;filter.criteriaChanged()"></i>
-            </button>
-        </div>
-        <p class="form-count">{{ 'platform.list.count' | translate }}: <span class="count">{{pageSettings.totalItems | number:0}}</span></p>
-    </div>
-</div>
-<div class="blade-static __bottom" ng-if="pageSettings.itemsPerPageCount < pageSettings.totalItems" ng-include="'pagerTemplate.html'"></div>
-<div class="blade-content">
-    <div class="blade-inner">
-        <div class="inner-block">
-            <div class="table-wrapper" ng-init="setGridOptions({
-                    useExternalSorting: true,
-                    rowTemplate: 'list.row.html',
-                    columnDefs: [
-                                { name: 'content', displayName: 'customerReviewsModule.blades.review-list.labels.content' },
-                                { name: 'modifiedDate', displayName: 'customerReviewsModule.blades.review-list.labels.modifiedDate', sort: { direction: uiGridConstants.DESC }}
-                        ]})">
-                <div ui-grid="gridOptions" ui-grid-auto-resize ui-grid-save-state ui-grid-selection ui-grid-resize-columns ui-grid-move-columns ui-grid-pinning ui-grid-height></div>
-            </div>
-            <p class="note" ng-if="!blade.currentEntities.length">{{ 'customerReviewsModule.blades.review-list.labels.no-review' | translate }}</p>
-        </div>
-    </div>
-</div>
+### Define blade for "Customer reviews" list
 
-<script type="text/ng-template" id="list.row.html">
-    <div ng-click="grid.appScope.blade.selectNode(row.entity)" ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid" ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'" class="ui-grid-cell" ng-class="{'ui-grid-row-header-cell': col.isRowHeader, '__hovered': grid.appScope.contextMenuEntity === row.entity, '__selected': row.entity.id===grid.appScope.selectedNodeId }" role="{{col.isRowHeader ? 'rowheader' : 'gridcell' }}" ui-grid-cell></div>
-</script>
-```
-
-3. Create a new *reviews-list.js* blade JS file in *\CustomerReviewsModule.Web\Scripts\blades* folder and define *customerReviewsModule.reviewsListController* by adding code to the *reviews-list.js* file:
+1. Create a new *reviews-list.js* blade JS file in *\CustomerReviewsModule.Web\Scripts\blades* folder and define *customerReviewsModule.reviewsListController* by adding code to the file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -183,6 +180,7 @@ angular.module('customerReviewsModule')
 
 
             blade.headIcon = 'fa-comments';
+            blade.title = 'customerReviewsModule.blades.review-list.title'
 
             blade.toolbarCommands = [
                 {
@@ -216,7 +214,44 @@ angular.module('customerReviewsModule')
         }]);
 ```
 
-4. Register a created controller in the Angular module by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
+2. To show a Customer reviews list in a blade create a new *reviews-list.tpl.html* blade template file in *\CustomerReviewsModule.Web\Scripts\blades* folder:
+
+```html
+<div class="blade-static">
+    <div class="form-group">
+        <div class="form-input __search">
+            <input placeholder="{{'platform.placeholders.search-keyword' | translate}}" ng-model="filter.keyword" ng-keyup="$event.which === 13 && filter.criteriaChanged()" />
+            <button class="btn __other" style="position: relative;right: 45px;">
+                <i class="btn-ico fa fa-times-circle" title="Clear" ng-click="filter.keyword=null;filter.criteriaChanged()"></i>
+            </button>
+        </div>
+        <p class="form-count">{{ 'platform.list.count' | translate }}: <span class="count">{{pageSettings.totalItems | number:0}}</span></p>
+    </div>
+</div>
+<div class="blade-static __bottom" ng-if="pageSettings.itemsPerPageCount < pageSettings.totalItems" ng-include="'pagerTemplate.html'"></div>
+<div class="blade-content">
+    <div class="blade-inner">
+        <div class="inner-block">
+            <div class="table-wrapper" ng-init="setGridOptions({
+                    useExternalSorting: true,
+                    rowTemplate: 'list.row.html',
+                    columnDefs: [
+                                { name: 'content', displayName: 'customerReviewsModule.blades.review-list.labels.content' },
+                                { name: 'modifiedDate', displayName: 'customerReviewsModule.blades.review-list.labels.modifiedDate', sort: { direction: uiGridConstants.DESC }}
+                        ]})">
+                <div ui-grid="gridOptions" ui-grid-auto-resize ui-grid-save-state ui-grid-resize-columns ui-grid-move-columns ui-grid-pinning ui-grid-height></div>
+            </div>
+            <p class="note" ng-if="!blade.currentEntities.length">{{ 'customerReviewsModule.blades.review-list.labels.no-review' | translate }}</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="list.row.html">
+    <div ng-click="grid.appScope.blade.selectNode(row.entity)" ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid" ui-grid-one-bind-id-grid="rowRenderIndex + '-' + col.uid + '-cell'" class="ui-grid-cell" ng-class="{'ui-grid-row-header-cell': col.isRowHeader, '__hovered': grid.appScope.contextMenuEntity === row.entity, '__selected': row.entity.id===grid.appScope.selectedNodeId }" role="{{col.isRowHeader ? 'rowheader' : 'gridcell' }}" ui-grid-cell></div>
+</script>
+```
+
+3. Register a new state in the Angular module by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
 ```JS
 ~~~
@@ -245,7 +280,9 @@ angular.module(moduleName, [])
 ~~~
 ```
 
-5. Define controller permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
+When the state is "activated", it "binds" the blade's controller with its template and the new blade is shown.
+
+4. Create a new menu item in main menu for the blade and define menu item permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
 ```JS
  ~~~
@@ -266,7 +303,7 @@ angular.module(moduleName, [])
 ~~~
 ```
 
-6. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files
+5. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files, that were created in the [Lesson 3](/lesson3.md) from Visual Studio template.
 
 Save all changes, restart application and open blade in main menu. You should see existing Customer reviews list.
 
@@ -315,7 +352,7 @@ angular.module('customerReviewsModule')
 ```
 
 
-3. Create a new *customerReviewWidget.tpl.html* widget markup file in *\CustomerReviewsModule.Web\Scripts\widgets* folder:
+3. Create a new *customerReviewWidget.tpl.html* widget template file in *\CustomerReviewsModule.Web\Scripts\widgets* folder:
 
 ```html
 <div class="gridster-cnt" ng-click="openBlade()">
@@ -327,7 +364,7 @@ angular.module('customerReviewsModule')
 </div>
 ```
 
-4. Add widget to a Product detail blade, register a new widget in *module.js*:
+4. "Inject" the new widget into the Product detail UI, by registering it in *module.js*:
 
 ```JS
 ~~~
@@ -358,30 +395,3 @@ angular.module('customerReviewsModule')
 6. Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
 
 ![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
-
-### How to create localization for "Customer reviews" module
-
-In order to localize a module content, you need to create blade fields and widget title description translation file in *\Localizations\en.CustomerReviewsModule.json* file.
-
-```JSON
-{
-  "customerReviewsModule": {
-    "blades": {
-      "review-list": {
-        "labels": {
-          "content": "Content",
-          "modifiedDate": "Last updated",
-          "no-review": "No Customer Reviews found"
-        }
-      }
-    },
-    "widgets": {
-      "item-detail": {
-        "title": "Customer reviews"
-      }
-    }
-  }
-}
-```
-
-Read more about localization in the [Localization implementation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/localization-implementation) article.
