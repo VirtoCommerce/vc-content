@@ -400,6 +400,6 @@ angular.module('customerReviewsModule')
 ~~~
 ```
 
-6. Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
+Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
 
 ![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
