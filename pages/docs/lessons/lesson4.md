@@ -143,7 +143,7 @@ These translations will be used in blade and widget to label titles and field na
 
 ### Define API controller for "Customer reviews" module
 
-To get data from backend define *search* API controller methods in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file:
+To get data from backend define *search* API controller method in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file:
 
 ```JS
 angular.module('customerReviewsModule')
