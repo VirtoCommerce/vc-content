@@ -318,7 +318,7 @@ Save all changes, restart application and open blade in main menu. You should se
 
 ![Reviews list blade](../../assets/images/docs/reviews-list-blade.png)
 
-### How to define widget for "Customer reviews" module
+### Define widget for "Customer reviews" module
 
 1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder.
 
