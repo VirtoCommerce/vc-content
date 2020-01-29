@@ -16,6 +16,8 @@ After completing this lesson, a new module will be created, including:
 * module API for create, delete, update and search customer reviews;
 * test project for testing module API.
 
+Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created in [Lesson 4](/lesson3.md)
+
 ## Video
 
 https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601 
@@ -24,7 +26,7 @@ https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601
 
 * Installed Virto Commerce Platform;
 * Basic C# knowledge;
-* Visual Studio 2017 or higher.
+* Visual Studio 2019 or higher.
 
 ## Glossary
 

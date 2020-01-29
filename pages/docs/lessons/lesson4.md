@@ -1,15 +1,15 @@
 ---
-title: Lessons 4 - How to build and customize platform manager Web UI (Angular)
-description: Lessons 4 - How to build and customize platform manager Web UI (Angular)
+title: Lessons 4 - How to build and customize platform manager Web UI (AngularJS)
+description: Lessons 4 - How to build and customize platform manager Web UI (AngularJS)
 layout: docs
 date: 2020-01-20
 priority: 3
 ---
-# How to build and customize Platform Manager Web UI (Angular)
+# How to build and customize Platform Manager Web UI (AngularJS)
 
 ## Summary
 
-Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](/lesson3.md)). There will be a UI created for the list and view product reviews.
+Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](/lesson3.md)). There will be a UI created for the product reviews list.
 
 After completing this lesson, a Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created, including:
 
@@ -20,7 +20,7 @@ After completing this lesson, a Platform Manager UI for the Virto Commerce "Cust
 
 * Installed Virto Commerce Platform Manager
 * Visual Studio 2019 or higher
-* Basic JavaScript (Angular) knowledge
+* Basic JavaScript (AngularJS) knowledge
 * Passed [Lesson 3](/lesson3.md)
 
 ## Glossary
@@ -99,11 +99,11 @@ Typical structure of this folder is:
 
 * **Scripts** - the *root* folder for Platform Manager UI related content:
   * **blades** - folder containing AngularJS controllers and templates for the module blades;
-  * **resources** - folder contains definitions for the resources (services) available inside AngularJS module;
-  * **widgets** - folder contains AngularJS controllers and markup for the module widgets;
-  * **module.js** -  the main entry point for the module UI, containing AngularJS module definition, registrations for menus, widgets, etc.
+  * **resources** - folder containing AngularJS definitions of the resources (API endpoints) exposed (and used) by this module;
+  * **widgets** - folder containing AngularJS controllers and templates for the module widgets;
+  * **module.js** - the main entry point for the module UI, containing AngularJS module definition, registrations for menus, widgets, etc.
 
-The Platform Manager also allows localizing UI elements. Localization based on resources (translation files) files placed in *\CustomerReviewsModule.Web\Localizations* folder.
+The Platform Manager also allows localizing UI elements. The localization is based on resources (translation files) placed in *\CustomerReviewsModule.Web\Localizations* folder.
 
 Read more about localization in the [Localization implementation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/localization-implementation) article.
 
@@ -139,7 +139,7 @@ In order to localize defined names, you need to create translation file in *\Loc
 }
 ```
 
-These translations will be used in blade and widget to defining title and fields name in Platform Manager UI.
+These translations will be used in blade and widget to label titles and field names in Platform Manager UI.
 
 ### Define API controller for "Customer reviews" module
 
@@ -259,7 +259,7 @@ angular.module('customerReviewsModule')
 </script>
 ```
 
-3. Register a new state in the Angular module by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
+3. Register a new state in the AngularJS module by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
 ```JS
 ~~~
@@ -291,12 +291,12 @@ angular.module(moduleName, [])
 
 When the state is "activated", it "binds" the blade's controller with its template and the new blade is shown.
 
-4. Create a new menu item in main menu for the blade and define menu item permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
+4. Add a new menu item in main menu for the blade and define menu item permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
 ```JS
  ~~~
-  .run(['$rootScope', 'platformWebApp.mainMenuService', 'platformWebApp.widgetService', '$state',
-        function ($rootScope, mainMenuService, widgetService, $state) {
+  .run(['platformWebApp.mainMenuService', 'platformWebApp.widgetService', '$state',
+        function (mainMenuService, widgetService, $state) {
             //Register module in main menu
             var menuItem = {
                 path: 'browse/customerReviewsModule',
@@ -322,7 +322,7 @@ Save all changes, restart application and open blade in main menu. You should se
 
 1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder.
 
-2. Create a new *customerReviewWidget.js* widget JS file in *\CustomerReviewsModule.Web\Scripts\widgets* folder and define *customerReviewsModule.customerReviewWidgetController* by adding code to the *customerReviewWidget.js*:
+2. Create a new *customerReviewWidget.js* widget JS file in *\CustomerReviewsModule.Web\Scripts\widgets* folder and define *customerReviewsModule.customerReviewWidgetController* by adding code to the file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -376,8 +376,8 @@ angular.module('customerReviewsModule')
 
 ```JS
 ~~~
-.run(['$rootScope', 'platformWebApp.mainMenuService', 'platformWebApp.widgetService', '$state',
-    function ($rootScope, mainMenuService, widgetService, $state) {
+.run(['platformWebApp.mainMenuService', 'platformWebApp.widgetService', '$state',
+    function (mainMenuService, widgetService, $state) {
         //Register module in main menu
         var menuItem = {
             path: 'browse/customerReviews',
