@@ -2,12 +2,12 @@
 title: Lessons 4 - How to build and customize platform manager Web UI (AngularJS)
 description: Lessons 4 - How to build and customize platform manager Web UI (AngularJS)
 layout: docs
-date: 2020-01-20
+date: 2020-01-30
 priority: 3
 ---
 # How to build and customize Platform Manager Web UI (AngularJS)
 
-## Summary
+### Summary
 
 Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](/lesson3.md)).
 
@@ -16,14 +16,14 @@ After completing this lesson, a Platform Manager UI for the Virto Commerce "Cust
 * blade with the customer reviews list for products;
 * widget on the product page to view the number of reviews and open the new reviews blade for the product.
 
-## Prerequisites
+### Prerequisites
 
 * Installed Virto Commerce Platform Manager
 * Visual Studio 2019 or higher
 * Basic JavaScript (AngularJS) knowledge
 * Passed [Lesson 3](/lesson3.md)
 
-## Glossary
+### Glossary
 
 * JS – JavaScript;
 * Platform - Virto Commerce Platform;
@@ -34,22 +34,21 @@ After completing this lesson, a Platform Manager UI for the Virto Commerce "Cust
 
 ## Platform Manager UI elements
 
-Platform Manager provides following UI elements:
-
+The most common extension points for Platform Manager UI are:
 * Blade
 * Toolbar
 * Metaform
-* Widget container
+* Widget
 
-Please review this UI elements before you start creating "Customer Reviews" module UI.
+Review these UI elements carefully before you start creating the UI for "Customer Reviews" module.
 
 ### Blade
 
-Blade is a main UI element of the Platform Manager. Every blade has basic parts such as Maximize, Close buttons on the top and the title, toolbar, main content placeholders following down. You can find out all the blade features on the [Blade constructor](https://virtocommerce.com/guides/blade-constructor)
+Blade is the main UI element of the Platform Manager. Every blade has basic parts such as Maximize, Close buttons on the top and the title, toolbar, main content placeholders following down. You can find out all the blade features on the [Blade constructor](https://virtocommerce.com/guides/blade-constructor).
 
 ![Blade](../../assets/images/docs/lesson4-blade.png)
 
-Read more about blades in the [Blades and navigation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blades-and-navigation) article.
+Read more in the [Blades and navigation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blades-and-navigation) article.
 
 
 ### Toolbar
@@ -58,7 +57,7 @@ A blade toolbar is a dedicated area inside blade for adding commands. Hereinafte
 
 ![Toolbar](../../assets/images/docs/lesson4-blade-toolbar.png)
 
-Read more about toolbar in the [Blade toolbar](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blade-toolbar) article.
+Read more in the [Blade toolbar](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blade-toolbar) article.
 
 ### Metaform
 
@@ -66,9 +65,9 @@ A metaform is a placeholder (container) control that renders UI content based on
 
 ![Metaform](../../assets/images/docs/lesson4-blade-metaform.png)
 
-Read more about metaform in the [Metaform](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/metaform) article.
+Read more in the [Metaform](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/metaform) article.
 
-### Widget container
+### Widget
 
 A widget is a relatively simple and intuitive web UI component in Platform Manager. It has the role of a transient or auxiliary tile, meaning that:
 
@@ -77,25 +76,25 @@ A widget is a relatively simple and intuitive web UI component in Platform Manag
 * usually enables opening additional blade with extra information and functionality;
 * is reusable and can be added to many blades (widget containers) in various places.
 
-A widget container is a placeholder control for widgets.
+A widget container is a placeholder control for individual widgets.
 
-![Widgetcontainer](../../assets/images/docs/lesson4-blade-widgetcontainer.png)
+![Widget container](../../assets/images/docs/lesson4-blade-widgetcontainer.png)
 
-Read more about widget container in the [Widgets](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/widgets) article.
+Read more in the [Widgets](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/widgets) article.
 
 ## Scripts debugging
 
-To debug JS code at run-time use special debugging tools in browser. You can read more about Chrome debug tools and how to debug any JS issue in this [article](https://javascript.info/debugging-chrome). In order to enable JS debugging, change platform's Web.config, app setting **VirtoCommerce:EnableBundlesOptimizations** value to false:
+In order to enable JS debugging in the Platform, set app setting **VirtoCommerce:EnableBundlesOptimizations** value to ***false*** in platform's Web.config:
 
 ```xml
 <add key="VirtoCommerce:EnableBundlesOptimizations" value="false" />
 ```
 
+Use the developer tools inside your browser, to actually debug the JS code. You can read more in [Debugging in Chrome](https://javascript.info/debugging-chrome) article. 
+
 ## Build "Customer reviews" module Web UI
 
-Platform Manager UI elements should be placed in **\CustomerReviewsModule.Web\Scripts** folder.
-
-Typical structure of this folder is:
+Platform Manager UI elements should be placed in CustomerReviewsModule&#46;Web\\**Scripts** folder. Typical structure of this folder:
 
 * **Scripts** - the *root* folder for Platform Manager UI related content:
   * **blades** - folder containing AngularJS controllers and templates for the module blades;
@@ -103,19 +102,17 @@ Typical structure of this folder is:
   * **widgets** - folder containing AngularJS controllers and templates for the module widgets;
   * **module.js** - the main entry point for the module UI, containing AngularJS module definition, registrations for menus, widgets, etc.
 
-The Platform Manager also allows localizing UI elements. The localization is based on resources (translation files) placed in *\CustomerReviewsModule.Web\Localizations* folder.
-
-Read more about localization in the [Localization implementation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/localization-implementation) article.
+The Platform Manager also allows localizing UI elements. The localization is based on resources (translation files) placed in CustomerReviewsModule&#46;Web\\**Localizations** folder. Read more  in the [Localization implementation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/localization-implementation) article.
 
 ### Create localization for "Customer reviews" module
 
-First of all define following names for blade and widget:
+First of all define the following names for blade and widget:
 
 * blade title;
 * blade labels (column names, "no-review" title);
 * widget title.
 
-In order to localize defined names, you need to create translation file in *\Localizations\en.CustomerReviewsModule.json* file.
+In order to localize defined names, you need to create the translation file *\Localizations\en.CustomerReviewsModule.json*.
 
 ```JSON
 {
@@ -127,15 +124,15 @@ In order to localize defined names, you need to create translation file in *\Loc
                     "content": "Content",
                     "modifiedDate": "Last updated",
                     "no-review": "No Customer Reviews found"
-                    }
                 }
-            },
+            }
+        },
         "widgets": {
             "item-detail": {
                 "title": "Customer reviews"
-                }
             }
         }
+    }
 }
 ```
 
@@ -143,7 +140,7 @@ These translations will be used in blade and widget to label titles and field na
 
 ### Define API controller for "Customer reviews" module
 
-To get data from backend define *search* API controller method in *\CustomerReviewsModule.Web\Scripts\resources\customer-reviews-module-api.js* file:
+To get data from backend, define *search* API controller method in \CustomerReviewsModule.Web\Scripts\resources\\*customer-reviews-module-api.js* file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -154,11 +151,11 @@ angular.module('customerReviewsModule')
 }]);
 ```
 
-More info in [$resource](https://docs.angularjs.org/api/ngResource/service/$resource) article.
+More info in AngularJS [$resource article](https://docs.angularjs.org/api/ngResource/service/$resource).
 
 ### Define blade for "Customer reviews" list
 
-1. Create a new *reviews-list.js* blade JS file in *\CustomerReviewsModule.Web\Scripts\blades* folder and define *customerReviewsModule.reviewsListController* by adding code to the file:
+1. Create a new **reviews-list.js** blade JS file in *\Scripts\blades* folder and define **customerReviewsModule.reviewsListController** by adding code to the file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -222,7 +219,7 @@ angular.module('customerReviewsModule')
         }]);
 ```
 
-2. To show a Customer reviews list in a blade create a new *reviews-list.tpl.html* blade template file in *\CustomerReviewsModule.Web\Scripts\blades* folder:
+2. To show a Customer reviews list in a blade create a new **reviews-list.tpl.html** blade template file in the same folder:
 
 ```html
 <div class="blade-static">
@@ -259,7 +256,7 @@ angular.module('customerReviewsModule')
 </script>
 ```
 
-3. Register a new state in the AngularJS module by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
+3. Update the blade shown on activating the `workspace.customerReviewsModuleState` state in the AngularJS module by editing *\Scripts\module.js*:
 
 ```JS
 ~~~
@@ -289,7 +286,7 @@ angular.module(moduleName, [])
 ~~~
 ```
 
-When the state is "activated", it "binds" the blade's controller with its template and the new blade is shown.
+When the state is "activated", the blade's controller is bound to its template and the new blade is shown.
 
 4. Add a new menu item in main menu for the blade and define menu item permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
 
@@ -312,17 +309,17 @@ When the state is "activated", it "binds" the blade's controller with its templa
 ~~~
 ```
 
-5. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files, that were created in the [Lesson 3](/lesson3.md) from Visual Studio template.
+5. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files, that were created in the **Lesson 3** from Visual Studio template.
 
-Save all changes, restart application and open blade in main menu. You should see existing Customer reviews list.
+Save all changes, restart the Platform application and open blade in main menu. You should see existing Customer reviews list:
 
 ![Reviews list blade](../../assets/images/docs/reviews-list-blade.png)
 
 ### Define widget for "Customer reviews" module
 
-1. Add new *widgets* folder in *\CustomerReviewsModule.Web\Scripts* folder.
+1. Add new *widgets* subfolder inside *Scripts* folder.
 
-2. Create a new *customerReviewWidget.js* widget JS file in *\CustomerReviewsModule.Web\Scripts\widgets* folder and define *customerReviewsModule.customerReviewWidgetController* by adding code to the file:
+2. Create a new *customerReviewWidget.js* widget JS file in *widgets* folder and define *customerReviewsModule.customerReviewWidgetController* by adding code to the file:
 
 ```JS
 angular.module('customerReviewsModule')
@@ -360,7 +357,7 @@ angular.module('customerReviewsModule')
     }]);
 ```
 
-3. Create a new *customerReviewWidget.tpl.html* widget template file in *\CustomerReviewsModule.Web\Scripts\widgets* folder:
+3. Create a new *customerReviewWidget.tpl.html* widget template file in the same folder:
 
 ```html
 <div class="gridster-cnt" ng-click="openBlade()">
@@ -372,7 +369,7 @@ angular.module('customerReviewsModule')
 </div>
 ```
 
-4. "Inject" the new widget into the Product detail UI, by registering it in *module.js*:
+4. "Inject" the new widget into the Product detail UI, by registering it in **module.js**:
 
 ```JS
 ~~~
@@ -400,6 +397,6 @@ angular.module('customerReviewsModule')
 ~~~
 ```
 
-Save all changes, restart application and open Product detail blade. You should see that a new widget added and shows actual number of existing reviews for the product. If you click widget, a new Customer review blade should appear with the list of Customer  review for the product.
+Save all changes, restart application and open Product detail blade. You should see the new widget added and showing actual number of existing reviews for the product. If you click the widget, a new blade should appear, showing with the list of Customer reviews for the product.
 
 ![Customer review widget](../../assets/images/docs/reviews-list-widget.png)
