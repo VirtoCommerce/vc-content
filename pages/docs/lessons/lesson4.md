@@ -7,7 +7,7 @@ priority: 3
 ---
 # How to build and customize Platform Manager Web UI (AngularJS)
 
-### Summary
+## Summary
 
 Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](./lesson3.md)).
 
@@ -21,7 +21,7 @@ After completing this lesson, a Platform Manager UI for the Virto Commerce "Cust
 * Installed Virto Commerce Platform Manager
 * Visual Studio 2019 or higher
 * Basic JavaScript (AngularJS) knowledge
-* Passed [Lesson 3](/lesson3.md)
+* Passed [Lesson 3](./lesson3.md)
 
 ### Glossary
 
@@ -35,6 +35,7 @@ After completing this lesson, a Platform Manager UI for the Virto Commerce "Cust
 ## Platform Manager UI elements
 
 The most common extension points for Platform Manager UI are:
+
 * Blade
 * Toolbar
 * Metaform
@@ -49,7 +50,6 @@ Blade is the main UI element of the Platform Manager. Every blade has basic part
 ![Blade](../../assets/images/docs/lesson4-blade.png)
 
 Read more in the [Blades and navigation](https://virtocommerce.com/docs/vc2devguide/working-with-platform-manager/basic-functions/blades-and-navigation) article.
-
 
 ### Toolbar
 
@@ -288,28 +288,7 @@ angular.module(moduleName, [])
 
 When the state is "activated", the blade's controller is bound to its template and the new blade is shown.
 
-4. Add a new menu item in main menu for the blade and define menu item permissions by editing *\CustomerReviewsModule.Web\Scripts\module.js*:
-
-```JS
- ~~~
-  .run(['platformWebApp.mainMenuService', 'platformWebApp.widgetService', '$state',
-        function (mainMenuService, widgetService, $state) {
-            //Register module in main menu
-            var menuItem = {
-                path: 'browse/customerReviewsModule',
-                icon: 'fa fa-comments',
-                title: 'Customer Reviews',
-                priority: 100,
-                action: function () { $state.go('workspace.customerReviewsModuleState') },
-                permission: 'CustomerReviewsModule:read'
-            };
-            mainMenuService.addMenuItem(menuItem);
-        }
-    ]);
-~~~
-```
-
-5. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files, that were created in the **Lesson 3** from Visual Studio template.
+4. Delete *\CustomerReviewsModule.Web\Scripts\blades\hello-world.html* and *\CustomerReviewsModule.Web\Scripts\blades\hello-world.js* files, that were created in the **Lesson 3** from Visual Studio template.
 
 Save all changes, restart the Platform application and open blade in main menu. You should see existing Customer reviews list:
 

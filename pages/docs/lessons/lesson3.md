@@ -18,13 +18,13 @@ After completing this lesson, a new module will be created, including:
 
 Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created in [Lesson 4](./lesson4.md)
 
-## Prerequisites
+### Prerequisites
 
 * Installed Virto Commerce Platform;
 * Basic C# knowledge;
 * Visual Studio 2019 or higher.
 
-## Glossary
+### Glossary
 
 * VC – Virto Commerce;
 * Platform - Virto Commerce Platform;
