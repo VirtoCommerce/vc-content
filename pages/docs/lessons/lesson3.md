@@ -18,10 +18,6 @@ After completing this lesson, a new module will be created, including:
 
 Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created in [Lesson 4](/lesson3.md)
 
-## Video
-
-https://web.microsoftstream.com/video/43fd5a0a-d482-4de9-93af-4e0ad0837601 
-
 ## Prerequisites
 
 * Installed Virto Commerce Platform;
