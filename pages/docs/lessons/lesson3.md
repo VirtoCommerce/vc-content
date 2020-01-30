@@ -16,7 +16,7 @@ After completing this lesson, a new module will be created, including:
 * module API for create, delete, update and search customer reviews;
 * test project for testing module API.
 
-Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created in [Lesson 4](/lesson3.md)
+Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created in [Lesson 4](./lesson4.md)
 
 ## Prerequisites
 

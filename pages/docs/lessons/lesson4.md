@@ -9,7 +9,7 @@ priority: 3
 
 ## Summary
 
-Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](/lesson3.md)).
+Use this guide to create Platform Manager UI for the Virto Commerce "Customer Reviews" module (created in the [Lesson 3](./lesson3.md)).
 
 After completing this lesson, a Platform Manager UI for the Virto Commerce "Customer Reviews" module will be created, including:
 
