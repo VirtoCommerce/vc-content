@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "clipboard": "^2.0.4",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jscrollpane": "^2.2.1",
     "popper.js": "^1.14.7"
   }
