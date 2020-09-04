@@ -5295,9 +5295,9 @@ code {
     padding-top: 5rem;
 }
 
-    #layout.hide-header {
-        padding-top: 0;
-    }
+#layout.hide-header {
+    padding-top: 0;
+}
 
 .cookie-bar {
     background: #f0f0f0;
@@ -5310,9 +5310,9 @@ code {
     z-index: 5000;
 }
 
-    .cookie-bar a[href] {
-        margin-left: .25rem;
-    }
+.cookie-bar a[href] {
+    margin-left: .25rem;
+}
 
 .cookie-bar__inner {
     align-items: center;
@@ -7284,6 +7284,12 @@ code {
 
 .block--padding-bottom-none {
     padding-bottom: 0;
+}
+
+.block--padding-bottom-none .block__descr p:last-child,
+    .block--padding-bottom-none .block__descr ul:last-child,
+    .block--padding-bottom-none .block__descr ol:last-child {
+    margin-bottom: 0;
 }
 
 .block--padding-half {
