@@ -130,6 +130,11 @@
         ol {
             margin-bottom: 1.25rem;
         }
+
+        .list--socials {
+            justify-content: left;
+            padding: 2rem .5rem;
+        }
     }
 
     &-post {
@@ -354,6 +359,7 @@
 
         .list--socials {
             margin-top: 1.25rem;
+            justify-content: center;
         }
     }
 
@@ -430,7 +436,6 @@
 
     .list--socials {
         display: flex;
-        justify-content: center;
 
         .list__item {
             font-size: 0;

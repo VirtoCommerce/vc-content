@@ -18,15 +18,14 @@
                     <div class="list__t">
                         {{ article_author.firstName }} {{ article_author.lastName }}
                     </div>
+                    <a class="btn btn-block btn-social btn-linkedin mb-4" href="{{ article_author.linkedinLink }}" target="_blank">
+                        <span class="fa fa-linkedin"></span>LinkedIn profile
+                    </a>
                     <div class="list__pos">
                         {{ article_author.jobTitle }}
                     </div>
                     <div class="list__descr">
                         <p>{{ article_author.biography }}</p>
-                        <p>&nbsp;</p>
-                        {% if article_author.linkedinLink %}
-                        <p><a href="{{ article_author.linkedinLink }}" target="_blank">LinkedIn profile</a></p>
-                        {% endif %}
                     </div>
                 </div>
             </div>
