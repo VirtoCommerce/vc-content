@@ -4635,6 +4635,18 @@ code {
     margin-top: -0.625rem;
 }
 
+.block .list-items--reviews.list-items .list__pos--with-profile {
+    display: flex;
+}
+
+.block .list-items--reviews.list-items .list__pos--with-profile img {
+    margin: 0 .5rem 0 0;
+}
+
+.block .list-items--reviews.list-items .list__pos--with-profile .pos {
+    margin: auto 0;
+}
+
 .block .list-items--reviews.list-items .list__company {
     font-size: 1rem;
     line-height: 1rem;
