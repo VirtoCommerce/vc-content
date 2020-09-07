@@ -37,6 +37,10 @@ Current version of Virto Commerce platform version 3 core pack includes the foll
    <li> vc-module-export v3.2.0 </li>    
    <li> vc-module-bulk-actions v3.1.0 </li>    
    <li> vc-module-notification v3.4.0 </li> 
+   <li> vc-module-payment v3.2.0 </li> 
+   <li> vc-module-shipping v3.2.0 </li>     
+   <li> vc-module-search v3.3.0 </li>
+   <li> vc-module-experience-api v0.2.0 </li> 
 </ul> 
 
 
@@ -49,5 +53,5 @@ Current version of Virto Commerce platform version 3 integration pack includes t
 
 <ul> 
    <li> vc-module-avatax v3.2.0 </li> 
-   <li> vc-module-Authorize.Net v3.2.0 </li> 
+   <li> vc-module-Authorize.Net v3.2.0 </li>
 </ul>
