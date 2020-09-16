@@ -1,9 +1,9 @@
 <div class="blog-sidebar {{ cssClass }}">
     <div class="blog-sidebar__inner">
         <div class="blog-sidebar__t">Sign up for Virto Commerce news and updates</div>
-        <form class="form" name="blogSubscribeForm">
-            <input type="text" class="form-control" placeholder="Enter your email" id="Blog[Email]" name="Blog[Email]" ng-model="email" required="" ng-pattern="emailPattern" />
-            <div class="input-validation-error" style="color: #e32646; font-size: small;display:none;" ng-if="(blogSubscribeForm['Blog[Email]'].$dirty || blogSubscribeForm.$submitted) && blogSubscribeForm['Blog[Email]'].$error.pattern">
+        <form id="subscribe_news" class="form" name="blogSubscribeForm">
+            <input type="text" class="form-control" placeholder="Enter your email" id="Blog[Email]" name="Index[Email]" ng-model="email" required="" ng-pattern="emailPattern" />
+            <div class="input-validation-error" style="color: #e32646; font-size: small;display:none;" ng-if="(blogSubscribeForm['Index[Email]'].$dirty || blogSubscribeForm.$submitted) && blogSubscribeForm['Index[Email]'].$error.pattern">
                 {{ 'apps.forms.email_format_validation_message' | t }}
             </div>
             {% include 'user-location-form-inputs' %}
