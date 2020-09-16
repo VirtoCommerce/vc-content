@@ -18,6 +18,12 @@
             <div class="blog-content">
                 <div class="blog-hero lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800 352 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
                 {% include 'json-blocks' page: article -%}
+                <div class="block__inner container">
+                    <div class="block__t">Share. Spread tech knowledge & news:</div>
+                </div>
+                <div class="list list--socials">
+                    {% include 'blog-socials' article: article %}
+                </div>
                 {% include 'article-author' article_author: page_settings.author -%}
                 <div class="blog__meta">
                     <div class="list list--tags list--tags-small">
@@ -25,9 +31,6 @@
                             {% assign tag_url = '/blog/tag/' | append: tag  %}
                             <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
                         {% endfor %}
-                    </div>
-                    <div class="list list--socials">
-                        {% include 'blog-socials' article: article %}
                     </div>
                 </div>
             </div>

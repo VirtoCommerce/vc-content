@@ -1,6 +1,6 @@
 {%- include 'prepare_layout' -%}
 <!DOCTYPE html>
-<html ng-app="storefrontApp">
+<html ng-app="storefrontApp" lang="en">
 <head>
     <link rel="preconnect" href="https://fastgull.io" />
     <link rel="preconnect" href="https://connect.facebook.net" />
@@ -38,7 +38,7 @@
     {% endif %}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
-    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="canonical" href="https://virtocommerce.com/" />
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
     </script>

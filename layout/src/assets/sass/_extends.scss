@@ -458,6 +458,21 @@
         {
             margin-bottom: 1.25rem;
             margin-top: -0.625rem;
+
+            &--with-profile
+            {
+                display: flex;
+
+                img
+                {
+                    margin: 0 .5rem 0 0;
+                }
+
+                .pos
+                {
+                    margin: auto 0;
+                }
+            }
         }
 
         .list__company

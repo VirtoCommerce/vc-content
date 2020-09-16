@@ -124,15 +124,16 @@
             margin-bottom: 1.25rem;
         }
 
-        a {
-            color: #fff;
-        }
-
         @extend %ul-and-ol;
 
         ul,
         ol {
             margin-bottom: 1.25rem;
+        }
+
+        .list--socials {
+            justify-content: left;
+            padding: 2rem .5rem;
         }
     }
 
@@ -231,6 +232,10 @@
                 font-size: 2.5rem;
                 margin-bottom: 1.875rem;
             }
+
+            a {
+                color: #fff;
+            }
         }
 
         &__descr {
@@ -242,6 +247,10 @@
 
             @include media-breakpoint-up(lg) {
                 margin-bottom: 1.875rem;
+            }
+
+            a {
+                color: #fff;
             }
         }
 
@@ -350,6 +359,7 @@
 
         .list--socials {
             margin-top: 1.25rem;
+            justify-content: center;
         }
     }
 
@@ -426,7 +436,6 @@
 
     .list--socials {
         display: flex;
-        justify-content: center;
 
         .list__item {
             font-size: 0;

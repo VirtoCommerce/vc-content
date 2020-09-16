@@ -149,6 +149,86 @@
       }
     ]
   },
+  "glossary-settings": {
+    "name": "Glossary settings",
+    "contentType": "pages",
+    "static": "top",
+    "icon": "header",
+    "settings": [
+      {
+        "id": "category",
+        "label": "Category",
+        "type": "select",
+		"default": "ecommerce",
+        "options": [
+			{
+				"label": "Ecommerce",
+				"value": "ecommerce"
+			},
+			{
+				"label": "Marketing",
+				"value": "marketing"
+			}
+		]
+      },
+      {
+        "id": "title",
+        "label": "Title",
+        "type": "string"
+      },
+      {
+        "id": "date",
+        "label": "Date",
+        "type": "calendar"
+      },
+      {
+        "id": "excerpt",
+        "label": "Excerpt",
+        "type": "string",
+        "multiline": true
+      },
+      {
+        "id": "author",
+        "label": "Author",
+        "type": "select",
+        "equalKey": "id",
+        "request": {
+          "url": "api/members/search",
+          "method": "post",
+          "label": "fullName",
+          "value": [
+            "id",
+            "firstName",
+            "lastName",
+            "photoUrl",
+            {
+              "key": "jobTitle",
+              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+              "isArray": false
+            },
+            {
+              "key": "biography",
+              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+              "isArray": false
+            },
+            {
+              "key": "linkedinLink",
+              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+              "isArray": false
+            }
+          ],
+          "params": {
+            "memberId": null,
+            "deepSearch": true,
+            "responseGroup": "Full",
+            "sort": "memberType:desc;name:asc",
+            "searchPhrase": "isAuthor:true"
+          }
+        },
+        "options": [{"label": "[none]", "value": null}]
+      }
+    ]
+  },
   "webpage-settings": {
     "name": "Structured data",
     "contentType": [
@@ -161,29 +241,6 @@
       {
         "type": "header",
         "content": "Structured data"
-      },
-      {
-        "id": "category",
-        "label": "Category",
-        "type": "select",
-        "options": [
-          {
-            "value": "technical",
-            "label": "Technical"
-          },
-          {
-            "value": "events",
-            "label": "Events"
-          },
-          {
-            "value": "blogs",
-            "label": "Blogs"
-          },
-          {
-            "value": "pressreleases",
-            "label": "Press Releases"
-          }
-        ]
       },
       {
         "id": "markup_webpage_title",

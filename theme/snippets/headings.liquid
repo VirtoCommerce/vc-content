@@ -2,4 +2,7 @@
     {% for heading in headings %}
         {% include 'seo-text' tag: heading.seoTag, text: heading.title, class: 'block__t' %}
     {% endfor %}
+    {% if notSpace == null or notSpace == false %}
+        <div class="block__space"></div>
+    {% endif %}
 {% endif %}

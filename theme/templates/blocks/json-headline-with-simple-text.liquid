@@ -12,17 +12,17 @@
 
                     {% if block.title != '' %}
                         {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                        <div class="block__space"></div>
                     {% endif %}
 
                     {% include 'headings' headings: block.headings %}
-                    <div class="block__space"></div>
 
                     {% if block.subtitle != '' %}
                         {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+                        <div class="block__space"></div>
                     {% endif %}
 
                     {% if block.firstButton != '' and block.firstButton.urlText != '' %}
-                        <div class="block__space"></div>
                         <div class="block__actions">
                             <a href="{{block.firstButton.url}}" class="{{block.firstButton.style}}" {% if block.firstButton.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.firstButton.urlText}}</a>
                             {% if block.secondButton != '' and block.secondButton.urlText != '' %}

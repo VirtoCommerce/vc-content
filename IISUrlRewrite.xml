@@ -1,6 +1,7 @@
 <rewrite>
     <rewriteMaps>
-        <rewriteMap name="VC-redirects">
+        <rewriteMap name="VC-redirects">		
+            <add key="/find-implementation-partner" value="/b2b-ecommerce-implementation" />
             <add key="/%7B%7B%20article.url%20%7D%7D" value="/" />
             <add key="/%EF%BC%89%EF%BC%8C%E5%9B%BD%E5%A4%96%E7%94%A8.net" value="/" />
             <add key="/{{ article.url }}" value="/" />
@@ -170,7 +171,7 @@
             <add key="/product-information-management" value="product-information-management-software" />
             <add key="/product-information-management-software" value="product-information-management-software-pim" />
             <add key="/requestcommunitylicense" value="/" />
-			<add key="/request-community-license" value="/request-license" />
+            <add key="/request-community-license" value="/request-license" />
             <add key="/search?q=%E5%A4%A7%E5%A5%96%E5%A8%B1%E4%B9%90%E5%A4%87%E7%BD%91+Q82019309.com.com" value="/" />
             <add key="/search?q=%E5%A4%A7%E5%A5%96%E6%8D%95%E9%B1%BC%E4%BC%98%E8%B4%A8%E7%9A%84%E5%8D%9A%E5%BD%A9%E6%9C%8D%E5%8A%A1%E5%8F%A3%E7%A2%91%E8%80%8C%E4%BA%AB%E8%AA%89%E5%85%A8%E7%90%83+Q82019309.com.com" value="/" />
             <add key="/shopping-cart" value="asp-net-shopping-cart" />

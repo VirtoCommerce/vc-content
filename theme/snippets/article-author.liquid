@@ -6,8 +6,6 @@
                     <div class="block__t">
                         <h2 class="block__t">About the author of this article</h2>
                     </div>
-                    <div class="block__space block__space--size-lg">
-                    </div>
                 </div>
             </div>
             <div class="list list-items list-items--cols-1 list-items--reviews">
@@ -18,15 +16,14 @@
                     <div class="list__t">
                         {{ article_author.firstName }} {{ article_author.lastName }}
                     </div>
-                    <div class="list__pos">
-                        {{ article_author.jobTitle }}
+                    <div class="list__pos list__pos--with-profile">
+                        <a rel="nofollow" href="{{article_author.linkedinLink}}" target="_blank">
+                            <img src="{{'images/icons/linkedin.svg' | asset_url}}" />
+                        </a>
+                        <span class="pos">{{article_author.jobTitle}}</span>
                     </div>
                     <div class="list__descr">
                         <p>{{ article_author.biography }}</p>
-                        <p>&nbsp;</p>
-                        {% if article_author.linkedinLink %}
-                        <p><a href="{{ article_author.linkedinLink }}" target="_blank">LinkedIn profile</a></p>
-                        {% endif %}
                     </div>
                 </div>
             </div>
