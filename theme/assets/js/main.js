@@ -2,17 +2,38 @@
     if (!!$.validator) {
         $.validator.unobtrusive.adapters.addBool("mandatory", "required");
     }
-} (jQuery));
+}(jQuery));
 
 $(function () {
     var cookies = document.cookie.split(';');
+    var currentIpCookie = null;
+    var currentIpCookieIsExists = false;
 
     var token = null;
 
     for (var cookie of cookies) {
+        if (cookie.startsWith(' current_ip=')) {
+            currentIpCookie = cookie;
+            currentIpCookieIsExists = true;
+        }
         if (cookie.startsWith(' XSRF-TOKEN=')) {
             token = cookie.replace(' XSRF-TOKEN=', '');
         }
+    }
+
+    var currentIp = null;
+    if (currentIpCookieIsExists) {
+        currentIp = currentIpCookie.replace(' current_ip=', '');
+    } else {
+        $.ajax({
+            method: 'POST',
+            url: `/${shopId}/${cultureName}/call`,
+            headers: { 'X-XSRF-TOKEN': token, service: 'IpData' },
+            success: function (data) {
+                currentIp = data.ip;
+                document.cookie = `current_ip=${currentIp}; max-age=86400`;
+            }
+        });
     }
 
     $('.header .nav__item').on('click', function () {
