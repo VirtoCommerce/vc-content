@@ -1,10 +1,20 @@
 (function ($) {
-	if (!!$.validator) {
-		$.validator.unobtrusive.adapters.addBool("mandatory", "required");
-	}
+    if (!!$.validator) {
+        $.validator.unobtrusive.adapters.addBool("mandatory", "required");
+    }
 } (jQuery));
 
 $(function () {
+    var cookies = document.cookie.split(';');
+
+    var token = null;
+
+    for (var cookie of cookies) {
+        if (cookie.startsWith(' XSRF-TOKEN=')) {
+            token = cookie.replace(' XSRF-TOKEN=', '');
+        }
+    }
+
     $('.header .nav__item').on('click', function () {
         var self = $(this);
 
@@ -231,10 +241,28 @@ $(function () {
                         break;
                 }
 
-                var redirectUrl = e.target.dataset.targetUrl;
-                if (redirectUrl && redirectUrl != '') {
-                    document.location.href = redirectUrl;
-                }
+                var form = $(this);
+                var submitBtn = form.children('[type=submit]');
+
+                $.ajax({
+                    method: 'POST',
+                    url: `/${shopId}/${cultureName}/call`,
+                    data: {
+                        formId: form.attr('id'),
+                        ip: currentIp,
+                        parameters: form.serialize()
+                    },
+                    headers: { 'X-XSRF-TOKEN': token, service: 'GateLA' },
+                    beforeSend: () => submitBtn.attr('disabled', true),
+                    complete: () => submitBtn.removeAttr('disabled')
+                });
+
+                setTimeout(function () {
+                    var redirectUrl = form.data('targetUrl');
+                    if (redirectUrl && redirectUrl !== '') {
+                        document.location.href = redirectUrl;
+                    }
+                }, 1500);
 
                 return true;
             } else {
@@ -279,51 +307,4 @@ $(function () {
             $('button,input[type="submit"][disabled]').removeAttr('disabled');
         }
     }, 1000);
-
-    $('#company').on('change', function () {
-        var form = $(this).closest('form');
-        var submitBtn = form.children('[type=submit]');
-        var targetAccId = "is_target_account";
-
-        $.ajax({
-            type: 'GET',
-            url: `${targetAccountServiceUrl}&CompanyName=${$(this).val()}`,
-            beforeSend: function () {
-                form.children(`input[id="${targetAccId}"]`).remove();
-                submitBtn.attr('disabled', true);
-            },
-            success: function (data) {
-                form.append(`<input type="text" id="${targetAccId}" name="${targetAccId}" value="${data}" style="display: none" />`);
-            },
-            complete: function () {
-                submitBtn.removeAttr('disabled');
-            }
-        });
-    });
-  
-	// ?utm_source=asset_downloads&
-	//  utm_medium=email&
-	//  utm_term=--Asset Type--&
-	//  utm_content=--Asset Name--&
-	//  utm_campaign=--Campaign--
-
-	if (false) {
-		var files = {};
-		files['lavazza'] = '/assets/files/lavazza-case-study.pdf';
-		var params = parseUrl();
-		var attachUrl = files[params.utm_content];
-		if (attachUrl) {
-			window.location.assign(attachUrl);
-		}
-		
-		function parseUrl() {
-			var result = {};
-			var vars = document.location.search.substring(1).split('&');
-			for (var i = 0; i < vars.length; i++) {
-				var pair = vars[i].split('=');
-				result[pair[0]] = decodeURIComponent(pair[1]);
-			}
-			return result;
-		}
-	}
 });
