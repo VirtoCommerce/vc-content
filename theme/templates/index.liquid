@@ -11,8 +11,8 @@
                 </div>
             </div>
             <div class="col-lg">
-                <img style="background:url(assets/images/home/bg.png)" alt="" class="section__pic lazyload" />
-                <img style="background:url(assets/images/home/bg-mobile.svg)" alt="" class="section__pic section__pic--mobile lazyload" />
+                <img data-src="{{ '/assets/images/home/bg.png' | image_url }}" alt="" class="section__pic lazyload" />
+                <img data-src="{{ '/assets/images/home/bg-mobile.svg' | image_url }}" alt="" class="section__pic section__pic--mobile lazyload" />
             </div>
         </div>
     </div>
@@ -21,7 +21,8 @@
     <div class="section__inner container">
         <div class="like-h2">Business Leaders Choose Virto Commerce</div>
         <p class="section__descr--centered">
-            View just a handful of the top companies that use <br />Virto Commerce to power their ecommerce</p>
+            View just a handful of the top companies that use <br />Virto Commerce to power their ecommerce
+        </p>
         <ul class="nav nav--customers">
             <li class="nav__item">
                 <a href="/case-studies/bosch" class="nav__link">
@@ -56,20 +57,23 @@
     <div class="section__inner container">
         <div class="like-h2">All you need in one place</div>
         <p class="section__descr--centered">
-            Virto Commerce is a flexible B2B ecommerce solution<br/>that offers powerful tools for enterprise business users.</p>
+            Virto Commerce is a flexible B2B ecommerce solution<br/>that offers powerful tools for enterprise business users.
+        </p>
         <div class="list list--columns list--centered row">
             <div class="list__item col-md-6 col-lg-3">
-                <img data-src="../assets/images/home/benefits/catalog.svg" alt="" class="list__icon lazyload"/>
+                <img data-src="{{ '/assets/images/home/benefits/catalog.svg' | image_url }}" alt="" class="list__icon lazyload"/>
                 <div class="list__t">Catalog Management</div>
                 <div class="list__descr">Access sophisticated catalog management capabilities on the Virto Commerce platform, making it simple to manage even the most complex B2B product lists and detailed product information.</div>
             </div>
             <div class="list__item col-md-6 col-lg-3">
-                <img data-src="../assets/images/home/benefits/cms.svg" alt="" class="list__icon lazyload"/>
+                <img data-src="{{ '/assets/images/home/benefits/cms.svg' | image_url }}" alt="" class="list__icon lazyload"/>
                 <div class="list__t">CMS</div>
-                <div class="list__descr">Manage your store and content with the Virto Commerce powerful content management system (CMS). Virto Commerce is also integrated with many <a href="/glossary/e-commerce-cms">top CMS platforms</a>.</div>
+                <div class="list__descr">
+                    Manage your store and content with the Virto Commerce powerful content management system (CMS). Virto Commerce is also integrated with many <a href="/glossary/e-commerce-cms">top CMS platforms</a>.
+                </div>
             </div>
             <div class="list__item col-md-6 col-lg-3">
-                <img data-src="../assets/images/home/benefits/order.svg" alt="" class="list__icon lazyload"/>
+                <img data-src="{{ '/assets/images/home/benefits/order.svg' | image_url }}" alt="" class="list__icon lazyload"/>
                 <div class="list__t">Order Management</div>
                 <div class="list__descr">Gain complete control over order management with industry-leading features from Virto Commerce. Easily integrate the features into complex enterprise workflows -- including many leading ERP and fulfillment systems.</div>
             </div>
@@ -91,19 +95,19 @@
         <p class="section__descr">Virto Commerce is more than just software – When you use it, you have support from our Virto team of experts, community, and partners worldwide and suite of value added services to ensure your solution is a success.</p>
         <div class="list list--columns list--centered row">
             <div class="list__item col-md-6 col-lg-4">
-            <img data-src="../assets/images/home/benefits/partners.svg" alt="" class="list__icon lazyload" />
+                <img data-src="{{ '/assets/images/home/benefits/partners.svg' | image_url }}" alt="" class="list__icon lazyload" />
                 <div class="list__t">Partners</div>
                 <div class="list__descr">Worldwide network of certified implementation partners to fit every project.</div>
                 <a href="/find-implementation-partner" class="list__link">Learn more</a>
-                </div>
+            </div>
             <div class="list__item col-md-6 col-lg-4">
-            <img data-src="../assets/images/home/benefits/solution.svg" alt="" class="list__icon lazyload" />
+                <img data-src="{{ '/assets/images/home/benefits/solution.svg' | image_url }}" alt="" class="list__icon lazyload" />
                 <div class="list__t">Expert Services</div>
                 <div class="list__descr">Virto Commerce experts are at your disposal - offering unique digital commerce knowledge.</div>
                 <a href="/b2b-ecommerce-services" class="list__link">Learn more</a>
             </div>
             <div class="list__item col-md-6 col-lg-4">
-                <img data-src="../assets/images/home/benefits/community.svg" alt="" class="list__icon lazyload" />
+                <img data-src="{{ '/assets/images/home/benefits/community.svg' | image_url }}" alt="" class="list__icon lazyload" />
                 <div class="list__t">Community & App Store</div>
                 <div class="list__descr">Explore our growing App Store of extensions and themes to customize your solution.</div>
                 <a href="/apps" class="list__link">Learn more</a>

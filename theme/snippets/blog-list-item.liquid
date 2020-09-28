@@ -1,5 +1,5 @@
 <div class="list__item">
-    <a class="list__bg lazyload" href="{{ article.url | absolute_url }}" style="background-image: url({% if article.image_url != '' %}{{ article.image_url }}{% else %}blue-abstract-background.jpg{% endif %});"></a>
+    <a class="list__bg lazyload" href="{{ article.url | absolute_url }}" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 343, 160 }}{% else %}blue-abstract-background.jpg{% endif %}"></a>
     <div class="list__info">
         <div class="list__t">
             <a href="{{ article.url | absolute_url }}">{{ article.title }}</a>

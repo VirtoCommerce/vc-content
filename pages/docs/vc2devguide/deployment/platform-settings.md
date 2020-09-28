@@ -225,7 +225,7 @@ Default value is 1 hour.
 RefreshTokenExpireTimeSpan is the life time of the refresh token.
 
 ```
-<add key="VirtoCommerce:Authentication:BearerTokens.LimitedCookiePermissions" value="security:call_api;platform:asset:read;platform:export;background_jobs:manage;content:read;platform:asset:create" />
+<add key="VirtoCommerce:Authentication:BearerTokens.LimitedCookiePermissions" value="platform:asset:read;platform:export;background_jobs:manage;content:read;platform:asset:create" />
 ```
 The list of permissions for Bearer token authorization that will be used to authorize some non-AJAX requests when it is impossible to add Bearer Authorization header.
 
