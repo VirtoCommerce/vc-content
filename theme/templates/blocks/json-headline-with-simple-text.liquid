@@ -1,7 +1,10 @@
 {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.backgroundOverlayColor, customColor: block.backgroundOverlayColorHex %}
 
 <div id="{{ block.__id }}" class="{% if block.topDivider == 'True' %} block--divider-top {% endif %} {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}">
-    <div class="block {{block.containerAlignment}} {{block.topPadding}} {{block.bottomPadding}} {% include 'background-settings' %}>
+    <div class="block {{block.containerAlignment}}
+        {{block.topPadding}}{% if block.useReducedPaddings == 'True' %}-reduced{% endif %}
+        {{block.bottomPadding}}{% if block.useReducedPaddings == 'True' %}-reduced{% endif %}
+        {% include 'background-settings' %}>
         <div class="block__inner container">
             <div class="row {% if block.containerAlignment == 'block--align-center' %} justify-content-center {% endif %} {% if block.containerAlignment == 'block--align-right' %} justify-content-end {% endif %}">
                 <div class="block__text {{block.textAreaWidth}}">

@@ -150,21 +150,41 @@
 	&--padding-top-half
 	{
 		padding-top: 3.125rem;
+
+        &-reduced
+        {
+            padding-top: 1.5625rem;
+        }
 	}
 
 	&--padding-bottom-half
 	{
 		padding-bottom: 3.125rem;
+
+        &-reduced
+        {
+            padding-bottom: 1.5625rem;
+        }
 	}
 
     &--padding-top-large
 	{
 		padding-top: 6.25rem;
+
+        &-reduced
+        {
+            padding-top: 3.125rem;
+        }
 	}
 
 	&--padding-bottom-large
 	{
 		padding-bottom: 6.25rem;
+
+        &-reduced
+        {
+            padding-bottom: 3.125rem;
+        }
 	}
 
     @include media-breakpoint-down(sm)

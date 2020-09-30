@@ -2395,6 +2395,14 @@
         "tab": "Settings",
         "group": "Paddings"
       },
+	  {
+		"id": "useReducedPaddings",
+		"label": "Use reduced paddings",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings",
+		"group": "Paddings"
+	  },
       {
         "id": "topDivider",
         "label": "Top divider",
