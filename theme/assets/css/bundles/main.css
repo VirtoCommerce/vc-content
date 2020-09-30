@@ -7313,16 +7313,32 @@ code {
     padding-top: 3.125rem;
 }
 
+.block--padding-top-half-reduced {
+    padding-top: 1.5625rem;
+}
+
 .block--padding-bottom-half {
     padding-bottom: 3.125rem;
+}
+
+.block--padding-bottom-half-reduced {
+    padding-bottom: 1.5625rem;
 }
 
 .block--padding-top-large {
     padding-top: 6.25rem;
 }
 
+.block--padding-top-large-reduced {
+    padding-top: 3.125rem;
+}
+
 .block--padding-bottom-large {
     padding-bottom: 6.25rem;
+}
+
+.block--padding-bottom-large-reduced {
+    padding-bottom: 3.125rem;
 }
 
 @media (max-width: 767.98px) {
