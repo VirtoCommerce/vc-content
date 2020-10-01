@@ -26,9 +26,7 @@ $(function () {
         currentIp = currentIpCookie.replace(' current_ip=', '');
     } else {
         $.ajax({
-            method: 'POST',
-            url: `/${shopId}/${cultureName}/call`,
-            headers: { 'X-XSRF-TOKEN': token, service: 'IpData' },
+            url: `https://api.ipdata.co?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip`,
             success: function (data) {
                 currentIp = data.ip;
                 document.cookie = `current_ip=${currentIp}; max-age=86400`;
