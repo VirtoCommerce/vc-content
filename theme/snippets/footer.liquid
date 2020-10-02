@@ -6,12 +6,11 @@
                     Virtocommerce
                 </div>
                 <div class="footer__text">{{settings['footerText']}}</div>
-                <div class="footer__signup">
+                <div class="footer__signup" ng-controller="newsSubscriberController">
                     <div class="label footer__text">Sign up for Virto Commerce news and updates</div>
-                    <form id="subscribe_news" class="form form--search" action="/thank-you-newsletters">
-                        <input type="text" name="Index[Email]" class="form-control form-control--round" placeholder="you@mail.com" />
-                        {% include 'user-location-form-inputs' %}
-                        <button type="submit" class="btn btn--orange btn--round">Sign&nbsp;Up</button>
+                    <form id="subscribe_news_footer" class="form form--search" name="blogSubscribeFormFooter">
+                        <input type="text" id="Index[Email]" name="Index[Email]" class="form-control form-control--round" ng-model="email" required="" ng-pattern="emailPattern" placeholder="you@mail.com" />
+                        <button ng-click="subscribe(blogSubscribeFormFooter)" type="submit" class="btn btn--orange btn--round" ng-disabled="isSubscribing">Sign&nbsp;Up</button>
                     </form>
                 </div>
             </div>

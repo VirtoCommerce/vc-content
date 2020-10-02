@@ -8,7 +8,7 @@ storefrontApp.service('blogService', ['$http', function ($http) {
     };
 }]);
 
-storefrontApp.controller('blogController', ['$scope', '$window', '$cookies', 'blogService', 'dialogService', function ($scope, $window, $cookies, blogService, dialogService) {
+storefrontApp.controller('blogController', ['$scope', '$window', '$cookies', 'blogService', function ($scope, $window, $cookies, blogService) {
     $scope.pageNumber = 2;
     $scope.articles = [];
     $scope.currentCategory = '';
@@ -46,15 +46,6 @@ storefrontApp.controller('blogController', ['$scope', '$window', '$cookies', 'bl
             $scope.pageNumber++;
             $scope.isLoading = false;
         });
-    };
-
-    $scope.displayResult = function () {
-        if ($scope.blogSubscribeForm.$valid) {
-            dialogService.showDialog(null, 'feedbackController', 'storefront.form-thank-you.tpl');
-            $scope.email = null;
-        } else {
-            event.preventDefault();
-        }
     };
 
     $scope.setCurrentCategoryFromArticle = function (category) {
