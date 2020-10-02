@@ -105,6 +105,7 @@
 
     {{ 'js/app.js' | asset_url | script_tag }}
     {{ 'themes/assets/scripts/angular/casestudy.js' | script_tag }}
+    {{ 'news.js' | asset_url | script_tag }}
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
     {{ 'js/team.js' | asset_url | script_tag }}
     <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>

@@ -175,6 +175,7 @@
     {{ 'app.js' | asset_url | script_tag }}
     {{ 'themes/assets/scripts/angular/docs.js' | script_tag }}
     {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
+    {{ 'news.js' | asset_url | script_tag }}
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
 
