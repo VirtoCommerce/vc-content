@@ -128,6 +128,6 @@
     {{ 'services.js' | asset_url | script_tag }}
     {{ 'main-layout.min.js' | asset_url | script_tag }}
     {{ 'segment-form-handler.js' | asset_url | script_tag }}
-    {{ 'news.js' | asset_url | script_tag }}
+    {{ 'news.js?v=' | append news_js_version | asset_url | script_tag }}
 </body>
 </html>
