@@ -7,14 +7,11 @@
 $(function () {
     var cookies = document.cookie.split(';');
     var currentIpCookie = null;
-    var currentIpCookieIsExists = false;
-
     var token = null;
 
     for (var cookie of cookies) {
         if (cookie.startsWith(' current_ip=')) {
             currentIpCookie = cookie;
-            currentIpCookieIsExists = true;
         }
         if (cookie.startsWith(' XSRF-TOKEN=')) {
             token = cookie.replace(' XSRF-TOKEN=', '');
@@ -22,14 +19,16 @@ $(function () {
     }
 
     var currentIp = null;
-    if (currentIpCookieIsExists) {
+    if (currentIpCookie) {
         currentIp = currentIpCookie.replace(' current_ip=', '');
     } else {
         $.ajax({
             url: `https://api.ipdata.co?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip`,
             success: function (data) {
-                currentIp = data.ip;
-                document.cookie = `current_ip=${currentIp}; max-age=86400`;
+                if (data.ip) {
+                    currentIp = data.ip;
+                    document.cookie = `current_ip=${currentIp}; max-age=86400`;
+                }
             }
         });
     }
@@ -263,7 +262,7 @@ $(function () {
                 var form = $(this);
                 var submitBtn = form.children('[type=submit]');
 
-                $.ajax({
+                var request = $.ajax({
                     method: 'POST',
                     url: `/${shopId}/${cultureName}/call`,
                     data: {
@@ -273,13 +272,29 @@ $(function () {
                     },
                     headers: { 'X-XSRF-TOKEN': token, service: 'GateLA' },
                     beforeSend: () => submitBtn.attr('disabled', true),
+                    error: function (jqXHR) {
+                        var error = 'An error occurred at sending form. Please refresh the page and fill in the form again or try again later.';
+                        if (jqXHR.status === 400) {
+                            error = 'Your session has expired. Please refresh the page and fill in the form again.';
+                        }
+
+                        var reqError = form.children('.req-error');
+                        if (reqError.length === 0) {
+                            form.append($(`<span class="req-error form-error field-validation-valid" data-valmsg-replace="true">${error}</span>`));
+                        } else {
+                            reqError.text(error);
+                        }
+                    },
                     complete: () => submitBtn.removeAttr('disabled')
                 });
 
                 setTimeout(function () {
-                    var redirectUrl = form.data('targetUrl');
-                    if (redirectUrl && redirectUrl !== '') {
-                        document.location.href = redirectUrl;
+                    var requestIsSent = !request.status;
+                    if (requestIsSent || (request.status && request.status >= 200 && request.status < 400)) {
+                        var redirectUrl = form.data('targetUrl');
+                        if (redirectUrl && redirectUrl !== '') {
+                            document.location.href = redirectUrl;
+                        }
                     }
                 }, 1500);
 
