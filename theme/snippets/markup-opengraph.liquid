@@ -32,3 +32,6 @@
         <meta property="og:image" content="{{ 'virtocommerce.png' | asset_url }}" />
         {% endif %}
     {% endif %}
+    {% if settings.markup_website_facebook_app_id %}
+    <meta property="fb:app_id" content="{{settings.markup_website_facebook_app_id}}" />
+    {% endif %}
