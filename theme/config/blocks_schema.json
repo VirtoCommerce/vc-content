@@ -253,6 +253,11 @@
         "type": "string",
         "multiline": true
       },
+	  {
+		"id": "markup_webpage_type",
+		"label": "Page meta type",
+		"type": "string"
+	  },
       {
         "type": "image",
         "id": "markup_webpage_image",

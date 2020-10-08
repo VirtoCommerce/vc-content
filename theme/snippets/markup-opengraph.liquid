@@ -17,6 +17,11 @@
         <meta property="og:description" content="VirtoCommerce is the enterprise-level Microsoft .NET ecommerce platform for complex ecommerce. Virto Commerce is a flexible B2B ecommerce solution based on Microsoft.NET that offers powerful tools for enterprise business users." />
         {% endif %}
     {% endif %}
+
+    {% if page_settings.markup_webpage_type %}
+    <meta property="og:type" content="{{page_settings.markup_webpage_type}}" />
+    {% endif %}
+
     <meta property="og:url" content="{{ canonical_url | absolute_url }}" />
     {% if page_settings.markup_webpage_image %}
     <meta property="og:image" content="{{ page_settings.markup_webpage_image }}" />
