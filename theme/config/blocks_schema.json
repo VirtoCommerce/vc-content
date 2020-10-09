@@ -2537,7 +2537,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
@@ -2555,6 +2557,7 @@
           "Link",
           "Unlink",
           "Maximize",
+		  "FontSize",
           "Source"
         ]
       },
@@ -2567,7 +2570,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
