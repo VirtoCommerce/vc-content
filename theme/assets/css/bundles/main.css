@@ -4394,7 +4394,7 @@ code {
     flex-direction: column;
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
-    padding: 0 1.25rem 2.5rem;
+    padding: 0 1.25rem;
 }
 
 .block .list-items .list__img {

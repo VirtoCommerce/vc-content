@@ -27,6 +27,11 @@
         "id": "markup_website_default_image",
         "label": "Image",
         "inline": true
+      },
+	  {
+        "type": "string",
+        "id": "markup_website_facebook_app_id",
+        "label": "Facebook App ID (fb:app_id)"
       }
     ]
   },
