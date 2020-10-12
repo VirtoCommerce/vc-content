@@ -64,9 +64,11 @@
             </div>
         {% endif %}
         {% if block.subtitle != '' and block.subtitlePosition == 'lower' %}
-            <div class="block__text {{block.textAreaWidth}}">
-                <div class="block__space"></div>
-                {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+            <div class="row">
+                <div class="block__text {{block.textAreaWidth}}">
+                    <div class="block__space"></div>
+                    {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+                </div>
             </div>
         {% endif %}
     </div>
