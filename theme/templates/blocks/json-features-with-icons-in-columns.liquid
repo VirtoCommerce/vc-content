@@ -41,6 +41,14 @@
                             {% if column.title != '' %}
                                 {% include 'seo-text' tag: column.titleSeoTag, text: column.title, class: 'list__t' %}
                             {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="list list-items list-items--cols-{{block.columnsCount}} {% if block.iconsType == 'letters' %} list-items--type-letters {% endif %}">
+                {% for column in block.columns %}
+                    <div class="list__item">
+                        <div class="list__inner">
                             {% if column.subtitle != '' %}
                                 {% include 'seo-text' tag: column.subtitleSeoTag, text: column.subtitle, class: 'list__descr' %}
                             {% endif %}
@@ -49,7 +57,7 @@
                                 <div class="block__actions">
                                     <a href="{{column.button.url}}" class="{{column.button.style}} btn--w-auto" {% if column.buttonIsNewWindow == 'True' %} target="_blank" {% endif %}>{{column.button.urlText}}</a>
                                 </div>
-                        {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
