@@ -16,6 +16,18 @@
         <!-- Blog main -->
         <div class="blog-main">
             <div class="blog-content">
+                {% if article.meta_fields.stickedOverlayColor != null and article.meta_fields.stickedOverlayColor != '' %}
+                <style>
+                    .blog-hero::after {
+                        background: -moz-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                        background: -webkit-gradient(left top,left bottom,color-stop(rgba(0,0,0,0),color-stop({{article.meta_fields.stickedOverlayColor}})));
+                        background: -webkit-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                        background: -o-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                        background: -ms-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                        background: linear-gradient(to bottom,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                    }
+                </style>
+                {% endif %}
                 <div class="blog-hero lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800 352 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
                 {% include 'json-blocks' page: article -%}
                 <div class="block__inner container">

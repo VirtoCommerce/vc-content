@@ -102,12 +102,6 @@
         "inline": true
       },
       {
-        "id": "is-sticked",
-        "label": "Sticked",
-        "type": "checkbox",
-        "default": false
-      },
-      {
         "id": "author",
         "label": "Author",
         "type": "select",
@@ -146,7 +140,23 @@
           }
         },
         "options": [{"label": "[none]", "value": null}]
-      }
+      },
+      {
+        "id": "is-sticked",
+        "label": "Sticked",
+        "type": "checkbox",
+        "default": false
+      },
+	  {
+		"id": "stickedOverlayColor",
+		"type": "color",
+		"label": "Sticked overlay color"
+	  },
+	  {
+		"id": "stickedFontColor",
+		"type": "color",
+		"label": "Sticked font color"
+	  }
     ]
   },
   "glossary-settings": {
