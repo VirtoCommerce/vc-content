@@ -1,10 +1,23 @@
 <div class="blog-content">
     <div class="blog-post">
+        {% if article.meta_fields.stickedOverlayColor != null and article.meta_fields.stickedOverlayColor != '' %}
+        <style>
+            .blog-post__bg::after {
+                background: -moz-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                background: -webkit-gradient(left top,left bottom,color-stop(rgba(0,0,0,0),color-stop({{article.meta_fields.stickedOverlayColor}})));
+                background: -webkit-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                background: -o-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                background: -ms-linear-gradient(top,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+                background: linear-gradient(to bottom,rgba(0,0,0,0),{{article.meta_fields.stickedOverlayColor}});
+            }
+        </style>
+        {% endif %}
+        {% assign stickedFontColorApplied = article.meta_fields.stickedFontColor != null and article.meta_fields.stickedFontColor != '' %}
         <div class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800, 560 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
         <div class="blog-post__text">
-            <div class="blog-post__t"><a href="{{article.url | absolute_url }}">{{ article.title }}</a></div>
+            <div class="blog-post__t"><a href="{{article.url | absolute_url }}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{ article.title }}</a></div>
             <div class="blog-post__descr">
-                <a href="{{article.url | absolute_url}}">{{article.excerpt}}</a>
+                <a href="{{article.url | absolute_url}}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{article.excerpt}}</a>
             </div>
             <div class="blog-post__category" data-name="{{ article.category }}">{{ "blogs.categories." | append: article.category | t }}</div>
             <a href="{{ article.url | absolute_url }}" class="btn btn--white">Read</a>
