@@ -31,6 +31,7 @@ storefrontApp.service('newsSubscriberService', ['$http', '$cookies', '$q', funct
 storefrontApp.controller('newsSubscriberController', ['$scope', 'newsSubscriberService', function ($scope, newsSubscriberService) {
     $scope.isSubscribing = false;
     $scope.email = '';
+    $scope.emailPattern = new RegExp(/((^|((?!^)([,;]|\r|\r\n|\n)))([a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*))+$/);
 
     $scope.subscribe = function (form) {
         $scope.isSubscribing = true;
