@@ -527,7 +527,7 @@
             content: counter(list, lower-latin);
         }
     }
-
+    
     @include media-breakpoint-down(md) {
         &.list-items--cols-4 .list__item {
             flex: 0 0 50%;
@@ -785,5 +785,239 @@
     & ~ .list-images
     {
         margin-top: 1rem;
+    }
+}
+
+%list-features
+{
+    counter-reset: list;
+    display: grid;
+    margin: 0 -1.25rem;
+
+    li
+    {
+        &::before
+        {
+            display: flex;
+        }
+    }
+
+    .list__inner
+    {
+        display: grid;
+        width: 100%;
+
+        @include media-breakpoint-down(md)
+        {
+            grid-template-rows: none;
+        }
+    }
+
+    .list__item
+    {
+        counter-increment: list;
+        padding: 0 1.25rem;
+    }
+
+    .list__img
+    {
+        flex: 0 0 12.5rem;
+        margin-bottom: 1.25rem;
+        min-height: 12.5rem;
+        position: relative;
+    }
+
+    .list__pic
+    {
+        position: relative;
+        max-height: 100%;
+        z-index: 5;
+    }
+
+    .list__image
+    {
+        background-position: 50%;
+        background-size: cover;
+        height: 10rem;
+        margin-bottom: 1.25rem;
+        overflow: hidden;
+        width: 100%;
+
+        @include media-breakpoint-down(sm) {
+            height: 15rem;
+        }
+    }
+
+    .list__num,
+    .list__ico
+    {
+        display: block;
+        margin-bottom: 1.25rem;
+        height: 3.125rem;
+        max-width: 3.125rem;
+    }
+
+    .list__num
+    {
+        align-items: center;
+        background-color: $white;
+        border: 0.1875rem solid $orange;
+        border-radius: 3.125rem;
+        display: flex;
+        justify-content: center;
+        width: 3.125rem;
+
+        &::after
+        {
+            color: $orange;
+            content: counter(list);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        &-black
+        {
+            border: 0.1875rem solid $orange;
+
+            &::after
+            {
+                color: $orange;
+                content: counter(list);
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        &-black
+        {
+            border: 0.1875rem solid $black;
+
+            &::after
+            {
+                color: $black;
+                content: counter(list);
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        &-grey
+        {
+            border: 0.1875rem solid $gray-600;
+
+            &::after
+            {
+                color: $gray-600;
+                content: counter(list);
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        &--filled
+        {
+            background-color: $orange;
+
+            &::after
+            {
+                color: $white;
+            }
+            
+            &-orange
+            {
+                background-color: $orange;
+
+                &::after
+                {
+                    color: $white;
+                }
+            }
+
+            &-black
+            {
+                background-color: $black;
+                border: .1875rem solid $black;
+
+                &::after
+                {
+                    color: $white;
+                }
+            }
+
+            &-grey
+            {
+                background-color: $gray-600;
+                border: .1875rem solid $gray-600;
+
+                &::after
+                {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .list__descr
+    {
+        margin-bottom: 1rem;
+    }
+
+    .btn
+    {
+        margin-top: auto;
+    }
+
+    &.list-features--cols
+    {
+        &-2
+        {
+            grid-template-columns: repeat(2, 1fr);
+
+            @include media-breakpoint-down(sm)
+            {
+                grid-template-columns: none;
+            }
+        }
+
+        &-3
+        {
+            grid-template-columns: repeat(3, 1fr);
+
+            @include media-breakpoint-down(md)
+            {
+                grid-template-columns: none;
+            }
+        }
+
+        &-4
+        {
+            grid-template-columns: repeat(4, 1fr);
+
+            @include media-breakpoint-only(md)
+            {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include media-breakpoint-down(sm)
+            {
+                grid-template-columns: none;
+            }
+        }
+    }
+
+    &.list-features--type-letters {
+        .list__num::after {
+            content: counter(list, lower-latin);
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .list__item,
+        &.list-items--cols-2 .list__item,
+        &.list-items--cols-4 .list__item {
+            flex-basis: auto;
+            flex-grow: 1;
+            max-width: 100%;
+        }
     }
 }

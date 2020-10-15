@@ -1104,8 +1104,14 @@
 		@extend %list-images;
 	}
 
+    .list-features
+    {
+        @extend %list-features;
+    }
+
 	.list-items,
-	.list-cards
+	.list-cards,
+    .list-features
 	{
 		.list__t {
 	        font-size: 1.25rem;
