@@ -969,6 +969,17 @@
 
     &.list-features--cols
     {
+        &-1
+        {
+            .list__item
+            {
+                &:not(:last-child)
+                {
+                    margin-bottom: 1.25rem;
+                }
+            }
+        }
+
         &-2
         {
             grid-template-columns: repeat(2, 1fr);
@@ -976,6 +987,22 @@
             @include media-breakpoint-down(sm)
             {
                 grid-template-columns: none;
+            }
+
+            .list__item
+            {
+                &:not(:nth-last-child(-n+2))
+                {
+                    margin-bottom: 1.25rem;
+                }
+
+                @include media-breakpoint-down(sm)
+                {
+                    &:not(:last-child)
+                    {
+                        margin-bottom: 1.25rem;
+                    }
+                }
             }
         }
 
@@ -986,6 +1013,25 @@
             @include media-breakpoint-down(md)
             {
                 grid-template-columns: none;
+            }
+
+            .list__item
+            {
+                @include media-breakpoint-down(md)
+                {
+                    &:not(:last-child)
+                    {
+                        margin-bottom: 1.25rem;
+                    }
+                }
+
+                @include media-breakpoint-up(md)
+                {
+                    &:not(:nth-last-child(-n+3))
+                    {
+                        margin-bottom: 1.25rem;
+                    }
+                }
             }
         }
 
@@ -1001,6 +1047,33 @@
             @include media-breakpoint-down(sm)
             {
                 grid-template-columns: none;
+            }
+
+            .list__item
+            {
+                @include media-breakpoint-down(sm)
+                {
+                    &:not(:last-child)
+                    {
+                        margin-bottom: 1.25rem;
+                    }
+                }
+
+                @include media-breakpoint-only(md)
+                {
+                    &:not(:nth-last-child(-n+2))
+                    {
+                        margin-bottom: 1.25rem;
+                    }
+                }
+
+                @include media-breakpoint-up(md)
+                {
+                    &:not(:nth-last-child(-n+4))
+                    {
+                        margin-bottom: 1.25rem;
+                    }
+                }
             }
         }
     }
