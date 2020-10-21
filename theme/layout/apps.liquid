@@ -6,26 +6,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Virto Commerce" />
-    {% if page_description != '' %}
-    <meta name="description" content="{{ page_description | escape }}" />
-    <meta property="og:description" content="{{ page_description | escape }}" />
-    {% else %}
-    <meta name="description" content="Virto Commerce - enterprise .NET Microsoft E-commerce Platform for B2B & B2C solutions" />
-    {% endif %}
+    {% assign description = "Do more with your online store by accessing Virto Commerce appstore and extensions. Submit your virto commerce extension. Expand you ecommerce capabilities by using custom apps." %}
+    <meta property="og:description" content="{{description}}" />
+    <meta name="description" content="{{description}}" />
     <meta itemprop="name" content="Virto Commerce" />
-    <meta itemprop="description" content="Multi Channel Ecommerce Platform | Enterprise Shopping Cart Software | VirtoCommerce" />
+    <meta itemprop="description" content="{{description}}" />
     <meta itemprop="image" content="{{ 'virtocommerce.png' | asset_url }}" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:image" content="{{ 'virtocommerce.png' | asset_url }}" />
     <meta name="google-site-verification" content="U2sXV9qIWUb-RceW8MpL-EfFnwvOqCo_jLWIDL8c6xI" />
     <link type="image/x-icon" rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" />
     <link rel="publisher" href="//plus.google.com/+Virtocommerce" />
-    {% if page_title != '' %}
-    <title>{{ page_title }}</title>
-    <meta property="og:title" content="{{ page_title }}" />
-    {% else %}
-    <title>Virto Commerce Appstore</title>
-    {% endif %}
+    <meta property="og:title" content="Virto Commerce | Appstore and extensions" />
+    <title>Virto Commerce | Appstore and extensions</title>
     {% comment %}
     {{ '//fonts.googleapis.com/css?family=Lato' | stylesheet_tag }}
     {{ '//fonts.googleapis.com/css?family=Roboto:400,100,300,700' | stylesheet_tag }}

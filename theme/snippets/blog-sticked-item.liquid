@@ -19,7 +19,6 @@
             <div class="blog-post__descr">
                 <a href="{{article.url | absolute_url}}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{article.excerpt}}</a>
             </div>
-            <div class="blog-post__category" data-name="{{ article.category }}">{{ "blogs.categories." | append: article.category | t }}</div>
             <a href="{{ article.url | absolute_url }}" class="btn btn--white">Read</a>
         </div>
     </div>
