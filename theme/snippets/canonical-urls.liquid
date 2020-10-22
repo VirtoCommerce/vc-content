@@ -1,0 +1,3 @@
+{% for item in settings.canonicalUrls %}
+    <link rel="canonical" href="{{item.url | absolute_url}}" />
+{% endfor %}

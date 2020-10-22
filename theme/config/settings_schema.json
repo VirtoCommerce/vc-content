@@ -32,7 +32,21 @@
         "type": "string",
         "id": "markup_website_facebook_app_id",
         "label": "Facebook App ID (fb:app_id)"
-      }
+      },
+	  {
+		"type": "list",
+		"id": "canonicalUrls",
+		"label": "Canonical URLs",
+		"displayField": "url",
+		"element": [
+			{
+				"id": "url",
+				"label": "URL",
+				"type": "string",
+				"multiline": true
+			}
+		]
+	  }
     ]
   },
   {

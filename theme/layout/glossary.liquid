@@ -39,6 +39,7 @@
     {% include 'segment' %}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
+    {% include 'canonical-urls' %}
     {% include 'url-segments-variables' %}
     {% include 'autopilot' %}
     {% include 'markup-corporation' %}

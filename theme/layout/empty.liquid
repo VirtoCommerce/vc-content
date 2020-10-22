@@ -26,6 +26,7 @@
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
     <link rel="canonical" href="{{ canonical_url }}" />
+    {% include 'canonical-urls' %}
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
     </script>
