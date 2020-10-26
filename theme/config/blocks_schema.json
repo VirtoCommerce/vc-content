@@ -317,7 +317,13 @@
           }
         },
         "options": [{"label": "[none]", "value": null}]
-      }
+      },
+	  {
+		"id": "isGenerateCanonicalTag",
+		"label": "Generate canonical tag",
+		"type": "checkbox",
+		"default": false
+	  }
     ]
   },
   "footer": {

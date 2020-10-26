@@ -1,3 +1,12 @@
-{% for item in settings.canonicalUrls %}
-    <link rel="canonical" href="{{item.url | absolute_url}}" />
-{% endfor %}
+{% if page.url == 'index' %}
+    <link rel="canonical" href="{{ '/' | absolute_url }}" />
+{% endif %}
+{% if page_settings.isGenerateCanonicalTag == 'True' %}
+    <link rel="canonical" href="{{page.url | absolute_url}}" />
+{% else %}
+    {% for item in settings.canonicalUrls %}
+        {% if page.url == (item.url | append: '') %}
+        <link rel="canonical" href="{{item.url | absolute_url}}" />
+        {% endif %}
+    {% endfor %}
+{% endif %}
