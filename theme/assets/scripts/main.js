@@ -1,6 +1,39 @@
-$(function (){
+(function ($) {
+    if (!!$.validator) {
+        $.validator.unobtrusive.adapters.addBool("mandatory", "required");
+    }
+}(jQuery));
 
-    $('.header .nav__item').on('click', function() {
+$(function () {
+    var cookies = document.cookie.split(';');
+    var currentIpCookie = null;
+    var token = null;
+
+    for (var cookie of cookies) {
+        if (cookie.startsWith(' current_ip=')) {
+            currentIpCookie = cookie;
+        }
+        if (cookie.startsWith(' XSRF-TOKEN=')) {
+            token = cookie.replace(' XSRF-TOKEN=', '');
+        }
+    }
+
+    var currentIp = null;
+    if (currentIpCookie) {
+        currentIp = currentIpCookie.replace(' current_ip=', '');
+    } else {
+        $.ajax({
+            url: `https://api.ipdata.co?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip`,
+            success: function (data) {
+                if (data.ip) {
+                    currentIp = data.ip;
+                    document.cookie = `current_ip=${currentIp}; max-age=86400`;
+                }
+            }
+        });
+    }
+
+    $('.header .nav__item').on('click', function () {
         var self = $(this);
 
         $('.dropdown-overlay').remove();
@@ -9,7 +42,7 @@ $(function (){
         $('.header .nav__item').removeClass('nav__item--active');
         $('.dropdown-menu').removeClass('opened');
 
-        if(self.hasClass('nav__item--active')) {
+        if (self.hasClass('nav__item--active')) {
             self.removeClass('nav__item--active');
             $('.dropdown-menu', self).removeClass('opened');
             $('.dropdown-overlay').remove();
@@ -20,18 +53,18 @@ $(function (){
         }
     });
 
-    $('.header-toggle').on('click', function() {
+    $('.header-toggle').on('click', function () {
         $('body').addClass('swipe-open').prepend('<div class="overlay"></div>');
         $('.swipe').addClass('opened');
     });
 
-    $('.swipe__close').on('click', function() {
+    $('.swipe__close').on('click', function () {
         $('body').removeClass('swipe-open');
         $('.swipe').removeClass('opened');
         $('.overlay').remove();
     });
 
-    $(':not(.nav__content) .nav__item').on('click', function() {
+    $(':not(.nav__content) .nav__item').on('click', function () {
         var self = $(this);
         self.addClass('nav__item--active').siblings().removeClass('nav__item--active').addClass('nav__item--animated');
         self.removeClass('nav__item--animated');
@@ -41,14 +74,14 @@ $(function (){
         $('.swipe__nav-item:nth-child(2)').addClass('swipe__nav-item--show');
     });
 
-    $('.swipe__back').on('click', function() {
+    $('.swipe__back').on('click', function () {
         $('.swipe__nav-item').removeClass('swipe__nav-item--show');
         $('.swipe__nav-item:nth-child(1)').addClass('swipe__nav-item--show');
         $('.nav__content').removeClass('nav__content--opened');
         $('.nav__item').removeClass('nav__item--animated nav__item--active');
     });
 
-    $('body').delegate('.dropdown-overlay', 'click', function() {
+    $('body').delegate('.dropdown-overlay', 'click', function () {
         $('.header .nav__item').removeClass('nav__item--active');
         $('.dropdown-menu').removeClass('opened');
         $('.dropdown-overlay').remove();
@@ -61,6 +94,13 @@ $(function (){
         } else {
             nav.addClass('footer__t--opened');
         }
+    });
+
+    $(document).on('click', '[data-target-show]', function (event) {
+        event.preventDefault();
+        var target = $(this).data('target-show');
+        $("#" + target).show();
+        $(this).parent().remove();
     });
 
     var links = $('.list--team .list__descr a');
@@ -83,35 +123,109 @@ $(function (){
         $('.modal').css('display', 'none');
         $('body').removeClass('modal-open');
     });
-	
-	$(document).on("submit", ".section--request form", function() {
-		var form = $(this);
-		if (form.valid()) {
-			$(this).hide();
-			$(".section--request .thanks-wrapper").hide();
-			var targetThanks = $("[name='access']:checked", form).data('thanks-class');
-			$(".section--request .thanks-wrapper." + targetThanks).show();
-		}
-	});
-	
-	$(document).on("change", ".section--request form input[name='fullname']", function() {
-		var value = $(this).val().trim();
-		var firstName = value;
-		var lastName = '';
-		var index = value.indexOf(' ');
-		if (index !== -1) {
-			firstName = value.substring(0, index);
-			lastName = value.substring(index + 1);
-		}
-		var form = $(this).closest('form').get(0);
-		form.firstName = firstName;
-		form.lastName = lastName;
-	});
-	
-	$(".section--request .send-again").on("click", function() {
-		var form = $(".section--request form");
-		$("input[type='text']", form).val("");
-		form.show();
-		$(".section--request .thanks-wrapper").hide();
-	});
+
+    var blockForms = $('.block .form');
+    if (blockForms.length) {
+        $(document).on('change', '.form-checkbox__input', function () {
+            $(this).val(this.checked);
+        });
+
+        blockForms.submit(function (e) {
+            if ($(e.target).valid()) {
+                switch (e.target.id) {
+                    case 'request_demo_form':
+                        dataLayer.push({
+                            'event': 'request_demo_form_success',
+                            'form': (e.target.elements.product_name) ? e.target.elements.product_name.value : 'no field with name product_name'
+                        });
+                        break;
+                    case 'contact_us_form':
+                        dataLayer.push({
+                            'event': 'contact_us_form_success',
+                            'form': (document.location.pathname === '/contact-us') ? 'Main' : 'Agile'
+                        });
+                        break;
+                    case 'asset_download_form':
+                        dataLayer.push({
+                            'event': 'asset_download_form_success',
+                            'form': (e.target.elements.asset_id) ? e.target.elements.asset_id.value : 'no field with name asset_id'
+                        });
+                        break;
+                }
+
+                var form = $(this);
+                var submitBtn = form.children('[type=submit]');
+
+                var request = $.ajax({
+                    method: 'POST',
+                    url: `/${shopId}/${cultureName}/call`,
+                    data: {
+                        formId: form.attr('id'),
+                        ip: currentIp,
+                        parameters: form.serialize()
+                    },
+                    headers: { 'X-XSRF-TOKEN': token, service: 'GateLA' },
+                    beforeSend: () => submitBtn.attr('disabled', true),
+                    error: function (jqXHR) {
+                        var error = 'An error occurred at sending form. Please refresh the page and fill in the form again or try again later.';
+                        if (jqXHR.status === 400) {
+                            error = 'Your session has expired. Please refresh the page and fill in the form again.';
+                        }
+
+                        var reqError = form.children('.req-error');
+                        if (reqError.length === 0) {
+                            form.append($(`<span class="req-error form-error field-validation-valid" data-valmsg-replace="true">${error}</span>`));
+                        } else {
+                            reqError.text(error);
+                        }
+                    },
+                    complete: () => submitBtn.removeAttr('disabled')
+                });
+
+                setTimeout(function () {
+                    var requestIsSent = !request.status;
+                    if (requestIsSent || (request.status && request.status >= 200 && request.status < 400)) {
+                        var redirectUrl = form.data('targetUrl');
+                        if (redirectUrl && redirectUrl !== '') {
+                            document.location.href = redirectUrl;
+                        }
+                    }
+                }, 2500);
+
+                return true;
+            } else {
+                switch (e.target.id) {
+                    case 'request_demo_form':
+                        dataLayer.push({
+                            'event': 'request_demo_form_fail',
+                            'form': (e.target.elements.product_name) ? e.target.elements.product_name.value : 'no field with name product_name'
+                        });
+                        break;
+                    case 'contact_us_form':
+                        dataLayer.push({
+                            'event': 'contact_us_form_fail',
+                            'form': (document.location.pathname === '/contact-us') ? 'Main' : 'Agile'
+                        });
+                        break;
+                    case 'asset_download_form':
+                        dataLayer.push({
+                            'event': 'asset_download_form_fail',
+                            'form': (e.target.elements.asset_id) ? e.target.elements.asset_id.value : 'no field with name asset_id'
+                        });
+                        break;
+                }
+
+                $(e.target).find('.form-error').show();
+            }
+        });
+    }
+
+    $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        var linkHref = $(this).attr('href');
+        var anchorId = linkHref.substr(linkHref.indexOf('#'));
+        var header = $('.header').height();
+        var finalOffset = parseInt($(anchorId).offset().top - header) + 'px';
+        $('html, body').animate({ scrollTop: finalOffset }, 1250);
+    });
 });

@@ -78,6 +78,7 @@
     <title>{{blog.title}}</title>
 
     <link rel="canonical" href="https://virtocommerce.com/blog" />
+    {% include 'canonical-urls' %}
 
     <link rel="preload" href="{{ '//fonts.googleapis.com/css?family=Roboto:400,100,300,700' }}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{{ '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' }}" as="style" onload="this.rel='stylesheet'">
@@ -126,25 +127,9 @@
             {% include 'footer' %}
         </div>
     </div>
+    {{ 'main.min.js' | asset_url | script_tag }}
     <script src="{{ '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js' }}" async></script>
-    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js' | script_tag }}
-    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js' | script_tag }}
-    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js' | script_tag }}
-    {{ '//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.min.js' | script_tag }}
-    {{ '//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js' | script_tag }}
-    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js' | script_tag }}
-    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.min.js' | script_tag }}
-    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate.min.js' | script_tag }}
-    {{ '//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.12.1/angular-translate-loader-url/angular-translate-loader-url.min.js' | script_tag }}
-    {{ 'jquery-3.5.0.min.js' | asset_url | script_tag }}
+    {{ 'angular-bundle-blog.min.js' | asset_url | script_tag }}
     {{ '//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js' | script_tag }}
-    {{ 'app.js' | asset_url | script_tag }}
-    {{ 'services.js' | asset_url | script_tag }}
-    {{ 'blog.js?v=' | append blog_js_version | asset_url | script_tag }}
-    {{ 'news.js?v=' | append news_js_version | asset_url | script_tag }}
-    {{ 'main.js' | asset_url | script_tag }}
-
-    {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
-    <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>
 </body>
 </html>

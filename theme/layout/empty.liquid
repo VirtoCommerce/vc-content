@@ -25,7 +25,7 @@
     {{ 'jquery.fancybox.min.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
-    <link rel="canonical" href="{{ canonical_url }}" />
+    {% include 'canonical-urls' %}
     <script>
         var BASE_URL = '{{ "/" | full_url }}';
     </script>
@@ -54,10 +54,7 @@
             {% include 'footer' %}
         </div>
     </div>
-    {{ 'jquery-3.5.0.min.js' | asset_url | script_tag }}
-    {{ 'jquery.fancybox.min.js' | asset_url | script_tag }}
-    {{ 'js/app.js' | asset_url | script_tag }}
-    {{ 'js/main.js?v=' | append main_js_version | asset_url | script_tag }}
-    <script src="{{ 'lazysizes.min.js?v=1.0.1' | asset_url }}"></script>
+    {{ 'main.min.js' | asset_url | script_tag }}
+    {{ 'angular-bundle-default.min.js' | asset_url | script_tag }}
 </body>
 </html>

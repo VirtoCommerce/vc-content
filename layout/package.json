@@ -27,7 +27,7 @@
   ],
   "postcss": {
     "plugins": {
-      "autoprefixer": { }
+      "autoprefixer": {}
     }
   },
   "scripts": {
@@ -41,6 +41,7 @@
     "clipboard": "^2.0.4",
     "jquery": "^3.3.1",
     "jscrollpane": "^2.2.1",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.14.7",
+    "uglify-es": "^3.3.9"
   }
 }
