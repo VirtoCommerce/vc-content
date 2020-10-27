@@ -9490,16 +9490,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
     overflow: hidden;
 }
 
-.blog-hero::after {
-    content: " ";
-    background: rgba(0, 0, 0, 0.25);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
 .blog-content {
     flex: 1 0 0;
 }
