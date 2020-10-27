@@ -323,6 +323,12 @@
 		"label": "Generate canonical tag",
 		"type": "checkbox",
 		"default": false
+	  },
+	  {
+		"id": "isGenerateNoFollowMeta",
+		"label": "Generate nofollow meta",
+		"type": "checkbox",
+		"default": false
 	  }
     ]
   },
