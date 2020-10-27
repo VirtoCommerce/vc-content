@@ -9504,13 +9504,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
     flex: 1 0 0;
 }
 
-.blog-content img {
-    border-radius: 0.625rem;
-    display: block;
-    margin-bottom: 2.5rem;
-    max-width: 100%;
-}
-
 .blog-content h2 {
     font-size: 2rem;
     font-weight: 900;
