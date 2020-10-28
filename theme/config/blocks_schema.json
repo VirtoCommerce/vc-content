@@ -7447,7 +7447,7 @@
       {
         "id": "text",
         "label": "Text",
-        "type": "string",
+        "type": "text",
         "default": "We chose Virto Commerce for Lavazza because it is the only ecommerce platform that has the functionality, flexibility, and scalability we need – today and long-term",
         "tab": "Content",
         "group": "Review"
