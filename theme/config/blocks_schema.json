@@ -109,29 +109,34 @@
         "request": {
           "url": "api/members/search",
           "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
+          "label": "name",
+          "response": {
+            "result": "results",
+            "isArray": true,
+            "value": [
+              "id",
+              "firstName",
+              "name",
+              "lastName",
+              "photoUrl",
+              {
+                "key": "jobTitle",
+                "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "biography",
+                "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "linkedinLink",
+                "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                "isArray": false
+              }
+            ]
+          },
+          "body": {
             "memberId": null,
             "deepSearch": true,
             "responseGroup": "Full",
@@ -139,7 +144,12 @@
             "searchPhrase": "isAuthor:true"
           }
         },
-        "options": [{"label": "[none]", "value": null}]
+        "options": [
+          {
+            "label": "[none]",
+            "value": null
+          }
+        ]
       },
       {
         "id": "is-sticked",
@@ -147,16 +157,16 @@
         "type": "checkbox",
         "default": false
       },
-	  {
-		"id": "stickedOverlayColor",
-		"type": "color",
-		"label": "Sticked overlay color"
-	  },
-	  {
-		"id": "stickedFontColor",
-		"type": "color",
-		"label": "Sticked font color"
-	  }
+      {
+        "id": "stickedOverlayColor",
+        "type": "color",
+        "label": "Sticked overlay color"
+      },
+      {
+        "id": "stickedFontColor",
+        "type": "color",
+        "label": "Sticked font color"
+      }
     ]
   },
   "glossary-settings": {
@@ -169,17 +179,17 @@
         "id": "category",
         "label": "Category",
         "type": "select",
-		"default": "ecommerce",
+        "default": "ecommerce",
         "options": [
-			{
-				"label": "Ecommerce",
-				"value": "ecommerce"
-			},
-			{
-				"label": "Marketing",
-				"value": "marketing"
-			}
-		]
+          {
+            "label": "Ecommerce",
+            "value": "ecommerce"
+          },
+          {
+            "label": "Marketing",
+            "value": "marketing"
+          }
+        ]
       },
       {
         "id": "title",
@@ -205,29 +215,34 @@
         "request": {
           "url": "api/members/search",
           "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
+          "label": "name",
+          "response": {
+            "result": "results",
+            "isArray": true,
+            "value": [
+              "id",
+              "firstName",
+              "name",
+              "lastName",
+              "photoUrl",
+              {
+                "key": "jobTitle",
+                "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "biography",
+                "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "linkedinLink",
+                "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                "isArray": false
+              }
+            ]
+          },
+          "body": {
             "memberId": null,
             "deepSearch": true,
             "responseGroup": "Full",
@@ -235,7 +250,12 @@
             "searchPhrase": "isAuthor:true"
           }
         },
-        "options": [{"label": "[none]", "value": null}]
+        "options": [
+          {
+            "label": "[none]",
+            "value": null
+          }
+        ]
       }
     ]
   },
@@ -263,11 +283,11 @@
         "type": "string",
         "multiline": true
       },
-	  {
-		"id": "markup_webpage_type",
-		"label": "Page meta type",
-		"type": "string"
-	  },
+      {
+        "id": "markup_webpage_type",
+        "label": "Page meta type",
+        "type": "string"
+      },
       {
         "type": "image",
         "id": "markup_webpage_image",
@@ -286,29 +306,34 @@
         "request": {
           "url": "api/members/search",
           "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
+          "label": "name",
+          "response": {
+            "result": "results",
+            "isArray": true,
+            "value": [
+              "id",
+              "firstName",
+              "name",
+              "lastName",
+              "photoUrl",
+              {
+                "key": "jobTitle",
+                "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "biography",
+                "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "linkedinLink",
+                "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                "isArray": false
+              }
+            ]
+          },
+          "body": {
             "memberId": null,
             "deepSearch": true,
             "responseGroup": "Full",
@@ -316,20 +341,25 @@
             "searchPhrase": "isAuthor:true"
           }
         },
-        "options": [{"label": "[none]", "value": null}]
+        "options": [
+          {
+            "label": "[none]",
+            "value": null
+          }
+        ]
       },
-	  {
-		"id": "isGenerateCanonicalTag",
-		"label": "Generate canonical tag",
-		"type": "checkbox",
-		"default": false
-	  },
-	  {
-		"id": "isGenerateNoFollowMeta",
-		"label": "Generate nofollow meta",
-		"type": "checkbox",
-		"default": false
-	  }
+      {
+        "id": "isGenerateCanonicalTag",
+        "label": "Generate canonical tag",
+        "type": "checkbox",
+        "default": false
+      },
+      {
+        "id": "isGenerateNoFollowMeta",
+        "label": "Generate nofollow meta",
+        "type": "checkbox",
+        "default": false
+      }
     ]
   },
   "footer": {
@@ -563,128 +593,128 @@
           "tab": "Content"
         }
       ],
-	  "paddings": [
-		{
-			"id": "topPadding",
-			"label": "Top padding",
-			"type": "select",
-			"default": "block--padding-top-large",
-			"options": [
-			  {
-				"value": "block--padding-top-none",
-				"label": "None"
-			  },
-			  {
-				"value": "block--padding-top-half",
-				"label": "Small"
-			  },
-			  {
-				"value": "block--padding-top-large",
-				"label": "Medium"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Paddings"
-		  },
-		  {
-			"id": "bottomPadding",
-			"label": "Bottom padding",
-			"type": "select",
-			"default": "block--padding-bottom-large",
-			"options": [
-			  {
-				"value": "block--padding-bottom-none",
-				"label": "None"
-			  },
-			  {
-				"value": "block--padding-bottom-half",
-				"label": "Small"
-			  },
-			  {
-				"value": "block--padding-bottom-large",
-				"label": "Medium"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Paddings"
-	    }
-	  ],
-	  "dividers": [
-		{
-			"id": "topDivider",
-			"label": "Top divider",
-			"type": "checkbox",
-			"default": false,
-			"tab": "Settings",
-			"group": "Dividers"
-		},
-		{
-			"id": "bottomDivider",
-			"label": "Bottom divider",
-			"type": "checkbox",
-			"default": false,
-			"tab": "Settings",
-			"group": "Dividers"
-	    }
-	  ],
-	  "title": [
-		{
-			"id": "title",
-			"label": "Title",
-			"type": "text",
-			"default": "Bring your ideas to life",
-			"tab": "Content",
-			"settings": [
-			  "TextColor",
-			  "Link",
-			  "Unlink"
-			]
-		}
-	  ],
-	  "subtitle": [
-	    {
-			"id": "subtitle",
-			"label": "Subtitle",
-			"type": "text",
-			"default": "Anything you've even dreamed about is possible to realise just at the moment when you decided to win.",
-			"tab": "Content",
-			"settings": [
-			  "TextColor",
-			  "NumberedList",
-			  "BulletedList",
-			  "Bold",
-			  "Italic",
-			  "Link",
-			  "Unlink",
-			  "Maximize",
-			  "Source"
-			]
-		}
-	  ],
-	  "title-font-size": [
-		  {
-			"id": "titleFontSize",
-			"label": "Title font size",
-			"type": "select",
-			"default": "medium",
-			"options": [
-			  {
-				"value": "small",
-				"label": "Small"
-			  },
-			  {
-				"value": "medium",
-				"label": "Medium"
-			  },
-			  {
-				"value": "large",
-				"label": "Large"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Typography"
-		  }
-	  ]
+      "paddings": [
+        {
+          "id": "topPadding",
+          "label": "Top padding",
+          "type": "select",
+          "default": "block--padding-top-large",
+          "options": [
+            {
+              "value": "block--padding-top-none",
+              "label": "None"
+            },
+            {
+              "value": "block--padding-top-half",
+              "label": "Small"
+            },
+            {
+              "value": "block--padding-top-large",
+              "label": "Medium"
+            }
+          ],
+          "tab": "Settings",
+          "group": "Paddings"
+        },
+        {
+          "id": "bottomPadding",
+          "label": "Bottom padding",
+          "type": "select",
+          "default": "block--padding-bottom-large",
+          "options": [
+            {
+              "value": "block--padding-bottom-none",
+              "label": "None"
+            },
+            {
+              "value": "block--padding-bottom-half",
+              "label": "Small"
+            },
+            {
+              "value": "block--padding-bottom-large",
+              "label": "Medium"
+            }
+          ],
+          "tab": "Settings",
+          "group": "Paddings"
+        }
+      ],
+      "dividers": [
+        {
+          "id": "topDivider",
+          "label": "Top divider",
+          "type": "checkbox",
+          "default": false,
+          "tab": "Settings",
+          "group": "Dividers"
+        },
+        {
+          "id": "bottomDivider",
+          "label": "Bottom divider",
+          "type": "checkbox",
+          "default": false,
+          "tab": "Settings",
+          "group": "Dividers"
+        }
+      ],
+      "title": [
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text",
+          "default": "Bring your ideas to life",
+          "tab": "Content",
+          "settings": [
+            "TextColor",
+            "Link",
+            "Unlink"
+          ]
+        }
+      ],
+      "subtitle": [
+        {
+          "id": "subtitle",
+          "label": "Subtitle",
+          "type": "text",
+          "default": "Anything you've even dreamed about is possible to realise just at the moment when you decided to win.",
+          "tab": "Content",
+          "settings": [
+            "TextColor",
+            "NumberedList",
+            "BulletedList",
+            "Bold",
+            "Italic",
+            "Link",
+            "Unlink",
+            "Maximize",
+            "Source"
+          ]
+        }
+      ],
+      "title-font-size": [
+        {
+          "id": "titleFontSize",
+          "label": "Title font size",
+          "type": "select",
+          "default": "medium",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ],
+          "tab": "Settings",
+          "group": "Typography"
+        }
+      ]
     }
   },
   "cover-with-simple-text": {
@@ -1157,7 +1187,7 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
-	  "title-font-size",
+      "title-font-size",
       "seo-subtitle",
       "seo-note",
       "headings"
@@ -2422,14 +2452,14 @@
         "tab": "Settings",
         "group": "Paddings"
       },
-	  {
-		"id": "useReducedPaddings",
-		"label": "Use reduced paddings",
-		"type": "checkbox",
-		"default": false,
-		"tab": "Settings",
-		"group": "Paddings"
-	  },
+      {
+        "id": "useReducedPaddings",
+        "label": "Use reduced paddings",
+        "type": "checkbox",
+        "default": false,
+        "tab": "Settings",
+        "group": "Paddings"
+      },
       {
         "id": "topDivider",
         "label": "Top divider",
@@ -2560,8 +2590,8 @@
           "TextColor",
           "Link",
           "Unlink",
-		  "FontSize",
-		  "Source"
+          "FontSize",
+          "Source"
         ]
       },
       {
@@ -2579,7 +2609,7 @@
           "Link",
           "Unlink",
           "Maximize",
-		  "FontSize",
+          "FontSize",
           "Source"
         ]
       },
@@ -2593,8 +2623,8 @@
           "TextColor",
           "Link",
           "Unlink",
-		  "FontSize",
-		  "Source"
+          "FontSize",
+          "Source"
         ]
       },
       {
@@ -4765,10 +4795,10 @@
         "id": "formFields",
         "label": "Fields",
         "type": "popup-list",
-		"options": {
-		  "width": "70%",
-		  "max-height": "70%"
-		},
+        "options": {
+          "width": "70%",
+          "max-height": "70%"
+        },
         "addText": "Add field",
         "removeText": "Remove field",
         "displayField": "labelText",
@@ -6778,44 +6808,44 @@
               "Source"
             ]
           },
-		  {
-			"id": "subtitleSeoTag",
-			"label": "Subtitle SEO tag",
-			"type": "select",
-			"default": "none",
-			"options": [
-			  {
-				"value": "h1",
-				"label": "H1"
-			  },
-			  {
-				"value": "h2",
-				"label": "H2"
-			  },
-			  {
-				"value": "h3",
-				"label": "H3"
-			  },
-			  {
-				"value": "h4",
-				"label": "H4"
-			  },
-			  {
-				"value": "h5",
-				"label": "H5"
-			  },
-			  {
-				"value": "h6",
-				"label": "H6"
-			  },
-			  {
-				"value": "none",
-				"label": "None"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Typography"
-		  },
+          {
+            "id": "subtitleSeoTag",
+            "label": "Subtitle SEO tag",
+            "type": "select",
+            "default": "none",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              },
+              {
+                "value": "none",
+                "label": "None"
+              }
+            ],
+            "tab": "Settings",
+            "group": "Typography"
+          },
           {
             "id": "image",
             "type": "image",
@@ -6882,7 +6912,7 @@
     "displayField": "title",
     "category": "References and Quotes",
     "includeShared": [
-	  "title-font-size",
+      "title-font-size",
       "seo-subtitle",
       "headings"
     ],
@@ -11715,36 +11745,36 @@
     "icon": "image-text",
     "displayField": "name",
     "category": "Archive",
-	"includeShared": [
-		"title",
-		"subtitle",
-		"paddings",
-		"dividers"
-	],
+    "includeShared": [
+      "title",
+      "subtitle",
+      "paddings",
+      "dividers"
+    ],
     "settings": [
-		{
-          "id": "backgroundColor",
-          "label": "Colour",
-          "type": "select",
-          "default": "block--bg-white",
-          "options": [
-            {
-              "value": "block--bg-white",
-              "label": "White"
-            },
-            {
-              "value": "block--bg-light",
-              "label": "Gray"
-            },
-            {
-              "value": "block--bg-orange",
-              "label": "Orange"
-            }
-          ],
-          "tab": "Settings",
-          "group": "Background"
-        }
-	]
+      {
+        "id": "backgroundColor",
+        "label": "Colour",
+        "type": "select",
+        "default": "block--bg-white",
+        "options": [
+          {
+            "value": "block--bg-white",
+            "label": "White"
+          },
+          {
+            "value": "block--bg-light",
+            "label": "Gray"
+          },
+          {
+            "value": "block--bg-orange",
+            "label": "Orange"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      }
+    ]
   },
   "image-with-text-overlay": {
     "hide": true,
@@ -12420,34 +12450,39 @@
         "request": {
           "url": "api/members/search",
           "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
+          "label": "name",
+          "body": {
             "memberId": null,
             "deepSearch": true,
             "responseGroup": "Full",
             "sort": "memberType:desc;name:asc",
             "searchPhrase": "isAuthor:true"
+          },
+          "response": {
+            "result": "results",
+            "isArray": true,
+            "value": [
+              "id",
+              "firstName",
+              "name",
+              "lastName",
+              "photoUrl",
+              {
+                "key": "jobTitle",
+                "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "biography",
+                "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                "isArray": false
+              },
+              {
+                "key": "linkedinLink",
+                "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                "isArray": false
+              }
+            ]
           }
         },
         "options": [
