@@ -8009,6 +8009,10 @@ code {
     }
 }
 
+.block .form fieldset {
+    border: none;
+}
+
 .block .block__note2 {
     font-size: 0.875rem;
     max-width: 18.75rem;

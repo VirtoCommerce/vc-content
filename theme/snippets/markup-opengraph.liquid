@@ -24,7 +24,7 @@
 
     <meta property="og:url" content="{{ canonical_url | absolute_url }}" />
     {% if page_settings.markup_webpage_image %}
-    <meta property="og:image" content="{{ page_settings.markup_webpage_image }}" />
+    <meta property="og:image" content="{{ page_settings.markup_webpage_image.url }}" />
     {% else %}
         {% if settings.markup_website_default_image.url %}
         <meta property="og:image" content="{{ settings.markup_website_default_image.url }}" />

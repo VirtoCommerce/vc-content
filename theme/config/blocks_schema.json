@@ -56,107 +56,117 @@
     "static": "top",
     "icon": "header",
     "settings": [
-      {
-        "id": "category",
-        "label": "Category",
-        "type": "select",
-        "options": [
-          {
-            "value": "technical",
-            "label": "Technical"
-          },
-          {
-            "value": "events",
-            "label": "Events"
-          },
-          {
-            "value": "blogs",
-            "label": "Blogs"
-          },
-          {
-            "value": "pressreleases",
-            "label": "Press Releases"
-          }
-        ]
-      },
-      {
-        "id": "title",
-        "label": "Title",
-        "type": "string"
-      },
-      {
-        "id": "date",
-        "label": "Date",
-        "type": "calendar"
-      },
-      {
-        "id": "excerpt",
-        "label": "Excerpt",
-        "type": "string",
-        "multiline": true
-      },
-      {
-        "id": "main-image",
-        "label": "Main image",
-        "type": "image",
-        "inline": true
-      },
-      {
-        "id": "author",
-        "label": "Author",
-        "type": "select",
-        "equalKey": "id",
-        "request": {
-          "url": "api/members/search",
-          "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
-            "memberId": null,
-            "deepSearch": true,
-            "responseGroup": "Full",
-            "sort": "memberType:desc;name:asc",
-            "searchPhrase": "isAuthor:true"
-          }
+        {
+            "id": "category",
+            "label": "Category",
+            "type": "select",
+            "options": [
+                {
+                    "value": "technical",
+                    "label": "Technical"
+                },
+                {
+                    "value": "events",
+                    "label": "Events"
+                },
+                {
+                    "value": "blogs",
+                    "label": "Blogs"
+                },
+                {
+                    "value": "pressreleases",
+                    "label": "Press Releases"
+                }
+            ]
         },
-        "options": [{"label": "[none]", "value": null}]
-      },
-      {
-        "id": "is-sticked",
-        "label": "Sticked",
-        "type": "checkbox",
-        "default": false
-      },
-	  {
-		"id": "stickedOverlayColor",
-		"type": "color",
-		"label": "Sticked overlay color"
-	  },
-	  {
-		"id": "stickedFontColor",
-		"type": "color",
-		"label": "Sticked font color"
-	  }
+        {
+            "id": "title",
+            "label": "Title",
+            "type": "string"
+        },
+        {
+            "id": "date",
+            "label": "Date",
+            "type": "calendar"
+        },
+        {
+            "id": "excerpt",
+            "label": "Excerpt",
+            "type": "string",
+            "multiline": true
+        },
+        {
+            "id": "main-image",
+            "label": "Main image",
+            "type": "image",
+            "inline": true
+        },
+        {
+            "id": "author",
+            "label": "Author",
+            "type": "select",
+            "equalKey": "id",
+            "request": {
+                "url": "api/members/search",
+                "method": "post",
+                "label": "name",
+                "response": {
+                    "result": "results",
+                    "isArray": true,
+                    "value": [
+                        "id",
+                        "firstName",
+                        "name",
+                        "lastName",
+                        "photoUrl",
+                        {
+                            "key": "jobTitle",
+                            "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "biography",
+                            "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "linkedinLink",
+                            "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                            "isArray": false
+                        }
+                    ]
+                },
+                "body": {
+                    "memberId": null,
+                    "deepSearch": true,
+                    "responseGroup": "Full",
+                    "sort": "memberType:desc;name:asc",
+                    "searchPhrase": "isAuthor:true"
+                }
+            },
+            "options": [
+                {
+                    "label": "[none]",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "id": "is-sticked",
+            "label": "Sticked",
+            "type": "checkbox",
+            "default": false
+        },
+        {
+            "id": "stickedOverlayColor",
+            "type": "color",
+            "label": "Sticked overlay color"
+        },
+        {
+            "id": "stickedFontColor",
+            "type": "color",
+            "label": "Sticked font color"
+        }
     ]
   },
   "glossary-settings": {
@@ -197,46 +207,56 @@
         "type": "string",
         "multiline": true
       },
-      {
-        "id": "author",
-        "label": "Author",
-        "type": "select",
-        "equalKey": "id",
-        "request": {
-          "url": "api/members/search",
-          "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
+        {
+            "id": "author",
+            "label": "Author",
+            "type": "select",
+            "equalKey": "id",
+            "request": {
+                "url": "api/members/search",
+                "method": "post",
+                "label": "name",
+                "response": {
+                    "result": "results",
+                    "isArray": true,
+                    "value": [
+                        "id",
+                        "firstName",
+                        "name",
+                        "lastName",
+                        "photoUrl",
+                        {
+                            "key": "jobTitle",
+                            "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "biography",
+                            "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "linkedinLink",
+                            "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                            "isArray": false
+                        }
+                    ]
+                },
+                "body": {
+                    "memberId": null,
+                    "deepSearch": true,
+                    "responseGroup": "Full",
+                    "sort": "memberType:desc;name:asc",
+                    "searchPhrase": "isAuthor:true"
+                }
             },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
-            "memberId": null,
-            "deepSearch": true,
-            "responseGroup": "Full",
-            "sort": "memberType:desc;name:asc",
-            "searchPhrase": "isAuthor:true"
-          }
-        },
-        "options": [{"label": "[none]", "value": null}]
-      }
+            "options": [
+                {
+                    "label": "[none]",
+                    "value": null
+                }
+            ]
+        }
     ]
   },
   "webpage-settings": {
@@ -248,88 +268,98 @@
     "static": "top",
     "icon": "header",
     "settings": [
-      {
-        "type": "header",
-        "content": "Structured data"
-      },
-      {
-        "id": "markup_webpage_title",
-        "label": "Page title",
-        "type": "string"
-      },
-      {
-        "id": "markup_webpage_description",
-        "label": "Page meta description",
-        "type": "string",
-        "multiline": true
-      },
-	  {
-		"id": "markup_webpage_type",
-		"label": "Page meta type",
-		"type": "string"
-	  },
-      {
-        "type": "image",
-        "id": "markup_webpage_image",
-        "label": "Page image"
-      },
-      {
-        "id": "markup_webpage_date_created",
-        "label": "Date created",
-        "type": "calendar"
-      },
-      {
-        "id": "author",
-        "label": "Author",
-        "type": "select",
-        "equalKey": "id",
-        "request": {
-          "url": "api/members/search",
-          "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
-            "memberId": null,
-            "deepSearch": true,
-            "responseGroup": "Full",
-            "sort": "memberType:desc;name:asc",
-            "searchPhrase": "isAuthor:true"
-          }
+        {
+            "type": "header",
+            "content": "Structured data"
         },
-        "options": [{"label": "[none]", "value": null}]
-      },
-	  {
-		"id": "isGenerateCanonicalTag",
-		"label": "Generate canonical tag",
-		"type": "checkbox",
-		"default": false
-	  },
-	  {
-		"id": "isGenerateNoFollowMeta",
-		"label": "Generate nofollow meta",
-		"type": "checkbox",
-		"default": false
-	  }
+        {
+            "id": "markup_webpage_title",
+            "label": "Page title",
+            "type": "string"
+        },
+        {
+            "id": "markup_webpage_description",
+            "label": "Page meta description",
+            "type": "string",
+            "multiline": true
+        },
+        {
+            "id": "markup_webpage_type",
+            "label": "Page meta type",
+            "type": "string"
+        },
+        {
+            "type": "image",
+            "id": "markup_webpage_image",
+            "label": "Page image"
+        },
+        {
+            "id": "markup_webpage_date_created",
+            "label": "Date created",
+            "type": "calendar"
+        },
+        {
+            "id": "author",
+            "label": "Author",
+            "type": "select",
+            "equalKey": "id",
+            "request": {
+                "url": "api/members/search",
+                "method": "post",
+                "label": "name",
+                "response": {
+                    "result": "results",
+                    "isArray": true,
+                    "value": [
+                        "id",
+                        "firstName",
+                        "name",
+                        "lastName",
+                        "photoUrl",
+                        {
+                            "key": "jobTitle",
+                            "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "biography",
+                            "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "linkedinLink",
+                            "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                            "isArray": false
+                        }
+                    ]
+                },
+                "body": {
+                    "memberId": null,
+                    "deepSearch": true,
+                    "responseGroup": "Full",
+                    "sort": "memberType:desc;name:asc",
+                    "searchPhrase": "isAuthor:true"
+                }
+            },
+            "options": [
+                {
+                    "label": "[none]",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "id": "isGenerateCanonicalTag",
+            "label": "Generate canonical tag",
+            "type": "checkbox",
+            "default": false
+        },
+        {
+            "id": "isGenerateNoFollowMeta",
+            "label": "Generate nofollow meta",
+            "type": "checkbox",
+            "default": false
+        }
     ]
   },
   "footer": {
@@ -1809,6 +1839,10 @@
                 "value": "hidden",
                 "label": "Hidden"
               },
+			  {
+				"value": "label",
+				"label": "Label"
+			  },
               {
                 "value": "phone",
                 "label": "Phone"
@@ -1949,6 +1983,28 @@
                 "id": "isDisabled",
                 "type": "checkbox",
                 "label": "Disabled"
+              }
+            ]
+          },
+          {
+            "id": "labels",
+            "label": "Labels",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
+            "addText": "Add label",
+            "removeText": "Remove label",
+            "element": [
+              {
+                "id": "label",
+                "type": "string",
+                "label": "Label"
+              },
+              {
+                "id": "value",
+                "type": "string",
+                "label": "Value"
               }
             ]
           }
@@ -3763,6 +3819,10 @@
                 "value": "hidden",
                 "label": "Hidden"
               },
+			  {
+				"value": "label",
+				"label": "Label"
+			  },
               {
                 "value": "phone",
                 "label": "Phone"
@@ -3904,6 +3964,28 @@
                 "id": "isDisabled",
                 "type": "checkbox",
                 "label": "Disabled"
+              }
+            ]
+          },
+          {
+            "id": "labels",
+            "label": "Labels",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
+            "addText": "Add label",
+            "removeText": "Remove label",
+            "element": [
+              {
+                "id": "label",
+                "type": "string",
+                "label": "Label"
+              },
+              {
+                "id": "value",
+                "type": "string",
+                "label": "Value"
               }
             ]
           }
@@ -4277,6 +4359,10 @@
                 "value": "hidden",
                 "label": "Hidden"
               },
+			  {
+				"value": "label",
+				"label": "Label"
+			  },
               {
                 "value": "phone",
                 "label": "Phone"
@@ -4418,6 +4504,28 @@
                 "id": "isDisabled",
                 "type": "checkbox",
                 "label": "Disabled"
+              }
+            ]
+          },
+          {
+            "id": "labels",
+            "label": "Labels",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
+            "addText": "Add label",
+            "removeText": "Remove label",
+            "element": [
+              {
+                "id": "label",
+                "type": "string",
+                "label": "Label"
+              },
+              {
+                "id": "value",
+                "type": "string",
+                "label": "Value"
               }
             ]
           }
@@ -7447,9 +7555,20 @@
       {
         "id": "text",
         "label": "Text",
-        "type": "string",
+        "type": "text",
         "default": "We chose Virto Commerce for Lavazza because it is the only ecommerce platform that has the functionality, flexibility, and scalability we need – today and long-term",
         "tab": "Content",
+        "settings": [
+          "TextColor",
+          "NumberedList",
+          "BulletedList",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+          "Maximize",
+          "Source"
+        ],
         "group": "Review"
       },
       {
@@ -12320,147 +12439,152 @@
     "icon": "text-columns",
     "category": "Queries and Other",
     "settings": [
-      {
-        "id": "style",
-        "label": "Block style",
-        "type": "select",
-        "default": "light",
-        "options": [
-          {
-            "value": "light",
-            "label": "Light"
-          },
-          {
-            "value": "dark",
-            "label": "Dark"
-          }
-        ],
-        "tab": "Settings"
-      },
-      {
-        "id": "title",
-        "label": "Title",
-        "type": "string"
-      },
-      {
-        "id": "itemsType",
-        "label": "Items type",
-        "type": "select",
-        "options": [
-          {
-            "value": "query",
-            "label": "Query"
-          },
-          {
-            "value": "fixed-items",
-            "label": "Fixed Items"
-          }
-        ]
-      },
-      {
-        "id": "count",
-        "label": "Count",
-        "type": "number",
-        "default": "3"
-      },
-      {
-        "id": "sourceType",
-        "label": "Source type",
-        "type": "select",
-        "options": [
-          {
-            "value": "blog",
-            "label": "Blog"
-          },
-          {
-            "value": "glossary",
-            "label": "Glossary"
-          },
-          {
-            "value": "case-studies",
-            "label": "Case Studies"
-          },
-          {
-            "value": "white-papers",
-            "label": "White Papers"
-          }
-        ]
-      },
-      {
-        "id": "queryType",
-        "label": "Query type",
-        "type": "select",
-        "options": [
-          {
-            "value": "last-items",
-            "label": "Last Items"
-          },
-          {
-            "value": "by-author",
-            "label": "By Author"
-          }
-        ]
-      },
-      {
-        "id": "author",
-        "label": "Author",
-        "type": "select",
-        "equalKey": "id",
-        "request": {
-          "url": "api/members/search",
-          "method": "post",
-          "label": "fullName",
-          "value": [
-            "id",
-            "firstName",
-            "lastName",
-            "photoUrl",
-            {
-              "key": "jobTitle",
-              "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "biography",
-              "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
-              "isArray": false
-            },
-            {
-              "key": "linkedinLink",
-              "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
-              "isArray": false
-            }
-          ],
-          "params": {
-            "memberId": null,
-            "deepSearch": true,
-            "responseGroup": "Full",
-            "sort": "memberType:desc;name:asc",
-            "searchPhrase": "isAuthor:true"
-          }
+        {
+            "id": "style",
+            "label": "Block style",
+            "type": "select",
+            "default": "light",
+            "options": [
+                {
+                    "value": "light",
+                    "label": "Light"
+                },
+                {
+                    "value": "dark",
+                    "label": "Dark"
+                }
+            ],
+            "tab": "Settings"
         },
-        "options": [
-          {
-            "value": " ",
-            "label": " "
-          }
-        ]
-      },
-      {
-        "id": "items",
-        "label": "Items",
-        "type": "list",
-        "addText": "Add item",
-        "removeText": "Remove item",
-        "displayField": "title",
-        "element": [
-          {
-            "id": "text",
-            "label": "Blog permalink",
+        {
+            "id": "title",
+            "label": "Title",
             "type": "string"
-          }
-        ]
-      }
+        },
+        {
+            "id": "itemsType",
+            "label": "Items type",
+            "type": "select",
+            "options": [
+                {
+                    "value": "query",
+                    "label": "Query"
+                },
+                {
+                    "value": "fixed-items",
+                    "label": "Fixed Items"
+                }
+            ]
+        },
+        {
+            "id": "count",
+            "label": "Count",
+            "type": "number",
+            "default": "3"
+        },
+        {
+            "id": "sourceType",
+            "label": "Source type",
+            "type": "select",
+            "options": [
+                {
+                    "value": "blog",
+                    "label": "Blog"
+                },
+                {
+                    "value": "glossary",
+                    "label": "Glossary"
+                },
+                {
+                    "value": "case-studies",
+                    "label": "Case Studies"
+                },
+                {
+                    "value": "white-papers",
+                    "label": "White Papers"
+                }
+            ]
+        },
+        {
+            "id": "queryType",
+            "label": "Query type",
+            "type": "select",
+            "options": [
+                {
+                    "value": "last-items",
+                    "label": "Last Items"
+                },
+                {
+                    "value": "by-author",
+                    "label": "By Author"
+                }
+            ]
+        },
+        {
+            "id": "author",
+            "label": "Author",
+            "type": "select",
+            "equalKey": "id",
+            "request": {
+                "url": "api/members/search",
+                "method": "post",
+                "label": "name",
+                "body": {
+                    "memberId": null,
+                    "deepSearch": true,
+                    "responseGroup": "Full",
+                    "sort": "memberType:desc;name:asc",
+                    "searchPhrase": "isAuthor:true"
+                },
+                "response": {
+                    "result": "results",
+                    "isArray": true,
+                    "value": [
+                        "id",
+                        "firstName",
+                        "name",
+                        "lastName",
+                        "photoUrl",
+                        {
+                            "key": "jobTitle",
+                            "query": "$..dynamicProperties[?(@.name=='jobTitle')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "biography",
+                            "query": "$..dynamicProperties[?(@.name=='biography')].values..value",
+                            "isArray": false
+                        },
+                        {
+                            "key": "linkedinLink",
+                            "query": "$..dynamicProperties[?(@.name=='linkedinLink')].values..value",
+                            "isArray": false
+                        }
+                    ]
+                }
+            },
+            "options": [
+                {
+                    "value": " ",
+                    "label": " "
+                }
+            ]
+        },
+        {
+            "id": "items",
+            "label": "Items",
+            "type": "list",
+            "addText": "Add item",
+            "removeText": "Remove item",
+            "displayField": "title",
+            "element": [
+                {
+                    "id": "text",
+                    "label": "Blog permalink",
+                    "type": "string"
+                }
+            ]
+        }
     ]
   },
   "text-over-image-test": {

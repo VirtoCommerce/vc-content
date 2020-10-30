@@ -96,6 +96,17 @@
                                             </div>
                                             {% include 'form-validation-message' inputItem: item %}
                                         </div>
+                                    {% elsif item.fieldType == 'label' %}
+                                        <fieldset {% if item.fieldId != '' %}id="{{item.fieldId}}"{% endif %} class="form-group" {% include 'input-validation-attributes' inputItem: item %}>
+                                            <legend class="form-label">{{item.labelText}}</legend>
+                                            {% for input in item.labels %}
+                                                <div class="form-group">
+                                                    <input type="checkbox" class="form-checkbox__input" id="{{item.fieldName}}{{forloop.index}}" name="{{item.fieldName}}" />
+                                                    <label class="form-checkbox__label" for="{{item.fieldName}}{{forloop.index}}">{{input.label}}</label>
+                                                </div>
+                                            {% endfor %}
+                                            {% include 'form-validation-message' inputItem: item %}
+                                        </fieldset>
                                     {% elsif item.fieldType == 'button' %}
                                         <input type="submit" class="{{block.formSubmitButtonStyle}}" value="{{item.labelText}}" />
                                     {% elsif item.fieldType == 'textarea' %}
