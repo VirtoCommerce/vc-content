@@ -1,11 +1,13 @@
 <rewrite>
     <rewriteMaps>
         <rewriteMap name="VC-redirects">
-            <add key="/become-partner" value="/partner-form-become-technology-partner" />		
+            <add key="/become-partner" value="/partner-form-become-technology-partner" />
             <add key="/find-implementation-partner" value="/b2b-ecommerce-implementation" />
-            <add key="/%7B%7B%20article.url%20%7D%7D" value="/" />
             <add key="/%EF%BC%89%EF%BC%8C%E5%9B%BD%E5%A4%96%E7%94%A8.net" value="/" />
+            <add key="/{{article.url}}" value="/blog" />
             <add key="/{{ article.url }}" value="/" />
+			<add key="/%7B%7B%20article.url%20%7D%7D" value="/" />
+			<add key="/{{ glossary.url }}" value="/glossary" />
             <add key="/account" value="vc-community" />
             <add key="/admin/api/licenses/activate/" value="/" />
             <add key="/apps/CMSExtensions" value="/" />
