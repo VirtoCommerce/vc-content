@@ -127,7 +127,7 @@
             {% include 'footer' %}
         </div>
     </div>
-    {{ 'main.min.js' | asset_url | script_tag }}
+    {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
     <script src="{{ '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js' }}" async></script>
     {{ 'angular-bundle-blog.min.js' | asset_url | script_tag }}
     {{ '//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js' | script_tag }}

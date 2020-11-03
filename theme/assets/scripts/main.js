@@ -182,6 +182,23 @@ $(function () {
                     complete: () => submitBtn.removeAttr('disabled')
                 });
 
+                var results = $.map($(this).closest('form').find('fieldset'), function (element) {
+                    var question = $(element).find('legend').text();
+                    var variants = $.map($(element).find('input[value="true"]'), i => $(i).next().text()).join(', ');
+                    return `${question}: ${variants}`;
+                }).join('; ');
+
+                $.ajax({
+                    method: 'POST',
+                    url: `/${shopId}/${cultureName}/call`,
+                    data: {
+                        url: document.location.pathname,
+                        formId: form.attr('id'),
+                        results: results
+                    },
+                    headers: { 'X-XSRF-TOKEN': token, service: 'SurveyCollector' }
+                });
+
                 setTimeout(function () {
                     var requestIsSent = !request.status;
                     if (requestIsSent || (request.status && request.status >= 200 && request.status < 400)) {

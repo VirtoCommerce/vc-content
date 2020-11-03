@@ -55,7 +55,7 @@
             {% include 'footer' %}
         </div>
     </div>
-    {{ 'main.min.js' | asset_url | script_tag }}
+    {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
     {{ 'angular-bundle-default.min.js' | asset_url | script_tag }}
 </body>
 </html>
