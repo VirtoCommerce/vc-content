@@ -2751,6 +2751,13 @@
         "group": "Main block settings"
       },
       {
+        "id": "fixedImageWidth",
+        "label": "Fixed image width",
+        "type": "checkbox",
+        "default": false,
+        "tab": "Settings"
+      },
+      {
         "id": "topDivider",
         "label": "Top divider",
         "type": "checkbox",

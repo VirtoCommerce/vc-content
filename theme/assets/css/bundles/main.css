@@ -8039,6 +8039,11 @@ code {
     width: 25rem;
 }
 
+.block .block__form--auto,
+    .block .block__media--auto {
+    width: auto;
+}
+
 @media (max-width: 767.98px) {
     .block .block__form,
       .block .block__media {

@@ -717,6 +717,11 @@
 		flex: 0 0 28.75rem;
 		width: 25rem;
 
+        &--auto
+        {
+            width: auto;
+        }
+
 		@include media-breakpoint-down(sm) {
 			flex-basis: auto;
 			flex-grow: 1;
