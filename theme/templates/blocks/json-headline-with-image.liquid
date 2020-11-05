@@ -8,8 +8,12 @@
             {% capture image_container %}
                 <div class="col-lg-auto">
                     {% if block.containerImage.url != '' %}
-                        <div class="block__media {% if block.fixedImageWidth == 'True' %}block__media--auto{% endif %}">
-                            <img data-src="{{ block.containerImage.url | image_url }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
+                        <div class="block__media {% if block.fixedImageSize == 'True' %}block__media--auto{% endif %}">
+                            {% if block.fixedImageSize == 'True' %}
+                                <img data-src="{{ block.containerImage.url | image_url: block.imageWidth, block.imageHeight }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
+                            {% else %}
+                                <img data-src="{{ block.containerImage.url | image_url }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
+                            {% endif %}
                         </div>
                     {% endif %}
                 </div>

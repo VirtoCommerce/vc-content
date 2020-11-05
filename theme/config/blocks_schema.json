@@ -2751,13 +2751,6 @@
         "group": "Main block settings"
       },
       {
-        "id": "fixedImageWidth",
-        "label": "Fixed image width",
-        "type": "checkbox",
-        "default": false,
-        "tab": "Settings"
-      },
-      {
         "id": "topDivider",
         "label": "Top divider",
         "type": "checkbox",
@@ -3005,6 +2998,25 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+      {
+        "id": "fixedImageSize",
+        "label": "Fixed image size",
+        "type": "checkbox",
+        "default": false,
+        "tab": "Settings"
+      },
+	  {
+		"id": "imageHeight",
+		"label": "Image height",
+		"type": "number",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageWidth",
+		"label": "Image width",
+		"type": "number",
+		"tab": "Settings"
+	  },
       {
         "id": "topDivider",
         "label": "Top divider",
