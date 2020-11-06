@@ -164,6 +164,19 @@
         &-reduced
         {
             padding-bottom: 1.5625rem;
+
+            .block__descr
+            {
+                p,
+                ul,
+                ol
+                {
+                    &:last-child
+                    {
+                        margin-bottom: 0;
+                    }
+                }
+            }
         }
 	}
 

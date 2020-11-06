@@ -7583,6 +7583,12 @@ code {
     padding-bottom: 1.5625rem;
 }
 
+.block--padding-bottom-half-reduced .block__descr p:last-child,
+      .block--padding-bottom-half-reduced .block__descr ul:last-child,
+      .block--padding-bottom-half-reduced .block__descr ol:last-child {
+    margin-bottom: 0;
+}
+
 .block--padding-top-large {
     padding-top: 6.25rem;
 }
