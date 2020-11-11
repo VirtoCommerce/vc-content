@@ -12,6 +12,19 @@
     <div class="block {{alignment}} {% include 'cover-background-settings' %}>
         <div class="block__inner container">
             <div class="row justify-content-center">
+                {% capture column %}
+                    {% assign column_area_width = block.textAreaWidth | split: '-' | last | plus: 0 %}
+                    {% assign col_class = 'col-lg' %}
+                    {% if column_area_width != 0 %}
+                        {% assign col_class = col_class | append: '-' | append: (12 | minus: column_area_width) %}
+                        <div class="{{col_class}}"></div>
+                    {% endif %}
+                {% endcapture %}
+
+                {% if block.horizontalAlignment == 'right' %}
+                    {{column}}
+                {% endif %}
+
                 <div class="block__text {{block.textAreaWidth}}">
                     {% if block.note != '' %}
                         {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
@@ -39,6 +52,10 @@
                         </div>
                     {% endif %}
                 </div>
+
+                {% if block.horizontalAlignment == 'left' %}
+                    {{column}}
+                {% endif %}
             </div>
         </div>
     </div>
