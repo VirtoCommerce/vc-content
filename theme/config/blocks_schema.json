@@ -5763,6 +5763,24 @@
             "label": "Item image",
             "group": "Image"
           },
+		  {
+            "id": "hoverImage",
+            "type": "image",
+            "label": "Item hover image",
+            "group": "Image"
+          },
+		  {
+			"id": "height",
+			"type": "number",
+			"label": "Image height",
+			"group": "Image"
+		  },
+		  {
+			"id": "width",
+			"type": "number",
+			"label": "Image width",
+			"group": "Image"
+		  },
           {
             "id": "url",
             "type": "string",
@@ -5779,6 +5797,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           },
@@ -5786,6 +5806,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           },
@@ -5793,6 +5815,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           },
@@ -5800,6 +5824,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           }
@@ -6137,8 +6163,8 @@
         "label": "Fixed image width",
         "type": "checkbox",
         "default": false,
-        "tab": "Settings"
-      },
+		"tab": "Settings"
+	  },
       {
         "id": "topPadding",
         "label": "Top padding",

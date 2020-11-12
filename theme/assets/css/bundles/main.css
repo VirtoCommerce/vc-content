@@ -4775,7 +4775,7 @@ code {
 
 .block .list-partners .list__item {
     margin-bottom: 3.125rem;
-    padding: 0 1.25rem;
+    padding: 0 1.625rem;
     text-align: center;
 }
 
@@ -4803,6 +4803,39 @@ code {
     max-width: 100%;
     position: relative;
     z-index: 5;
+}
+
+.block .list-partners .list__pic-hover {
+    position: relative;
+}
+
+.block .list-partners .list__pic-hover::after, .block .list-partners .list__pic-hover::before {
+    background-size: contain;
+    bottom: 0;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.block .list-partners .list__pic-hover::after {
+    z-index: 5;
+}
+
+.block .list-partners .list__pic-hover::before {
+    opacity: 0;
+}
+
+.block .list-partners .list__pic-hover:hover::after {
+    opacity: 0;
+}
+
+.block .list-partners .list__pic-hover:hover::before {
+    opacity: 1;
+    z-index: 10;
 }
 
 .block .list-partners--centered.list-partners .list__img {
