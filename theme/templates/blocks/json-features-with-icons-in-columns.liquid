@@ -1,6 +1,7 @@
 <div id="{{ block.__id }}" class="block {{block.topPadding}} {{block.bottomPadding}}
     {% if block.topDivider == 'True' %} block--divider-top {% endif %}
     {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
+    {% if block.horizontalAlignment == 'left' %}block--align-left{% else %}block--align-center{% endif %}
     {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
     {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
     <div class="block__inner container">
@@ -21,53 +22,113 @@
         
         <div class="block__space block__space--size-lg"></div>
         {% if block.columns.size > 0 %}
-            <div class="list list-features list-features--cols-{{block.columnsCount}} {% if block.iconsType == 'letters' %} list-features--type-letters {% endif %}">
+            {% if block.columnsBorders == 'True' %}
+                {% assign bordersColor = '#dee2e6' %}
+                {% if block.columnsBordersColor != '' %}
+                    {% assign bordersColor = block.columnsBordersColor %}
+                {% endif %}
+
+                <style>
+                    {% capture border_style %}
+                        1px solid {{bordersColor}} !important;
+                    {% endcapture %}
+
+                    {% if block.columnsCount == 2 %}
+                        @media (min-width: 768px) {
+                            #{{block.__id}} .list-items .list__item:nth-child(odd) {
+                                border-right: {{border_style}}
+                            }
+                        }
+                    {% endif %}
+
+                    {% if block.columnsCount == 3 %}
+                        @media (min-width: 768px) {
+                            #{{block.__id}} .list-items .list__item:nth-child(3n+1) {
+                                border-right: {{border_style}}
+                            }
+
+                            #{{block.__id}} .list-items .list__item:nth-child(3n+2) {
+                                border-right: {{border_style}}
+                            }
+                        }
+                    {% endif %}
+
+                    {% if block.columnsCount == 4 %}
+                        @media (min-width: 991px) {
+                            #{{block.__id}} .list-items .list__item:nth-child(odd) {
+                                border-right: {{border_style}}
+                            }
+                            #{{block.__id}} .list-items .list__item:nth-child(4n+2) {
+                                border-right: {{border_style}}
+                            }
+                        }
+
+                        @media (min-width: 768px) and (max-width: 991px) {
+                            #{{block.__id}} .list-items .list__item:nth-child(odd) {
+                                border-right: {{border_style}}
+                            }
+                            #{{block.__id}} .list-items .list__item:not(:nth-last-child(-n+2)) {
+                                border-bottom: {{border_style}}
+                            }
+                        }
+                    {% endif %}
+                    
+                    {% assign offset = block.columns.size | modulo: block.columnsCount %}
+                    {% if offset == 0 %}
+                        {% assign offset = block.columnsCount %}
+                    {% endif %}
+
+                    @media (min-width: 768px) {
+                        #{{block.__id}} .list-items .list__item:nth-last-child(1n+{{offset | plus: 1}}) {
+                            border-bottom: {{border_style}}
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        #{{block.__id}} .list-items .list__item:not(:last-child) {
+                            border-bottom: {{border_style}}
+                        }
+                    }
+                </style>
+            {% endif %}
+            
+            {% if block.columnsTitlesHoverColor != '' %}
+                <style>
+                    #{{block.__id}} .list-items .list__item:hover .list__t {
+                        color: {{block.columnsTitlesHoverColor}};
+                    }
+                </style>
+            {% endif %}
+
+            <div class="list list-items list-items--bordered list-items--cols-{{block.columnsCount}} {% if block.iconsType == 'letters' %} list-features--type-letters {% endif %}">
                 {% for column in block.columns %}
                     <div class="list__item">
-                        {% assign index = 0 %}
                         <div class="list__inner">
                             {% if block.iconsType == 'numbers' or block.iconsType == 'letters' %}
                                 <div class="list__num list__num-{{block.iconsFilling}} {% if block.iconsAreFilled == 'True' %} list__num--filled-{{block.iconsFilling}} {% endif %}"></div>
-                                {% assign index = index | plus: 1 %}
                             {% endif %}
                             {% if block.iconsType == 'customIcon' %}
                                 {% if column.image.url != '' %}
                                     <div class="list__image lazyload" title="{{column.image.altText}}" data-bg="{{ column.image.url | image_url }}"></div>
-                                    {% assign index = index | plus: 1 %}
                                 {% endif %}
                             {% endif %}
                             {% if block.iconsType == 'images' %}
                                 {% if column.image.url != '' %}
                                     <img data-src="{{ column.image.url | image_url }}" title="{{column.image.altText}}" class="list__ico lazyload" />
-                                    {% assign index = index | plus: 1 %}
                                 {% endif %}
                             {% endif %}
                             {% if column.title != '' %}
                                 {% include 'seo-text' tag: column.titleSeoTag, text: column.title, class: 'list__t' %}
-                                {% assign index = index | plus: 1 %}
                             {% endif %}
                             {% if column.subtitle != '' %}
                                 {% include 'seo-text' tag: column.subtitleSeoTag, text: column.subtitle, class: 'list__descr' %}
-                                {% assign index = index | plus: 1 %}
                             {% endif %}
                             {% if column.button != '' and column.button.urlText != '' %}
                                 <div class="block__space"></div>
                                 <div class="block__actions">
                                     <a href="{{column.button.url}}" class="{{column.button.style}} btn--w-auto" {% if column.buttonIsNewWindow == 'True' %} target="_blank" {% endif %}>{{column.button.urlText}}</a>
                                 </div>
-                                {% assign index = index | plus: 1 %}
                             {% endif %}
-
-                            {% assign index = (index | minus: 2) %}
-                            {% if index <= 0 %}
-                                {% assign index = 1 %}
-                            {% endif %}
-                            <style>
-                                #{{block.__id}} .list-features .list__inner
-                                {
-                                    grid-template-rows: repeat({{index}}, 1fr) max-content;
-                                }
-                            </style>
                         </div>
                     </div>
                 {% endfor %}

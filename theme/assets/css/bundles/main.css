@@ -4698,6 +4698,18 @@ code {
     }
 }
 
+.block .list-items--bordered.list-items .list__item {
+    padding: 0 2.25rem;
+}
+
+.block .list-items--bordered.list-items .list__item .list__inner {
+    margin-top: 2.25rem;
+}
+
+.block .list-items--bordered.list-items .block__actions {
+    margin-bottom: 1.25rem;
+}
+
 .block .list-cards {
     display: flex;
     flex-wrap: wrap;

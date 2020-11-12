@@ -544,6 +544,24 @@
             max-width: 100%;
         }
     }
+
+    &.list-items--bordered
+    {
+        .list__item
+        {
+            padding: 0 2.25rem;
+
+            .list__inner
+            {
+                margin-top: 2.25rem;
+            }
+        }
+
+        .block__actions
+        {
+            margin-bottom: 1.25rem;
+        }
+    }
 }
 
 %list-cards
