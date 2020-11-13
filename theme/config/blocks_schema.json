@@ -6162,7 +6162,20 @@
         "id": "fixedImageWidth",
         "label": "Fixed image width",
         "type": "checkbox",
-        "default": false,
+        "default": true,
+        "tab": "Settings"
+      },
+      {
+        "id": "fixedImageHeight",
+        "label": "Fixed image height",
+        "type": "checkbox",
+        "default": true,
+        "tab": "Settings"
+      },
+	  {
+		"id": "imageHeight",
+		"label": "Image height",
+        "type": "number",
 		"tab": "Settings"
 	  },
       {

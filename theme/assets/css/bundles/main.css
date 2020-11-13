@@ -8292,10 +8292,13 @@ code {
     background-size: cover;
     background-position: 50% 50%;
     display: flex;
-    min-height: 26.25rem;
     padding: 0 2.5rem 2.5rem;
     position: relative;
     width: 100%;
+}
+
+.block .block__cover-pic--fixed-height {
+    min-height: 26.25rem;
 }
 
 .block .block__cover-pic .block__note {
