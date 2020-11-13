@@ -43,14 +43,14 @@
 
                             {% if logotype.url != '' %}
                                 <a href="{{logotype.url}}" {% if logotype.openInNewTab == 'True' %}target="_blank"{% endif %}>
-                                    {% if logotype.hoverImage != '' and logotype.hoverImage != null %}
+                                    {% if logotype.hoverImage != '' and logotype.hoverImage != blank %}
                                         <span id="{{logo_id}}" title="{{logotype.image.altText}}" class="list__pic list__pic-hover lazyload"></span>
                                     {% else %}
                                         <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
                                     {% endif %}
                                 </a>
                             {% else %}
-                                {% if logotype.hoverImage != '' and logotype.hoverImage != null %}
+                                {% if logotype.hoverImage != '' and logotype.hoverImage != blank %}
                                     <span id="{{logo_id}}" title="{{logotype.image.altText}}" class="list__pic list__pic-hover lazyload"></span>
                                 {% else %}
                                     <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
