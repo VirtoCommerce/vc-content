@@ -12004,6 +12004,11 @@ textarea {
     background-image: url("../../images/redesign/icons/in.svg");
 }
 
+.nav--socials .nav__link--yt {
+    background: #fff no-repeat scroll 50% 50%;
+    background-image: url("../../images/redesign/icons/yt.svg");
+}
+
 @media (max-width: 767.98px) {
     .nav--customers .nav__item:nth-child(n+2), .nav--technology .nav__item:nth-child(n+2) {
         display: none;

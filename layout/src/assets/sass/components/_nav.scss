@@ -252,6 +252,12 @@
             {
                 background-image: url($tpl-img-url + 'icons/in.svg');
             }
+
+            &--yt
+            {
+                background: $white no-repeat scroll 50% 50%;
+                background-image: url($tpl-img-url + 'icons/yt.svg');
+            }
         }
     }
 
