@@ -25,12 +25,36 @@
                 {% for logotype in block.logotypes %}
                     <div class="list__item">
                         <div class="list__img">
+                            {% if logotype.hoverImage != '' %}
+                                {% assign logo_id = block.__id | append: '-logo-' | append: (forloop.index | plus: 1) %}
+                                <style>
+                                    #{{logo_id}} {
+                                        height: {{logotype.height}}px;
+                                        width: {{logotype.width}}px;
+                                    }
+                                    #{{logo_id}}::after {
+                                        background-image: url({{logotype.image.url | image_url}});
+                                    }
+                                    #{{logo_id}}::before {
+                                        background-image: url({{logotype.hoverImage.url | image_url}});
+                                    }
+                                </style>
+                            {% endif %}
+
                             {% if logotype.url != '' %}
                                 <a href="{{logotype.url}}" {% if logotype.openInNewTab == 'True' %}target="_blank"{% endif %}>
-                                    <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
+                                    {% if logotype.hoverImage != '' and logotype.hoverImage != blank %}
+                                        <span id="{{logo_id}}" title="{{logotype.image.altText}}" class="list__pic list__pic-hover lazyload"></span>
+                                    {% else %}
+                                        <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
+                                    {% endif %}
                                 </a>
                             {% else %}
-                                <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
+                                {% if logotype.hoverImage != '' and logotype.hoverImage != blank %}
+                                    <span id="{{logo_id}}" title="{{logotype.image.altText}}" class="list__pic list__pic-hover lazyload"></span>
+                                {% else %}
+                                    <img data-src="{{ logotype.image.url | image_url }}" title="{{logotype.image.altText}}" class="list__pic lazyload" />
+                                {% endif %}
                             {% endif %}
                         </div>
                     </div>

@@ -5,16 +5,22 @@
     {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
     <div class="block__inner container">
         <div class="row align-items-center">
-            {% if block.horizontalAlignment == 'left' %}
+            {% capture image_container %}
                 <div class="col-lg-auto">
-                    <div class="block__media">
-                        {% if block.containerImage.url != '' %}
-                            <div class="block__media">
+                    {% if block.containerImage.url != '' %}
+                        <div class="block__media {% if block.fixedImageSize == 'True' %}block__media--auto{% endif %}">
+                            {% if block.fixedImageSize == 'True' %}
+                                <img data-src="{{ block.containerImage.url | image_url: block.imageWidth, block.imageHeight }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
+                            {% else %}
                                 <img data-src="{{ block.containerImage.url | image_url }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
-                            </div>
-                        {% endif %}
-                    </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 </div>
+            {% endcapture %}
+
+            {% if block.horizontalAlignment == 'left' %}
+                {{image_container}}
             {% endif %}
 
             <div class="col-lg">
@@ -46,15 +52,7 @@
             </div>
 
             {% if block.horizontalAlignment == 'right' %}
-                <div class="col-lg-auto">
-                    <div class="block__media">
-                        {% if block.containerImage.url != '' %}
-                            <div class="block__media">
-                                <img data-src="{{ block.containerImage.url | image_url }}" title="{{block.containerImage.altText}}" class="block__pic lazyload" />
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
+                {{image_container}}
             {% endif %}
         </div>
     </div>

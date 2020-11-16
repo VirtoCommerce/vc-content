@@ -4698,6 +4698,18 @@ code {
     }
 }
 
+.block .list-items--bordered.list-items .list__item {
+    padding: 0 2.25rem;
+}
+
+.block .list-items--bordered.list-items .list__item .list__inner {
+    margin-top: 2.25rem;
+}
+
+.block .list-items--bordered.list-items .block__actions {
+    margin-bottom: 1.25rem;
+}
+
 .block .list-cards {
     display: flex;
     flex-wrap: wrap;
@@ -4775,7 +4787,7 @@ code {
 
 .block .list-partners .list__item {
     margin-bottom: 3.125rem;
-    padding: 0 1.25rem;
+    padding: 0 1.625rem;
     text-align: center;
 }
 
@@ -4803,6 +4815,39 @@ code {
     max-width: 100%;
     position: relative;
     z-index: 5;
+}
+
+.block .list-partners .list__pic-hover {
+    position: relative;
+}
+
+.block .list-partners .list__pic-hover::after, .block .list-partners .list__pic-hover::before {
+    background-size: contain;
+    bottom: 0;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.block .list-partners .list__pic-hover::after {
+    z-index: 5;
+}
+
+.block .list-partners .list__pic-hover::before {
+    opacity: 0;
+}
+
+.block .list-partners .list__pic-hover:hover::after {
+    opacity: 0;
+}
+
+.block .list-partners .list__pic-hover:hover::before {
+    opacity: 1;
+    z-index: 10;
 }
 
 .block .list-partners--centered.list-partners .list__img {
@@ -7583,6 +7628,12 @@ code {
     padding-bottom: 1.5625rem;
 }
 
+.block--padding-bottom-half-reduced .block__descr p:last-child,
+      .block--padding-bottom-half-reduced .block__descr ul:last-child,
+      .block--padding-bottom-half-reduced .block__descr ol:last-child {
+    margin-bottom: 0;
+}
+
 .block--padding-top-large {
     padding-top: 6.25rem;
 }
@@ -8039,6 +8090,11 @@ code {
     width: 25rem;
 }
 
+.block .block__form--auto,
+    .block .block__media--auto {
+    width: auto;
+}
+
 @media (max-width: 767.98px) {
     .block .block__form,
       .block .block__media {
@@ -8236,10 +8292,13 @@ code {
     background-size: cover;
     background-position: 50% 50%;
     display: flex;
-    min-height: 26.25rem;
     padding: 0 2.5rem 2.5rem;
     position: relative;
     width: 100%;
+}
+
+.block .block__cover-pic--fixed-height {
+    min-height: 26.25rem;
 }
 
 .block .block__cover-pic .block__note {
@@ -11943,6 +12002,11 @@ textarea {
 
 .nav--socials .nav__link--in {
     background-image: url("../../images/redesign/icons/in.svg");
+}
+
+.nav--socials .nav__link--yt {
+    background: #fff no-repeat scroll 50% 50%;
+    background-image: url("../../images/redesign/icons/yt.svg");
 }
 
 @media (max-width: 767.98px) {

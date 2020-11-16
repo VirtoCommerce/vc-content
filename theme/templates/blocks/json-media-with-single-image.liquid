@@ -25,6 +25,7 @@
                 #block-{{block.__id}}
                 {
                     position: relative;
+                    {% if block.fixedImageHeight != 'True' %}height:{{block.imageHeight}}px;{% endif %}
                 }
 
                 #block-{{block.__id}}:after
@@ -38,15 +39,25 @@
 	                right: 0;
 	                top: 0;
 	                z-index: 5;
+                    {% if block.fixedImageHeight != 'True' %}height: {{block.imageHeight}}px;{% endif %}
                 }
             </style>
 
             {% if block.fixedImageWidth == 'True' %}
                 <div id="block-{{block.__id}}">
-                    <img class="block__pic block__pic--fixed lazyload" data-src="{{block.image.url | image_url}}" />
+                    <img class="block__pic block__pic--fixed lazyload {% if block.fixedImageHeight == 'True' %} block__cover-pic--fixed-height{% endif %}"
+                    {% if block.fixedImageHeight == 'False' %} height="{{block.imageHeight}}" data-src="{{block.image.url | image_url: auto, block.imageHeight}}" {% else %} data-src="{{block.image.url | image_url}}" {% endif %} />
                 </div>
             {% else %}
-                <div id="block-{{block.__id}}" class="block__cover-pic lazyload" {% if block.backgroundImage != '' and block.backgroundImage.url != '' %} data-bg="{{block.image.url | image_url}}" {% endif %}></div>
+                <div id="block-{{block.__id}}" class="block__cover-pic lazyload {% if block.fixedImageHeight == 'True' %} block__cover-pic--fixed-height{% endif %}"
+                    {% if block.backgroundImage != '' and block.backgroundImage.url != '' %}
+                        {% if block.fixedImageHeight == 'False' %}
+                            data-bg="{{block.image.url | image_url: auto, block.imageHeight}}"
+                        {% else %}
+                            data-bg="{{block.image.url | image_url}}"
+                        {% endif %}
+                    {% endif %}>
+                </div>
             {% endif %}
         {% endif %}
 

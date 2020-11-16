@@ -865,7 +865,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
@@ -2998,6 +3000,25 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+      {
+        "id": "fixedImageSize",
+        "label": "Fixed image size",
+        "type": "checkbox",
+        "default": false,
+        "tab": "Settings"
+      },
+	  {
+		"id": "imageHeight",
+		"label": "Image height",
+		"type": "number",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageWidth",
+		"label": "Image width",
+		"type": "number",
+		"tab": "Settings"
+	  },
       {
         "id": "topDivider",
         "label": "Top divider",
@@ -5742,6 +5763,24 @@
             "label": "Item image",
             "group": "Image"
           },
+		  {
+            "id": "hoverImage",
+            "type": "image",
+            "label": "Item hover image",
+            "group": "Image"
+          },
+		  {
+			"id": "height",
+			"type": "number",
+			"label": "Image height",
+			"group": "Image"
+		  },
+		  {
+			"id": "width",
+			"type": "number",
+			"label": "Image width",
+			"group": "Image"
+		  },
           {
             "id": "url",
             "type": "string",
@@ -5758,6 +5797,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           },
@@ -5765,6 +5806,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           },
@@ -5772,6 +5815,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           },
@@ -5779,6 +5824,8 @@
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
             },
+			"height": 30,
+			"width": 100,
             "url": "",
             "openInNewTab": false
           }
@@ -6115,9 +6162,22 @@
         "id": "fixedImageWidth",
         "label": "Fixed image width",
         "type": "checkbox",
-        "default": false,
+        "default": true,
         "tab": "Settings"
       },
+      {
+        "id": "fixedImageHeight",
+        "label": "Fixed image height",
+        "type": "checkbox",
+        "default": true,
+        "tab": "Settings"
+      },
+	  {
+		"id": "imageHeight",
+		"label": "Image height",
+        "type": "number",
+		"tab": "Settings"
+	  },
       {
         "id": "topPadding",
         "label": "Top padding",
@@ -6542,6 +6602,23 @@
       "headings"
     ],
     "settings": [
+	  {
+		"id": "horizontalAlignment",
+		"label": "Horizontal alignment",
+		"type": "select",
+		"default": "center",
+		"tab": "Settings",
+		"options": [
+		  {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+		]
+	  },
       {
         "id": "columnsCount",
         "label": "Columns count",
@@ -6568,6 +6645,27 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+	  {
+		"id": "columnsBorders",
+		"label": "Columns borders",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "columnsBordersColor",
+		"label": "Columns borders color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "columnsTitlesHoverColor",
+		"label": "Columns titles hover color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
       {
         "id": "textAreaWidth",
         "label": "Text area width",
@@ -6938,6 +7036,10 @@
             "textLabel": "Button text",
             "styleLabel": "Link style",
             "styles": [
+			  {
+                "value": "",
+                "label": "Default"
+              },
               {
                 "value": "btn btn--black",
                 "label": "Black button"

@@ -844,6 +844,68 @@
 	]
   },
   {
+	"name": "Apps pages",
+	"icon": "apps",
+	"settings": [
+		{
+			"id": "appsTitle",
+			"label": "Title",
+			"type": "string",
+			"multiline": true
+		},
+		{
+			"type": "list",
+			"id": "appsPagesMeta",
+			"label": "Meta info on pages",
+			"displayField": "url",
+			"element": [
+				{
+					"id": "url",
+					"label": "URL",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "title",
+					"label": "Title",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"type": "popup-list",
+					"id": "tags",
+					"label": "Tags",
+					"displayField": "type",
+					"options": {
+					  "width": "70%",
+					  "max-height": "70%"
+					},
+					"addText": "Add tag",
+					"removeText": "Remove tag",
+					"element": [
+						{
+							"id": "type",
+							"label": "Type",
+							"type": "string"
+						},
+						{
+							"id": "typeValue",
+							"label": "Type value",
+							"type": "string"
+						},
+						{
+							"id": "content",
+							"label": "Content",
+							"type": "string",
+							"multiline": true
+						}
+					]
+				}
+			]
+	    }
+	]
+  },
+  {
     "name": "Home page",
     "icon": "home",
     "settings": [

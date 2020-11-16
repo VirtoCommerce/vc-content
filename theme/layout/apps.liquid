@@ -6,19 +6,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Virto Commerce" />
-    {% assign description = "Do more with your online store by accessing Virto Commerce appstore and extensions. Submit your virto commerce extension. Expand you ecommerce capabilities by using custom apps." %}
-    <meta property="og:description" content="{{description}}" />
-    <meta name="description" content="{{description}}" />
+
+    {% assign titleIsSet = false %}
+    {% if settings.appsPagesMeta != '' and settings.appsPagesMeta.size > 0 %}
+        {% for page in settings.appsPagesMeta %}
+            {% assign pageIsFound = (page.url | absolute_url) == request_url %}
+            {% if pageIsFound %}
+                {% for tag in page.tags %}
+                <meta {{tag.type}}="{{tag.typeValue}}" {% if content != '' %}content="{{tag.content | render}}"{% endif %} />
+                {% endfor %}
+
+                {% if page.title != '' %}
+                    <title>{{page.title}}</title>
+                    {% assign titleIsSet = true %}
+                {% endif %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
     <meta itemprop="name" content="Virto Commerce" />
-    <meta itemprop="description" content="{{description}}" />
     <meta itemprop="image" content="{{ 'virtocommerce.png' | asset_url }}" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:image" content="{{ 'virtocommerce.png' | asset_url }}" />
     <meta name="google-site-verification" content="U2sXV9qIWUb-RceW8MpL-EfFnwvOqCo_jLWIDL8c6xI" />
     <link type="image/x-icon" rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" />
     <link rel="publisher" href="//plus.google.com/+Virtocommerce" />
-    <meta property="og:title" content="Virto Commerce | Appstore and extensions" />
-    <title>Virto Commerce | Appstore and extensions</title>
+    {% if titleIsSet == false %}
+    <title>{{settings.appsTitle}}</title>
+    {% endif %}
     {% comment %}
     {{ '//fonts.googleapis.com/css?family=Lato' | stylesheet_tag }}
     {{ '//fonts.googleapis.com/css?family=Roboto:400,100,300,700' | stylesheet_tag }}
