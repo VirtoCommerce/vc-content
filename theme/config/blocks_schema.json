@@ -7058,6 +7058,8 @@
         "default": [
           {
             "title": "Access to customer insights yields competitive advantage",
+			"titleSeoTag": "none",
+			"subtitleSeoTag": "none",
             "button": {
               "url": "",
               "urlText": "Call to action",
@@ -7066,6 +7068,8 @@
           },
           {
             "title": "Access to customer insights yields competitive advantage",
+			"titleSeoTag": "none",
+			"subtitleSeoTag": "none",
             "button": {
               "url": "",
               "urlText": "Call to action",
@@ -7074,6 +7078,8 @@
           },
           {
             "title": "Access to customer insights yields competitive advantage",
+			"titleSeoTag": "none",
+			"subtitleSeoTag": "none",
             "button": {
               "url": "",
               "urlText": "Call to action",
