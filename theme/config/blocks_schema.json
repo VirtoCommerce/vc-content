@@ -8556,6 +8556,61 @@
         "tab": "Settings",
         "group": "Background"
       },
+	  {
+		"id": "borderColor",
+		"label": "Border color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "useShadow",
+		"label": "Use shadow",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "shadowColor",
+		"label": "Shadow color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "shadowHorizontalDirection",
+		"label": "Shadow horizontal direction",
+		"type": "select",
+		"default": "left",
+		"options": [
+			{
+				"value": "left",
+				"label": "Left"
+			},
+			{
+				"value": "right",
+				"label": "Right"
+			}
+		],
+		"tab": "Settings"
+	  },
+	  {
+		"id": "shadowVerticalDirection",
+		"label": "Shadow vertical direction",
+		"type": "select",
+		"default": "bottom",
+		"options": [
+			{
+				"value": "bottom",
+				"label": "Bottom"
+			},
+			{
+				"value": "top",
+				"label": "Top"
+			}
+		],
+		"tab": "Settings"
+	  },
       {
         "id": "title",
         "label": "Title",
@@ -8565,7 +8620,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
@@ -8606,7 +8663,9 @@
             "settings": [
               "TextColor",
               "Link",
-              "Unlink"
+              "Unlink",
+			  "FontSize",
+			  "Source"
             ]
           },
           {
