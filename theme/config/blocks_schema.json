@@ -730,6 +730,20 @@
       "headings"
     ],
     "settings": [
+	  {
+		"id": "twoSides",
+		"label": "2 sides",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "secondSideBackgroundColor",
+		"label": "Second side background color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
       {
         "id": "horizontalAlignment",
         "default": "center",
@@ -898,6 +912,25 @@
           "TextColor",
           "Link",
           "Unlink"
+        ]
+      },
+      {
+        "id": "secondSideText",
+        "label": "Second side text",
+        "type": "text",
+        "default": "Bring your ideas to life",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "NumberedList",
+          "BulletedList",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+		  "FontSize",
+          "Maximize",
+          "Source"
         ]
       },
       {
@@ -3162,7 +3195,7 @@
           "Link",
           "Unlink",
           "Maximize",
-          "Source"
+		  "Source"
         ]
       },
       {
