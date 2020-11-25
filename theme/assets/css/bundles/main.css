@@ -8456,6 +8456,18 @@ code {
     display: flex;
 }
 
+@media (min-width: 992px) {
+    .block .second-side--left {
+        margin-left: 10rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .block .second-side--right {
+        margin-right: 10rem;
+    }
+}
+
 .block--cover {
     background-repeat: no-repeat;
     background-position: 50% 25%;

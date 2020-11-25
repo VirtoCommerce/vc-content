@@ -21,6 +21,30 @@
         </div>
 
         {% if block.items.size > 0 %}
+            {% if block.borderColor != '' %}
+                <style>
+                    #{{block.__id}} .list-cards .list__item .list__inner {
+                        border: 1px solid {{block.borderColor}};
+                    }
+                </style>
+            {% endif %}
+            {% if block.useShadow == 'True' %}
+                {% assign shadowHorizontal = '2px' %}
+                {% if block.shadowHorizontalDirection == 'left' %}
+                    {% assign shadowHorizontal = '-2px' %}
+                {% endif %}
+
+                {% assign shadowVertical = '-2px' %}
+                {% if block.shadowVerticalDirection == 'bottom' %}
+                    {% assign shadowVertical = '2px' %}
+                {% endif %}
+
+                <style>
+                    #{{block.__id}} .list-cards .list__item .list__inner {
+                        box-shadow: {{shadowHorizontal}} {{shadowVertical}} 2px 2px {{block.shadowColor}};
+                    }
+                </style>
+            {% endif %}
             <div class="list list-cards list-cards--cols-{{block.columnsCount}}">
                 {% for item in block.items %}
                     <div class="list__item">

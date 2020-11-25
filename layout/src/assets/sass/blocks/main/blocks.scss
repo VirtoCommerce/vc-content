@@ -1185,6 +1185,23 @@
             display: flex;
         }
 	}
+
+    .second-side
+    {
+        &--left
+        {
+            @include media-breakpoint-up(lg) {
+                margin-left: 10rem;
+            }
+        }
+
+        &--right
+        {
+            @include media-breakpoint-up(lg) {
+                margin-right: 10rem;
+            }
+        }
+    }
 }
 
 

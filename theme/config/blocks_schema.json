@@ -730,6 +730,20 @@
       "headings"
     ],
     "settings": [
+	  {
+		"id": "twoSides",
+		"label": "2 sides",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "secondSideBackgroundColor",
+		"label": "Second side background color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
       {
         "id": "horizontalAlignment",
         "default": "center",
@@ -898,6 +912,25 @@
           "TextColor",
           "Link",
           "Unlink"
+        ]
+      },
+      {
+        "id": "secondSideText",
+        "label": "Second side text",
+        "type": "text",
+        "default": "Bring your ideas to life",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "NumberedList",
+          "BulletedList",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+		  "FontSize",
+          "Maximize",
+          "Source"
         ]
       },
       {
@@ -3144,7 +3177,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
@@ -3161,8 +3196,9 @@
           "Italic",
           "Link",
           "Unlink",
+		  "FontSize",
           "Maximize",
-          "Source"
+		  "Source"
         ]
       },
       {
@@ -3174,7 +3210,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
@@ -7058,6 +7096,8 @@
         "default": [
           {
             "title": "Access to customer insights yields competitive advantage",
+			"titleSeoTag": "none",
+			"subtitleSeoTag": "none",
             "button": {
               "url": "",
               "urlText": "Call to action",
@@ -7066,6 +7106,8 @@
           },
           {
             "title": "Access to customer insights yields competitive advantage",
+			"titleSeoTag": "none",
+			"subtitleSeoTag": "none",
             "button": {
               "url": "",
               "urlText": "Call to action",
@@ -7074,6 +7116,8 @@
           },
           {
             "title": "Access to customer insights yields competitive advantage",
+			"titleSeoTag": "none",
+			"subtitleSeoTag": "none",
             "button": {
               "url": "",
               "urlText": "Call to action",
@@ -8550,6 +8594,61 @@
         "tab": "Settings",
         "group": "Background"
       },
+	  {
+		"id": "borderColor",
+		"label": "Border color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "useShadow",
+		"label": "Use shadow",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "shadowColor",
+		"label": "Shadow color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "shadowHorizontalDirection",
+		"label": "Shadow horizontal direction",
+		"type": "select",
+		"default": "left",
+		"options": [
+			{
+				"value": "left",
+				"label": "Left"
+			},
+			{
+				"value": "right",
+				"label": "Right"
+			}
+		],
+		"tab": "Settings"
+	  },
+	  {
+		"id": "shadowVerticalDirection",
+		"label": "Shadow vertical direction",
+		"type": "select",
+		"default": "bottom",
+		"options": [
+			{
+				"value": "bottom",
+				"label": "Bottom"
+			},
+			{
+				"value": "top",
+				"label": "Top"
+			}
+		],
+		"tab": "Settings"
+	  },
       {
         "id": "title",
         "label": "Title",
@@ -8559,7 +8658,9 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Source"
         ]
       },
       {
@@ -8600,7 +8701,9 @@
             "settings": [
               "TextColor",
               "Link",
-              "Unlink"
+              "Unlink",
+			  "FontSize",
+			  "Source"
             ]
           },
           {

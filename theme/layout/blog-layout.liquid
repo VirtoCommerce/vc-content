@@ -26,24 +26,31 @@
     {% endif %}
 
     {% if article %}
-    {% assign page_url = article.url | full_url %}
-    {% assign title = article.title | append: ' - ' | append: blog.title %}
-    {% assign description = article.excerpt %}
+        {% assign page_url = article.url | full_url %}
+        {% assign title = article.title | append: ' - ' | append: blog.title %}
+        {% assign description = article.excerpt %}
     {% else %}
-    {% assign page_url = blog.url | full_url %}
-    {% assign title = blog.title %}
-    {% assign description = blog.title %}
-    {% if search_category %}
-    {% assign title = search_category | append: ' - ' | append: blog.title %}
-    {% assign description = 'Posts about ' | append: search_category | append: ' - ' | append: blog.title %}
-    {% endif %}
-    {% if search_tag %}
-    {% assign title = search_tag | append: ' - ' | append: blog.title %}
-    {% assign description = 'Posts about ' | append: search_tag | append: ' - ' | append: blog.title %}
-    {% endif %}
+        {% assign page_url = blog.url | full_url %}
+        {% assign title = blog.title %}
+        {% assign description = blog.title %}
+        {% if search_category %}
+            {% assign title = search_category | append: ' - ' | append: blog.title %}
+            {% assign description = 'Posts about ' | append: search_category | append: ' - ' | append: blog.title %}
+        {% endif %}
+        {% if search_tag %}
+            {% assign title = search_tag | append: ' - ' | append: blog.title %}
+            {% assign description = 'Posts about ' | append: search_tag | append: ' - ' | append: blog.title %}
+        {% endif %}
     {% endif %}
 
-    <meta name="description" content="{{ description }}" />
+    {% assign last_segment_url = request_url | split '/' | last %}
+    {% if last_segment_url == 'blog' %}
+        <meta name="description" content="{{blog.title}}" />
+        <meta name="twitter:description" content="{{blog.title}}" />
+    {% else %}
+        <meta name="description" content="{{ description }}" />
+        <meta name="twitter:description" content="{{ description }}" />
+    {% endif %}
 
     <!-- Facebook  Open Graph Meta Tags BEGIN -->
     <meta property="og:locale" content="en_US" />
@@ -69,7 +76,6 @@
     {% endif %}
 
     <meta name="twitter:card" content="summary" />
-    <meta content="{{ description }}" name="twitter:description" />
     <meta content="{{ title }}" name="twitter:title" />
     {% comment %}
     <meta content="{{ page_image_url | absolute_url }}" name="twitter:image" />{% endcomment %}
