@@ -1192,6 +1192,7 @@
         {
             @include media-breakpoint-up(lg) {
                 margin-left: 10rem;
+                margin-top: 5rem;
             }
         }
 
@@ -1199,6 +1200,7 @@
         {
             @include media-breakpoint-up(lg) {
                 margin-right: 10rem;
+                margin-bottom: 5rem;
             }
         }
     }
