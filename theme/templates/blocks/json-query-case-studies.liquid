@@ -29,19 +29,19 @@
                 </style>
             {% endif %}
             {% if block.useShadow == 'True' %}
-                {% assign shadowHorizontal = '1px' %}
+                {% assign shadowHorizontal = '2px' %}
                 {% if block.shadowHorizontalDirection == 'left' %}
-                    {% assign shadowHorizontal = '-1px' %}
+                    {% assign shadowHorizontal = '-2px' %}
                 {% endif %}
 
-                {% assign shadowVertical = '-1px' %}
+                {% assign shadowVertical = '-2px' %}
                 {% if block.shadowVerticalDirection == 'bottom' %}
-                    {% assign shadowVertical = '1px' %}
+                    {% assign shadowVertical = '2px' %}
                 {% endif %}
 
                 <style>
                     #{{block.__id}} .list-cards .list__item .list__inner {
-                        box-shadow: {{shadowHorizontal}} {{shadowVertical}} 1px 1px {{block.shadowColor}};
+                        box-shadow: {{shadowHorizontal}} {{shadowVertical}} 2px 2px {{block.shadowColor}};
                     }
                 </style>
             {% endif %}
