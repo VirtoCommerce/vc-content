@@ -6,12 +6,46 @@
     {% assign alignment = 'block--align-right' %}
 {% endif %}
 
+{% if block.twoSides == 'True' %}
+<style>
+    #{{block.__id}} > .block:after {
+        background: {{block.secondSideBackgroundColor}};
+        opacity: 1;
+        bottom: 0;
+	    content: ' ';
+	    left: 50%;
+	    position: absolute;
+        right: 0;
+	    top: 0;
+	    z-index: 5;
+    }
+
+    @media (max-width: 991px) {
+        #{{block.__id}} > .block:after {
+            background: {{block.secondSideBackgroundColor}};
+            opacity: 1;
+            bottom: 0;
+	        content: ' ';
+	        left: 0;
+	        position: absolute;
+            right: 0;
+	        top: 50%;
+	        z-index: 5;
+        }
+    }
+</style>
+{% else %}
 {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.backgroundOverlayColor, customColor: block.backgroundOverlayColorHex %}
+{% endif %}
 
 <div id="{{ block.__id }}">
     <div class="block {{alignment}} {% include 'cover-background-settings' %}>
         <div class="block__inner container">
             <div class="row justify-content-center">
+                {% capture second_side %}
+                    <div class="col-lg second-side--{{block.horizontalAlignment}}">{{block.secondSideText}}</div>
+                {% endcapture %}
+
                 {% capture column %}
                     {% assign column_area_width = block.textAreaWidth | split: '-' | last | plus: 0 %}
                     {% assign col_class = 'col-lg' %}
@@ -22,10 +56,14 @@
                 {% endcapture %}
 
                 {% if block.horizontalAlignment == 'right' %}
+                    {% if block.twoSides == 'True' %}
+                    {{second_side}}
+                    {% else %}
                     {{column}}
+                    {% endif %}
                 {% endif %}
 
-                <div class="block__text {{block.textAreaWidth}}">
+                <div class="block__text {% if block.twoSides == 'True' %}col-lg{% else %}{{block.textAreaWidth}}{% endif %}">
                     {% if block.note != '' %}
                         {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
                         <div class="block__space"></div>
@@ -54,7 +92,11 @@
                 </div>
 
                 {% if block.horizontalAlignment == 'left' %}
+                    {% if block.twoSides == 'True' %}
+                    {{second_side}}
+                    {% else %}
                     {{column}}
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
