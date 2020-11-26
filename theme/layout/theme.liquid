@@ -82,6 +82,7 @@
         </div>
     </div>
     {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
+    {% include 'slider-asset' %}
     <script>
 	    $(function () {
 		    $('#cookieConsentAccept').on('click', function (event) {

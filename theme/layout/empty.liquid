@@ -56,6 +56,7 @@
         </div>
     </div>
     {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
+    {% include 'slider-asset' %}
     {{ 'angular-bundle-default.min.js' | asset_url | script_tag }}
 </body>
 </html>

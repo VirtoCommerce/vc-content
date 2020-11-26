@@ -1,0 +1,7 @@
+{% for block in blocks %}
+    {% if block.type == 'images-carousel-with-text' %}
+        {{ 'Tocca.min.js' | asset_url | script_tag }}
+        {{ 'slider.js' | asset_url | script_tag}}
+        {% break %}
+    {% endif %}
+{% endfor %}
