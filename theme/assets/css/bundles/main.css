@@ -8462,21 +8462,9 @@ code {
     }
 }
 
-@media (max-width: 991.98px) {
-    .block .second-side--left {
-        margin-top: 5rem;
-    }
-}
-
 @media (min-width: 992px) {
     .block .second-side--right {
         margin-right: 10rem;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .block .second-side--right {
-        margin-bottom: 5rem;
     }
 }
 

@@ -30,23 +30,8 @@
 
     @media (max-width: 991px) {
         #{{block.__id}} > .block:after {
-            background: {{block.secondSideBackgroundColor}};
-            opacity: 1;
-            {% if block.horizontalAlignment == 'right' %}
-	        bottom: 50%;
-            {% else %}
-            bottom: 0;
-            {% endif %}
-	        content: ' ';
 	        left: 0;
-	        position: absolute;
             right: 0;
-	        {% if block.horizontalAlignment == 'left' %}
-            top: 50%;
-            {% else %}
-            top: 0;
-            {% endif %}
-	        z-index: 5;
         }
     }
 </style>
