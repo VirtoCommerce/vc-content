@@ -9074,6 +9074,184 @@
       }
     ]
   },
+  "images-carousel-with-text": {
+	"id": "images-carousel-with-text",
+	"name": "Images carousel with text",
+	"icon": "image-text",
+	"displayField": "name",
+    "category": "Queries and Other",
+	"includeShared": [
+	  "paddings",
+	  "dividers",
+	  "title",
+	  "subtitle",
+      "seo-subtitle",
+      "headings"
+    ],
+	"settings": [
+		{
+			"id": "titleSeoTag",
+			"label": "Title SEO tag",
+			"type": "select",
+			"default": "div",
+			"options": [
+			  {
+				"value": "h1",
+				"label": "H1"
+			  },
+			  {
+				"value": "h2",
+				"label": "H2"
+			  },
+			  {
+				"value": "h3",
+				"label": "H3"
+			  },
+			  {
+				"value": "div",
+				"label": "DIV"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Typography"
+		},
+		{
+			"id": "backgroundColor",
+			"label": "Colour",
+			"type": "select",
+			"default": "block--bg-white",
+			"options": [
+			  {
+				"value": "block--bg-white",
+				"label": "White"
+			  },
+			  {
+				"value": "block--bg-light",
+				"label": "Gray"
+			  },
+			  {
+				"value": "block--bg-orange",
+				"label": "Orange"
+			  }
+			],
+			"tab": "Settings",
+			"group": "Background"
+		},
+		{
+			"id": "backgroundColorHex",
+			"label": "Colour HEX",
+			"type": "color",
+			"default": "",
+			"tab": "Settings",
+			"group": "Background"
+		},
+		{
+			"id": "itemsBorderColor",
+			"label": "Items border color",
+			"type": "color",
+			"default": "",
+			"tab": "Settings"
+		},
+		{
+			"id": "itemsBackgroundColor",
+			"label": "Items background color",
+			"type": "color",
+			"default": "",
+			"tab": "Settings"
+		},
+		{
+			"id": "items",
+			"label": "Items",
+			"type": "list",
+			"addText": "Add item",
+			"removeText": "Remove item",
+			"displayField": "title",
+			"tab": "Content",
+			"element": [
+			  {
+				"id": "image",
+				"type": "image",
+				"label": "Item image"
+			  },
+			  {
+				"id": "title",
+				"type": "text",
+				"label": "Title",
+				"settings": [
+				  "TextColor",
+				  "Link",
+				  "Unlink"
+				]
+			  },
+			  {
+				"id": "subtitle",
+				"type": "text",
+				"label": "Subtitle",
+				"settings": [
+				  "TextColor",
+				  "NumberedList",
+				  "BulletedList",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "Maximize",
+				  "Source"
+				]
+			  },
+			  {
+				"id": "note",
+				"type": "text",
+				"label": "Note",
+				"settings": [
+				  "TextColor",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Source"
+				]
+			  },
+			  {
+				"id": "bottomImage",
+				"type": "image",
+				"label": "Bottom image"
+			  },
+			  {
+				"id": "borderColor",
+				"type": "color",
+				"label": "Border color",
+				"default": ""
+			  },
+			  {
+				"id": "backgroundColor",
+				"type": "color",
+				"label": "Background color",
+				"default": ""
+			  }
+			],
+			"default": [
+			  {
+				"image": {
+				  "url": "/assets/pages/video-screen-asp-net-shopping-cart.png"
+				},
+				"title": "Virto Commerce demo is available",
+				"subtitle": "Our vision is to offer the best lighting on the market at an affordable price and to make sure that our cus...",
+				"note": "Our company"
+			  },
+			  {
+				"image": {
+				  "url": "/assets/pages/video-screen-asp-net-shopping-cart.png"
+				},
+				"title": "Virto Commerce demo is available",
+				"subtitle": "Our vision is to offer the best lighting on the market at an affordable price and to make sure that our cus...",
+				"note": "Our company"
+			  }
+			]
+		}
+	]
+  },
   "form-case-study": {
     "name": "Form Case Study",
     "icon": "image-text",

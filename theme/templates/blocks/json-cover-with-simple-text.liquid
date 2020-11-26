@@ -13,24 +13,25 @@
         opacity: 1;
         bottom: 0;
 	    content: ' ';
+        {% if block.horizontalAlignment == 'left' %}
 	    left: 50%;
+        {% else %}
+        left: 0;
+        {% endif %}
 	    position: absolute;
+        {% if block.horizontalAlignment == 'right' %}
+        right: 50%;
+        {% else %}
         right: 0;
+        {% endif %}
 	    top: 0;
 	    z-index: 5;
     }
 
     @media (max-width: 991px) {
         #{{block.__id}} > .block:after {
-            background: {{block.secondSideBackgroundColor}};
-            opacity: 1;
-            bottom: 0;
-	        content: ' ';
 	        left: 0;
-	        position: absolute;
             right: 0;
-	        top: 50%;
-	        z-index: 5;
         }
     }
 </style>
@@ -39,7 +40,7 @@
 {% endif %}
 
 <div id="{{ block.__id }}">
-    <div class="block {{alignment}} {% include 'cover-background-settings' %}>
+    <div class="block {% if block.twoSides != 'True' %}{{alignment}}{% endif %} {% include 'cover-background-settings' %}>
         <div class="block__inner container">
             <div class="row justify-content-center">
                 {% capture second_side %}

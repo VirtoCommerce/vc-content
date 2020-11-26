@@ -1,0 +1,91 @@
+<div id="{{ block.__id }}" class="block {{block.backgroundColor}} {{block.topPadding}} {{block.bottomPadding}}
+    {% if block.topDivider == 'True' %} block--divider-top {% endif %}
+    {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
+    {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
+    {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
+    <div class="block__inner container">
+        {% if block.title != '' or block.subtitle != '' %}
+            <div class="row">
+                <div class="block__text col-lg">
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    {% endif %}
+
+                    {% include 'headings' headings: block.headings %}
+
+                    {% if block.subtitle != '' %}
+                        <div class="block__space"></div>
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+                        <div class="block__space block__space--size-lg"></div>
+                    {% else %}
+                        <div class="block__space block__space--size-lg"></div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="cards-carousel">
+            {% if block.items.size > 0 %}
+                <div class="cards">
+                {% for item in block.items %}
+                    {% assign borderColor = '' %}
+                    {% assign backgroundColor = '' %}
+                    {% if block.itemsBorderColor != '' %}
+                        {% assign borderColor = block.itemsBorderColor %}
+                    {% elsif item.borderColor != '' %}
+                        {% assign borderColor = item.borderColor %}
+                    {% endif %}
+
+                    {% if block.itemsBackgroundColor != '' %}
+                        {% assign backgroundColor = block.itemsBackgroundColor %}
+                    {% elsif item.backgroundColor != '' %}
+                        {% assign backgroundColor = item.backgroundColor %}
+                    {% endif %}
+
+                    {% assign cardReviewStyle = '' %}
+                    {% if borderColor != '' or backgroundColor != '' %}
+                        {% assign cardReviewStyle = ' style="' %}
+                        {% if borderColor != '' %}
+                            {% assign cardReviewStyle = cardReviewStyle | append 'border: 1px solid {{borderColor}};' | render %}
+                        {% endif %}
+                        {% if backgroundColor != '' %}
+                            {% assign cardReviewStyle = cardReviewStyle | append 'background: {{backgroundColor}};' | render %}
+                        {% endif %}
+                        {% assign cardReviewStyle = cardReviewStyle | append '"' %}
+                    {% endif %}
+
+                    <div class="card-review{% if forloop.index == 0 %} card-review--selected{% endif %}"{{cardReviewStyle}}>
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5">
+                                {% if item.image.url != '' %}
+                                    <img class="review-image" src="{{item.image.url}}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} />
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-7">
+                                {% if item.title != '' %}
+                                    <div class="block__t">{{item.title}}</div>
+                                {% endif %}
+
+                                {% if item.subtitle != '' %}
+                                    <div class="block__space"></div>
+                                    <div class="block__descr">{{item.subtitle}}</div>
+                                {% endif %}
+
+                                {% if item.note != '' %}
+                                    <div class="block__space"></div>
+                                    <div class="note">{{item.note}}</div>
+                                {% endif %}
+                                {% if item.bottomImage != '' %}
+                                    <img class="bottom-img" src="{{item.bottomImage.url}}" {% if item.bottomImage.altText != '' %}title="{{item.bottomImage.altText}}"{% endif %} />
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+            <div class="slider-arrow slider-arrow--left" title="left"></div>
+            <div class="slider-arrow slider-arrow--right" title="right"></div>
+        </div>
+    </div>
+</div>
