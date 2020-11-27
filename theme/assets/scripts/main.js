@@ -245,4 +245,11 @@ $(function () {
         var finalOffset = parseInt($(anchorId).offset().top - header) + 'px';
         $('html, body').animate({ scrollTop: finalOffset }, 1250);
     });
+
+    $('.gradient-btn').on('click', function () {
+        var url = $(this).children('.gradient-btn-link').attr('href');
+        if (url) {
+            document.location.assign(url);
+        }
+    });
 });
