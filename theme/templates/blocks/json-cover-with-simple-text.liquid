@@ -39,6 +39,13 @@
 {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.backgroundOverlayColor, customColor: block.backgroundOverlayColorHex %}
 {% endif %}
 
+<style>
+    @media (max-width: 543px) {
+        #{{block.__id}} .block--cover {
+            background-position: {{block.backgroundPositionX}}% 25%;
+        }
+    }
+</style>
 <div id="{{ block.__id }}">
     <div class="block {% if block.twoSides != 'True' %}{{alignment}}{% endif %} {% include 'cover-background-settings' %}>
         <div class="block__inner container">

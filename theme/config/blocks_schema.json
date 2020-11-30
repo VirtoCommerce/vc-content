@@ -870,6 +870,14 @@
         "tab": "Settings",
         "group": "Background"
       },
+	  {
+		"id": "backgroundPositionX",
+		"label": "Background position X (in % for mobile)",
+		"type": "number",
+		"default": "50",
+		"tab": "Settings",
+		"group": "Background"
+	  },
       {
         "id": "title",
         "label": "Title",
