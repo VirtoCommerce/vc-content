@@ -5179,6 +5179,24 @@
     "displayField": "title",
     "category": "Paragraphs and Links",
     "settings": [
+	  {
+        "id": "horizontalAlignment",
+        "label": "Horizontal alignment",
+        "type": "select",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
       {
         "id": "numberOfColumns",
         "label": "Number of columns",
