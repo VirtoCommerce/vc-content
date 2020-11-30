@@ -1,4 +1,5 @@
 <div id="{{ block.__id }}" class="block block--info {{block.topPadding}} {{block.bottomPadding}}
+    {% if block.horizontalAlignment == 'center' %} block--align-center{% endif %}
     {% if block.topDivider == 'True' %} block--divider-top {% endif %}
     {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
     {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
