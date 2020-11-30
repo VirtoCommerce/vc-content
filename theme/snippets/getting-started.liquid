@@ -14,18 +14,19 @@
                     {%- assign menu_tabs = linklists['main-menu'] -%}
                     {%- for tab in menu_tabs.links -%}
                     <li class="nav__item">
-                    <a class="nav__link nav__link--dropdown">{{ tab.title }}</a>
-                    <div class="dropdown-menu">
-                        <div class="container">
-                            <div class="row">
-                                <!--blocks-->
-                                {%- assign tab_blocks = linklists[tab.url].links -%}
-                                {%- for current_block in tab_blocks -%}
-                                {%- if tab_blocks.size > 3 -%}
-                                <div class="col">
+                        {%- assign tab_blocks = linklists[tab.url].links -%}
+                        <a class="nav__link nav__link--dropdown" {% if tab_blocks.size == null %} href="{{tab.url}}{% endif %}">{{ tab.title }}</a>
+                        {% if tab_blocks.size > 0 %}
+                        <div class="dropdown-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <!--blocks-->
+                                    {%- for current_block in tab_blocks -%}
+                                    {%- if tab_blocks.size > 3 -%}
+                                    <div class="col">
                                     {%- else -%}
                                     <div class="col-3">
-                                        {%- endif -%}
+                                    {%- endif -%}
                                         {%- assign current_links = linklists[current_block.url] -%}
                                         <div class="dropdown-menu__t">{{ current_block.title }}</div>
                                         <!--links-->
@@ -37,6 +38,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
                     </li>
                     {%- endfor -%}
                 </ul>
