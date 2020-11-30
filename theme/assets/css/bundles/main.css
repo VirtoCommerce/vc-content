@@ -7892,6 +7892,12 @@ code {
     margin: auto auto 0;
 }
 
+.block--align-center .block__inner .list-items .list__item .list__inner .list__num,
+    .block--align-center .block__inner .list-items .list__item .list__inner .list__ico {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .block--align-center .block__inner .list-items--reviews.list-items .list__img,
     .block--align-center .block__inner .list-items--reviews.list-items .list__t,
     .block--align-center .block__inner .list-items--reviews.list-items .list__pos,

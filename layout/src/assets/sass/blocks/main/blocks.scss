@@ -430,6 +430,22 @@
             margin: auto auto 0;
 		}
 
+        .list-items
+        {
+            .list__item
+            {
+                .list__inner
+                {
+                    .list__num,
+                    .list__ico
+                    {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+
 		.list-items--reviews.list-items
 		{
             & .list__img,
