@@ -1,31 +1,31 @@
 <header class="header">
-    <div class="header-inner container">
-        <div class="row align-items-center">
-            <div class="col-auto">
+    <div class="header-inner">
+        <div class="align-items-center d-flex justify-content-between">
+            <div class="ml-4 ml-lg-5">
                 <a href="/">
                     <div class="header-logo">
                         Virtocommerce
                     </div>
                 </a>
             </div>
-            <div class="header-nav col-auto d-none d-lg-block">
+            <div class="header-nav">
                 <ul class="nav">
                     <!--tabs-->
                     {%- assign menu_tabs = linklists['main-menu'] -%}
                     {%- for tab in menu_tabs.links -%}
                     <li class="nav__item">
-                        <a class="nav__link nav__link--dropdown">{{ tab.title }}</a>
-                        <div class="dropdown-menu">
-                            <div class="container">
-                                <div class="row">
-                                    <!--blocks-->
-                                    {%- assign tab_blocks = linklists[tab.url].links -%}
-                                    {%- for current_block in tab_blocks -%}
-                                    {%- if tab_blocks.size > 3 -%}
-                                    <div class="col">
+                    <a class="nav__link nav__link--dropdown">{{ tab.title }}</a>
+                    <div class="dropdown-menu">
+                        <div class="container">
+                            <div class="row">
+                                <!--blocks-->
+                                {%- assign tab_blocks = linklists[tab.url].links -%}
+                                {%- for current_block in tab_blocks -%}
+                                {%- if tab_blocks.size > 3 -%}
+                                <div class="col">
                                     {%- else -%}
                                     <div class="col-3">
-                                    {%- endif -%}
+                                        {%- endif -%}
                                         {%- assign current_links = linklists[current_block.url] -%}
                                         <div class="dropdown-menu__t">{{ current_block.title }}</div>
                                         <!--links-->
@@ -41,14 +41,9 @@
                     {%- endfor -%}
                 </ul>
             </div>
-            <div class="header-phone ml-auto col-auto d-none d-lg-block">
+            <div class="mr-4 mr-lg-5">
+                {% include 'gradient-button' url: '/request-demo', text: 'Request Demo', background: 'white' %}
             </div>
-            <div class="col-auto">
-              <a class="btn btn--orange" href="/request-demo">Request a Demo</a>
-            </div>
-            <div class="header-phone col-auto d-block d-lg-none">
-            </div>
-            <a class="header-toggle"></a>
         </div>
     </div>
 </header>

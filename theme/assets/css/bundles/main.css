@@ -5568,13 +5568,16 @@ code {
 }
 
 @media (min-width: 992px) {
-    .header-nav .btn,
-    .header .nav__item {
+    .header-nav .btn {
         margin-left: 1.25rem;
     }
 
     .header .nav__item {
         display: flex;
+    }
+
+    .header .nav__item:not(:last-child) {
+        margin-right: 2rem;
     }
 
     .header .nav__item--login {
@@ -5583,14 +5586,59 @@ code {
 }
 
 @media (min-width: 1200px) {
-    .header-nav .btn,
-    .header .nav__item {
+    .header-nav .btn {
         margin-left: 1.875rem;
+    }
+
+    .header .nav__item:not(:last-child) {
+        margin-right: 2.71875rem;
     }
 
     .header .nav__item--login {
         margin-left: 7rem;
     }
+}
+
+@media (min-width: 1400px) {
+    .header .nav__item:not(:last-child) {
+        margin-right: 5.4375rem;
+    }
+}
+
+.btn-gradient {
+    font-size: .875rem;
+    cursor: pointer;
+}
+
+.btn-gradient .btn-gradient-link {
+    background: linear-gradient(to bottom, #ff453d 0, #ff9800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 555;
+    position: absolute;
+    margin-left: 1.875rem;
+}
+
+.btn-gradient .btn-gradient-shape {
+    position: relative;
+    background: white;
+    border-radius: 4rem;
+    padding: .75rem 1.875rem;
+    height: 2.5rem;
+    font-size: .875rem;
+}
+
+.btn-gradient .btn-gradient-shape:before {
+    position: absolute;
+    content: ' ';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4rem;
+    background: linear-gradient(to bottom, #ff453d 0%, #ff9800 100%);
+    z-index: -5;
+    margin: -2px;
 }
 
 #layout {
