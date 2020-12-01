@@ -26,12 +26,14 @@
                 <!--tabs-->
                 {%- assign menu_tabs = linklists['main-menu'] -%}
                 {%- for tab in menu_tabs.links -%}
-                <li class="nav__item">
-                    <a class="nav__link">
-                        {{ tab.title }}
-                        <span class="nav__carret ml-auto"></span>
-                    </a>
-                </li>
+                    {% assign links_count = linklists[tab.url].links.size %}
+                    {% assign no_subitems = links_count == null or links_count == 0 %}
+                    <li class="nav__item {% if no_subitems %}nav__item--no-subitems{% endif %}">
+                        <a class="nav__link" {% if no_subitems %}href="{{tab.url}}"{% endif %}>
+                            {{ tab.title }}
+                            {% if no_subitems == false %}<span class="nav__carret ml-auto"></span>{% endif %}
+                        </a>
+                    </li>
                 {%- endfor -%}
             </ul>
             <!--tabs-->

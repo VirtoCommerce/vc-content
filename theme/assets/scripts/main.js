@@ -64,7 +64,7 @@ $(function () {
         $('.overlay').remove();
     });
 
-    $(':not(.nav__content) .nav__item').on('click', function () {
+    $(':not(.nav__content) .nav__item:not(.nav__item--no-subitems)').on('click', function () {
         var self = $(this);
         self.addClass('nav__item--active').siblings().removeClass('nav__item--active').addClass('nav__item--animated');
         self.removeClass('nav__item--animated');
