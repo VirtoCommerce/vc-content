@@ -42,7 +42,7 @@
 <style>
     @media (max-width: 543px) {
         #{{block.__id}} .block--cover {
-            background-position: {{block.backgroundPositionX}}% 25%;
+            background-position: {% if block.backgroundPositionX == null %}0%{% else %}{{block.backgroundPositionX}}%{% endif %} 25%;
         }
     }
 </style>
