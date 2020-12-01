@@ -4726,6 +4726,7 @@ code {
 }
 
 .block .list-cards--wide.list-cards .list__item .list__inner .list__img {
+    width: 100%;
     margin: 0;
 }
 
