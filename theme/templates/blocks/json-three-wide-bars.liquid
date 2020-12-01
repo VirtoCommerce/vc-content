@@ -1,0 +1,64 @@
+<div id="{{ block.__id }}" class="block {{block.topPadding}} {{block.bottomPadding}}
+    {% if block.topDivider == 'True' %} block--divider-top {% endif %}
+    {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
+    {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
+    {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
+    <div class="block__inner container">
+        <div class="row">
+            <div class="block__text {% if block.titleAlignment == 'center' %}text-center{% endif %} {{block.textAreaWidth}}">
+                {% if block.title != '' %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    <div class="block__space block__space--size-lg"></div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if block.items.size > 0 %}
+            {% if block.borderColor != '' %}
+                <style>
+                    #{{block.__id}} .list-cards .list__item .list__inner {
+                        border: 1px solid {{block.borderColor}};
+                    }
+                </style>
+            {% endif %}
+            {% if block.useShadow == 'True' %}
+                {% assign shadowHorizontal = '2px' %}
+                {% if block.shadowHorizontalDirection == 'left' %}
+                    {% assign shadowHorizontal = '-2px' %}
+                {% endif %}
+
+                {% assign shadowVertical = '-2px' %}
+                {% if block.shadowVerticalDirection == 'bottom' %}
+                    {% assign shadowVertical = '2px' %}
+                {% endif %}
+
+                <style>
+                    #{{block.__id}} .list-cards .list__item .list__inner {
+                        box-shadow: {{shadowHorizontal}} {{shadowVertical}} 2px 2px {{block.shadowColor}};
+                    }
+                </style>
+            {% endif %}
+            <div class="list list-cards list-cards--wide">
+                {% for item in block.items %}
+                    <div class="list__item">
+                        <div class="list__inner">
+                            {% if item.image != '' and item.image.url != '' %}
+                                <div class="list__img">
+                                    <img data-src="{{ item.image.url | image_url }}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} class="list__pic lazyload" />
+                                </div>
+                            {% endif %}
+                            {% if item.subtitle != '' %}
+                                <div class="list__descr">{{item.subtitle}}</div>
+                            {% endif %}
+                            {% if item.button != '' and item.button.urlText != '' %}
+                                <div class="block__actions">
+                                    <a href="{{item.button.url}}" class="{{item.button.style}}" {% if item.button.openInNewTab == 'True' %} target="_blank" {% endif %}>{{item.button.urlText}}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>

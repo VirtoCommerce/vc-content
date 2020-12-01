@@ -714,6 +714,63 @@
 			"tab": "Settings",
 			"group": "Typography"
 		  }
+	  ],
+	  "items-borders": [
+		  {
+			"id": "borderColor",
+			"label": "Border color",
+			"type": "color",
+			"default": "",
+			"tab": "Settings"
+		  },
+		  {
+			"id": "useShadow",
+			"label": "Use shadow",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings"
+		  },
+		  {
+			"id": "shadowColor",
+			"label": "Shadow color",
+			"type": "color",
+			"default": "",
+			"tab": "Settings"
+		  },
+		  {
+			"id": "shadowHorizontalDirection",
+			"label": "Shadow horizontal direction",
+			"type": "select",
+			"default": "left",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"tab": "Settings"
+		  },
+		  {
+			"id": "shadowVerticalDirection",
+			"label": "Shadow vertical direction",
+			"type": "select",
+			"default": "bottom",
+			"options": [
+				{
+					"value": "bottom",
+					"label": "Bottom"
+				},
+				{
+					"value": "top",
+					"label": "Top"
+				}
+			],
+			"tab": "Settings"
+		  }
 	  ]
     }
   },
@@ -8799,6 +8856,226 @@
           {
             "image": {
               "url": "/assets/pages/lavazza-logo.svg"
+            },
+            "title": "Get access to customers and deeply integrate with them",
+            "subtitle": "Bosch wanted a direct line of communication with their customer base. To gain this important customer access, they decided to create a customer loyalty program that awarded points and ultimately allowed them to interact directly with their customers.",
+            "button": {
+              "url": "",
+              "urlText": "Read more",
+              "style": "btn btn--orange"
+            }
+          }
+        ],
+        "tab": "Content"
+      }
+    ]
+  },
+  "three-wide-bars": {
+    "id": "three-wide-bars",
+    "name": "Three wide bars",
+    "icon": "image-text",
+    "displayField": "title",
+    "category": "Queries and Other",
+    "includeShared": [
+		"paddings",
+		"dividers",
+		"items-borders"
+    ],
+    "settings": [
+	  {
+		"id": "titleAlignment",
+        "label": "Title alignment",
+        "type": "select",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+		],
+		"tab": "Settings"
+	  },
+      {
+        "id": "textAreaWidth",
+        "label": "Text area width",
+        "type": "select",
+        "default": "col-lg",
+        "options": [
+          {
+            "value": "col-lg",
+            "label": "Full width"
+          },
+          {
+            "value": "col-lg-10",
+            "label": "10 cols"
+          },
+          {
+            "value": "col-lg-8",
+            "label": "8 cols"
+          },
+          {
+            "value": "col-lg-6",
+            "label": "6 cols"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
+      {
+        "id": "titleSeoTag",
+        "label": "Title SEO tag",
+        "type": "select",
+        "default": "div",
+        "options": [
+          {
+            "value": "h1",
+            "label": "H1"
+          },
+          {
+            "value": "h2",
+            "label": "H2"
+          },
+          {
+            "value": "h3",
+            "label": "H3"
+          },
+          {
+            "value": "div",
+            "label": "DIV"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Typography"
+      },
+      {
+        "id": "backgroundColor",
+        "label": "Colour",
+        "type": "select",
+        "default": "block--bg-white",
+        "options": [
+          {
+            "value": "block--bg-white",
+            "label": "White"
+          },
+          {
+            "value": "block--bg-light",
+            "label": "Gray"
+          },
+          {
+            "value": "block--bg-orange",
+            "label": "Orange"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundColorHex",
+        "label": "Colour HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Bring your ideas to life",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "Link",
+          "Unlink",
+		  "FontSize",
+		  "Source"
+        ]
+      },
+      {
+        "id": "items",
+        "label": "Items",
+        "type": "list",
+        "addText": "Add item",
+        "removeText": "Remove item",
+        "displayField": "title",
+        "element": [
+          {
+            "id": "image",
+            "type": "image",
+            "label": "Item image"
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "settings": [
+              "TextColor",
+              "NumberedList",
+              "BulletedList",
+              "Bold",
+              "Italic",
+              "Link",
+              "Unlink",
+			  "FontSize",
+              "Maximize",
+              "Source"
+            ]
+          },
+		  {
+			"id": "button",
+			"label": "Button",
+			"type": "url",
+			"urlLabel": "Url",
+			"textLabel": "Button text",
+			"styleLabel": "Link style",
+			"styles": [
+			  {
+				"value": "btn btn--black",
+				"label": "Black button"
+			  },
+			  {
+				"value": "btn btn--orange",
+				"label": "Orange button"
+			  },
+			  {
+				"value": "btn btn--white",
+				"label": "White button"
+			  }
+			]
+		  }
+        ],
+        "default": [
+          {
+            "image": {
+              "url": "/assets/pages/video-screen-4.png"
+            },
+            "title": "Get access to customers and deeply integrate with them",
+            "subtitle": "Bosch wanted a direct line of communication with their customer base. To gain this important customer access, they decided to create a customer loyalty program that awarded points and ultimately allowed them to interact directly with their customers.",
+            "button": {
+              "url": "",
+              "urlText": "Read more",
+              "style": "btn btn--orange"
+            }
+          },
+          {
+            "image": {
+              "url": "/assets/pages/video-screen-4.png"
+            },
+            "title": "Get access to customers and deeply integrate with them",
+            "subtitle": "Bosch wanted a direct line of communication with their customer base. To gain this important customer access, they decided to create a customer loyalty program that awarded points and ultimately allowed them to interact directly with their customers.",
+            "button": {
+              "url": "",
+              "urlText": "Read more",
+              "style": "btn btn--orange"
+            }
+          },
+          {
+            "image": {
+              "url": "/assets/pages/video-screen-4.png"
             },
             "title": "Get access to customers and deeply integrate with them",
             "subtitle": "Bosch wanted a direct line of communication with their customer base. To gain this important customer access, they decided to create a customer loyalty program that awarded points and ultimately allowed them to interact directly with their customers.",

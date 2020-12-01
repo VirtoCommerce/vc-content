@@ -4716,6 +4716,28 @@ code {
     margin: 0 -1.25rem;
 }
 
+.block .list-cards--wide.list-cards .list__item {
+    padding: 0 1rem 2.5rem;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner {
+    border-radius: 0;
+    padding: 0;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner .list__img {
+    margin: 0;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner .list__descr {
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner .block__actions {
+    padding: 0 1.5rem 1.5rem;
+}
+
 .block .list-cards .list__item {
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
@@ -7525,6 +7547,10 @@ code {
     display: flex;
     font-family: Helvetica, sans-serif;
     padding: 3.75rem 0;
+}
+
+.block .text-center {
+    text-align: center;
 }
 
 @media (max-width: 767.98px) {

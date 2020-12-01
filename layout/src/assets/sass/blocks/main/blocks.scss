@@ -5,6 +5,11 @@
 	font-family: Helvetica, sans-serif;
 	padding: 3.75rem 0;
 
+    .text-center
+    {
+        text-align: center;
+    }
+
 	@include media-breakpoint-down(sm) {
 		.container
 		{
