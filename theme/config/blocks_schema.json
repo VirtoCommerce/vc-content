@@ -8883,6 +8883,13 @@
     ],
     "settings": [
 	  {
+		"id": "pageSize",
+		"label": "Page size",
+		"type": "number",
+		"default": 3,
+		"tab": "Settings"
+	  },
+	  {
 		"id": "titleAlignment",
         "label": "Title alignment",
         "type": "select",
@@ -9087,7 +9094,13 @@
           }
         ],
         "tab": "Content"
-      }
+      },
+	  {
+		"id": "moreButtonText",
+		"label": "More button text",
+		"type": "string",
+		"tab": "Content"
+	  }
     ]
   },
   "query-blog-posts": {

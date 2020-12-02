@@ -38,9 +38,9 @@
                     }
                 </style>
             {% endif %}
-            <div class="list list-cards list-cards--wide">
+            <div class="list list-cards list-cards--wide" {% if block.pageSize != '' and block.pageSize > 0 %}data-page-size="{{block.pageSize}}"{% endif %}>
                 {% for item in block.items %}
-                    <div class="list__item">
+                    <div class="list__item"{% if forloop.index > (block.pageSize | minus: 1) %} hidden{% endif %}>
                         <div class="list__inner">
                             {% if item.image != '' and item.image.url != '' %}
                                 <div class="list__img">
@@ -59,6 +59,9 @@
                     </div>
                 {% endfor %}
             </div>
+            {% if block.moreButtonText != '' %}
+                <a class="more-button text-center">{{block.moreButtonText}}</a>
+            {% endif %}
         {% endif %}
     </div>
 </div>

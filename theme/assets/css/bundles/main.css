@@ -8617,6 +8617,13 @@ code {
     width: 4rem;
 }
 
+.block .more-button {
+    display: block;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    font-size: 1.125rem;
+}
+
 .block--cover {
     background-repeat: no-repeat;
     background-position: 50% 25%;
