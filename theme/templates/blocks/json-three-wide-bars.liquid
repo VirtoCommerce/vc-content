@@ -38,9 +38,13 @@
                     }
                 </style>
             {% endif %}
-            <div class="list list-cards list-cards--wide" {% if block.pageSize != '' and block.pageSize > 0 %}data-page-size="{{block.pageSize}}"{% endif %}>
+            {% assign page_size = 3 %}
+            {% if (block.pageSize != null or block.pageSize != '') and block.pageSize > 0 %}
+                {% assign page_size = block.pageSize %}
+            {% endif %}
+            <div class="list list-cards list-cards--wide" data-page-size="{{page_size}}">
                 {% for item in block.items %}
-                    <div class="list__item"{% if forloop.index > (block.pageSize | minus: 1) %} hidden{% endif %}>
+                    <div class="list__item"{% if forloop.index > (page_size | minus: 1) %} hidden{% endif %}>
                         <div class="list__inner">
                             {% if item.image != '' and item.image.url != '' %}
                                 <div class="list__img">
