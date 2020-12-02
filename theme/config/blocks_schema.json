@@ -3290,6 +3290,16 @@
         "tab": "Content",
         "group": "Container media"
       },
+	  {
+        "id": "logoImage",
+        "label": "Logo image",
+        "type": "image",
+        "default": {
+          "url": "/assets/pages/video-screen-4.png"
+        },
+        "tab": "Content",
+        "group": "Container media"
+      },
       {
         "id": "firstButton",
         "label": "First button",

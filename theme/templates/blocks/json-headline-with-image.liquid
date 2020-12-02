@@ -24,6 +24,10 @@
             {% endif %}
 
             <div class="col-lg">
+                {% if block.logoImage.url != '' %}
+                    <img class="headline-logo" width="auto" height="auto" data-src="{{block.logoImage.url | image_url}}" />
+                {% endif %}
+
                 {% if block.note != '' %}
                     {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
                     <div class="block__space"></div>

@@ -8624,6 +8624,10 @@ code {
     font-size: 1.125rem;
 }
 
+.block .headline-logo {
+    margin-bottom: .625rem;
+}
+
 .block--cover {
     background-repeat: no-repeat;
     background-position: 50% 25%;
