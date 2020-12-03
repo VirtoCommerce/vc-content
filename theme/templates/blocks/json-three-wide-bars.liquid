@@ -45,7 +45,7 @@
             <div class="list list-cards list-cards--wide" data-page-size="{{page_size}}">
                 {% for item in block.items %}
                     <div class="list__item"{% if forloop.index > (page_size | minus: 1) %} hidden{% endif %}>
-                        <div class="list__inner">
+                        <div class="list__inner" {% if item.color != '' %}style="background:{{item.color}}"{% endif %}>
                             {% if item.image != '' and item.image.url != '' %}
                                 <div class="list__img">
                                     <img data-src="{{ item.image.url | image_url }}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} class="list__pic lazyload" />
