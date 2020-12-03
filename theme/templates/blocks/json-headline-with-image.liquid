@@ -25,7 +25,7 @@
 
             <div class="col-lg">
                 {% if block.logoImage.url != '' %}
-                    <img class="headline-logo" width="auto" height="auto" data-src="{{block.logoImage.url | image_url}}" />
+                    <img class="headline-logo lazyload" width="auto" height="auto" src="{{block.logoImage.url | image_url}}" />
                 {% endif %}
 
                 {% if block.note != '' %}
