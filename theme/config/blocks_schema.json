@@ -3395,6 +3395,28 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+	  {
+        "id": "verticalAlignment",
+        "label": "Vertical alignment",
+        "type": "select",
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+		  {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
       {
         "id": "topDivider",
         "label": "Top divider",

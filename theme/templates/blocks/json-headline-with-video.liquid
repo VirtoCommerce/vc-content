@@ -18,7 +18,14 @@
                 </div>
             {% endif %}
 
-            <div class="col-lg">
+            {% assign verticalAlignment = 'align-self-center' %}
+            {% if block.verticalAlignment == 'top' %}
+                {% assign verticalAlignment = 'align-self-start' %}
+            {% elsif block.verticalAlignment == 'bottom' %}
+                {% assign verticalAlignment = 'align-self-end' %}
+            {% endif %}
+
+            <div class="col-lg {{verticalAlignment}}">
                 {% if block.note != '' %}
                     {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
                     <div class="block__space"></div>
