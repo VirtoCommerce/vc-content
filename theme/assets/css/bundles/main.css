@@ -4716,6 +4716,29 @@ code {
     margin: 0 -1.25rem;
 }
 
+.block .list-cards--wide.list-cards .list__item {
+    padding: 0 1rem 2.5rem;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner {
+    border-radius: 0;
+    padding: 0;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner .list__img {
+    width: 100%;
+    margin: 0;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner .list__descr {
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.block .list-cards--wide.list-cards .list__item .list__inner .block__actions {
+    padding: 0 1.5rem 1.5rem;
+}
+
 .block .list-cards .list__item {
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
@@ -7527,6 +7550,10 @@ code {
     padding: 3.75rem 0;
 }
 
+.block .text-center {
+    text-align: center;
+}
+
 @media (max-width: 767.98px) {
     .block .container {
         padding: 0;
@@ -7865,11 +7892,19 @@ code {
         margin-bottom: 1.25rem;
         width: 100%;
     }
+
+    .block__actions .btn ~ .btn-gradient {
+        margin-top: .75rem;
+    }
 }
 
 @media (min-width: 576px) {
     .block__actions .btn ~ .btn {
         margin-left: 1.25rem;
+    }
+
+    .block__actions .btn ~ .btn-gradient {
+        margin-left: 1.5rem;
     }
 }
 
@@ -7890,6 +7925,12 @@ code {
 .block--align-center .block__inner .block__actions {
     justify-content: center;
     margin: auto auto 0;
+}
+
+.block--align-center .block__inner .list-items .list__item .list__inner .list__num,
+    .block--align-center .block__inner .list-items .list__item .list__inner .list__ico {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .block--align-center .block__inner .list-items--reviews.list-items .list__img,
@@ -8582,6 +8623,39 @@ code {
     bottom: -1rem;
     height: 4rem;
     width: 4rem;
+}
+
+.block .more-button {
+    display: block;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    font-size: 1.125rem;
+}
+
+.block .headline-logo {
+    margin-bottom: .625rem;
+}
+
+@media (max-width: 575.98px) {
+    .block .btn-gradient {
+        width: 100%;
+    }
+
+    .block .btn-gradient ~ .btn {
+        margin-top: 1.75rem;
+    }
+
+    .block .btn-gradient ~ .btn-gradient {
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .block .btn-gradient ~ .btn-gradient,
+    .block .btn-gradient ~ .btn {
+        margin-left: 1.5rem;
+    }
 }
 
 .block--cover {

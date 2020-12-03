@@ -1,0 +1,17 @@
+{% if firstBtn != '' and firstBtn.urlText != '' %}
+    <div class="block__space"></div>
+    <div class="block__actions align-items-center">
+        {% if firstBtn.style == 'btn-gradient' %}
+            {% include 'gradient-button' url: firstBtn.url, text: firstBtn.urlText, background: block.backgroundColorHex %}
+        {% else %}
+            <a href="{{firstBtn.url}}" class="{{firstBtn.style}}" {% if firstBtn.openInNewTab == 'True' %} target="_blank" {% endif %}>{{firstBtn.urlText}}</a>
+        {% endif %}
+        {% if secondBtn != '' and secondBtn.urlText != '' %}
+            {% if secondBtn.style == 'btn-gradient' %}
+                {% include 'gradient-button' url: secondBtn.url, text: secondBtn.urlText, background: block.backgroundColorHex %}
+            {% else %}
+                <a href="{{secondBtn.url}}" class="{{secondBtn.style}}" {% if secondBtn.openInNewTab == 'True' %} target="_blank" {% endif %}>{{secondBtn.urlText}}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endif %}

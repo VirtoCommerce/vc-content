@@ -2,7 +2,7 @@
 
 {% if tag %}
     {% if tag != 'none' and tag != 'div' %}
-        {% assign text = text | remove: '<p>' | remove: '</p>' %}
+        {% assign text = text | remove: '<p>' | remove: '</p>' | replace: '\n\n', '\n' | newline_to_br %}
     {% endif %}
 {% endif %}
 

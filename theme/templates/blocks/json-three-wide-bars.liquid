@@ -5,17 +5,10 @@
     {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
     <div class="block__inner container">
         <div class="row">
-            <div class="block__text {{block.textAreaWidth}}">
-                {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
-                
-                {% include 'headings' headings: block.headings %}
-
-                {% if block.subtitle != '' %}
-                    <div class="block__space"></div>
-                    {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+            <div class="block__text {% if block.titleAlignment == 'center' %}text-center{% endif %} {{block.textAreaWidth}}">
+                {% if block.title != '' %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
                     <div class="block__space block__space--size-lg"></div>
-                {% else %}
-                <div class="block__space block__space--size-lg"></div>
                 {% endif %}
             </div>
         </div>
@@ -45,17 +38,18 @@
                     }
                 </style>
             {% endif %}
-            <div class="list list-cards list-cards--cols-{{block.columnsCount}}">
+            {% assign page_size = 3 %}
+            {% if (block.pageSize != null or block.pageSize != '') and block.pageSize > 0 %}
+                {% assign page_size = block.pageSize %}
+            {% endif %}
+            <div class="list list-cards list-cards--wide" data-page-size="{{page_size}}">
                 {% for item in block.items %}
-                    <div class="list__item">
-                        <div class="list__inner">
+                    <div class="list__item"{% if forloop.index > (page_size | minus: 1) %} hidden{% endif %}>
+                        <div class="list__inner" {% if item.color != '' %}style="background:{{item.color}}"{% endif %}>
                             {% if item.image != '' and item.image.url != '' %}
                                 <div class="list__img">
-                                    <img data-src="{{ item.image.url | image_url }}" title="{{item.image.altText}}" class="list__pic lazyload" />
+                                    <img data-src="{{ item.image.url | image_url }}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} class="list__pic lazyload" />
                                 </div>
-                            {% endif %}
-                            {% if item.title != '' %}
-                                <div class="list__t">{{item.title}}</div>
                             {% endif %}
                             {% if item.subtitle != '' %}
                                 <div class="list__descr">{{item.subtitle}}</div>
@@ -65,6 +59,9 @@
                     </div>
                 {% endfor %}
             </div>
+            {% if block.moreButtonText != '' %}
+                <a class="more-button text-center">{{block.moreButtonText}}</a>
+            {% endif %}
         {% endif %}
     </div>
 </div>

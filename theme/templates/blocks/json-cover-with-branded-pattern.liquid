@@ -22,13 +22,7 @@
                     {% if block.subtitle != '' %}
                         {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                     {% endif %}
-                    {% if block.firstButton != '' and block.firstButton.urlText != '' %}
-                        <div class="block__space block__space--size-lg"></div>
-                        <a href="{{block.firstButton.url}}" class="{{block.firstButton.style}} btn--lg" {% if block.firstButton.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.firstButton.urlText}}</a>
-                        {% if block.secondButton != '' and block.secondButton.urlText != '' %}
-                            <a href="{{block.secondButton.url}}" class="{{block.secondButton.style}} btn--lg" {% if block.secondButton.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.secondButton.urlText}}</a>
-                        {% endif %}
-                    {% endif %}
+                    {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
                     <div class="author-info">
                         {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__descr' %}
                     </div>

@@ -76,11 +76,7 @@
                         <div class="list__descr">{{item.review}}</div>
                     {% endif %}
 
-                    {% if item.casestudyLink != '' and item.casestudyLink.urlText != '' %}
-                        <div class="block__actions">
-                            <a href="{{item.casestudyLink.url}}" class="{{item.casestudyLink.style}}" {% if item.casestudyLink.openInNewTab == 'True' %} target="_blank" {% endif %}>{{item.casestudyLink.urlText}}</a>
-                        </div>
-                    {% endif %}
+                    {% include 'block-buttons' firstBtn: item.casestudyLink %}
                 </div>
             {% endfor %}
             </div>

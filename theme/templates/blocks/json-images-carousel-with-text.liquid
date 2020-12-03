@@ -58,7 +58,7 @@
                         <div class="row">
                             <div class="col-md-5 col-lg-5">
                                 {% if item.image.url != '' %}
-                                    <img class="review-image" src="{{item.image.url}}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} />
+                                    <img class="review-image" src="{{item.image.url | image_url}}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} />
                                 {% endif %}
                             </div>
                             <div class="col-lg-7">
@@ -76,7 +76,7 @@
                                     <div class="note">{{item.note}}</div>
                                 {% endif %}
                                 {% if item.bottomImage != '' %}
-                                    <img class="bottom-img" src="{{item.bottomImage.url}}" {% if item.bottomImage.altText != '' %}title="{{item.bottomImage.altText}}"{% endif %} />
+                                    <img class="bottom-img" src="{{item.bottomImage.url | image_url}}" {% if item.bottomImage.altText != '' %}title="{{item.bottomImage.altText}}"{% endif %} />
                                 {% endif %}
                             </div>
                         </div>

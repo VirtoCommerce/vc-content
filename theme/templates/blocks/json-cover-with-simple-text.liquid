@@ -39,6 +39,13 @@
 {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.backgroundOverlayColor, customColor: block.backgroundOverlayColorHex %}
 {% endif %}
 
+<style>
+    @media (max-width: 543px) {
+        #{{block.__id}} .block--cover {
+            background-position: {% if block.backgroundPositionX == null %}0%{% else %}{{block.backgroundPositionX}}%{% endif %} 25%;
+        }
+    }
+</style>
 <div id="{{ block.__id }}">
     <div class="block {% if block.twoSides != 'True' %}{{alignment}}{% endif %} {% include 'cover-background-settings' %}>
         <div class="block__inner container">
@@ -81,15 +88,7 @@
                         {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                     {% endif %}
 
-                    {% if block.firstButton != '' and block.firstButton.urlText != '' %}
-                        <div class="block__space"></div>
-                        <div class="block__actions">
-                            <a href="{{block.firstButton.url}}" class="{{block.firstButton.style}}" {% if block.firstButton.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.firstButton.urlText}}</a>
-                            {% if block.secondButton != '' and block.secondButton.urlText != '' %}
-                                <a href="{{block.secondButton.url}}" class="{{block.secondButton.style}}" {% if block.secondButton.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.secondButton.urlText}}</a>
-                            {% endif %}
-                        </div>
-                    {% endif %}
+                    {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
                 </div>
 
                 {% if block.horizontalAlignment == 'left' %}

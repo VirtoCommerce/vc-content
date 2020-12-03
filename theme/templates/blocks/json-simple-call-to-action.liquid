@@ -5,9 +5,13 @@
             {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
             
             {% include 'headings' headings: block.headings %}
-
+            
             {% if block.button != '' and block.button.urlText != '' %}
-                <a href="{{block.button.url}}" class="{{block.button.style}}" {% if block.button.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.button.urlText}}</a>
+                {% if block.button.style == 'btn-gradient' %}
+                    {% include 'gradient-button' url: block.button.url, text: block.button.urlText, background: block.backgroundColorHex, additionalClasses: 'text-center ml-4 mt-4 mt-sm-0' %}
+                {% else %}
+                    <a href="{{block.button.url}}" class="{{block.button.style}}" {% if block.button.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.button.urlText}}</a>
+                {% endif %}
             {% endif %}
         </div>
     </div>
