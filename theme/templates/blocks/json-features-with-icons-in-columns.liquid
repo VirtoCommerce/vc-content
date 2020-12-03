@@ -123,12 +123,7 @@
                             {% if column.subtitle != '' %}
                                 {% include 'seo-text' tag: column.subtitleSeoTag, text: column.subtitle, class: 'list__descr' %}
                             {% endif %}
-                            {% if column.button != '' and column.button.urlText != '' %}
-                                <div class="block__space"></div>
-                                <div class="block__actions">
-                                    <a href="{{column.button.url}}" class="{{column.button.style}} btn--w-auto" {% if column.buttonIsNewWindow == 'True' %} target="_blank" {% endif %}>{{column.button.urlText}}</a>
-                                </div>
-                            {% endif %}
+                            {% include 'block-buttons' firstBtn: column.button %}
                         </div>
                     </div>
                 {% endfor %}

@@ -401,12 +401,22 @@
 				justify-content: center;
 				margin-bottom: 1.25rem;
 				width: 100%;
+
+                & ~ .btn-gradient
+                {
+                    margin-top: .75rem;
+                }
 			}
 
 			@include media-breakpoint-up(sm) {
                 & ~ .btn
                 {
 				    margin-left: 1.25rem;
+                }
+
+                & ~ .btn-gradient
+                {
+                    margin-left: 1.5rem;
                 }
 			}
 
@@ -1310,6 +1320,32 @@
     .headline-logo
     {
         margin-bottom: .625rem;
+    }
+
+    .btn-gradient
+    {
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+
+            & ~ .btn
+            {
+                margin-top: 1.75rem;
+            }
+
+            & ~ .btn-gradient
+            {
+                margin-bottom: 1.5rem;
+                margin-top: 2.5rem;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            & ~ .btn-gradient,
+            & ~ .btn
+            {
+                margin-left: 1.5rem;
+            }
+        }
     }
 }
 

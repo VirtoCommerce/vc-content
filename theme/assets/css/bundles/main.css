@@ -7892,11 +7892,19 @@ code {
         margin-bottom: 1.25rem;
         width: 100%;
     }
+
+    .block__actions .btn ~ .btn-gradient {
+        margin-top: .75rem;
+    }
 }
 
 @media (min-width: 576px) {
     .block__actions .btn ~ .btn {
         margin-left: 1.25rem;
+    }
+
+    .block__actions .btn ~ .btn-gradient {
+        margin-left: 1.5rem;
     }
 }
 
@@ -8626,6 +8634,28 @@ code {
 
 .block .headline-logo {
     margin-bottom: .625rem;
+}
+
+@media (max-width: 575.98px) {
+    .block .btn-gradient {
+        width: 100%;
+    }
+
+    .block .btn-gradient ~ .btn {
+        margin-top: 1.75rem;
+    }
+
+    .block .btn-gradient ~ .btn-gradient {
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .block .btn-gradient ~ .btn-gradient,
+    .block .btn-gradient ~ .btn {
+        margin-left: 1.5rem;
+    }
 }
 
 .block--cover {

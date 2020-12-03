@@ -54,11 +54,7 @@
                             {% if item.subtitle != '' %}
                                 <div class="list__descr">{{item.subtitle}}</div>
                             {% endif %}
-                            {% if item.button != '' and item.button.urlText != '' %}
-                                <div class="block__actions">
-                                    <a href="{{item.button.url}}" class="{{item.button.style}}" {% if item.button.openInNewTab == 'True' %} target="_blank" {% endif %}>{{item.button.urlText}}</a>
-                                </div>
-                            {% endif %}
+                            {% include 'block-buttons' firstBtn: item.button %}
                         </div>
                     </div>
                 {% endfor %}
