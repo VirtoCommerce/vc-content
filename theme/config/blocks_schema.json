@@ -9048,6 +9048,12 @@
             ]
           },
 		  {
+			"id": "color",
+			"label": "Colour HEX",
+			"type": "color",
+			"default": ""
+		  },
+		  {
 			"id": "button",
 			"label": "Button",
 			"type": "url",
