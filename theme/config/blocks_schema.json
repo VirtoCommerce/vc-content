@@ -293,6 +293,11 @@
             "id": "markup_webpage_image",
             "label": "Page image"
         },
+		{
+            "type": "image",
+            "id": "backgroundImage",
+            "label": "Background image"
+        },
         {
             "id": "markup_webpage_date_created",
             "label": "Date created",

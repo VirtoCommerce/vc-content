@@ -53,6 +53,15 @@
     {% include 'markup-opengraph' %}
     {% include 'twitter-cards-meta' %}
     {% include 'target-account-service-url' %}
+    {% if page_settings.backgroundImage != blank and page_settings.backgroundImage.url != '' %}
+        <style>
+            body {
+                background: url({{page_settings.backgroundImage.url | image_url}});
+                background-position: center;
+                background-size: cover;
+            }
+        </style>
+    {% endif %}
 </head>
 <body>
     {% include 'google-tag-manager-body' %}
