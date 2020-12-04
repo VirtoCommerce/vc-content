@@ -7868,6 +7868,13 @@ code {
     }
 }
 
+.block [style="font-size:28px"],
+  .block [style="font-size:36px"],
+  .block [style="font-size:48px"],
+  .block [style="font-size:72px"] {
+    line-height: 1.4;
+}
+
 .block__space {
     height: 1.25rem;
 }
