@@ -1037,6 +1037,7 @@
           "Italic",
           "Link",
           "Unlink",
+		  "FontSize",
           "Maximize",
           "Source"
         ]
