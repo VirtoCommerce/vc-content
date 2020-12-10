@@ -61,5 +61,9 @@
                 {% endfor %}
             </div>
         {% endif %}
+        {% if block.firstButton != '' and block.firstButton.urlText != '' %}
+            <div class="block__space"></div>
+            {% include 'block-buttons' firstBtn: item.firstButton, secondBtn: item.secondButton %}
+        {% endif %}
     </div>
 </div>

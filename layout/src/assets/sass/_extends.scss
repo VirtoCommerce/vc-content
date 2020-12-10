@@ -704,7 +704,8 @@
 
     .list__img
     {
-        align-items: center;
+        display: flex;
+        align-items: flex-end;
         height: 3.125rem;
         justify-content: flex-start;
         position: relative;

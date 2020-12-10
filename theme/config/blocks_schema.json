@@ -5213,7 +5213,8 @@
     "category": "Media and Logotypes",
     "includeShared": [
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "buttons"
     ],
     "settings": [
       {
@@ -5385,7 +5386,10 @@
         "settings": [
           "TextColor",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize",
+		  "Maximize",
+		  "Source"
         ]
       },
       {
@@ -5402,6 +5406,7 @@
           "Italic",
           "Link",
           "Unlink",
+		  "FontSize",
           "Maximize",
           "Source"
         ]
