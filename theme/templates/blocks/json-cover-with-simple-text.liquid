@@ -34,6 +34,22 @@
             right: 0;
         }
     }
+    
+    {% if block.items.size > 0 %}
+        {% for item in block.items %}
+            {% if item.background.url != '' and item.background.url != 'Null' %}
+                #{{block.__id}} > .block--cover-item-{{forloop.index | plus: 1}}:after {
+                    background: url({{item.background.url | image_url}});
+                    background-repeat: no-repeat;
+                }
+            {% endif %}
+            {% if item.backgroundColorHex != '' %}
+                #{{block.__id}} > .block.block--cover-item-{{forloop.index | plus: 1}}:after {
+                    background: {{item.backgroundColorHex}};
+                }
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 </style>
 {% else %}
 {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.backgroundOverlayColor, customColor: block.backgroundOverlayColorHex %}
@@ -47,58 +63,110 @@
     }
 </style>
 <div id="{{ block.__id }}">
-    <div class="block {% if block.twoSides != 'True' %}{{alignment}}{% endif %} {% include 'cover-background-settings' %}>
+    <div class="block {% if block.twoSides != 'True' %}{{alignment}}{% endif %} {% if block.items.size > 0 %}block--cover-items block--cover-item-1{% endif %} {% include 'cover-background-settings' %}>
         <div class="block__inner container">
-            <div class="row justify-content-center">
-                {% capture second_side %}
-                    <div class="col-lg second-side--{{block.horizontalAlignment}}">{{block.secondSideText}}</div>
-                {% endcapture %}
+            {% capture second_side %}
+                <div class="col-lg second-side--{{block.horizontalAlignment}}">{{block.secondSideText}}</div>
+            {% endcapture %}
 
-                {% capture column %}
-                    {% assign column_area_width = block.textAreaWidth | split: '-' | last | plus: 0 %}
-                    {% assign col_class = 'col-lg' %}
-                    {% if column_area_width != 0 %}
-                        {% assign col_class = col_class | append: '-' | append: (12 | minus: column_area_width) %}
-                        <div class="{{col_class}}"></div>
-                    {% endif %}
-                {% endcapture %}
-
-                {% if block.horizontalAlignment == 'right' %}
-                    {% if block.twoSides == 'True' %}
-                    {{second_side}}
-                    {% else %}
-                    {{column}}
-                    {% endif %}
+            {% capture column %}
+                {% assign column_area_width = block.textAreaWidth | split: '-' | last | plus: 0 %}
+                {% assign col_class = 'col-lg' %}
+                {% if column_area_width != 0 %}
+                    {% assign col_class = col_class | append: '-' | append: (12 | minus: column_area_width) %}
+                    <div class="{{col_class}}"></div>
                 {% endif %}
+            {% endcapture %}
+            
+            {% if block.items.size > 0 %}
+                {% for item in block.items %}
+                    <div class="row justify-content-center cover-item cover-item-{{forloop.index | plus: 1}} {% if forloop.index == 0 %}cover-item--scrolled{% endif %}" {% if forloop.index > 0 %}style="display:none;opacity:0"{% endif %}>
+                        {% if block.horizontalAlignment == 'right' %}
+                            {% if block.twoSides == 'True' %}
+                                <div class="col-lg second-side--{{block.horizontalAlignment}}">
+                                    {{item.text}}
+                                </div>
+                            {% else %}
+                                {{column}}
+                            {% endif %}
+                        {% endif %}
 
-                <div class="block__text {% if block.twoSides == 'True' %}col-lg{% else %}{{block.textAreaWidth}}{% endif %}">
-                    {% if block.note != '' %}
-                        {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                        <div class="block__text {% if block.twoSides == 'True' %}col-lg{% else %}{{item.textAreaWidth}}{% endif %}">
+                            {% if item.note != '' %}
+                                {% include 'seo-text' tag: item.noteSeoTag, text: item.note, class: 'block__note' %}
+                                <div class="block__space"></div>
+                            {% endif %}
+
+                            {% if item.title != '' %}
+                                {% include 'seo-text' tag: item.titleSeoTag, text: item.title, class: 'block__t' %}
+                            {% endif %}
+
+                            {% include 'headings' headings: item.headings %}
+                            <div class="block__space"></div>
+
+                            {% if item.subtitle != '' %}
+                                {% include 'seo-text' tag: item.subtitleSeoTag, text: item.subtitle, class: 'block__descr' %}
+                            {% endif %}
+
+                            {% include 'block-buttons' firstBtn: item.firstButton, secondBtn: item.secondButton %}
+                        </div>
+
+                        {% if block.horizontalAlignment == 'left' %}
+                            {% if block.twoSides == 'True' %}
+                                <div class="col-lg second-side--{{block.horizontalAlignment}}">
+                                    <div class="block__descr">
+                                        {{item.text}}
+                                    </div>
+                                </div>
+                            {% else %}
+                                {{column}}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="row justify-content-center">
+                    {% if block.horizontalAlignment == 'right' %}
+                        {% if block.twoSides == 'True' %}
+                            {{second_side}}
+                        {% else %}
+                            {{column}}
+                        {% endif %}
+                    {% endif %}
+
+                    <div class="block__text {% if block.twoSides == 'True' %}col-lg{% else %}{{block.textAreaWidth}}{% endif %}">
+                        {% if block.note != '' %}
+                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                            <div class="block__space"></div>
+                        {% endif %}
+
+                        {% if block.title != '' %}
+                            {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                        {% endif %}
+
+                        {% include 'headings' headings: block.headings %}
                         <div class="block__space"></div>
+
+                        {% if block.subtitle != '' %}
+                            {% assign subtitle_class = '' %}
+                            {% if block.doubleSpacing != 'False' %}
+                                {% assign subtitle_class = 'block__descr' %}
+                            {% endif %}
+                            {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: subtitle_class %}
+                        {% endif %}
+
+                        {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
+                    </div>
+
+                    {% if block.horizontalAlignment == 'left' %}
+                        {% if block.twoSides == 'True' %}
+                            {{second_side}}
+                        {% else %}
+                            {{column}}
+                        {% endif %}
                     {% endif %}
-
-                    {% if block.title != '' %}
-                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
-                    {% endif %}
-
-                    {% include 'headings' headings: block.headings %}
-                    <div class="block__space"></div>
-
-                    {% if block.subtitle != '' %}
-                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
-                    {% endif %}
-
-                    {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
                 </div>
-
-                {% if block.horizontalAlignment == 'left' %}
-                    {% if block.twoSides == 'True' %}
-                    {{second_side}}
-                    {% else %}
-                    {{column}}
-                    {% endif %}
-                {% endif %}
-            </div>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -1355,6 +1355,16 @@
             }
         }
     }
+
+    .morph-hide:after
+    {
+        animation: morph-hide .75s forwards;
+    }
+
+    .morph-show:after
+    {
+        animation: morph-show .75s forwards;
+    }
 }
 
 

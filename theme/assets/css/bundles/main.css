@@ -5737,6 +5737,26 @@ code {
     z-index: 9000;
 }
 
+@keyframes morph-hide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes morph-show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .section {
     padding: 6.25rem 0;
     text-align: center;
@@ -8664,6 +8684,14 @@ code {
     .block .btn-gradient ~ .btn {
         margin-left: 1.5rem;
     }
+}
+
+.block .morph-hide:after {
+    animation: morph-hide .75s forwards;
+}
+
+.block .morph-show:after {
+    animation: morph-show .75s forwards;
 }
 
 .block--cover {

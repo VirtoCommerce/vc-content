@@ -1039,9 +1039,17 @@
           "Unlink",
 		  "FontSize",
           "Maximize",
-          "Source"
+          "Source",
+		  "EnterModeBr"
         ]
       },
+	  {
+		"id": "doubleSpacing",
+		"label": "Double spacing",
+		"type": "checkbox",
+		"default": true,
+		"tab": "Content"
+	  },
       {
         "id": "note",
         "label": "Note",
@@ -1073,6 +1081,91 @@
           "Source"
         ]
       },
+	  {
+		"id": "items",
+		"label": "Items",
+		"type": "list",
+		"tab": "Content",
+		"addText": "Add item",
+        "removeText": "Remove item",
+        "displayField": "title",
+        "element": [
+			{
+				"id": "title",
+				"label": "Title",
+				"type": "text",
+				"default": "Bring your ideas to life",
+				"tab": "Content",
+				"settings": [
+				  "TextColor",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Source"
+				]
+			},
+			{
+				"id": "subtitle",
+				"label": "Subtitle",
+				"type": "text",
+				"default": "Anything you've even dreamed about is possible to realise just at the moment when you decided to win.",
+				"tab": "Content",
+				"settings": [
+				  "TextColor",
+				  "NumberedList",
+				  "BulletedList",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Maximize",
+				  "Source"
+				]
+			},
+			{
+				"id": "note",
+				"label": "Note",
+				"type": "text",
+				"default": "Our company",
+				"tab": "Content",
+				"settings": [
+				  "TextColor",
+				  "Link",
+				  "Unlink"
+				]
+			},
+			{
+				"id": "background",
+				"type": "image",
+				"label": "Background"
+			},
+			{
+				"id": "backgroundColorHex",
+				"label": "Colour HEX",
+				"type": "color",
+				"default": ""
+			  },
+			{
+				"id": "text",
+				"type": "text",
+				"label": "Second side text",
+				"default": "",
+				"settings": [
+				  "TextColor",
+				  "NumberedList",
+				  "BulletedList",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Maximize",
+				  "Source"
+				]
+			}
+		]
+	  },
       {
         "id": "background",
         "label": "Background",
