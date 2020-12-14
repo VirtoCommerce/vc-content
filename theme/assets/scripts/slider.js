@@ -62,4 +62,61 @@ $(function () {
     $('.block .slider-arrow--right').on('mouseout', function () {
         $(this).siblings('.slider-arrow--left').css('visibility', 'visible');
     });
+
+    var coverItems = $('.block--cover-items');
+    if (coverItems.length > 0) {
+        var animateBlock = function (block, element, classIndicator, animationClass, useCoverClassPrefix) {
+            for (var classname of element.classList) {
+                if (classname.startsWith(classIndicator) && !classname.endsWith('--scrolled')) {
+                    block.toggleClass(animationClass);
+                    block.toggleClass(useCoverClassPrefix ? `block--${classname}` : classname);
+                }
+            }
+        };
+
+        var mouseWheelHandler = function (e) {
+            var delta = e.deltaY || e.detail || e.wheelDelta;
+            if (delta > 0) {
+                e.preventDefault();
+                var target = $(e.currentTarget);
+                if (!target.hasClass('morph-show') && !target.hasClass('morph-hide')) {
+                    target.trigger('swipedown');
+                }
+            }
+        };
+
+        var isMozillaBrowser = /Firefox/i.test(navigator.userAgent);
+        var mozillaMouseEventName = 'DOMMouseScroll';
+
+        coverItems.on('swipedown', function () {
+            var block = $(this);
+            var lastScrolled = block.find('.cover-item--scrolled:last');
+            var next = lastScrolled.next();
+            if (next.length > 0) {
+                next.addClass('cover-item--scrolled');
+                block.toggleClass('morph-hide');
+                lastScrolled.animate({ opacity: 0 }, 750, null, function () {
+                    animateBlock(block, block[0], 'block--cover-item-', 'morph-hide');
+                    lastScrolled.css('display', 'none');
+                    animateBlock(block, next[0], 'cover-item-', 'morph-show', true);
+                    next.css('display', 'flex');
+                    next.animate({ opacity: 1 }, 750, null, () => block.toggleClass('morph-show'));
+                });
+            } else {
+                if (isMozillaBrowser) {
+                    block[0].removeEventListener(mozillaMouseEventName, mouseWheelHandler);
+                } else {
+                    block[0].onmousewheel = null;
+                }
+            }
+        });
+
+        for (var item of coverItems) {
+            if (isMozillaBrowser) {
+                item.addEventListener(mozillaMouseEventName, mouseWheelHandler);
+            } else {
+                item.onmousewheel = mouseWheelHandler;
+            }
+        }
+    }
 });

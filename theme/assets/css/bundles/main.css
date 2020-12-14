@@ -4815,7 +4815,8 @@ code {
 }
 
 .block .list-partners .list__img {
-    align-items: center;
+    display: flex;
+    align-items: flex-end;
     height: 3.125rem;
     justify-content: flex-start;
     position: relative;
@@ -5734,6 +5735,26 @@ code {
 
 .overlay {
     z-index: 9000;
+}
+
+@keyframes morph-hide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes morph-show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .section {
@@ -8665,6 +8686,14 @@ code {
     }
 }
 
+.block .morph-hide:after {
+    animation: morph-hide .75s forwards;
+}
+
+.block .morph-show:after {
+    animation: morph-show .75s forwards;
+}
+
 .block--cover {
     background-repeat: no-repeat;
     background-position: 50% 25%;
@@ -9663,7 +9692,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog {
-    background: #f8f8f8;
     box-sizing: border-box;
     height: 100%;
     padding: 0 0 3.125rem 0;
