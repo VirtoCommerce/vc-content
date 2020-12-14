@@ -9692,7 +9692,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog {
-    background: #f8f8f8;
     box-sizing: border-box;
     height: 100%;
     padding: 0 0 3.125rem 0;

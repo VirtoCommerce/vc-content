@@ -1,7 +1,8 @@
-<div id="{{ block.__id }}" class="section {% if block.style == 'dark' %} section--gray {% endif %}
-     {% if block.noTop == 'True' %} section--small-top {% endif %}
-     {% if block.noBottom == 'True' %} section--small-bottom {% endif %}
-     {% if block.noPad == 'True' %} section--no-padding {% endif %}">
+<div id="{{ block.__id }}" class="{% if block.style == 'dark' %} section--gray {% endif %}
+    {{block.topPadding}} {{block.bottomPadding}}
+    {% if block.topDivider == 'True' %} block--divider-top {% endif %}
+    {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}"
+    {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}>
     <div class="blog">
         <div class="posts __responsive container">
             {% if block.title != '' %}

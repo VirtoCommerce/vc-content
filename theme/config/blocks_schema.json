@@ -12740,6 +12740,10 @@
     "name": "Dynamic content",
     "icon": "text-columns",
     "category": "Queries and Other",
+	"includeShared":[
+		"paddings",
+		"dividers"
+	],
     "settings": [
         {
             "id": "style",
@@ -12758,6 +12762,14 @@
             ],
             "tab": "Settings"
         },
+		{
+			"id": "backgroundColorHex",
+			"label": "Colour HEX",
+			"type": "color",
+			"default": "",
+			"tab": "Settings",
+			"group": "Background"
+		},
         {
             "id": "title",
             "label": "Title",
