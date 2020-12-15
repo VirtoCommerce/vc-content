@@ -8,6 +8,19 @@
             {% if block.title != '' %}
             <h2>{{ block.title }}</h2>
             {% endif %}
+            {% if block.borderColor != '' %}
+                <style>
+                    #{{block.__id}} .list--posts .list__item .list__bg {
+                        border: 1px solid {{block.borderColor}};
+                        border-bottom: none;
+                    }
+                    
+                    #{{block.__id}} .list--posts .list__item .list__info {
+                        border: 1px solid {{block.borderColor}};
+                        border-top: none;
+                    }
+                </style>
+            {% endif %}
             <div class="list list--posts">
                 {% if block.itemsType == 'fixed-items' %}
                     {% for link_text in block.items %}
