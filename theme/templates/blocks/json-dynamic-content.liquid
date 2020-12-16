@@ -8,15 +8,17 @@
             {% if block.title != '' %}
             <h2>{{ block.title }}</h2>
             {% endif %}
-            {% if block.borderColor != blank and block.borderColor != '' %}
+          	{% assign border_color = '#d8d8d8' %}
+            {% if block.borderColor != '' %}
+          		{% assign border_color = block.borderColor %}
                 <style>
                     #{{block.__id}} .list--posts .list__item .list__bg {
-                        border: 1px solid {{block.borderColor}};
+                        border: 1px solid {{border_color}};
                         border-bottom: none;
                     }
                     
                     #{{block.__id}} .list--posts .list__item .list__info {
-                        border: 1px solid {{block.borderColor}};
+                        border: 1px solid {{border_color}};
                         border-top: none;
                     }
                 </style>
@@ -97,7 +99,7 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <div class="more __responsive container">
+            <div class="more __responsive container d-none">
                 <a class="btn btn--lg blog-older justify-content-center mt-5" style="width: 100%;">Older</a>
             </div>
         </div>
