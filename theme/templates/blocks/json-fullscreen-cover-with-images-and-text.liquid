@@ -1,0 +1,154 @@
+<div id="{{block.__id}}" class="home-13">
+    <div class="block block--window-height">
+        {% if block.pictures.size > 0 %}
+            {% for picture in block.pictures %}
+                {% if picture.image.url != '' %}
+                    {% assign picture_style = 'background:url(' | append: picture.image.url | append: ');' %}
+
+                    {% if picture.borderRadius != '' %}
+                        {% assign picture_style = picture_style | append: 'border-radius:' | append: picture.borderRadius | append: '%;' %}
+                    {% endif %}
+
+                    {% if picture.height != '' %}
+                        {% assign picture_style = picture_style | append: 'height:' | append: picture.height | append: 'px;' %}
+                    {% else %}
+                        {% assign picture_style = picture_style | append: 'height:auto;' %}
+                    {% endif %}
+
+                    {% if picture.width != '' %}
+                        {% assign picture_style = picture_style | append: 'width:' | append: picture.width | append: 'px;' %}
+                    {% else %}
+                        {% assign picture_style = picture_style | append: 'width:auto;' %}
+                    {% endif %}
+
+                    {% if picture.topOffset != '' %}
+                        {% assign picture_style = picture_style | append: 'top:' | append: picture.topOffset | append: 'px;' | append: ';' %}
+                    {% endif %}
+                    
+                    {% if picture.rightOffset != '' %}
+                        {% assign picture_style = picture_style | append: 'right:' | append: picture.rightOffset | append: 'px;' | append: ';' %}
+                    {% endif %}
+
+                    {% if picture.bottomOffset != '' %}
+                        {% assign picture_style = picture_style | append: 'bottom:' | append: picture.bottomOffset | append: 'px;' | append: ';' %}
+                    {% endif %}
+
+                    {% if picture.leftOffset != '' %}
+                        {% assign picture_style = picture_style | append: 'left:' | append: picture.leftOffset | append: 'px;' | append: ';' %}
+                    {% endif %}
+
+                    <div style="position:absolute;{{picture_style}}"></div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if block.items.size > 0 %}
+            {% assign hexagons_colors_styles = '' %}
+            {% for item in block.items %}
+                {% assign hexagon_style = '' %}
+
+                {% assign hexagon_height = '8' %}
+                {% if item.height != '' %}
+                    {% assign hexagon_height = item.height %}
+                {% endif %}
+                {% if item.heightMeasure != 'rem' %}
+                    {% assign hexagon_style = hexagon_style | append: 'height:' | append: hexagon_height | append: 'px;' %}
+                {% else %}
+                    {% assign hexagon_style = hexagon_style | append: 'height:' | append: hexagon_height | append: item.heightMeasure | append: ';' %}
+                {% endif %}
+
+                {% assign hexagon_width = '9' %}
+                {% if item.height != '' %}
+                    {% assign hexagon_width = item.width %}
+                {% endif %}
+                {% if item.widthMeasure != 'rem' %}
+                    {% assign hexagon_style = hexagon_style | append: 'width:' | append: hexagon_width | append: 'px;' %}
+                {% else %}
+                    {% assign hexagon_style = hexagon_style | append: 'width:' | append: hexagon_width | append: item.widthMeasure | append: ';' %}
+                {% endif %}
+
+                {% assign hexagon_style = hexagon_style | append: 'top:' | append: item.topOffset | append: 'rem;' %}
+                {% assign hexagon_style = hexagon_style | append: 'right:' | append: item.rightOffset | append: 'rem;' %}
+
+                {% assign hexagon_class = 'hexagon-' | append: (forloop.index | plus: 1) %}
+                {% if item.color != '' or item.textColor != '' %}
+                    {% assign hexagons_colors_styles = hexagons_colors_styles | append: ('#' | append: block.__id) %}
+                    {% assign hexagons_colors_styles = hexagons_colors_styles | append: (' .' | append: hexagon_class) %}
+                    {% assign hexagons_colors_styles = hexagons_colors_styles | append: '{' %}
+
+                    {% if item.color != '' %}
+                        {% assign hexagons_colors_styles = hexagons_colors_styles | append: 'background-color:' | append: item.color | append: ';' %}
+                    {% endif %}
+
+                    {% if item.textColor != '' %}
+                        {% assign hexagons_colors_styles = hexagons_colors_styles | append: 'color:' | append: item.textColor | append: ';' %}
+                    {% endif %}
+
+                    {% assign hexagons_colors_styles = hexagons_colors_styles | append: '}' %}
+                {% endif %}
+                <div class="hexagon {{hexagon_class}}{% if item.text == '' %} hexagon-empty{% endif %}" style="{{hexagon_style}}">
+                    {% if item.hideText != 'True' %}{{item.text}}{% endif %}
+                </div>
+            {% endfor %}
+
+            {% assign hexagons_colors_styles = hexagons_colors_styles | strip %}
+            {% if (hexagons_colors_styles | size) > 0 %}
+                <style>
+                    {{hexagons_colors_styles}}
+                </style>
+            {% endif %}
+        {% endif %}
+        
+        <div class="block__inner container">
+            <div class="row">
+                <div class="col-lg-10">
+                    {% if item.note != '' %}
+                        {% include 'seo-text' tag: item.noteSeoTag, text: item.note, class: 'block__note' %}
+                    {% endif %}
+
+                    {% if item.title != '' %}
+                        <div class="block__space"></div>
+                        {% include 'seo-text' tag: item.titleSeoTag, text: item.title, class: 'block__t' %}
+                    {% endif %}
+
+                    {% if item.subtitle != '' %}
+                        <div class="block__space"></div>
+                        {% include 'seo-text' tag: item.subtitleSeoTag, text: item.subtitle, class: 'block__descr' %}
+                    {% endif %}
+                    <div class="block__space"></div>
+                    {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .bottom-right-orange-sphere {
+            background: url(images/home/orange-sphere.png);
+            background-repeat: no-repeat;
+            height: 446px;
+            width: 520px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .middle-left-ellipse {
+            background: url(images/home/orange-dots.png);
+            background-repeat: no-repeat;
+            height: 175px;
+            width: 175px;
+            position: absolute;
+            left: -3rem;
+            border-radius: 100%;
+        }
+
+        .bottom-left-element {
+            background: url(images/home/bottom_left_element.png);
+            height: 253px;
+            width: 259px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</div>

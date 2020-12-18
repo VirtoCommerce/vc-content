@@ -1,0 +1,309 @@
+[
+    {
+        "type": "settings",
+        "title": "",
+        "permalink": "home-13",
+        "layout": "theme",
+        "noindex": false
+    },
+    {
+        "id": 1,
+        "type": "fullscreen-cover-with-images-and-text",
+        "__id": "fullscreen-cover-with-images-and-textkA8r",
+        "name": null,
+        "firstButton": {
+            "url": null,
+            "urlText": "Let's Connect",
+            "style": "btn-gradient",
+            "openInNewTab": false
+        },
+        "secondButton": {
+            "url": null,
+            "urlText": "",
+            "style": "btn-gradient",
+            "openInNewTab": false
+        },
+        "note": "<p><span style=\"font-size:48px\"><span style=\"color:#ff483b\">Headless. Composable. Cloud.</span></span></p>\n",
+        "title": "<span style=\"font-size:72px\">B2B eCommerce<br />\nPlatform</span>",
+        "subtitle": "<span style=\"font-size:36px\">Outstandingly flexible and fully<br />\ncomposable ecommerce platform that<br />\nsolves it all.</span>",
+        "items": [
+            {
+                "hideText": null,
+                "text": "Inventory",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "15.5",
+                "rightOffset": "9"
+            },
+            {
+                "hideText": null,
+                "text": "Erp integrations<br />\n&nbsp;",
+                "textColor": null,
+                "color": null,
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "11.5",
+                "rightOffset": "16"
+            },
+            {
+                "hideText": null,
+                "text": "Contracts",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": null,
+                "heightMeasure": "rem",
+                "width": null,
+                "widthMeasure": "rem",
+                "topOffset": "15.75",
+                "rightOffset": "23"
+            },
+            {
+                "hideText": null,
+                "text": "Vendor<br />\nportal",
+                "textColor": null,
+                "color": null,
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "24",
+                "rightOffset": "23"
+            },
+            {
+                "hideText": null,
+                "text": "Digital<br />\ncatalog",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "28",
+                "rightOffset": "16"
+            },
+            {
+                "hideText": null,
+                "text": "B2B<br />\nportal",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "32.25",
+                "rightOffset": "23"
+            },
+            {
+                "hideText": null,
+                "text": "Prices",
+                "textColor": null,
+                "color": null,
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "36.25",
+                "rightOffset": "16"
+            },
+            {
+                "hideText": null,
+                "text": "Marketplace",
+                "textColor": null,
+                "color": "rgb(255,126,19)",
+                "height": "12",
+                "heightMeasure": "rem",
+                "width": "14",
+                "widthMeasure": "rem",
+                "topOffset": "40.5",
+                "rightOffset": "21.75"
+            },
+            {
+                "hideText": true,
+                "text": "Red between ERP and Digital",
+                "textColor": null,
+                "color": null,
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "19.75",
+                "rightOffset": "16"
+            },
+            {
+                "hideText": true,
+                "text": "Orange on top and right",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": "8",
+                "heightMeasure": "rem",
+                "width": "9",
+                "widthMeasure": "rem",
+                "topOffset": "7.25",
+                "rightOffset": "9"
+            },
+            {
+                "hideText": true,
+                "text": "Gray on right",
+                "textColor": null,
+                "color": "rgb(196,196,196)",
+                "height": "6",
+                "heightMeasure": "rem",
+                "width": "7",
+                "widthMeasure": "rem",
+                "topOffset": "12.5",
+                "rightOffset": "4"
+            },
+            {
+                "hideText": true,
+                "text": "Orange on left",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": null,
+                "heightMeasure": "rem",
+                "width": null,
+                "widthMeasure": "rem",
+                "topOffset": "19.75",
+                "rightOffset": "30"
+            },
+            {
+                "hideText": true,
+                "text": "Gray on left",
+                "textColor": null,
+                "color": "rgb(196,196,196)",
+                "height": null,
+                "heightMeasure": "rem",
+                "width": null,
+                "widthMeasure": "rem",
+                "topOffset": "28",
+                "rightOffset": "30"
+            },
+            {
+                "hideText": true,
+                "text": "Small orange on top",
+                "textColor": null,
+                "color": "rgb(255,152,0)",
+                "height": "5",
+                "heightMeasure": "rem",
+                "width": "6",
+                "widthMeasure": "rem",
+                "topOffset": "10.5",
+                "rightOffset": "23.85"
+            }
+        ],
+        "noteSeoTag": "none",
+        "titleSeoTag": "div",
+        "subtitleSeoTag": "none",
+        "pictures": [
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/bottom_left_element_Ixg4yq3Dqj.png",
+                    "altText": null
+                },
+                "height": "253",
+                "width": "259",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": null,
+                "bottomOffset": "0",
+                "leftOffset": "0"
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-dots_8Yro5NfELC.png",
+                    "altText": null
+                },
+                "height": "175",
+                "width": "175",
+                "borderRadius": "100",
+                "topOffset": null,
+                "rightOffset": null,
+                "bottomOffset": null,
+                "leftOffset": "-48"
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-sphere_1lpxIpy9rW.png",
+                    "altText": null
+                },
+                "height": "446",
+                "width": "520",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": "0",
+                "bottomOffset": "0",
+                "leftOffset": null
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-line_ytMoKvdMU7.png",
+                    "altText": null
+                },
+                "height": "503",
+                "width": "366",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": null,
+                "bottomOffset": "0",
+                "leftOffset": null
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-plus_jFgCcHKs84.png",
+                    "altText": null
+                },
+                "height": "77",
+                "width": "77",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": null,
+                "bottomOffset": "70",
+                "leftOffset": "25"
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-hexagon_4keojxsvlH.png",
+                    "altText": null
+                },
+                "height": "112",
+                "width": "122",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": null,
+                "bottomOffset": "230",
+                "leftOffset": "20"
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/part-of-black-hexagon_3H4zicNC0b.png",
+                    "altText": null
+                },
+                "height": "91",
+                "width": "92",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": "0",
+                "bottomOffset": "0",
+                "leftOffset": null
+            },
+            {
+                "image": {
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/part-of-dark-gray-hexagon-big_ieIkSYu5LW.png",
+                    "altText": null
+                },
+                "height": "277",
+                "width": "182",
+                "borderRadius": null,
+                "topOffset": null,
+                "rightOffset": "0",
+                "bottomOffset": "170",
+                "leftOffset": null
+            }
+        ]
+    }
+]

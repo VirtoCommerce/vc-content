@@ -10,6 +10,42 @@
         text-align: center;
     }
 
+    &--window-height
+    {
+        @include media-breakpoint-up(sm) {
+            min-height: calc(100vh - 5rem);
+        }
+
+        & .hexagon
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #FF483B;
+            color: black;
+            font-weight: bold;
+            position: absolute;
+            height: 8rem;
+            width: 9rem;
+            text-transform: uppercase;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+            &:after
+            {
+                position: absolute;
+                content: ' ';
+                background-color: white;
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                top: .2rem;
+                left: .2rem;
+                right: .2rem;
+                bottom: .2rem;
+                z-index: -5;
+            }
+        }
+    }
+
 	@include media-breakpoint-down(sm) {
 		.container
 		{
