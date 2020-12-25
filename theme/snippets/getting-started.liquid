@@ -1,14 +1,14 @@
 <header class="header">
     <div class="header-inner">
-        <div class="align-items-center d-flex justify-content-start justify-content-lg-between">
-            <div class="ml-4 ml-lg-5 mr-4 mr-lg-0">
+        <div class="align-items-center d-flex justify-content-between">
+            <div class="ml-4 ml-lg-5 flex-sm-grow-1 flex-lg-grow-0">
                 <a href="/">
                     <div class="header-logo">
                         Virtocommerce
                     </div>
                 </a>
             </div>
-            <div class="header-nav">
+            <div class="header-nav d-none d-lg-block">
                 <ul class="nav">
                     <!--tabs-->
                     {%- assign menu_tabs = linklists['main-menu'] -%}
@@ -43,10 +43,12 @@
                     {%- endfor -%}
                 </ul>
             </div>
-            <div class="mr-4 mr-lg-5">
-                {% include 'gradient-button' url: '/request-demo', text: 'Request Demo', background: 'white' %}
+            <div class="mr-lg-5 mr-sm-3">
+                {% include 'gradient-button' url: '/request-demo', text: 'Request Demo' %}
             </div>
-            <a class="header-toggle"></a>
+            <div class="d-lg-none mb-3 mr-5">
+                <a class="header-toggle"></a>
+            </div>
         </div>
     </div>
 </header>

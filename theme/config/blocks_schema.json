@@ -9435,6 +9435,209 @@
 		}
 	]
   },
+  "fullscreen-cover-with-combs": {
+	"id": "fullscreen-cover-with-combs",
+	"name": "Fullscreen cover with combs",
+	"icon": "image-text",
+	"displayField": "name",
+	"includeShared": [
+		"note",
+		"title",
+		"subtitle",
+		"buttons",
+		"seo-note",
+		"seo-title",
+		"seo-subtitle"
+	],
+	"settings": [
+		{
+			"id": "title",
+			"settings": [
+			  "TextColor",
+			  "Link",
+			  "Unlink",
+			  "FontSize",
+			  "Maximize",
+			  "Source",
+			  "EnterModeBr"
+			]
+		},
+		{
+			"id": "subtitle",
+			"settings": [
+			  "TextColor",
+			  "NumberedList",
+			  "BulletedList",
+			  "Bold",
+			  "Italic",
+			  "Link",
+			  "Unlink",
+			  "FontSize",
+			  "Maximize",
+			  "Source",
+			  "EnterModeBr"
+			]
+		},
+		{
+            "id": "columns",
+            "label": "Columns",
+            "type": "list",
+            "addText": "Add column",
+            "removeText": "Remove column",
+			"tab": "Content",
+			"displayField": "columnName",
+            "element": [
+			  {
+				"id": "columnName",
+				"label": "Column name",
+				"type": "string"
+			  },
+			  {
+				"id": "isInvisibleOnMobile",
+				"label": "Invisible on mobile",
+				"type": "checkbox"
+			  },
+			  {
+				"id": "items",
+				"label": "Column items",
+				"type": "popup-list",
+				"options": {
+				  "width": "70%",
+				  "max-height": "70%"
+				},
+				"addText": "Add item",
+				"removeText": "Remove item",
+				"element": [
+					{
+						"id": "isHidden",
+						"label": "Hidden",
+						"type": "checkbox"
+					},
+					{
+						"id": "isInvisibleOnMobile",
+						"label": "Invisible on mobile",
+						"type": "checkbox"
+					},
+					{
+						"id": "isHiddenOnMobile",
+						"label": "Hidden on mobile",
+						"type": "checkbox"
+					},
+					{
+						"id": "hideText",
+						"label": "Hide text",
+						"type": "checkbox"
+					},
+					{
+						"id": "text",
+						"label": "Text",
+						"type": "text",
+						"settings": [
+						  "TextColor",
+						  "Link",
+						  "Unlink",
+						  "FontSize",
+						  "Maximize",
+						  "Source",
+						  "EnterModeBr"
+						]
+					},
+					{
+						"id": "textColor",
+						"label": "Text color",
+						"type": "color",
+						"default": ""
+					},
+					{
+						"id": "color",
+						"label": "Color",
+						"type": "color",
+						"default": ""
+					},
+					{
+						"id": "size",
+						"label": "Size",
+						"type": "select",
+						"default": "middle",
+						"options": [
+							{
+								"label": "Small",
+								"value": "small"
+							},
+							{
+								"label": "Middle",
+								"value": "middle"
+							},
+							{
+								"label": "Big",
+								"value": "big"
+							}
+						]
+					}
+				]
+			  }
+			]
+	    },
+		{
+			"id": "pictures",
+			"label": "Pictures",
+			"type": "list",
+			"addText": "Add item",
+			"removeText": "Remove item",
+			"displayField": "text",
+			"tab": "Content",
+			"element": [
+				{
+					"id": "isVisibleOnMobile",
+					"label": "Visible on mobile",
+					"type": "checkbox"
+				},
+				{
+					"id": "image",
+					"label": "Image",
+					"type": "image"
+				},
+				{
+					"id": "height",
+					"label": "Height",
+					"type": "number",
+					"default": "128"
+				},
+				{
+					"id": "width",
+					"label": "Width",
+					"type": "number",
+					"default": "144"
+				},
+				{
+					"id": "borderRadius",
+					"label": "Border radius (%)",
+					"type": "number"
+				},
+				{
+					"id": "topOffset",
+					"label": "Top offset",
+					"type": "number"
+				},
+				{
+					"id": "rightOffset",
+					"label": "Right offset",
+					"type": "number"
+				},
+				{
+					"id": "bottomOffset",
+					"label": "Bottom offset",
+					"type": "number"
+				},
+				{
+					"id": "leftOffset",
+					"label": "Left offset",
+					"type": "number"
+				}
+			]
+		}
+	]
+  },
   "form-case-study": {
     "name": "Form Case Study",
     "icon": "image-text",

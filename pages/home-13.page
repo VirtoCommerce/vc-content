@@ -36,8 +36,8 @@
                 "heightMeasure": "rem",
                 "width": "9",
                 "widthMeasure": "rem",
-                "topOffset": "15.5",
-                "rightOffset": "9"
+                "topOffset": "15.75",
+                "rightOffset": "8.8"
             },
             {
                 "hideText": null,
@@ -49,7 +49,7 @@
                 "width": "9",
                 "widthMeasure": "rem",
                 "topOffset": "11.5",
-                "rightOffset": "16"
+                "rightOffset": "15.9"
             },
             {
                 "hideText": null,
@@ -72,7 +72,7 @@
                 "heightMeasure": "rem",
                 "width": "9",
                 "widthMeasure": "rem",
-                "topOffset": "24",
+                "topOffset": "24.25",
                 "rightOffset": "23"
             },
             {
@@ -84,8 +84,8 @@
                 "heightMeasure": "rem",
                 "width": "9",
                 "widthMeasure": "rem",
-                "topOffset": "28",
-                "rightOffset": "16"
+                "topOffset": "28.5",
+                "rightOffset": "15.9"
             },
             {
                 "hideText": null,
@@ -96,7 +96,7 @@
                 "heightMeasure": "rem",
                 "width": "9",
                 "widthMeasure": "rem",
-                "topOffset": "32.25",
+                "topOffset": "32.75",
                 "rightOffset": "23"
             },
             {
@@ -108,8 +108,8 @@
                 "heightMeasure": "rem",
                 "width": "9",
                 "widthMeasure": "rem",
-                "topOffset": "36.25",
-                "rightOffset": "16"
+                "topOffset": "37",
+                "rightOffset": "15.9"
             },
             {
                 "hideText": null,
@@ -120,7 +120,7 @@
                 "heightMeasure": "rem",
                 "width": "14",
                 "widthMeasure": "rem",
-                "topOffset": "40.5",
+                "topOffset": "41.25",
                 "rightOffset": "21.75"
             },
             {
@@ -132,8 +132,8 @@
                 "heightMeasure": "rem",
                 "width": "9",
                 "widthMeasure": "rem",
-                "topOffset": "19.75",
-                "rightOffset": "16"
+                "topOffset": "20",
+                "rightOffset": "15.9"
             },
             {
                 "hideText": true,
@@ -145,7 +145,7 @@
                 "width": "9",
                 "widthMeasure": "rem",
                 "topOffset": "7.25",
-                "rightOffset": "9"
+                "rightOffset": "8.8"
             },
             {
                 "hideText": true,
@@ -157,7 +157,7 @@
                 "width": "7",
                 "widthMeasure": "rem",
                 "topOffset": "12.5",
-                "rightOffset": "4"
+                "rightOffset": "3.7"
             },
             {
                 "hideText": true,
@@ -168,8 +168,8 @@
                 "heightMeasure": "rem",
                 "width": null,
                 "widthMeasure": "rem",
-                "topOffset": "19.75",
-                "rightOffset": "30"
+                "topOffset": "20",
+                "rightOffset": "30.1"
             },
             {
                 "hideText": true,
@@ -180,8 +180,8 @@
                 "heightMeasure": "rem",
                 "width": null,
                 "widthMeasure": "rem",
-                "topOffset": "28",
-                "rightOffset": "30"
+                "topOffset": "28.5",
+                "rightOffset": "30.1"
             },
             {
                 "hideText": true,
@@ -192,7 +192,7 @@
                 "heightMeasure": "rem",
                 "width": "6",
                 "widthMeasure": "rem",
-                "topOffset": "10.5",
+                "topOffset": "10.4",
                 "rightOffset": "23.85"
             }
         ],
