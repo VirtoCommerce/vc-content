@@ -5677,6 +5677,63 @@ code {
     padding-top: 0;
 }
 
+#layout.layout--dark .header,
+  #layout.layout--dark .btn-gradient-shape,
+  #layout.layout--dark .swipe,
+  #layout.layout--dark .page,
+  #layout.layout--dark .footer {
+    background-color: black;
+}
+
+#layout.layout--dark .header-logo {
+    background: url("../../images/redesign/logo-dark.svg") no-repeat scroll 0 0;
+}
+
+#layout.layout--dark .header .nav__item {
+    color: white;
+}
+
+#layout.layout--dark .header .nav__item .dropdown-menu,
+    #layout.layout--dark .header .nav__item .dropdown-menu__t,
+    #layout.layout--dark .header .nav__item .dropdown-menu__item {
+    background-color: black;
+}
+
+#layout.layout--dark .header .header-toggle {
+    border-color: white;
+}
+
+#layout.layout--dark .header .header-toggle:before, #layout.layout--dark .header .header-toggle:after {
+    background: white;
+}
+
+#layout.layout--dark .swipe .nav {
+    background-color: black;
+    color: white;
+}
+
+#layout.layout--dark .swipe__back {
+    background: url("../../images/redesign/icons/arrow-back-white.svg") no-repeat;
+}
+
+#layout.layout--dark .swipe__close {
+    background: url("../../images/redesign/icons/close-white.svg") no-repeat;
+}
+
+#layout.layout--dark .swipe .nav__carret {
+    background: url("../../images/redesign/icons/angle-arrow-white.svg") no-repeat;
+}
+
+#layout.layout--dark .page .block .block__note,
+  #layout.layout--dark .page .block .block__t,
+  #layout.layout--dark .page .block .block__descr {
+    color: white;
+}
+
+#layout.layout--dark .page__t {
+    color: white;
+}
+
 .cookie-bar {
     background: #f0f0f0;
     bottom: 0;
