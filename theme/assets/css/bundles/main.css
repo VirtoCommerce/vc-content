@@ -7923,7 +7923,7 @@ code {
 
 .block__inner {
     align-items: flex-start;
-    color: #2c3237;
+    color: black;
     position: relative;
     z-index: 10;
 }
@@ -8149,10 +8149,6 @@ code {
 
 .block--bg-light {
     background-color: #f8f8f8;
-}
-
-.block--bg-light .block__inner {
-    color: #2c3237;
 }
 
 .block--bg-orange {
@@ -8898,7 +8894,7 @@ code {
 }
 
 .block--cover .block--bg-light .block__inner {
-    color: #2c3237;
+    color: black;
 }
 
 .block--cover .block--bg-orange {

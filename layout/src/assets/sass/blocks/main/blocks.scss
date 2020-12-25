@@ -396,7 +396,7 @@
 	&__inner
 	{
 		align-items: flex-start;
-		color: $gray-900;
+		color: black;
 		position: relative;
 		z-index: 10;
 
@@ -680,11 +680,6 @@
 	&--bg-light
 	{
 		background-color: $gray-100;
-
-		.block__inner
-	    {
-	    	color: $gray-900;
-	    }
 	}
 
 	&--bg-orange
@@ -1596,7 +1591,7 @@
 
 		.block__inner
 	    {
-	    	color: $gray-900;
+	    	color: black;
 	    }
 	}
 
