@@ -45,7 +45,7 @@
         </div>
         <div class="block__inner container">
             <div class="row">
-                <div class="col-lg-6 col-xl-7 mt-5 mt-md-0">
+                <div class="col-lg-6 col-xl-7 mt-5">
                     {% if item.note != '' %}
                         {% include 'seo-text' tag: item.noteSeoTag, text: item.note, class: 'block__note' %}
                     {% endif %}
@@ -62,7 +62,7 @@
                     <div class="block__space"></div>
                     {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
                 </div>
-                <div class="combs-col col-lg-6 col-xl-7">
+                <div class="combs-col col-lg-6 col-xl-6">
                     {% if block.columns.size > 0 %}
                         <div class="row justify-content-center">
                         {% for column in block.columns %}

@@ -47,12 +47,12 @@
                     "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-sphere_1lpxIpy9rW.png",
                     "altText": null
                 },
-                "height": "446",
+                "height": "476",
                 "width": "520",
                 "borderRadius": null,
                 "topOffset": null,
                 "rightOffset": "0",
-                "bottomOffset": "0",
+                "bottomOffset": "",
                 "leftOffset": null
             },
             {
@@ -98,21 +98,7 @@
                 "leftOffset": "20"
             },
             {
-                "isVisibleOnMobile": true,
-                "image": {
-                    "url": "https://vcpro.blob.core.windows.net/assets/pages/part-of-black-hexagon_3H4zicNC0b.png",
-                    "altText": null
-                },
-                "height": "91",
-                "width": "92",
-                "borderRadius": null,
-                "topOffset": null,
-                "rightOffset": "0",
-                "bottomOffset": "0",
-                "leftOffset": null
-            },
-            {
-                "isVisibleOnMobile": true,
+                "isVisibleOnMobile": false,
                 "image": {
                     "url": "https://vcpro.blob.core.windows.net/assets/pages/part-of-dark-gray-hexagon-big_ieIkSYu5LW.png",
                     "altText": null
@@ -187,7 +173,7 @@
                         "isInvisibleOnMobile": false,
                         "isHiddenOnMobile": true,
                         "hideText": true,
-                        "text": "Orange",
+                        "text": "",
                         "textColor": null,
                         "color": "rgb(255,152,0)",
                         "size": "small"
@@ -289,7 +275,7 @@
                         "isInvisibleOnMobile": true,
                         "isHiddenOnMobile": null,
                         "hideText": true,
-                        "text": "Orange",
+                        "text": "",
                         "textColor": null,
                         "color": "rgb(255,152,0)",
                         "size": null

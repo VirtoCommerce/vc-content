@@ -79,6 +79,9 @@
 
         .page
         {
+            position: relative;
+            z-index: -6;
+
             .block
             {
                 .block__note,

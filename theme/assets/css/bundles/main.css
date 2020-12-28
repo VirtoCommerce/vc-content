@@ -5724,9 +5724,14 @@ code {
     background: url("../../images/redesign/icons/angle-arrow-white.svg") no-repeat;
 }
 
+#layout.layout--dark .page {
+    position: relative;
+    z-index: -6;
+}
+
 #layout.layout--dark .page .block .block__note,
-  #layout.layout--dark .page .block .block__t,
-  #layout.layout--dark .page .block .block__descr {
+    #layout.layout--dark .page .block .block__t,
+    #layout.layout--dark .page .block .block__descr {
     color: white;
 }
 
