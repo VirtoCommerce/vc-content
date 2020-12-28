@@ -10,6 +10,94 @@
 	{
 		padding-top: 0;
 	}
+
+    &.layout--dark
+    {
+        .header,
+        .btn-gradient-shape,
+        .swipe,
+        .page,
+        .footer
+        {
+            background-color: black;
+        }
+
+        .header
+        {
+            &-logo
+            {
+                background: url($tpl-img-url + 'logo-dark.svg') no-repeat scroll 0 0;
+            }
+
+            .nav__item
+            {
+                color: white;
+
+                .dropdown-menu,
+                .dropdown-menu__t,
+                .dropdown-menu__item
+                {
+                    background-color: black;
+                }
+            }
+
+            .header-toggle
+            {
+                border-color: white;
+
+                &:before,
+                &:after
+                {
+                    background: white;
+                }
+            }
+        }
+
+        .swipe
+        {
+            .nav
+            {
+                background-color: black;
+                color: white;
+            }
+
+            &__back
+            {
+                background: url($tpl-img-url + 'icons/arrow-back-white.svg') no-repeat;
+            }
+
+            &__close
+            {
+                background: url($tpl-img-url + 'icons/close-white.svg') no-repeat;
+            }
+
+            .nav__carret
+            {
+                background: url($tpl-img-url + 'icons/angle-arrow-white.svg') no-repeat;
+            }
+        }
+
+        .page
+        {
+            position: relative;
+            z-index: -6;
+
+            .block
+            {
+                .block__note,
+                .block__t,
+                .block__descr
+                {
+                    color: white;
+                }
+            }
+
+            &__t
+            {
+                color: white;
+            }
+        }
+    }
 }
 
 .cookie-bar

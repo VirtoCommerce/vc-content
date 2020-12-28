@@ -70,6 +70,9 @@
     {% endif %}
 
     <div id="layout">
+        {% if page == 'index' %}
+        <script>var l=document.getElementById('layout');if(l){var h=new Date().getHours();if(h<=7||h>=19)l.classList.value+='layout--dark';}</script>
+        {% endif %}
         <div class="layout-canvas">
             <div class="swipe">
                 <!-- TODO: Fix main-menu for mobile -->
