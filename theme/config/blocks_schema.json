@@ -869,6 +869,10 @@
 				"label": "Orange button"
 			  },
 			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
+			  {
 				"value": "btn btn--white",
 				"label": "White button"
 			  }
@@ -902,6 +906,10 @@
 				"label": "Orange button"
 			  },
 			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
+			  {
 				"value": "btn btn--white",
 				"label": "White button"
 			  }
@@ -914,6 +922,32 @@
 			"tab": "Content",
 			"group": "Buttons"
 		  }
+	  ],
+	  "buttons-colors": [
+		{
+			"id": "firstButtonColor",
+			"label": "First button color",
+			"type": "color",
+			"tab": "Settings"
+		},
+		{
+			"id": "firstButtonColorText",
+			"label": "First button color text",
+			"type": "color",
+			"tab": "Settings"
+		},
+		{
+			"id": "secondButtonColor",
+			"label": "Second button color",
+			"type": "color",
+			"tab": "Settings"
+		},
+		{
+			"id": "secondButtonColorText",
+			"label": "Second button color text",
+			"type": "color",
+			"tab": "Settings"
+		}
 	  ]
     }
   },
@@ -9445,6 +9479,7 @@
 		"title",
 		"subtitle",
 		"buttons",
+		"buttons-colors",
 		"seo-note",
 		"seo-title",
 		"seo-subtitle"

@@ -42,17 +42,17 @@
                 "leftOffset": "-48"
             },
             {
-                "isVisibleOnMobile": true,
+                "isVisibleOnMobile": false,
                 "image": {
-                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-sphere_1lpxIpy9rW.png",
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/circle_zkbbLgIU0A.svg",
                     "altText": null
                 },
-                "height": "476",
-                "width": "520",
+                "height": "750",
+                "width": "731",
                 "borderRadius": null,
                 "topOffset": null,
                 "rightOffset": "0",
-                "bottomOffset": "",
+                "bottomOffset": "-200",
                 "leftOffset": null
             },
             {
@@ -113,7 +113,7 @@
             }
         ],
         "name": null,
-        "note": "<p><span style=\"color:#ff483b\">Headless. Modular. Cloud.</span></p>\n",
+        "note": "<p><a href=\"/headless-ecommerce\">Headless.</a> Modular. <a href=\"/cloud-ecommerce\">Cloud.</a></p>\n",
         "firstButton": {
             "url": "",
             "urlText": "Let's Connect",
@@ -122,7 +122,7 @@
         "secondButton": {
             "url": "",
             "urlText": "",
-            "style": "btn btn--orange"
+            "style": "btn btn--round"
         },
         "noteSeoTag": "none",
         "titleSeoTag": "div",
@@ -239,7 +239,7 @@
                         "isInvisibleOnMobile": null,
                         "isHiddenOnMobile": true,
                         "hideText": true,
-                        "text": "Red",
+                        "text": "",
                         "textColor": null,
                         "color": null,
                         "size": null
@@ -292,6 +292,75 @@
                     }
                 ]
             }
-        ]
+        ],
+        "firstButtonColor": null,
+        "firstButtonColorText": null,
+        "secondButtonColor": null,
+        "secondButtonColorText": null
+    },
+    {
+        "id": 2,
+        "type": "features-with-icons-in-columns",
+        "__id": "featureswithiconsincolumnsMmqe",
+        "horizontalAlignment": "center",
+        "columnsCount": "3",
+        "columnsBorders": false,
+        "columnsBordersColor": null,
+        "columnsTitlesHoverColor": null,
+        "textAreaWidth": "col-lg",
+        "topDivider": false,
+        "bottomDivider": false,
+        "topPadding": "block--padding-top-large",
+        "bottomPadding": "block--padding-bottom-large",
+        "titleSeoTag": "div",
+        "subtitlePosition": "upper",
+        "iconsType": "numbers",
+        "iconsAreFilled": false,
+        "iconsFilling": "orange",
+        "backgroundColor": "block--bg-white",
+        "backgroundColorHex": null,
+        "title": "<p>Bring your ideas to life</p>\n",
+        "subtitle": "<p>Anything you&#39;ve even dreamed about is possible to realise just at the moment when you decided to win.</p>\n",
+        "columns": [
+            {
+                "title": "Access to customer insights yields competitive advantage",
+                "titleSeoTag": "none",
+                "subtitle": null,
+                "subtitleSeoTag": "none",
+                "image": null,
+                "button": {
+                    "url": "",
+                    "urlText": "Call to action",
+                    "style": "btn btn--orange"
+                }
+            },
+            {
+                "title": "Access to customer insights yields competitive advantage",
+                "titleSeoTag": "none",
+                "subtitle": null,
+                "subtitleSeoTag": "none",
+                "image": null,
+                "button": {
+                    "url": "",
+                    "urlText": "Call to action",
+                    "style": "btn btn--orange"
+                }
+            },
+            {
+                "title": "Access to customer insights yields competitive advantage",
+                "titleSeoTag": "none",
+                "subtitle": null,
+                "subtitleSeoTag": "none",
+                "image": null,
+                "button": {
+                    "url": "",
+                    "urlText": "Call to action",
+                    "style": "btn btn--orange"
+                }
+            }
+        ],
+        "name": null,
+        "subtitleSeoTag": "none",
+        "headings": []
     }
 ]

@@ -82,19 +82,31 @@
             position: relative;
             z-index: -6;
 
-            .block
-            {
-                .block__note,
-                .block__t,
-                .block__descr
-                {
-                    color: white;
-                }
-            }
-
             &__t
             {
                 color: white;
+            }
+        }
+
+        .block
+        {
+            position: relative;
+            z-index: -6;
+            background-color: black;
+
+            .block__note,
+            .block__t,
+            .block__descr
+            {
+                color: white;
+            }
+
+            .hexagon-empty
+            {
+                &:after
+                {
+                    background: black;
+                }
             }
         }
     }

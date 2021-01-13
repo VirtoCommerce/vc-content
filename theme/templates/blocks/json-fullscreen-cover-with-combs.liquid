@@ -60,7 +60,7 @@
                         {% include 'seo-text' tag: item.subtitleSeoTag, text: item.subtitle, class: 'block__descr' %}
                     {% endif %}
                     <div class="block__space"></div>
-                    {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
+                    {% include 'block-buttons' firstBtn: block.firstButton, firstBtnColor: block.firstButtonColor, firstBtnColorText: block.firstButtonColorText, secondBtn: block.secondButton, secondBtnColor: block.secondButtonColor, secondBtnColorText: block.secondButtonColorText %}
                 </div>
                 <div class="combs-col col-lg-6 col-xl-6">
                     {% if block.columns.size > 0 %}
