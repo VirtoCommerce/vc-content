@@ -19,13 +19,15 @@
                     "url": "https://vcpro.blob.core.windows.net/assets/pages/bottom_left_element_Ixg4yq3Dqj.png",
                     "altText": null
                 },
-                "height": "253",
-                "width": "259",
+                "height": "259",
+                "width": "253",
                 "borderRadius": null,
+                "useThemeModeOpacity": null,
                 "topOffset": null,
                 "rightOffset": null,
                 "bottomOffset": "0",
-                "leftOffset": "0"
+                "leftOffset": "0",
+                "cssProperties": []
             },
             {
                 "isVisibleOnMobile": null,
@@ -33,27 +35,57 @@
                     "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-dots_8Yro5NfELC.png",
                     "altText": null
                 },
-                "height": "175",
-                "width": "175",
+                "height": null,
+                "width": "225",
                 "borderRadius": "100",
+                "useThemeModeOpacity": null,
                 "topOffset": null,
                 "rightOffset": null,
                 "bottomOffset": null,
-                "leftOffset": "-48"
+                "leftOffset": null,
+                "cssProperties": [
+                    {
+                        "name": "left",
+                        "value": "-8vh"
+                    },
+                    {
+                        "name": "bottom",
+                        "value": "34vh"
+                    },
+                    {
+                        "name": "height",
+                        "value": "24vh"
+                    },
+                    {
+                        "name": "width",
+                        "value": "24vh"
+                    }
+                ]
             },
             {
                 "isVisibleOnMobile": false,
                 "image": {
-                    "url": "https://vcpro.blob.core.windows.net/assets/pages/circle_zkbbLgIU0A.svg",
+                    "url": "https://vcpro.blob.core.windows.net/assets/pages/circle_CTBzCy8pwc.svg",
                     "altText": null
                 },
-                "height": "750",
-                "width": "731",
+                "height": null,
+                "width": null,
                 "borderRadius": null,
+                "useThemeModeOpacity": true,
                 "topOffset": null,
                 "rightOffset": "0",
-                "bottomOffset": "-200",
-                "leftOffset": null
+                "bottomOffset": "-150",
+                "leftOffset": null,
+                "cssProperties": [
+                    {
+                        "name": "height",
+                        "value": "66.3vh"
+                    },
+                    {
+                        "name": "width",
+                        "value": "66.3vh"
+                    }
+                ]
             },
             {
                 "isVisibleOnMobile": null,
@@ -61,13 +93,24 @@
                     "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-line_ytMoKvdMU7.png",
                     "altText": null
                 },
-                "height": "503",
-                "width": "366",
+                "height": null,
+                "width": null,
                 "borderRadius": null,
+                "useThemeModeOpacity": null,
                 "topOffset": null,
                 "rightOffset": null,
                 "bottomOffset": "0",
-                "leftOffset": "0"
+                "leftOffset": "0",
+                "cssProperties": [
+                    {
+                        "name": "height",
+                        "value": "51.5vh"
+                    },
+                    {
+                        "name": "width",
+                        "value": "39vh"
+                    }
+                ]
             },
             {
                 "isVisibleOnMobile": null,
@@ -78,24 +121,12 @@
                 "height": "77",
                 "width": "77",
                 "borderRadius": null,
+                "useThemeModeOpacity": null,
                 "topOffset": null,
                 "rightOffset": null,
                 "bottomOffset": "70",
-                "leftOffset": "25"
-            },
-            {
-                "isVisibleOnMobile": null,
-                "image": {
-                    "url": "https://vcpro.blob.core.windows.net/assets/pages/orange-hexagon_4keojxsvlH.png",
-                    "altText": null
-                },
-                "height": "112",
-                "width": "122",
-                "borderRadius": null,
-                "topOffset": null,
-                "rightOffset": null,
-                "bottomOffset": "230",
-                "leftOffset": "20"
+                "leftOffset": "25",
+                "cssProperties": null
             },
             {
                 "isVisibleOnMobile": false,
@@ -106,16 +137,18 @@
                 "height": "277",
                 "width": "182",
                 "borderRadius": null,
+                "useThemeModeOpacity": null,
                 "topOffset": null,
                 "rightOffset": "0",
                 "bottomOffset": "170",
-                "leftOffset": null
+                "leftOffset": null,
+                "cssProperties": null
             }
         ],
         "name": null,
         "note": "<p><a href=\"/headless-ecommerce\">Headless.</a> Modular. <a href=\"/cloud-ecommerce\">Cloud.</a></p>\n",
         "firstButton": {
-            "url": "",
+            "url": "contact-us",
             "urlText": "Let's Connect",
             "style": "btn-gradient"
         },
@@ -125,7 +158,7 @@
             "style": "btn btn--round"
         },
         "noteSeoTag": "none",
-        "titleSeoTag": "div",
+        "titleSeoTag": "h1",
         "subtitleSeoTag": "none",
         "columns": [
             {
@@ -134,33 +167,46 @@
                 "items": [
                     {
                         "isHidden": true,
-                        "isInvisibleOnMobile": null,
-                        "isHiddenOnMobile": true,
+                        "isInvisibleOnMobile": false,
+                        "isHiddenOnMiddle": null,
+                        "isHiddenOnMobile": false,
                         "hideText": null,
                         "text": null,
-                        "textColor": null,
                         "color": null,
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": false,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": true,
                         "text": null,
-                        "textColor": null,
-                        "color": "rgb(255,152,0)",
-                        "size": null
+                        "color": null,
+                        "size": null,
+                        "cssProperties": [
+                            {
+                                "name": "background",
+                                "value": "linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%)"
+                            }
+                        ]
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": false,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": true,
                         "text": null,
-                        "textColor": null,
-                        "color": "rgb(196,196,196)",
-                        "size": null
+                        "color": null,
+                        "size": "middle",
+                        "cssProperties": [
+                            {
+                                "name": "background",
+                                "value": "linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%)"
+                            }
+                        ]
                     }
                 ]
             },
@@ -169,54 +215,59 @@
                 "isInvisibleOnMobile": false,
                 "items": [
                     {
-                        "isHidden": null,
+                        "isHidden": true,
                         "isInvisibleOnMobile": false,
-                        "isHiddenOnMobile": true,
+                        "isHiddenOnMiddle": null,
+                        "isHiddenOnMobile": false,
                         "hideText": true,
-                        "text": "",
-                        "textColor": null,
+                        "text": null,
                         "color": "rgb(255,152,0)",
-                        "size": "small"
+                        "size": "middle",
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "Contracts",
-                        "textColor": null,
+                        "text": "<span style=\"color:#ff9800\">Contracts</span>",
                         "color": "rgb(255,152,0)",
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "Vendor<br />\nportal",
-                        "textColor": null,
+                        "text": "<span style=\"color:#ff2a2a\">Vendor<br />\nportal</span>",
                         "color": null,
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "B2B<br />\nportal",
-                        "textColor": null,
+                        "text": "<span style=\"color:#ff9800\">B2B<br />\nportal</span>",
                         "color": "rgb(255,152,0)",
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
                         "text": "Marketplace",
-                        "textColor": null,
                         "color": "rgb(255,126,19)",
-                        "size": "big"
+                        "size": "big",
+                        "cssProperties": null
                     }
                 ]
             },
@@ -227,68 +278,72 @@
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "Erp integrations<br />\n&nbsp;",
-                        "textColor": null,
+                        "text": "<span style=\"color:#ff2a2a\">Erp<br />\nintegrations</span>",
                         "color": null,
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
-                        "isHiddenOnMobile": true,
-                        "hideText": true,
-                        "text": "",
-                        "textColor": null,
-                        "color": null,
-                        "size": null
+                        "isHiddenOnMiddle": null,
+                        "isHiddenOnMobile": false,
+                        "hideText": false,
+                        "text": "Inventory",
+                        "color": "rgba(0,0,0,0.6)",
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "Digital<br />\ncatalog",
-                        "textColor": null,
+                        "text": "<span style=\"color:#ff9800\">Digital<br />\ncatalog</span>",
                         "color": "rgb(255,152,0)",
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": null,
+                        "isHiddenOnMiddle": null,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "Prices",
-                        "textColor": null,
+                        "text": "<span style=\"color:#ff2a2a\">Prices</span>",
                         "color": null,
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     }
                 ]
             },
             {
                 "columnName": "Fourth",
-                "isInvisibleOnMobile": false,
+                "isInvisibleOnMobile": true,
                 "items": [
                     {
                         "isHidden": null,
                         "isInvisibleOnMobile": true,
                         "isHiddenOnMobile": null,
                         "hideText": true,
-                        "text": "",
-                        "textColor": null,
+                        "text": null,
                         "color": "rgb(255,152,0)",
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     },
                     {
                         "isHidden": null,
-                        "isInvisibleOnMobile": false,
+                        "isInvisibleOnMobile": true,
                         "isHiddenOnMobile": null,
                         "hideText": null,
-                        "text": "Inventory",
-                        "textColor": null,
+                        "text": null,
                         "color": "rgb(255,152,0)",
-                        "size": null
+                        "size": null,
+                        "cssProperties": null
                     }
                 ]
             }
@@ -297,70 +352,5 @@
         "firstButtonColorText": null,
         "secondButtonColor": null,
         "secondButtonColorText": null
-    },
-    {
-        "id": 2,
-        "type": "features-with-icons-in-columns",
-        "__id": "featureswithiconsincolumnsMmqe",
-        "horizontalAlignment": "center",
-        "columnsCount": "3",
-        "columnsBorders": false,
-        "columnsBordersColor": null,
-        "columnsTitlesHoverColor": null,
-        "textAreaWidth": "col-lg",
-        "topDivider": false,
-        "bottomDivider": false,
-        "topPadding": "block--padding-top-large",
-        "bottomPadding": "block--padding-bottom-large",
-        "titleSeoTag": "div",
-        "subtitlePosition": "upper",
-        "iconsType": "numbers",
-        "iconsAreFilled": false,
-        "iconsFilling": "orange",
-        "backgroundColor": "block--bg-white",
-        "backgroundColorHex": null,
-        "title": "<p>Bring your ideas to life</p>\n",
-        "subtitle": "<p>Anything you&#39;ve even dreamed about is possible to realise just at the moment when you decided to win.</p>\n",
-        "columns": [
-            {
-                "title": "Access to customer insights yields competitive advantage",
-                "titleSeoTag": "none",
-                "subtitle": null,
-                "subtitleSeoTag": "none",
-                "image": null,
-                "button": {
-                    "url": "",
-                    "urlText": "Call to action",
-                    "style": "btn btn--orange"
-                }
-            },
-            {
-                "title": "Access to customer insights yields competitive advantage",
-                "titleSeoTag": "none",
-                "subtitle": null,
-                "subtitleSeoTag": "none",
-                "image": null,
-                "button": {
-                    "url": "",
-                    "urlText": "Call to action",
-                    "style": "btn btn--orange"
-                }
-            },
-            {
-                "title": "Access to customer insights yields competitive advantage",
-                "titleSeoTag": "none",
-                "subtitle": null,
-                "subtitleSeoTag": "none",
-                "image": null,
-                "button": {
-                    "url": "",
-                    "urlText": "Call to action",
-                    "style": "btn btn--orange"
-                }
-            }
-        ],
-        "name": null,
-        "subtitleSeoTag": "none",
-        "headings": []
     }
 ]

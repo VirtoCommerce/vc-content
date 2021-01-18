@@ -94,11 +94,25 @@
             z-index: -6;
             background-color: black;
 
-            .block__note,
-            .block__t,
-            .block__descr
+            &__note,
+            &__t,
+            &__descr
             {
                 color: white;
+            }
+
+            &--window-height
+            {
+                .pictures
+                {
+                    .pic
+                    {
+                        &--mode-opacity
+                        {
+                            opacity: .8;
+                        }
+                    }
+                }
             }
 
             .hexagon-empty

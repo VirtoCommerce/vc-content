@@ -12,14 +12,10 @@
 
                         {% if picture.height != '' %}
                             {% assign picture_style = picture_style | append: 'height:' | append: picture.height | append: 'px;' %}
-                        {% else %}
-                            {% assign picture_style = picture_style | append: 'height:auto;' %}
                         {% endif %}
 
                         {% if picture.width != '' %}
                             {% assign picture_style = picture_style | append: 'width:' | append: picture.width | append: 'px;' %}
-                        {% else %}
-                            {% assign picture_style = picture_style | append: 'width:auto;' %}
                         {% endif %}
 
                         {% if picture.topOffset != '' %}
@@ -38,21 +34,27 @@
                             {% assign picture_style = picture_style | append: 'left:' | append: picture.leftOffset | append: 'px;' | append: ';' %}
                         {% endif %}
 
-                        <div class="pic{% if picture.isVisibleOnMobile != 'True' %} d-none d-md-block{% endif %}" style="{{picture_style}}"></div>
+                        {% if picture.cssProperties.size > 0 %}
+                            {% for property in picture.cssProperties %}
+                                {% assign picture_style = picture_style | append: property.name | append: ': ' | append: property.value | append: ';' %}
+                            {% endfor %}
+                        {% endif %}
+
+                        <div class="pic{% if picture.isVisibleOnMobile != 'True' %} d-none d-md-block{% endif %} {% if picture.useThemeModeOpacity == 'True' %}pic--mode-opacity{% endif %}" style="{{picture_style}}"></div>
                     {% endif %}
                 {% endfor %}
             {% endif %}
         </div>
         <div class="block__inner container">
-            <div class="row">
-                <div class="col-lg-6 col-xl-7 mt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-7">
                     {% if item.note != '' %}
                         {% include 'seo-text' tag: item.noteSeoTag, text: item.note, class: 'block__note' %}
                     {% endif %}
 
                     {% if item.title != '' %}
                         <div class="block__space"></div>
-                        {% include 'seo-text' tag: item.titleSeoTag, text: item.title, class: 'block__t' %}
+                        {% include 'seo-text' tag: item.titleSeoTag, text: item.title, class: 'block__t block__t--flexible-large' %}
                     {% endif %}
 
                     {% if item.subtitle != '' %}
@@ -93,14 +95,20 @@
                                         {% assign hexagon_class = hexagon_class | append: ' d-none d-sm-block' %}
                                     {% endif %}
 
+                                    {% if item.isHiddenOnMiddle == 'True' %}
+                                        {% assign hexagon_class = hexagon_class | append: ' d-none d-lg-block' %}
+                                    {% endif %}
+
                                     {% assign hexagon_style = '' %}
                                     
                                     {% if item.color != '' %}
                                         {% assign hexagon_style = hexagon_style | append: 'background-color:' | append: item.color | append: ';' %}
                                     {% endif %}
 
-                                    {% if item.textColor != '' %}
-                                        {% assign hexagon_style = hexagon_style | append: 'color:' | append: item.textColor | append: ';' %}
+                                    {% if item.cssProperties.size > 0 %}
+                                        {% for property in item.cssProperties %}
+                                            {% assign hexagon_style = hexagon_style | append: property.name | append: ': ' | append: property.value | append: ';' %}
+                                        {% endfor %}
                                     {% endif %}
 
                                     <div class="hexagon{{hexagon_class}}" {% if (hexagon_style | size) > 0 %} style="{{hexagon_style}}"{% endif %}>
