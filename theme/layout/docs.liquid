@@ -48,6 +48,7 @@
     {% include 'markup-opengraph' %}
     {% include 'twitter-cards-meta' %}
     {% include 'target-account-service-url' %}
+    {% include 'hot-jar-script' %}
 </head>
 <body ng-controller="docsController">
     {% assign docs_pages = pages | where: 'url', 'contains', 'docs' | sort_list: 'url' %}
