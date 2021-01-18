@@ -5405,7 +5405,6 @@ code {
 
 .header {
     background: #fff;
-    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
     left: 0;
     position: fixed;
     right: 0;
@@ -5739,10 +5738,12 @@ code {
     background-color: black;
 }
 
-#layout.layout--dark .block .block__note,
-    #layout.layout--dark .block .block__t,
-    #layout.layout--dark .block .block__descr {
+#layout.layout--dark .block__note, #layout.layout--dark .block__t, #layout.layout--dark .block__descr {
     color: white;
+}
+
+#layout.layout--dark .block--window-height .pictures .pic--mode-opacity {
+    opacity: .8;
 }
 
 #layout.layout--dark .block .hexagon-empty:after {
@@ -7662,6 +7663,10 @@ code {
     z-index: -5;
 }
 
+.block--window-height .pictures .pic--mode-opacity {
+    opacity: .5;
+}
+
 @media (min-width: 576px) {
     .block--window-height {
         min-height: calc(100vh - 5rem);
@@ -7673,6 +7678,12 @@ code {
     background: linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.block--window-height .block__note,
+  .block--window-height .block__t,
+  .block--window-height .block__descr {
+    font-family: CircularStd;
 }
 
 @media (max-width: 767.98px) {
@@ -7691,22 +7702,6 @@ code {
     }
 }
 
-@media (min-width: 992px) {
-    .block--window-height .block__note {
-        font-size: 3rem;
-    }
-
-    .block--window-height .block__t {
-        font-size: 4.5rem;
-        line-height: 1.1;
-    }
-
-    .block--window-height .block__descr {
-        font-size: 2.25rem;
-        line-height: 1.1;
-    }
-}
-
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .block--window-height .block__note {
         font-size: 2rem;
@@ -7714,11 +7709,6 @@ code {
 
     .block--window-height .block__t {
         font-size: 3.5rem;
-        line-height: 1.1;
-    }
-
-    .block--window-height .block__descr {
-        font-size: 1.75rem;
         line-height: 1.1;
     }
 }
@@ -7736,6 +7726,12 @@ code {
     }
 }
 
+@media (min-width: 1625px) {
+    .block--window-height .combs-col {
+        margin-left: 15%;
+    }
+}
+
 .block .hexagon {
     display: flex;
     position: relative;
@@ -7744,12 +7740,13 @@ code {
     text-align: center;
     background-color: #FF483B;
     color: black;
+    font-size: 1.45vh;
     font-weight: bold;
-    height: 8rem;
-    width: 9rem;
+    height: 12vh;
+    width: 14vh;
     text-transform: uppercase;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    margin-top: .5rem;
+    margin-top: .75vh;
 }
 
 @media (max-width: 991.98px) {
@@ -7763,7 +7760,7 @@ code {
 .block .hexagon--small {
     height: 5rem;
     width: 6rem;
-    margin: 3.5rem 0 0 2.25rem;
+    margin: 1.75rem 0 0 3.25rem;
 }
 
 @media (max-width: 991.98px) {
@@ -7776,10 +7773,10 @@ code {
 }
 
 .block .hexagon--big {
-    height: 12rem;
-    width: 14rem;
-    margin-left: -5.25rem;
-    left: 1.5rem;
+    height: 19vh;
+    width: 23vh;
+    margin-left: -9.25vh;
+    left: 2.75vh;
 }
 
 @media (max-width: 991.98px) {
@@ -7803,7 +7800,7 @@ code {
 }
 
 .block .hexagons-col:nth-child(odd) {
-    margin-top: 4.25rem;
+    margin-top: 6.25vh;
 }
 
 @media (max-width: 991.98px) {
@@ -7813,7 +7810,7 @@ code {
 }
 
 .block .hexagons-col ~ .hexagons-col {
-    margin-left: -1.75rem;
+    margin-left: -2.5vh;
 }
 
 @media (max-width: 991.98px) {

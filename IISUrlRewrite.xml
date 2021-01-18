@@ -1,13 +1,14 @@
 <rewrite>
     <rewriteMaps>
         <rewriteMap name="VC-redirects">
+			<add key="/industry/distribution" value="/b2b-ecommerce-for-distributors" />
             <add key="/become-partner" value="/partner-form-become-technology-partner" />
             <add key="/find-implementation-partner" value="/b2b-ecommerce-implementation" />
             <add key="/%EF%BC%89%EF%BC%8C%E5%9B%BD%E5%A4%96%E7%94%A8.net" value="/" />
             <add key="/{{article.url}}" value="/blog" />
             <add key="/{{ article.url }}" value="/" />
-			<add key="/%7B%7B%20article.url%20%7D%7D" value="/" />
-			<add key="/{{ glossary.url }}" value="/glossary" />
+            <add key="/%7B%7B%20article.url%20%7D%7D" value="/" />
+            <add key="/{{ glossary.url }}" value="/glossary" />
             <add key="/account" value="vc-community" />
             <add key="/admin/api/licenses/activate/" value="/" />
             <add key="/apps/CMSExtensions" value="/" />
@@ -197,6 +198,22 @@
             <add key="/webcast-virto-commerce-9-10-oct" value="/" />
             <add key="/www.transfirst.com" value="/" />
             <add key="/znodeNET" value="/" />
+            <add key="/solutions/non-profit-online-catalog" value="industry/non-profit" />
+            <add key="/solutions/meds" value="industry/meds" />
+            <add key="/solutions/ecommerce-whitelabel" value="products/ecommerce-whitelabel" />
+            <add key="/products/virto-commerce-platform" value="virto-commerce-platform-overview" />
+            <add key="/products/b2b-portal" value="solutions/b2b-portal" />
+            <add key="/products/b2c-webshop" value="solutions/b2c-webshop" />
+            <add key="/products/marketplace" value="solutions/marketplace" />
+            <add key="/products/page-builder" value="solutions/page-builder" />
+            <add key="/products/digital-catalog" value="solutions/digital-catalog" />
+            <add key="/products/vendor-portal" value="solutions/vendor-portal" />
+            <add key="/products/customer-loyalty-portal" value="solutions/loyalty-portal" />
+            <add key="/products/chatbot-for-ecommerce" value="solutions/chatbot" />
+            <add key="/ecosystem/ai-ecommerce-tools" value="integrations/ai-in-b2b-ecommerce" />
+            <add key="/ecosystem/erp-integrations" value="integrations/ecommerce-erp-integrations" />
+            <add key="/ecosystem/key-ecommerce-integrations" value="integrations/key-ecommerce-integrations" />
+            <add key="/enterprise-ecommerce-architecture" value="platform-architecture" />
         </rewriteMap>
     </rewriteMaps>
     <rules>

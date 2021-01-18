@@ -9542,74 +9542,96 @@
 				},
 				"addText": "Add item",
 				"removeText": "Remove item",
-				"element": [
+                "element": [
+                    {
+                        "id": "isHidden",
+                        "label": "Hidden",
+                        "type": "checkbox"
+                    },
+                    {
+                        "id": "isInvisibleOnMobile",
+                        "label": "Invisible on mobile",
+                        "type": "checkbox"
+                    },
 					{
-						"id": "isHidden",
-						"label": "Hidden",
-						"type": "checkbox"
-					},
-					{
-						"id": "isInvisibleOnMobile",
-						"label": "Invisible on mobile",
-						"type": "checkbox"
-					},
-					{
-						"id": "isHiddenOnMobile",
-						"label": "Hidden on mobile",
-						"type": "checkbox"
-					},
-					{
-						"id": "hideText",
-						"label": "Hide text",
-						"type": "checkbox"
-					},
-					{
-						"id": "text",
-						"label": "Text",
-						"type": "text",
-						"settings": [
-						  "TextColor",
-						  "Link",
-						  "Unlink",
-						  "FontSize",
-						  "Maximize",
-						  "Source",
-						  "EnterModeBr"
-						]
-					},
-					{
-						"id": "textColor",
-						"label": "Text color",
-						"type": "color",
-						"default": ""
-					},
-					{
-						"id": "color",
-						"label": "Color",
-						"type": "color",
-						"default": ""
-					},
-					{
-						"id": "size",
-						"label": "Size",
-						"type": "select",
-						"default": "middle",
-						"options": [
-							{
-								"label": "Small",
-								"value": "small"
-							},
-							{
-								"label": "Middle",
-								"value": "middle"
-							},
-							{
-								"label": "Big",
-								"value": "big"
-							}
-						]
-					}
-				]
+                        "id": "isHiddenOnMiddle",
+                        "label": "Hidden on middle",
+                        "type": "checkbox"
+                    },
+                    {
+                        "id": "isHiddenOnMobile",
+                        "label": "Hidden on mobile",
+                        "type": "checkbox"
+                    },
+                    {
+                        "id": "hideText",
+                        "label": "Hide text",
+                        "type": "checkbox"
+                    },
+                    {
+                        "id": "text",
+                        "label": "Text",
+                        "type": "text",
+                        "settings": [
+                            "TextColor",
+                            "Link",
+                            "Unlink",
+                            "FontSize",
+                            "Maximize",
+                            "Source",
+                            "EnterModeBr"
+                        ]
+                    },
+                    {
+                        "id": "color",
+                        "label": "Color",
+                        "type": "color",
+                        "default": ""
+                    },
+                    {
+                        "id": "size",
+                        "label": "Size",
+                        "type": "select",
+                        "default": "middle",
+                        "options": [
+                            {
+                                "label": "Small",
+                                "value": "small"
+                            },
+                            {
+                                "label": "Middle",
+                                "value": "middle"
+                            },
+                            {
+                                "label": "Big",
+                                "value": "big"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "cssProperties",
+                        "label": "CSS properties",
+                        "type": "popup-list",
+                        "options": {
+                            "width": "70%",
+                            "max-height": "70%"
+                        },
+                        "addText": "Add property",
+                        "removeText": "Remove property",
+                        "element": [
+                            {
+                                "id": "name",
+                                "label": "Name",
+                                "type": "string"
+                            },
+                            {
+                                "id": "value",
+                                "label": "Value",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
 			  }
 			]
 	    },
@@ -9635,19 +9657,24 @@
 				{
 					"id": "height",
 					"label": "Height",
-					"type": "number",
+					"type": "string",
 					"default": "128"
 				},
 				{
 					"id": "width",
 					"label": "Width",
-					"type": "number",
+					"type": "string",
 					"default": "144"
 				},
 				{
 					"id": "borderRadius",
 					"label": "Border radius (%)",
 					"type": "number"
+				},
+				{
+					"id": "useThemeModeOpacity",
+					"label": "Use theme mode opacity",
+					"type": "checkbox"
 				},
 				{
 					"id": "topOffset",
@@ -9668,6 +9695,29 @@
 					"id": "leftOffset",
 					"label": "Left offset",
 					"type": "number"
+				},
+				{
+					"id": "cssProperties",
+					"label": "CSS properties",
+					"type": "popup-list",
+					"options": {
+						"width": "70%",
+						"max-height": "70%"
+					},
+					"addText": "Add property",
+					"removeText": "Remove property",
+					"element": [
+						{
+							"id": "name",
+							"label": "Name",
+							"type": "string"
+						},
+						{
+							"id": "value",
+							"label": "Value",
+							"type": "string"
+						}
+					]
 				}
 			]
 		}
