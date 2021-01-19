@@ -3890,6 +3890,531 @@
       }
     ]
   },
+  "headline-with-form-and-bound-value-result": {
+    "id": "headline-with-form-and-bound-value-result",
+    "name": "Headline with form and bound value result",
+    "icon": "image-text",
+    "displayField": "title",
+    "category": "Headlines and Forms",
+    "includeShared": [
+	  "paddings",
+	  "dividers",
+      "seo-subtitle",
+      "seo-note",
+      "headings"
+    ],
+    "settings": [
+      {
+        "id": "horizontalAlignment",
+        "label": "Horizontal alignment",
+        "type": "select",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
+      {
+        "id": "formId",
+        "label": "Form ID",
+        "type": "string",
+        "default": "formId",
+        "tab": "Settings",
+        "group": "Form"
+      },
+      {
+        "id": "formName",
+        "label": "Form Name",
+        "type": "string",
+        "default": "formName",
+        "tab": "Settings",
+        "group": "Form"
+      },
+      {
+        "id": "formSubmitRedirectUrl",
+        "label": "Submit redirect URL",
+        "type": "string",
+        "tab": "Settings",
+        "group": "Form"
+      },
+      {
+        "id": "formSubmitButtonStyle",
+        "label": "Submit button style",
+        "type": "select",
+        "default": "btn btn--orange btn--block",
+        "options": [
+          {
+            "value": "btn btn--black btn--block",
+            "label": "Black"
+          },
+          {
+            "value": "btn btn--orange btn--block",
+            "label": "Orange"
+          },
+          {
+            "value": "btn btn--white btn--block",
+            "label": "White"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Form"
+      },
+	  {
+		"id": "formSubmitButtonColor",
+		"label": "Form submit button color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "formSubmitButtonTextColor",
+		"label": "Form submit button text color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "formSubmitButtonBorderColor",
+		"label": "Form submit button border color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  },
+      {
+        "id": "titleSeoTag",
+        "label": "Title SEO tag",
+        "type": "select",
+        "default": "div",
+        "options": [
+          {
+            "value": "h1",
+            "label": "H1"
+          },
+          {
+            "value": "h2",
+            "label": "H2"
+          },
+          {
+            "value": "h3",
+            "label": "H3"
+          },
+          {
+            "value": "div",
+            "label": "DIV"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Typography"
+      },
+      {
+        "id": "backgroundColor",
+        "label": "Colour",
+        "type": "select",
+        "default": "block--bg-white",
+        "options": [
+          {
+            "value": "block--bg-white",
+            "label": "White"
+          },
+          {
+            "value": "block--bg-light",
+            "label": "Gray"
+          },
+          {
+            "value": "block--bg-orange",
+            "label": "Orange"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundColorHex",
+        "label": "Colour HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundOverlayColor",
+        "label": "Background overlay color",
+        "type": "select",
+        "default": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "black",
+            "label": "Black"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundOverlayColorHex",
+        "label": "Overlay color HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundScrollEffect",
+        "label": "Scroll effect",
+        "type": "select",
+        "default": "block--cover-static",
+        "options": [
+          {
+            "value": "block--cover-fixed",
+            "label": "Fixed"
+          },
+          {
+            "value": "block--cover-static",
+            "label": "Static"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Bring your ideas to life",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "Link",
+          "Unlink"
+        ]
+      },
+      {
+        "id": "subtitle",
+        "label": "Subtitle",
+        "type": "text",
+        "default": "Anything you've even dreamed about is possible to realise just at the moment when you decided to win.",
+        "tab": "Content",
+        "settings": [
+          "TextColor",
+          "NumberedList",
+          "BulletedList",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+          "Maximize",
+          "Source"
+        ]
+      },
+      {
+        "id": "background",
+        "label": "Background",
+        "type": "image",
+        "tab": "Content",
+        "group": "Background"
+      },
+	  {
+        "id": "images",
+        "label": "Images",
+        "type": "list",
+        "addText": "Add image",
+        "removeText": "Remove image",
+        "displayField": "note",
+        "element": [
+			{
+				"id": "img",
+				"label": "Img",
+				"type": "image"
+			},
+			{
+				"id": "val",
+				"label": "Val",
+				"type": "string"
+			},
+		    {
+				"id": "note",
+				"label": "Note",
+				"type": "text",
+				"tab": "Content",
+				"settings": [
+				  "TextColor",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Source",
+				  "EnterModeBr"
+				]
+		    }
+		],
+		"tab": "Content"
+	  },
+      {
+        "id": "formFields",
+        "label": "Fields list",
+        "type": "list",
+        "addText": "Add a field",
+        "removeText": "Remove a field",
+        "displayField": "labelText",
+        "element": [
+          {
+            "id": "fieldType",
+            "label": "Type",
+            "type": "select",
+            "default": "text",
+            "options": [
+              {
+                "value": "button",
+                "label": "Button"
+              },
+              {
+                "value": "checkbox",
+                "label": "Checkbox"
+              },
+              {
+                "value": "email",
+                "label": "Email"
+              },
+              {
+                "value": "hidden",
+                "label": "Hidden"
+              },
+			  {
+				"value": "label",
+				"label": "Label"
+			  },
+              {
+                "value": "phone",
+                "label": "Phone"
+              },
+              {
+                "value": "radio",
+                "label": "Radio"
+              },
+              {
+                "value": "select",
+                "label": "Select"
+              },
+              {
+                "value": "text",
+                "label": "Text"
+              },
+              {
+                "value": "textarea",
+                "label": "Textarea"
+              }
+            ],
+            "group": "Field name settings"
+          },
+          {
+            "id": "fieldId",
+            "label": "ID",
+            "type": "string",
+            "group": "Field name settings"
+          },
+          {
+            "id": "fieldName",
+            "label": "Name",
+            "type": "string",
+            "group": "Field name settings"
+          },
+          {
+            "id": "labelText",
+            "label": "Label",
+            "type": "string",
+            "group": "Field name settings"
+          },
+          {
+            "id": "placeholder",
+            "label": "Placeholder",
+            "type": "string",
+            "default": "Enter the value",
+            "group": "Field name settings"
+          },
+          {
+            "id": "fieldValue",
+            "label": "Value",
+            "type": "string",
+            "default": "",
+            "group": "Field name settings"
+          },
+          {
+            "id": "required",
+            "label": "Required field",
+            "type": "checkbox",
+            "group": "Validation"
+          },
+          {
+            "id": "validationMessage",
+            "label": "Validation message",
+            "type": "string",
+            "group": "Validation"
+          },
+		  {
+			"id": "isRoundedStyle",
+			"label": "Rounded style(for button)",
+			"type": "checkbox"
+		  },
+          {
+            "id": "radioListItems",
+            "label": "Radio items",
+            "type": "popup-list",
+            "options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
+            "addText": "Add radio option",
+            "removeText": "Remove item",
+            "displayField": "text",
+            "element": [
+              {
+                "id": "title",
+                "type": "string",
+                "label": "Title"
+              },
+              {
+                "id": "text",
+                "type": "string",
+                "label": "Subtitle"
+              },
+              {
+                "id": "id",
+                "type": "string",
+                "label": "Radio ID"
+              },
+              {
+                "id": "value",
+                "type": "string",
+                "label": "Radio value"
+              },
+              {
+                "id": "isChecked",
+                "type": "checkbox",
+                "label": "Checked"
+              },
+              {
+                "id": "isDisabled",
+                "type": "checkbox",
+                "label": "Disabled"
+              }
+            ]
+          },
+          {
+            "id": "selectOptions",
+            "label": "Select options",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
+            "addText": "Add select option",
+            "removeText": "Remove option",
+            "displayField": "label",
+            "element": [
+              {
+                "id": "label",
+                "type": "string",
+                "label": "Label"
+              },
+              {
+                "id": "value",
+                "type": "string",
+                "label": "Value"
+              },
+              {
+                "id": "isSelected",
+                "type": "checkbox",
+                "label": "Selected"
+              },
+              {
+                "id": "isDisabled",
+                "type": "checkbox",
+                "label": "Disabled"
+              }
+            ]
+          },
+          {
+            "id": "labels",
+            "label": "Labels",
+            "type": "popup-list",
+            "options": {
+              "width": "30%"
+            },
+            "addText": "Add label",
+            "removeText": "Remove label",
+            "element": [
+              {
+                "id": "label",
+                "type": "string",
+                "label": "Label"
+              },
+              {
+                "id": "value",
+                "type": "string",
+                "label": "Value"
+              }
+            ]
+          }
+        ],
+        "default": [
+          {
+            "fieldName": "fullname",
+            "fieldId": "fullname",
+            "fieldType": "text",
+            "required": true,
+            "labelText": "Full name",
+            "placeholder": "Enter your name"
+          },
+          {
+            "fieldName": "email",
+            "fieldId": "email",
+            "fieldType": "text",
+            "required": true,
+            "labelText": "Email",
+            "placeholder": "Enter your email"
+          },
+          {
+            "fieldName": "agree",
+            "fieldId": "agree",
+            "fieldType": "checkbox",
+            "required": true,
+            "labelText": "By checking this checkbox,&nbsp;I'm agree to the Virto Commerce <a href=\"/terms\">Terms</a> and <a href=\"/privacy\">Privacy</a>.",
+            "validationMessage": "Please agree with our terms"
+          },
+          {
+            "fieldType": "button",
+            "labelText": "Action button"
+          }
+        ],
+        "tab": "Content",
+        "group": "Form"
+      },
+      {
+        "id": "showFormLabels",
+        "label": "Show form labels",
+        "type": "checkbox",
+        "default": true,
+        "tab": "Content",
+        "group": "Form"
+      }
+    ]
+  },
   "headline-with-form-in-list": {
     "id": "headline-with-form-in-list",
     "name": "Headline with form in list",

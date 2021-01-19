@@ -66,12 +66,14 @@ $(function () {
 
     $(':not(.nav__content) .nav__item:not(.nav__item--no-subitems)').on('click', function () {
         var self = $(this);
-        self.addClass('nav__item--active').siblings().removeClass('nav__item--active').addClass('nav__item--animated');
-        self.removeClass('nav__item--animated');
-        $('.nav__content').removeClass('nav__content--opened').eq(self.index()).addClass('nav__content--opened');
+        if (self.find('.nav__t').length === 0) {
+            self.addClass('nav__item--active').siblings().removeClass('nav__item--active').addClass('nav__item--animated');
+            self.removeClass('nav__item--animated');
+            $('.nav__content').removeClass('nav__content--opened').eq(self.index()).addClass('nav__content--opened');
 
-        $('.swipe__nav-item').removeClass('swipe__nav-item--show');
-        $('.swipe__nav-item:nth-child(2)').addClass('swipe__nav-item--show');
+            $('.swipe__nav-item').removeClass('swipe__nav-item--show');
+            $('.swipe__nav-item:nth-child(2)').addClass('swipe__nav-item--show');
+        }
     });
 
     $('.swipe__back').on('click', function () {
@@ -274,4 +276,36 @@ $(function () {
             $(this).remove();
         }
     });
+
+    var headlinesWithFormAndBoundValueResult = $('[id*="headlinewithformandboundvalueresult"]');
+    if (headlinesWithFormAndBoundValueResult.length > 0) {
+        $.ajax({
+            url: `https://api.ipdata.co?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=country_code`,
+            success: function (data) {
+                if (data.country_code) {
+                    $.ajax({
+                        method: 'POST',
+                        url: `/${shopId}/${cultureName}/call`,
+                        data: {
+                            country_code: data.country_code
+                        },
+                        headers: { 'X-XSRF-TOKEN': token, service: 'RegionByCountryCode' },
+                        success: function (data) {
+                            var ownerInfos = headlinesWithFormAndBoundValueResult.find('.owner-info[data-val]');
+                            var ownerInfo = ownerInfos.attr('data-val');
+                            var infoArray = ownerInfo.split(';');
+                            for (var info of infoArray) {
+                                if (info === data) {
+                                    var ownerInfoEl = ownerInfos.filter(`[data-val="${ownerInfo}"]`);
+                                    ownerInfoEl.toggleClass('d-none');
+                                    ownerInfoEl.animate({ opacity: 1 }, 750);
+                                    break;
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
 });
