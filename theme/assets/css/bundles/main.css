@@ -7664,7 +7664,7 @@ code {
 }
 
 .block--window-height .pictures .pic--mode-opacity {
-    opacity: .5;
+    opacity: .7;
 }
 
 @media (min-width: 576px) {
@@ -7702,7 +7702,7 @@ code {
     }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (min-width: 992px) {
     .block--window-height .block__note {
         font-size: 2rem;
     }
@@ -7797,6 +7797,10 @@ code {
     right: .2rem;
     bottom: .2rem;
     z-index: -5;
+}
+
+.block .hexagon a:hover {
+    text-decoration: underline;
 }
 
 .block .hexagons-col:nth-child(odd) {
