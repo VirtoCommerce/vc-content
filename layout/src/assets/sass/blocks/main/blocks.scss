@@ -33,7 +33,7 @@
 
                 &--mode-opacity
                 {
-                    opacity: .5;
+                    opacity: .7;
                 }
             }
         }
@@ -76,7 +76,7 @@
             }
         }
 
-        @include media-breakpoint-only(lg) {
+        @include media-breakpoint-up(lg) {
             .block__note
             {
                 font-size: 2rem;
@@ -168,6 +168,11 @@
             right: .2rem;
             bottom: .2rem;
             z-index: -5;
+        }
+
+        a:hover
+        {
+            text-decoration: underline;
         }
     }
 
