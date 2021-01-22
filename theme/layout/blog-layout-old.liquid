@@ -95,7 +95,7 @@
 
     {{ '//fonts.googleapis.com/css?family=Roboto:400,100,300,700' | stylesheet_tag }}
     {{ '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' | stylesheet_tag }}
-    {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
+    {{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
 
     {% include 'segment' %}
     {{ content_for_header }}

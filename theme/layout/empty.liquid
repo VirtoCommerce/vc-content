@@ -22,7 +22,7 @@
     {% else %}
     <title>ASP.NET ecommerce platform - Virto Commerce</title>
     {% endif %}
-    {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
+    {{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
     {{ 'jquery.fancybox.min.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
