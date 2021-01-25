@@ -113,7 +113,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        background-color: #FF483B;
+        background-color: black;
         color: black;
         font-size: 1.45vh;
         font-weight: bold;
@@ -170,9 +170,14 @@
             z-index: -5;
         }
 
-        a:hover
+        a
         {
-            text-decoration: underline;
+            color: black;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
         }
     }
 

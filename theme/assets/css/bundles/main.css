@@ -5746,8 +5746,20 @@ code {
     opacity: .8;
 }
 
-#layout.layout--dark .block .hexagon-empty:after {
+#layout.layout--dark .block .hexagon,
+    #layout.layout--dark .block .hexagon-empty {
+    background-color: white;
+    color: white;
+}
+
+#layout.layout--dark .block .hexagon:after,
+      #layout.layout--dark .block .hexagon-empty:after {
     background: black;
+}
+
+#layout.layout--dark .block .hexagon a,
+      #layout.layout--dark .block .hexagon-empty a {
+    color: white;
 }
 
 .cookie-bar {
@@ -7738,7 +7750,7 @@ code {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #FF483B;
+    background-color: black;
     color: black;
     font-size: 1.45vh;
     font-weight: bold;
@@ -7797,6 +7809,10 @@ code {
     right: .1rem;
     bottom: .1rem;
     z-index: -5;
+}
+
+.block .hexagon a {
+    color: black;
 }
 
 .block .hexagon a:hover {

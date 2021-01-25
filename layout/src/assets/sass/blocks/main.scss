@@ -115,11 +115,20 @@
                 }
             }
 
+            .hexagon,
             .hexagon-empty
             {
+                background-color: white;
+                color: white;
+
                 &:after
                 {
                     background: black;
+                }
+
+                a
+                {
+                    color: white;
                 }
             }
         }
