@@ -56,7 +56,7 @@
 
                     <div class="card-review{% if forloop.index == 0 %} card-review--selected{% endif %}"{{cardReviewStyle}}>
                         <div class="row">
-                            <div class="col-md-5 col-lg-5">
+                            <div class="col-md-5 col-lg-5 align-self-center">
                                 {% if item.image.url != '' %}
                                     <img class="review-image" src="{{item.image.url | image_url}}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} />
                                 {% endif %}
