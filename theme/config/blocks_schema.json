@@ -1186,6 +1186,43 @@
         ]
       },
 	  {
+			"id": "secondSideFirstButton",
+			"label": "Second side first button",
+			"type": "url",
+			"urlLabel": "Url",
+			"textLabel": "Button text",
+			"styleLabel": "Link style",
+			"styles": [
+			  {
+				"value": "btn btn--black",
+				"label": "Black button"
+			  },
+			  {
+				"value": "btn-gradient",
+				"label": "Gradient button"
+			  },
+			  {
+				"value": "btn btn--orange",
+				"label": "Orange button"
+			  },
+			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
+			  {
+				"value": "btn btn--white",
+				"label": "White button"
+			  }
+			],
+			"default": {
+			  "url": "",
+			  "urlText": "Call to action",
+			  "style": "btn btn--orange"
+			},
+			"tab": "Content",
+			"group": "Buttons"
+	  },
+	  {
 		"id": "items",
 		"label": "Items",
 		"type": "list",
@@ -2847,6 +2884,7 @@
         "tab": "Content",
         "settings": [
           "TextColor",
+          "FontSize",
           "Link",
           "Unlink"
         ]
@@ -2863,6 +2901,7 @@
           "BulletedList",
           "Bold",
           "Italic",
+          "FontSize",
           "Link",
           "Unlink",
           "Maximize",
