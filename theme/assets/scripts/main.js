@@ -291,15 +291,17 @@ $(function () {
                         },
                         headers: { 'X-XSRF-TOKEN': token, service: 'RegionByCountryCode' },
                         success: function (data) {
-                            var ownerInfos = headlinesWithFormAndBoundValueResult.find('.owner-info[data-val]');
-                            var ownerInfo = ownerInfos.attr('data-val');
-                            var infoArray = ownerInfo.split(';');
-                            for (var info of infoArray) {
-                                if (info === data) {
-                                    var ownerInfoEl = ownerInfos.filter(`[data-val="${ownerInfo}"]`);
-                                    ownerInfoEl.toggleClass('d-none');
-                                    ownerInfoEl.animate({ opacity: 1 }, 750);
-                                    break;
+                            var ownerInfoValues = headlinesWithFormAndBoundValueResult.find('.owner-info[data-val]');
+                            for (var ownerInfoValue of ownerInfoValues) {
+                                var val = ownerInfoValue.dataset.val;
+                                var values = val.split(';');
+                                for (var value of values) {
+                                    if (value === data) {
+                                        var jqOwnerInfoValue = $(ownerInfoValue);
+                                        jqOwnerInfoValue.toggleClass('d-none');
+                                        jqOwnerInfoValue.animate({ opacity: 1 }, 750);
+                                        break;
+                                    }
                                 }
                             }
                         }
