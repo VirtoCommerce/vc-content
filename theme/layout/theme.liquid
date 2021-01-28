@@ -89,37 +89,12 @@
                     {% endcomment %}
                 </div>
                 {% endif %}
-                {% if current_page == 'blog' %}
-                    <div class="container blog">
-                        {% include 'breadcrumb' %}
-                        <h1 class="blog__t">{{blog.title}}</h1>
-                        <div class="list list--tags">
-                            <a class="list__item list__item--active" data-category="">All</a>
-                            {% for category in blog.categories %}
-                                {% assign category_handle = category | handleize %}
-                                {% assign blog_url = '~/blogs/' | append: blog.handle  %}
-                                {% assign category_url = '/blog/category/' | append: category %}
-                                {% assign categoryName = "blogs.categories." | append: category | t %}
-                                <a class="list__item" data-category="{{category}}">{{categoryName}}</a>
-                            {% endfor %}
-                        </div>
-                        {% assign sticked_article = blog.articles | where: 'IsSticked', '==', true | sort_list: 'publishedAt:desc' | first %}
-                        <div class="blog-main">
-                            {% include 'blog-sticked-item' article: sticked_article %}
-                            {% include 'blog-subscribe' %}
-                        </div>
-                    </div>
-                {% endif %}
                 {{ content_for_layout }}
             </article>
             {% include 'footer' %}
         </div>
     </div>
-    {{ 'jquery-3.5.0.min.js' | asset_url | script_tag }}
-    {{ 'jquery.validate.min.js' | asset_url | script_tag }}
-    {{ 'jquery.validate.unobtrusive.min.js' | asset_url | script_tag }}
-    {{ 'blog-item.js' | asset_url | script_tag }}
-    {{ 'scripts/main.js' | asset_url | script_tag }}
+    {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
     {% include 'slider-asset' %}
     <script>
 	    $(function () {

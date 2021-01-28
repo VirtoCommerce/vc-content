@@ -1483,7 +1483,7 @@
 
             &:first-child
             {
-                display: block;
+                display: flex;
                 opacity: 1;
             }
 
@@ -1499,6 +1499,29 @@
                 bottom: -1rem;
                 height: 4rem;
                 width: 4rem;
+            }
+        }
+
+        .indicators
+        {
+            display: inline-flex;
+            width: 100%;
+
+            .indicator
+            {
+                height: .5rem;
+                width: 1.75rem;
+                background: #c4c4c4;
+
+                &--selected
+                {
+                    background: black;
+                }
+
+                & ~ .indicator
+                {
+                    margin-left: .25rem;
+                }
             }
         }
     }

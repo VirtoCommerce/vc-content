@@ -1,9 +1,14 @@
 $(function () {
     function showCard(selected, elementToDisplay) {
+        selected.removeClass('card-review--selected');
         selected.animate({ opacity: 0 }, 750, null, function () {
+            var indicators = selected.parent().siblings('.indicators').children('.indicator');
+            indicators.find('.indicator--selected').toggleClass('indicator--selected');
+            indicators.eq(selected.index()).toggleClass('indicator--selected');
+            indicators.eq(elementToDisplay.index()).toggleClass('indicator--selected');
             selected.css('display', 'none');
             elementToDisplay.addClass('card-review--selected');
-            elementToDisplay.css('display', 'block');
+            elementToDisplay.css('display', 'flex');
             elementToDisplay.animate({ opacity: 1 }, 750);
         });
     }
@@ -12,7 +17,6 @@ $(function () {
         var arrow = $(this);
         var cards = arrow.siblings('.cards');
         var selected = cards.children('.card-review--selected');
-        selected.removeClass('card-review--selected');
 
         var elementToDisplay = null;
         if (arrow.hasClass('slider-arrow--left')) {
@@ -61,6 +65,26 @@ $(function () {
 
     $('.block .slider-arrow--right').on('mouseout', function () {
         $(this).siblings('.slider-arrow--left').css('visibility', 'visible');
+    });
+
+    $('.block .cards-carousel .indicators .indicator').on('click', function () {
+        var self = $(this);
+        var cards = self.closest('.cards-carousel').find('.cards');
+        var cardToDisplay = cards.children('.card-review').eq(self.index());
+        var selected = cards.children('.card-review--selected').eq(0);
+        showCard(selected, cardToDisplay);
+    });
+
+    $('.block .cards-carousel .cards').each(function () {
+        var reviews = $(this).find('.card-review');
+        var maxHeight = 0;
+        reviews.each(function () {
+            var review = $(this);
+            var height = review.height();
+            if (height > maxHeight)
+                maxHeight = height;
+        });
+        reviews.height(maxHeight);
     });
 
     var coverItems = $('.block--cover-items');
