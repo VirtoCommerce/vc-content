@@ -3,9 +3,9 @@
 <div id="{{ block.__id }}" class="{% if block.topDivider == 'True' %} block--divider-top {% endif %} {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}">
     <div class="block {{block.topPadding}} {{block.bottomPadding}} {% include 'background-settings' %}>
         <div class="block__inner container">
-            <div class="row">
+            <div class="row align-items-end">
                 {% capture review_column %}
-                    <div class="col-lg-7 mr-lg-3">
+                    <div class="col-lg-7 mr-lg-3 align-self-start">
                         <div class="text-center">
                             {% if block.title != '' %}
                                 {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
@@ -16,14 +16,21 @@
                                 <div class="block__space"></div>
                             {% endif %}
                         </div>
-                        <div class="block__media m-auto">
+                        <div class="block__media mt-4 mr-auto ml-auto">
                             {% for image in block.images %}
                                 <div class="owner-info d-none" data-val="{{image.val}}" style="opacity:0">
                                     {% if image.img != '' and image.img.url != '' %}
-                                        <img data-src="{{image.img.url | image_url}}" title="{{image.img.alt}}" style="border-radius:50%;width:15rem" class="d-block m-auto lazyload" />
+                                        <img data-src="{{image.img.url | image_url}}" title="{{image.img.alt}}" style="border-radius:50%;width:13rem" class="d-block m-auto lazyload" />
                                     {% endif %}
                                     {% if image.note != '' %}
-                                        {% include 'seo-text' tag: block.noteSeoTag, text: image.note, class: 'block__note2 mt-4' %}
+                                        <div class="d-flex align-items-center justify-content-center mt-4">
+                                            {% if image.linkedInLink != '' %}
+                                                <a rel="nofollow" href="{{image.linkedInLink}}" target="_blank">
+                                                    <img src="{{'images/icons/linkedin.svg' | asset_url}}" />
+                                                </a>
+                                            {% endif %}
+                                            {% include 'seo-text' tag: block.noteSeoTag, text: image.note, class: 'block__note2 ml-2 m-0' %}
+                                        </div>
                                     {% endif %}
                                 </div>
                             {% endfor %}
@@ -37,7 +44,7 @@
 
                 <div class="col-lg text-center">
                     {% if block.formFields.size > 0 %}
-                        <form class="form" {% if block.formId != '' %}id="{{block.formId}}" data-segment-name="{{block.formId}}"{% endif %}
+                        <form class="form mb-0" {% if block.formId != '' %}id="{{block.formId}}" data-segment-name="{{block.formId}}"{% endif %}
                             {% if block.formName != '' %}name="{{block.formName}}"{% endif %}
                             {% if block.formSubmitRedirectUrl != '' %} data-target-url="{{block.formSubmitRedirectUrl}}" {% endif %}>
                             {% for item in block.formFields %}
@@ -129,7 +136,7 @@
                                         {% assign button_style = button_style | append: 'border-color:{{block.formSubmitButtonBorderColor}};' | render %}
                                     {% endif %}
 
-                                    <input type="submit" class="{{block.formSubmitButtonStyle}} {% if item.isRoundedStyle == 'True' %}btn--round{% endif %}" value="{{item.labelText}}" {% if button_style != '' %}style="{{button_style}}"{% endif %} />
+                                    <input type="submit" class="{{block.formSubmitButtonStyle}} {% if item.isRoundedStyle == 'True' %}btn--round{% endif %} {% if forloop.index == (block.formFields.size | minus: 1) %}mb-0{% endif %}" value="{{item.labelText}}" {% if button_style != '' %}style="{{button_style}}"{% endif %} />
                                 {% elsif item.fieldType == 'textarea' %}
                                     <div class="form-group">
                                         {% if block.showFormLabels == 'True' %}

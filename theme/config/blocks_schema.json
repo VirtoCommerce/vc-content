@@ -4201,7 +4201,13 @@
 				  "Source",
 				  "EnterModeBr"
 				]
-		    }
+		    },
+			{
+				"id": "linkedInLink",
+				"label": "LinkedIn link",
+				"type": "string",
+				"multiline": true
+			}
 		],
 		"tab": "Content"
 	  },
