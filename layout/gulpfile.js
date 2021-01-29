@@ -130,7 +130,7 @@ gulp.task("css:build", function () {
         .pipe(cssbeautify())
         .pipe(gulp.dest(path.build.css))
         .pipe(cssmin())
-        .pipe(rename("style.min.css"))
+        .pipe(rename("styles.min.css"))
         .pipe(gulp.dest(path.build.css));
 });
 

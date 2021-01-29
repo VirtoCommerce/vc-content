@@ -113,7 +113,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        background-color: #FF483B;
+        background-color: black;
         color: black;
         font-size: 1.45vh;
         font-weight: bold;
@@ -170,9 +170,14 @@
             z-index: -5;
         }
 
-        a:hover
+        a
         {
-            text-decoration: underline;
+            color: black;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -1478,13 +1483,12 @@
 
             &:first-child
             {
-                display: block;
+                display: flex;
                 opacity: 1;
             }
 
             .review-image
             {
-                height: 100%;
                 width: 100%;
             }
 
@@ -1495,6 +1499,29 @@
                 bottom: -1rem;
                 height: 4rem;
                 width: 4rem;
+            }
+        }
+
+        .indicators
+        {
+            display: inline-flex;
+            width: 100%;
+
+            .indicator
+            {
+                height: .5rem;
+                width: 1.75rem;
+                background: #c4c4c4;
+
+                &--selected
+                {
+                    background: black;
+                }
+
+                & ~ .indicator
+                {
+                    margin-left: .25rem;
+                }
             }
         }
     }

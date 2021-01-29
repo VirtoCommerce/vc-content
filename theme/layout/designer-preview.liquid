@@ -8,7 +8,7 @@
 
     <title>{{ shop.name }}</title>
 
-    {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
+    {{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
     <base href="{{ '/' | absolute_url }}" />
     {{ content_for_header }}
 </head>

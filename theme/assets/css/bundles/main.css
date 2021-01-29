@@ -5746,8 +5746,20 @@ code {
     opacity: .8;
 }
 
-#layout.layout--dark .block .hexagon-empty:after {
+#layout.layout--dark .block .hexagon,
+    #layout.layout--dark .block .hexagon-empty {
+    background-color: white;
+    color: white;
+}
+
+#layout.layout--dark .block .hexagon:after,
+      #layout.layout--dark .block .hexagon-empty:after {
     background: black;
+}
+
+#layout.layout--dark .block .hexagon a,
+      #layout.layout--dark .block .hexagon-empty a {
+    color: white;
 }
 
 .cookie-bar {
@@ -7738,7 +7750,7 @@ code {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #FF483B;
+    background-color: black;
     color: black;
     font-size: 1.45vh;
     font-weight: bold;
@@ -7797,6 +7809,10 @@ code {
     right: .1rem;
     bottom: .1rem;
     z-index: -5;
+}
+
+.block .hexagon a {
+    color: black;
 }
 
 .block .hexagon a:hover {
@@ -8880,12 +8896,11 @@ code {
 }
 
 .block .cards-carousel .card-review:first-child {
-    display: block;
+    display: flex;
     opacity: 1;
 }
 
 .block .cards-carousel .card-review .review-image {
-    height: 100%;
     width: 100%;
 }
 
@@ -8895,6 +8910,25 @@ code {
     bottom: -1rem;
     height: 4rem;
     width: 4rem;
+}
+
+.block .cards-carousel .indicators {
+    display: inline-flex;
+    width: 100%;
+}
+
+.block .cards-carousel .indicators .indicator {
+    height: .5rem;
+    width: 1.75rem;
+    background: #c4c4c4;
+}
+
+.block .cards-carousel .indicators .indicator--selected {
+    background: black;
+}
+
+.block .cards-carousel .indicators .indicator ~ .indicator {
+    margin-left: .25rem;
 }
 
 .block .more-button {

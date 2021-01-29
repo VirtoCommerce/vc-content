@@ -40,10 +40,10 @@
     {{ '//fonts.googleapis.com/css?family=Roboto:400,100,300,700' | stylesheet_tag }}
     {{ '//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700' | stylesheet_tag }}
     {{ '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' | stylesheet_tag }}
-    {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
+    {{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
     {% endcomment %}
     {% include 'segment' %}
-    {{ 'style.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
+    {{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
     {{ content_for_header }}
     <base href="{{ '/' | absolute_url }}" />
     <link rel="canonical" href="{{ canonical_url }}" />
