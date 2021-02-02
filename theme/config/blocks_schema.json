@@ -7477,6 +7477,10 @@
 				"value": "btn-gradient",
 				"label": "Gradient button"
 			  },
+			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
               {
                 "value": "btn btn--orange",
                 "label": "Orange button"
@@ -9084,6 +9088,10 @@
 				"value": "btn-gradient",
 				"label": "Gradient button"
 			  },
+			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
               {
                 "value": "btn btn--orange",
                 "label": "Orange button"
@@ -10290,6 +10298,62 @@
 					]
 				}
 			]
+		}
+	]
+  },
+  "blog-header": {
+	"name": "Blog header",
+    "icon": "image-text",
+    "displayField": "name",
+	"includeShared": [
+		"seo-title"
+	],
+    "settings": [
+		{
+			"id": "title",
+			"label": "Title",
+			"type": "text",
+			"settings": [
+			  "TextColor",
+			  "NumberedList",
+			  "BulletedList",
+			  "Bold",
+			  "Italic",
+			  "Link",
+			  "Unlink",
+			  "FontSize",
+			  "Maximize",
+			  "Source",
+			  "EnterModeBr"
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "tags",
+			"label": "Tags",
+			"type": "list",
+			"displayField": "label",
+			"element": [
+				{
+					"id": "label",
+					"label": "Label",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "category",
+					"label": "Category",
+					"type": "string",
+					"multiline": true
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "backgroundColor",
+			"label": "Background color",
+			"type": "color",
+			"tab": "Settings"
 		}
 	]
   },
@@ -13892,6 +13956,37 @@
 			"default": "",
 			"tab": "Settings",
 			"group": "Background"
+		},
+		{
+			"id": "hideDateAndName",
+			"label": "Hide date and name",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings"
+		},
+		{
+			"id": "descriptionStyle",
+			"label": "Description style",
+			"type": "select",
+			"default": "blog",
+			"options": [
+				{
+					"value": "blog",
+					"label": "Blog"
+				},
+				{
+					"value": "block",
+					"label": "Block"
+				}
+			],
+			"tab": "Settings"
+		},
+		{
+			"id": "showOlderButton",
+			"label": "Show older button",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings"
 		},
         {
             "id": "title",

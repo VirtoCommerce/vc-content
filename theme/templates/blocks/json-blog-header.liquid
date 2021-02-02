@@ -1,0 +1,18 @@
+<div class="blog" itemtype="http://schema.org/Blog" itemscope {% if block.backgroundColor != '' %} style="background-color:{{block.backgroundColor}}"{% endif %}>
+    <div class="posts __responsive container" itemprop="blogPosts">
+        {% include 'breadcrumb' %}
+        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'blog__t' %}
+        {% if block.tags.size > 0 %}
+            <div class="list list--tags">
+                {% for tag in block.tags %}
+                    <a class="list__item{% if forloop.index == 0 %} list__item--active{% endif %}" {% if tag.category != '' %}data-category="{{tag.category}}"{% endif %}>{{tag.label}}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% assign sticked_article = blog.articles | where: 'IsSticked', '==', true | sort_list: 'publishedAt:desc' | first %}
+        <div class="blog-main">
+            {% include 'blog-sticked-item' article: sticked_article %}
+            {% include 'blog-subscribe' %}
+        </div>
+    </div>
+</div>

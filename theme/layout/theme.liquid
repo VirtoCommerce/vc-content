@@ -27,7 +27,7 @@
     {% else %}
     <title>ASP.NET ecommerce platform - Virto Commerce</title>
     {% endif %}
-    {{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
+    {{ 'styles.min.css?' | append css_version | asset_url | stylesheet_tag }}
     <link rel="preload" href="{{ 'jquery.fancybox.min.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="../../fonts/CircularStd-Book.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="../../fonts/CircularStd-Bold.woff" as="font" type="font/woff" crossorigin>
@@ -94,7 +94,7 @@
             {% include 'footer' %}
         </div>
     </div>
-    {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
+    {{ 'main.min.js?' | append main_min_js_version | asset_url | script_tag }}
     {% include 'slider-asset' %}
     <script>
 	    $(function () {
@@ -105,7 +105,6 @@
 		    });
 	    });
     </script>
-    {{ 'angular-bundle-default.min.js' | asset_url | script_tag }}
 
     {% if page == 'about-us' %}
 	    {{ 'js/team.js' | asset_url | script_tag }}

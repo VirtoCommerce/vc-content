@@ -12,42 +12,44 @@
         </div>
         <div class="list__descr">
             {% if article.excerpt and article.excerpt != '' %}
-                <a class="list__descr" href="{{ article.url }}">{{ article.excerpt }}</a>
+                <a class="list__descr{% if block.descriptionStyle == 'block' %} list__descr--block{% endif %}" href="{{ article.url }}">{{ article.excerpt }}</a>
             {% else %}
-                <a class="list__descr" href="{{ article.url }}">{{ article.description }}</a>
+                <a class="list__descr{% if block.descriptionStyle == 'block' %} list__descr--block{% endif %}" href="{{ article.url }}">{{ article.description }}</a>
             {% endif %}
             <div class="block__space"></div>
         </div>
-        {% if article.permalink contains 'blog/' or article.permalink contains 'glossary/' %}
-            <div class="list__descr">
-            {% if article.meta_info.date %}
-                <div>{{ article.meta_info.date | date: "d MMMM yyyy" }}</div>
-            {% else %}
-                <div>{{ article.meta_info.markup_webpage_date_created | date: "d MMMM yyyy" }}</div>
+        {% if block.hideDateAndName != 'True' %}
+            {% if article.permalink contains 'blog/' or article.permalink contains 'glossary/' %}
+                <div class="list__descr">
+                {% if article.meta_info.date %}
+                    <div>{{ article.meta_info.date | date: "d MMMM yyyy" }}</div>
+                {% else %}
+                    <div>{{ article.meta_info.markup_webpage_date_created | date: "d MMMM yyyy" }}</div>
+                {% endif %}
+                </div>
+                <div class="list list--tags">
+                    {% for tag in article.tags limit:3 %}
+                        {% assign tag_url = '/blog/tag/' | append: tag  %}
+                        <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
+                    {% endfor %}
+                </div>
+                <div class="list__author">
+                    <div class="list__author-logo">
+                    {% if article.meta_info.author.photoUrl %}
+                        <img data-src="{{ article.meta_info.author.photoUrl }}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+                    {% else %}
+                        <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%;" class="lazyload" />
+                    {% endif %}
+                    </div>
+                    <div class="list__author-text">
+                    {% if article.meta_info.author.firstName %}
+                        <div class="list__author-name">{{ article.meta_info.author.firstName }} {{ article.meta_info.author.lastName }}</div>
+                    {% else %}
+                        <div class="list__author-name">VirtoCommerce</div>
+                    {% endif %}
+                    </div>
+                </div>
             {% endif %}
-            </div>
-            <div class="list list--tags">
-                {% for tag in article.tags limit:3 %}
-                    {% assign tag_url = '/blog/tag/' | append: tag  %}
-                    <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
-                {% endfor %}
-            </div>
-            <div class="list__author">
-                <div class="list__author-logo">
-                {% if article.meta_info.author.photoUrl %}
-                    <img data-src="{{ article.meta_info.author.photoUrl }}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
-                {% else %}
-                    <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%;" class="lazyload" />
-                {% endif %}
-                </div>
-                <div class="list__author-text">
-                {% if article.meta_info.author.firstName %}
-                    <div class="list__author-name">{{ article.meta_info.author.firstName }} {{ article.meta_info.author.lastName }}</div>
-                {% else %}
-                    <div class="list__author-name">VirtoCommerce</div>
-                {% endif %}
-                </div>
-            </div>
         {% endif %}
     </div>
 </div>
