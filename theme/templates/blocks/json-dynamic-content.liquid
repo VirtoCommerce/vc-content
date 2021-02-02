@@ -99,9 +99,7 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <div class="more __responsive container d-none">
-                <a class="btn btn--lg blog-older justify-content-center mt-5" style="width: 100%;">Older</a>
-            </div>
+            <a class="{% if block.showOlderButton != 'True' %}d-none {% endif %}btn btn--lg blog-older justify-content-center mt-5" style="width: 100%;">Older</a>
         </div>
     </div>
 </div>

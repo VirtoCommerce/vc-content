@@ -515,6 +515,14 @@
             color: $gray-500;
             font-size: 0.875rem;
             margin: 0.9375rem 0;
+
+            &.list__descr {
+                &--block {
+                    font-family: Helvetica,sans-serif;
+                    font-size: 1rem;
+                    color: black;
+                }
+            }
         }
 
         .list--tags .list__item {

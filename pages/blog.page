@@ -1,0 +1,67 @@
+[
+    {
+        "type": "settings",
+        "title": "",
+        "permalink": "blog",
+        "layout": "theme",
+        "noindex": false
+    },
+    {
+        "id": 1,
+        "type": "blog-header",
+        "__id": "blogheaderaPeF",
+        "name": null,
+        "backgroundColor": "rgb(248,248,248)",
+        "title": "Virto Commerce news",
+        "titleSeoTag": "h1",
+        "tags": [
+            {
+                "label": "All",
+                "category": null
+            },
+            {
+                "label": "Technical",
+                "category": "technical"
+            },
+            {
+                "label": "Events",
+                "category": "events"
+            },
+            {
+                "label": "Blogs",
+                "category": "blogs"
+            },
+            {
+                "label": "Press releases",
+                "category": "pressreleases"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "type": "dynamic-content",
+        "__id": "dynamiccontenth2GP",
+        "style": "dark",
+        "title": null,
+        "itemsType": "query",
+        "count": "9",
+        "sourceType": "blog",
+        "queryType": "last-items",
+        "author": null,
+        "items": [],
+        "name": null,
+        "topPadding": "block--padding-top-half",
+        "bottomPadding": "block--padding-bottom-half",
+        "topDivider": false,
+        "bottomDivider": false,
+        "backgroundColorHex": null,
+        "borderColor": null,
+        "useShadow": null,
+        "shadowColor": null,
+        "shadowHorizontalDirection": null,
+        "shadowVerticalDirection": null,
+        "hideDateAndName": false,
+        "descriptionStyle": "blog",
+        "showOlderButton": true
+    }
+]

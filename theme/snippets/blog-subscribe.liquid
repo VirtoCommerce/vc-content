@@ -1,12 +1,9 @@
 <div class="blog-sidebar {{ cssClass }}">
-    <div class="blog-sidebar__inner" ng-controller="newsSubscriberController">
+    <div class="blog-sidebar__inner">
         <div class="blog-sidebar__t">Sign up for Virto Commerce news and updates</div>
         <form id="subscribe_news" class="form" name="blogSubscribeForm">
-            <input type="text" class="form-control" placeholder="Enter your email" id="blog_email" name="blog_email" ng-model="email" required="" ng-pattern="emailPattern" />
-            <div class="input-validation-error" style="color: #e32646; font-size: small;display:none;" ng-style="{ 'display': ((blogSubscribeForm['blog_email'].$dirty || blogSubscribeForm.$submitted) && blogSubscribeForm['blog_email'].$error.pattern) ? '' : 'none' }">
-                {{ 'apps.forms.email_format_validation_message' | t }}
-            </div>
-            <button ng-click="subscribe(blogSubscribeForm)" class="btn btn--orange" type="submit" ng-disabled="isSubscribing">Subscribe</button>
+            <input type="text" class="form-control" placeholder="Enter your email" data-val="true" data-val-required="" data-val-email="email" id="blog_email" name="blog_email"/>
+            <button class="btn btn--orange" type="submit">Subscribe</button>
         </form>
         <p>... or follow our news on <br /> our social networks</p>
         <div class="list list--socials">

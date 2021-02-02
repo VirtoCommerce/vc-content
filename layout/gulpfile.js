@@ -79,6 +79,7 @@ var path = {
             main: buildPaths(scriptsPath,
             [
                 'jquery-3.5.0.min.js',
+                '/blog/blog-item.js',
                 'main.js',
                 'lazysizes.min.js',
                 'jquery.validate.min.js',

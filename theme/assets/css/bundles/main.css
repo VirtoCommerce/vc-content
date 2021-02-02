@@ -10508,6 +10508,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
     margin: 0.9375rem 0;
 }
 
+.blog .list--posts .list__descr.list__descr--block {
+    font-family: Helvetica,sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
 .blog .list--posts .list--tags .list__item {
     font-size: 0.75rem;
     height: 1.5rem;
