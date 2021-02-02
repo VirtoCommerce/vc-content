@@ -7351,12 +7351,14 @@
         "element": [
           {
             "id": "title",
-            "type": "string",
+            "type": "text",
             "label": "Title",
             "settings": [
               "TextColor",
+			  "FontSize",
               "Link",
-              "Unlink"
+              "Unlink",
+			  "Source"
             ]
           },
           {
