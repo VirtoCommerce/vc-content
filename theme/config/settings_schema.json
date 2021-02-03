@@ -840,7 +840,13 @@
 		"label": "Text",
         "type": "string",
 		"multiline": true
-      }
+      },
+	  {
+		"id": "footerCopyright",
+		"label": "Copyright",
+        "type": "string",
+		"multiline": true
+	  }
 	]
   },
   {
