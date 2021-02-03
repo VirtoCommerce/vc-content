@@ -3,7 +3,7 @@
     {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
     {% if block.horizontalAlignment == 'left' %}block--align-left{% else %}block--align-center{% endif %}
     {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
-    {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}">
+    {% include 'block-background-style' %}>
     <div class="block__inner container">
         {% if block.title != '' %}
             <div class="row">

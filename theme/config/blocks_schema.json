@@ -948,6 +948,14 @@
 			"type": "color",
 			"tab": "Settings"
 		}
+	  ],
+	  "background-image": [
+		{
+			"id": "background",
+			"label": "Background image",
+			"type": "image",
+			"tab": "Content"
+		}
 	  ]
     }
   },
@@ -5994,7 +6002,8 @@
     "includeShared": [
       "seo-subtitle",
       "headings",
-	  "buttons"
+	  "buttons",
+	  "background-image"
     ],
     "settings": [
       {
@@ -7041,7 +7050,8 @@
     "category": "Features and Cards",
     "includeShared": [
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "background-image"
     ],
     "settings": [
 	  {
@@ -8793,7 +8803,8 @@
     "category": "Queries and Other",
     "includeShared": [
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "background-image"
     ],
     "settings": [
       {
@@ -9702,7 +9713,8 @@
 	  "title",
 	  "subtitle",
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "background-image"
     ],
 	"settings": [
 		{
@@ -13944,7 +13956,8 @@
 	"includeShared":[
 		"paddings",
 		"dividers",
-		"items-borders"
+		"items-borders",
+		"background-image"
 	],
     "settings": [
         {
@@ -14006,7 +14019,8 @@
         {
             "id": "title",
             "label": "Title",
-            "type": "string"
+            "type": "string",
+			"tab": "Content"
         },
         {
             "id": "itemsType",
@@ -14021,13 +14035,15 @@
                     "value": "fixed-items",
                     "label": "Fixed Items"
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "count",
             "label": "Count",
             "type": "number",
-            "default": "3"
+            "default": "3",
+			"tab": "Content"
         },
         {
             "id": "sourceType",
@@ -14050,7 +14066,8 @@
                     "value": "white-papers",
                     "label": "White Papers"
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "queryType",
@@ -14065,7 +14082,8 @@
                     "value": "by-author",
                     "label": "By Author"
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "author",
@@ -14115,7 +14133,8 @@
                     "value": " ",
                     "label": " "
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "items",
@@ -14130,7 +14149,8 @@
                     "label": "Blog permalink",
                     "type": "string"
                 }
-            ]
+            ],
+			"tab": "Content"
         }
     ]
   },

@@ -1,0 +1,8 @@
+{% assign block_background = '' %}
+{% if block.backgroundColorHex != '' %}
+    {% assign block_background = block_background | append: ('background-color:{{block.backgroundColorHex}}' | render) %}
+{% endif %}
+{% if block.background != '' and block.background.url != '' %}
+    {% assign block_background = block_background | append: ('background:url({{block.background.url}});background-size:cover' | render) %}
+{% endif %}
+{% if block_background != '' %}style="{{block_background}}"{% endif %}
