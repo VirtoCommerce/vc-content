@@ -5743,8 +5743,15 @@
       {
         "id": "title",
         "label": "Title",
-        "type": "string",
+        "type": "text",
         "default": "Bring your ideas to life",
+		"settings": [
+		  "TextColor",
+		  "Link",
+		  "Unlink",
+		  "FontSize",
+		  "Source"
+		],
         "tab": "Content"
       },
       {
@@ -9048,7 +9055,7 @@
           },
           {
             "id": "title",
-            "type": "string",
+            "type": "text",
             "label": "Title",
             "settings": [
               "TextColor",
