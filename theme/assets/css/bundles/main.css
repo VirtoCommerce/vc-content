@@ -10067,6 +10067,18 @@ input.ng-touched.ng-invalid, .input-validation-error {
     overflow: hidden;
 }
 
+@media (max-width: 575.98px) {
+    .blog-hero {
+        height: 14rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .blog-hero {
+        height: 16rem;
+    }
+}
+
 .blog-content {
     flex: 1 0 0;
 }
