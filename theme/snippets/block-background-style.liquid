@@ -1,8 +1,10 @@
 {% assign block_background = '' %}
 {% if block.backgroundColorHex != '' %}
-    {% assign block_background = block_background | append: ('background-color:{{block.backgroundColorHex}}' | render) %}
+    {% assign block_background = block_background | append: ('background-color:{{block.backgroundColorHex}};' | render) %}
 {% endif %}
-{% if block.background != '' and block.background.url != '' %}
-    {% assign block_background = block_background | append: ('background:url({{block.background.url}});background-size:cover' | render) %}
+{% if block.background != blank %}
+    {% if block.background != '' and block.background.url != '' %}
+        {% assign block_background = block_background | append: ('background:url({{block.background.url}});background-size:cover' | render) %}
+    {% endif %}
 {% endif %}
 {% if block_background != '' %}style="{{block_background}}"{% endif %}
