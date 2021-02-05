@@ -7,9 +7,16 @@
 {% endif %}
 
 {% if block.twoSides == 'True' %}
+{% assign second_side_background = '' %}
+{% if block.secondSideBackgroundColor != '' %}
+    {% assign second_side_background = block.secondSideBackgroundColor %}
+{% endif %}
+{% if block.secondSideBackgroundImage != '' and block.secondSideBackgroundImage.url != '' %}
+    {% assign second_side_background = 'url({{block.secondSideBackgroundImage.url}})' | render %}
+{% endif %}
 <style>
     #{{block.__id}} > .block:after {
-        background: {{block.secondSideBackgroundColor}};
+        {% if second_side_background != '' %}background: {{second_side_background}}; {% endif %}
         opacity: 1;
         bottom: 0;
 	    content: ' ';

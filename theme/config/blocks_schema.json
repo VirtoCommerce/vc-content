@@ -948,6 +948,14 @@
 			"type": "color",
 			"tab": "Settings"
 		}
+	  ],
+	  "background-image": [
+		{
+			"id": "background",
+			"label": "Background image",
+			"type": "image",
+			"tab": "Content"
+		}
 	  ]
     }
   },
@@ -959,6 +967,7 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -1022,32 +1031,6 @@
         ],
         "tab": "Settings",
         "group": "Main block settings"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColorHex",
@@ -1186,41 +1169,47 @@
         ]
       },
 	  {
-			"id": "secondSideFirstButton",
-			"label": "Second side first button",
-			"type": "url",
-			"urlLabel": "Url",
-			"textLabel": "Button text",
-			"styleLabel": "Link style",
-			"styles": [
-			  {
-				"value": "btn btn--black",
-				"label": "Black button"
-			  },
-			  {
-				"value": "btn-gradient",
-				"label": "Gradient button"
-			  },
-			  {
-				"value": "btn btn--orange",
-				"label": "Orange button"
-			  },
-			  {
-				"value": "btn btn--round",
-				"label": "Round button"
-			  },
-			  {
-				"value": "btn btn--white",
-				"label": "White button"
-			  }
-			],
-			"default": {
-			  "url": "",
-			  "urlText": "Call to action",
-			  "style": "btn btn--orange"
-			},
-			"tab": "Content",
-			"group": "Buttons"
+		"id": "secondSideFirstButton",
+		"label": "Second side first button",
+		"type": "url",
+		"urlLabel": "Url",
+		"textLabel": "Button text",
+		"styleLabel": "Link style",
+		"styles": [
+		  {
+			"value": "btn btn--black",
+			"label": "Black button"
+		  },
+		  {
+			"value": "btn-gradient",
+			"label": "Gradient button"
+		  },
+		  {
+			"value": "btn btn--orange",
+			"label": "Orange button"
+		  },
+		  {
+			"value": "btn btn--round",
+			"label": "Round button"
+		  },
+		  {
+			"value": "btn btn--white",
+			"label": "White button"
+		  }
+		],
+		"default": {
+		  "url": "",
+		  "urlText": "Call to action",
+		  "style": "btn btn--orange"
+		},
+		"tab": "Content",
+		"group": "Buttons"
+	  },
+	  {
+		"id": "secondSideBackgroundImage",
+		"label": "Second side background image",
+		"type": "image",
+		"tab": "Content"
 	  },
 	  {
 		"id": "items",
@@ -1324,38 +1313,13 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
 	  "buttons"
     ],
     "settings": [
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
       {
         "id": "backgroundColorHex",
         "label": "Colour HEX",
@@ -1482,38 +1446,13 @@
     "includeShared": [
       "cover-blocks",
 	  "title-font-size",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
 	  "buttons"
     ],
     "settings": [
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
       {
         "id": "backgroundColorHex",
         "label": "Colour HEX",
@@ -1639,38 +1578,13 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
 	  "buttons"
     ],
     "settings": [
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
       {
         "id": "backgroundColorHex",
         "label": "Colour HEX",
@@ -1804,6 +1718,7 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -1813,32 +1728,6 @@
       {
         "id": "horizontalAlignment",
         "default": "right"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColorHex",
@@ -2241,6 +2130,7 @@
     "category": "Covers and Hero",
     "includeShared": [
       "cover-blocks",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -2290,32 +2180,6 @@
           {
             "value": "2",
             "label": "Style 2"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
           }
         ],
         "tab": "Settings",
@@ -2447,6 +2311,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+      "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -2568,32 +2433,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title style",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -2736,6 +2575,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -2821,32 +2661,6 @@
         "group": "Paddings"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "backgroundColor",
         "label": "Colour",
         "type": "select",
@@ -2929,6 +2743,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -3031,32 +2846,6 @@
         ],
         "tab": "Settings",
         "group": "Paddings"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -3164,6 +2953,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings",
@@ -3271,32 +3061,6 @@
         "group": "Paddings"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "backgroundColor",
         "label": "Colour",
         "type": "select",
@@ -3395,6 +3159,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings"
@@ -3522,32 +3287,6 @@
         ],
         "tab": "Settings",
         "group": "Form"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -3938,6 +3677,7 @@
     "includeShared": [
 	  "paddings",
 	  "dividers",
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings"
@@ -4027,32 +3767,6 @@
 		"default": "",
 		"tab": "Settings"
 	  },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
       {
         "id": "backgroundColor",
         "label": "Colour",
@@ -4467,6 +4181,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings"
@@ -4602,32 +4317,6 @@
         ],
         "tab": "Settings",
         "group": "Form"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -5007,6 +4696,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "seo-note",
       "headings"
@@ -5142,32 +4832,6 @@
         ],
         "tab": "Settings",
         "group": "Form"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -5546,6 +5210,9 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Paragraphs and Links",
+	"includeShared": [
+		"seo-title"
+	],
     "settings": [
 	  {
         "id": "horizontalAlignment",
@@ -5678,32 +5345,6 @@
         "group": "Dividers"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "overlayGradient",
         "label": "Overlay gradient",
         "type": "checkbox",
@@ -5743,8 +5384,15 @@
       {
         "id": "title",
         "label": "Title",
-        "type": "string",
+        "type": "text",
         "default": "Bring your ideas to life",
+		"settings": [
+		  "TextColor",
+		  "Link",
+		  "Unlink",
+		  "FontSize",
+		  "Source"
+		],
         "tab": "Content"
       },
       {
@@ -5774,6 +5422,9 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Paragraphs and Links",
+	"includeShared": [
+		"seo-title"
+	],
     "settings": [
       {
         "id": "horizontalAlignment",
@@ -5872,32 +5523,6 @@
         "group": "Dividers"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "backgroundColor",
         "label": "Colour",
         "type": "select",
@@ -5979,9 +5604,11 @@
     "displayField": "title",
     "category": "Media and Logotypes",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "headings",
-	  "buttons"
+	  "buttons",
+	  "background-image"
     ],
     "settings": [
       {
@@ -6087,32 +5714,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -6270,6 +5871,7 @@
     "displayField": "title",
     "category": "Media and Logotypes",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "headings"
     ],
@@ -6401,32 +6003,6 @@
         "group": "Dividers"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "backgroundColor",
         "label": "Background color",
         "type": "select",
@@ -6540,7 +6116,8 @@
     "displayField": "title",
     "category": "Media and Logotypes",
     "includeShared": [
-      "headings"
+      "headings",
+	  "seo-title"
     ],
     "settings": [
       {
@@ -6668,32 +6245,6 @@
         "group": "Dividers"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "title",
         "label": "Title",
         "type": "text",
@@ -6799,6 +6350,9 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Media and Logotypes",
+	"includeShared": [
+		"seo-title"
+	],
     "settings": [
       {
         "id": "containerAlignment",
@@ -6905,32 +6459,6 @@
         "group": "Dividers"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "backgroundColor",
         "label": "Colour",
         "type": "select",
@@ -7027,8 +6555,10 @@
     "displayField": "title",
     "category": "Features and Cards",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "background-image"
     ],
     "settings": [
 	  {
@@ -7182,32 +6712,6 @@
         "group": "Paddings"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "subtitlePosition",
         "label": "Subtitle position",
         "type": "select",
@@ -7351,12 +6855,14 @@
         "element": [
           {
             "id": "title",
-            "type": "string",
+            "type": "text",
             "label": "Title",
             "settings": [
               "TextColor",
+			  "FontSize",
               "Link",
-              "Unlink"
+              "Unlink",
+			  "Source"
             ]
           },
           {
@@ -7536,6 +7042,7 @@
     "category": "References and Quotes",
     "includeShared": [
 	  "title-font-size",
+	  "seo-title",
       "seo-subtitle",
       "headings"
     ],
@@ -7665,32 +7172,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -7925,6 +7406,7 @@
     "displayField": "review",
     "category": "References and Quotes",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "headings"
     ],
@@ -8014,32 +7496,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -8167,6 +7623,7 @@
     "displayField": "review",
     "category": "References and Quotes",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "headings"
     ],
@@ -8256,32 +7713,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -8441,6 +7872,7 @@
     "displayField": "title",
     "category": "Promotions and CTAs",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "headings",
 	  "buttons"
@@ -8533,32 +7965,6 @@
         "group": "Dividers"
       },
       {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
-      },
-      {
         "id": "backgroundColor",
         "label": "Colour",
         "type": "select",
@@ -8633,6 +8039,9 @@
     "icon": "image-text",
     "displayField": "title",
     "category": "Promotions and CTAs",
+	"includeShared": [
+		"seo-title"
+	],
     "settings": [
       {
         "id": "titleAlignment",
@@ -8667,32 +8076,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -8777,8 +8160,10 @@
     "displayField": "title",
     "category": "Queries and Other",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "background-image"
     ],
     "settings": [
       {
@@ -8887,32 +8272,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -9046,7 +8405,7 @@
           },
           {
             "id": "title",
-            "type": "string",
+            "type": "text",
             "label": "Title",
             "settings": [
               "TextColor",
@@ -9154,6 +8513,7 @@
     "includeShared": [
 		"paddings",
 		"dividers",
+		"seo-title",
 		"items-borders-and-shadows"
     ],
     "settings": [
@@ -9206,32 +8566,6 @@
         ],
         "tab": "Settings",
         "group": "Main block settings"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -9395,6 +8729,7 @@
     "displayField": "title",
     "category": "Queries and Other",
     "includeShared": [
+	  "seo-title",
       "seo-subtitle",
       "headings"
     ],
@@ -9505,32 +8840,6 @@
         "default": false,
         "tab": "Settings",
         "group": "Dividers"
-      },
-      {
-        "id": "titleSeoTag",
-        "label": "Title SEO tag",
-        "type": "select",
-        "default": "div",
-        "options": [
-          {
-            "value": "h1",
-            "label": "H1"
-          },
-          {
-            "value": "h2",
-            "label": "H2"
-          },
-          {
-            "value": "h3",
-            "label": "H3"
-          },
-          {
-            "value": "div",
-            "label": "DIV"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Typography"
       },
       {
         "id": "backgroundColor",
@@ -9686,36 +8995,12 @@
 	  "dividers",
 	  "title",
 	  "subtitle",
+	  "seo-title",
       "seo-subtitle",
-      "headings"
+      "headings",
+	  "background-image"
     ],
 	"settings": [
-		{
-			"id": "titleSeoTag",
-			"label": "Title SEO tag",
-			"type": "select",
-			"default": "div",
-			"options": [
-			  {
-				"value": "h1",
-				"label": "H1"
-			  },
-			  {
-				"value": "h2",
-				"label": "H2"
-			  },
-			  {
-				"value": "h3",
-				"label": "H3"
-			  },
-			  {
-				"value": "div",
-				"label": "DIV"
-			  }
-			],
-			"tab": "Settings",
-			"group": "Typography"
-		},
 		{
 			"id": "backgroundColor",
 			"label": "Colour",
@@ -13929,7 +13214,8 @@
 	"includeShared":[
 		"paddings",
 		"dividers",
-		"items-borders"
+		"items-borders",
+		"background-image"
 	],
     "settings": [
         {
@@ -13991,7 +13277,8 @@
         {
             "id": "title",
             "label": "Title",
-            "type": "string"
+            "type": "string",
+			"tab": "Content"
         },
         {
             "id": "itemsType",
@@ -14006,13 +13293,15 @@
                     "value": "fixed-items",
                     "label": "Fixed Items"
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "count",
             "label": "Count",
             "type": "number",
-            "default": "3"
+            "default": "3",
+			"tab": "Content"
         },
         {
             "id": "sourceType",
@@ -14035,7 +13324,8 @@
                     "value": "white-papers",
                     "label": "White Papers"
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "queryType",
@@ -14050,7 +13340,8 @@
                     "value": "by-author",
                     "label": "By Author"
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "author",
@@ -14100,7 +13391,8 @@
                     "value": " ",
                     "label": " "
                 }
-            ]
+            ],
+			"tab": "Content"
         },
         {
             "id": "items",
@@ -14115,7 +13407,8 @@
                     "label": "Blog permalink",
                     "type": "string"
                 }
-            ]
+            ],
+			"tab": "Content"
         }
     ]
   },

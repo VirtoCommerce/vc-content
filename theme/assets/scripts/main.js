@@ -395,9 +395,16 @@ $(function () {
                     email: form.find('input[name*="email"]').val() || form.find('input[name*="Email"]').val()
                 },
                 beforeSend: () => subscribeNewsButtons.attr('disabled', true),
-                success: () => form.find('input[type="text"]').val(''),
+                success: function () {
+                    form.find('input[type="text"]').val('');
+                    if (form.attr('id') == 'subscribe_news') {
+                        document.location.href = '/thank-you-newsletters';
+                    }
+                },
                 complete: () => subscribeNewsButtons.removeAttr('disabled')
             });
+        } else {
+            e.preventDefault();
         }
     });
 });

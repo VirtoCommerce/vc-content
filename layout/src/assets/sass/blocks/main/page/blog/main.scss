@@ -89,6 +89,14 @@
         margin-bottom: 2.5rem;
         border-radius: 0.625rem;
         overflow: hidden;
+
+        @include media-breakpoint-down(xs) {
+            height: 14rem;
+        }
+
+        @include media-breakpoint-only(sm) {
+            height: 16rem;
+        }
     }
 
     &-content {

@@ -22,11 +22,15 @@
     <meta itemprop="image" content="{{ 'virtocommerce.png' | asset_url }}" />
     <meta name="google-site-verification" content="U2sXV9qIWUb-RceW8MpL-EfFnwvOqCo_jLWIDL8c6xI" />
     <link type="image/x-icon" rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" />
-    {% if page_title != '' %}
-    <title>{{ page_title }}</title>
-    {% else %}
-    <title>ASP.NET ecommerce platform - Virto Commerce</title>
+
+    {% page_title = 'ASP.NET ecommerce platform - Virto Commerce' %}
+    {% if page.meta_fields != blank %}
+        {% if page.meta_fields.header != null and page.meta_fields.header != '' %}
+            {% assign page_title = page.meta_fields.header %}
+        {% endif %}
     {% endif %}
+    <title>{{page_title}}</title>
+
     {{ 'styles.min.css?' | append css_version | asset_url | stylesheet_tag }}
     <link rel="preload" href="{{ 'jquery.fancybox.min.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="../../fonts/CircularStd-Book.woff" as="font" type="font/woff" crossorigin>

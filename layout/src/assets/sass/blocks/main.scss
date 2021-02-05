@@ -80,7 +80,7 @@
         .page
         {
             position: relative;
-            z-index: -6;
+            z-index: 10;
 
             &__t
             {
@@ -97,6 +97,11 @@
             &__note,
             &__t,
             &__descr
+            {
+                color: white;
+            }
+
+            &__inner
             {
                 color: white;
             }

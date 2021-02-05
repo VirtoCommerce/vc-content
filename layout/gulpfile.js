@@ -79,11 +79,11 @@ var path = {
             main: buildPaths(scriptsPath,
             [
                 'jquery-3.5.0.min.js',
+                'jquery.validate.min.js',
+                'jquery.validate.unobtrusive.min.js',
                 '/blog/blog-item.js',
                 'main.js',
                 'lazysizes.min.js',
-                'jquery.validate.min.js',
-                'jquery.validate.unobtrusive.min.js',
                 'jquery.fancybox.min.js'
             ]),
             layout: 'src/assets/js/*.js'
