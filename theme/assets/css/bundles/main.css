@@ -5725,7 +5725,7 @@ code {
 
 #layout.layout--dark .page {
     position: relative;
-    z-index: -6;
+    z-index: 10;
 }
 
 #layout.layout--dark .page__t {
@@ -5739,6 +5739,10 @@ code {
 }
 
 #layout.layout--dark .block__note, #layout.layout--dark .block__t, #layout.layout--dark .block__descr {
+    color: white;
+}
+
+#layout.layout--dark .block__inner {
     color: white;
 }
 
