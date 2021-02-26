@@ -80,8 +80,8 @@
             ]
         },
         {
-            "id": "title",
-            "label": "Title",
+            "id": "articleTitle",
+            "label": "Article title",
             "type": "string"
         },
         {

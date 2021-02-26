@@ -93,7 +93,7 @@
         <a href="{{ blog.url | absolute_url }}" class="list__link">{{ blog.title }}</a>
     </div>
     {% if article.title != null %}
-        <div class="list__item">{{ article.title }}</div>
+        <div class="list__item">{{ article.meta_fields.articleTitle }}</div>
     {% endif %}
 
   {% elsif template contains 'page' %}

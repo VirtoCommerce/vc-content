@@ -15,7 +15,7 @@
         {% assign stickedFontColorApplied = article.meta_fields.stickedFontColor != null and article.meta_fields.stickedFontColor != '' %}
         <div class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800, 560 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
         <div class="blog-post__text">
-            <div class="blog-post__t"><a href="{{article.url | absolute_url }}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{ article.title }}</a></div>
+            <div class="blog-post__t"><a href="{{article.url | absolute_url }}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{ article.meta_fields.articleTitle }}</a></div>
             <div class="blog-post__descr">
                 <a href="{{article.url | absolute_url}}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{article.excerpt}}</a>
             </div>

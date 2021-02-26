@@ -2,7 +2,7 @@
     <div class="container">
         {% include 'breadcrumb' %}
         <h1 class="blog__t">
-            {{ article.title }}
+            {{ article.meta_fields.articleTitle }}
         </h1>
         <div class="blog__meta">
             <div class="blog__date">{{ article.created_at | date: "%b %d, %Y" }}</div>
