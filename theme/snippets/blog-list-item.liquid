@@ -2,7 +2,7 @@
     <a class="list__bg lazyload" href="{{ article.url | absolute_url }}" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 343, 160 }}{% else %}blue-abstract-background.jpg{% endif %}"></a>
     <div class="list__info">
         <div class="list__t">
-            <a href="{{ article.url | absolute_url }}">{{ article.title }}</a>
+            <a href="{{ article.url | absolute_url }}">{{ article.meta_fields.articleTitle }}</a>
         </div>
         <div class="list__descr">
             <a class="list__descr" href="{{article.url}}">{{article.excerpt}}</a>
@@ -15,17 +15,17 @@
         <div class="list__author">
             <div class="list__author-logo">
                 {% if article.meta_fields.author.photoUrl != '' %}
-                    <img data-src="{{article.meta_fields.author.photoUrl}}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+                <img data-src="{{article.meta_fields.author.photoUrl}}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
                 {% else %}
-                    <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height:100%;no-repeat scroll 0 0" class="lazyload" />
+                <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height:100%;no-repeat scroll 0 0" class="lazyload" />
                 {% endif %}
             </div>
             <div class="list__author-text">
                 <div class="list__author-name">
                     {% if article.meta_fields.author != '' %}
-                        {{(article.meta_fields.author.firstName | append: ' ') | append: article.meta_fields.author.lastName }}
+                    {{(article.meta_fields.author.firstName | append: ' ') | append: article.meta_fields.author.lastName }}
                     {% else %}
-                        {{'VirtoCommerce'}}
+                    {{'VirtoCommerce'}}
                     {% endif %}
                 </div>
             </div>

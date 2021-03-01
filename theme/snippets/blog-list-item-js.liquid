@@ -1,7 +1,7 @@
 <a class="list__bg lazyload" href="{% raw %}{{ article.url }}{% endraw %}" data-bg="{% raw %}{{ article.imageUrl.replace('https://vcpro.blob.core.windows.net', 'https://ik.imagekit.io/je8lpsqkoi') + '?tr=w-343,h-160' }}{% endraw %}"></a>
 <div class="list__info">
     <div class="list__t">
-        <a href="{% raw %}{{article.url}}{% endraw %}" ng-bind="article.title"></a>
+        <a href="{% raw %}{{article.url}}{% endraw %}" ng-bind="article.metaInfo.articleTitle"></a>
     </div>
     <div class="list__descr">
         {% raw %}
