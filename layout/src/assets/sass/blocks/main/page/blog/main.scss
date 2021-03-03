@@ -312,7 +312,8 @@
         }
 
         &__inner {
-            width: 13.125rem;
+            background: #f8f8f8;
+            padding: 3rem 4rem 0;
         }
 
         &__pic {
@@ -336,8 +337,6 @@
             .btn {
                 justify-content: center;
                 margin-bottom: 0.9375rem;
-                text-align: center;
-                width: 100%;
             }
         }
 
@@ -348,7 +347,6 @@
         }
 
         .list--socials {
-            margin-top: 1.25rem;
             justify-content: center;
         }
     }
@@ -366,8 +364,6 @@
     @include media-breakpoint-up(lg) {
         &-sidebar {
             flex: 0 0 16.875rem;
-            margin-left: 2.5rem;
-            max-width: 16.875rem;
         }
     }
 

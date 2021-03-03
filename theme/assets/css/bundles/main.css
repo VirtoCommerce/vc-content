@@ -10311,7 +10311,8 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog-sidebar__inner {
-    width: 13.125rem;
+    background: #f8f8f8;
+    padding: 3rem 4rem 0;
 }
 
 .blog-sidebar__pic {
@@ -10336,8 +10337,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
       .blog-sidebar .form .btn {
     justify-content: center;
     margin-bottom: 0.9375rem;
-    text-align: center;
-    width: 100%;
 }
 
 .blog-sidebar p {
@@ -10347,7 +10346,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog-sidebar .list--socials {
-    margin-top: 1.25rem;
     justify-content: center;
 }
 
@@ -10364,8 +10362,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 @media (min-width: 992px) {
     .blog-sidebar {
         flex: 0 0 16.875rem;
-        margin-left: 2.5rem;
-        max-width: 16.875rem;
     }
 }
 
