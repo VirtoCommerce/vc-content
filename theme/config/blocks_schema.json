@@ -82,8 +82,18 @@
         {
             "id": "articleTitle",
             "label": "Article title",
-            "type": "string"
+            "type": "text",
+			"settings": [
+				"TextColor",
+				"FontSize",
+				"EnterModeBr"
+			]
         },
+		{
+			"id": "articleTitleBackgroundColor",
+			"type": "color",
+			"label": "Article title background color"
+		},
         {
             "id": "date",
             "label": "Date",

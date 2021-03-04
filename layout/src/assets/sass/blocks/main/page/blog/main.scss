@@ -72,12 +72,26 @@
         }
     }
 
-    &-main {
-        display: flex;
-        margin-top: 2.1875rem;
+    &--cover {
+        position: relative;
+        height: 25rem;
+        text-align: center;
+        margin-bottom: 2rem;
 
-        @include media-breakpoint-down(md) {
-            margin-top: 0.3125rem;
+        .blog__t {
+            color: white;
+            font-weight: 600;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #ff9a05;
+            z-index: -10;
         }
     }
 

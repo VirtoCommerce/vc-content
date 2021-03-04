@@ -10050,15 +10050,27 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 }
 
-.blog-main {
-    display: flex;
-    margin-top: 2.1875rem;
+.blog--cover {
+    position: relative;
+    height: 25rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-@media (max-width: 991.98px) {
-    .blog-main {
-        margin-top: 0.3125rem;
-    }
+.blog--cover .blog__t {
+    color: white;
+    font-weight: 600;
+}
+
+.blog--cover:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #ff9a05;
+    z-index: -10;
 }
 
 .blog-hero {
