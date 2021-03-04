@@ -100,7 +100,22 @@
                 </style>
             {% endif %}
 
-            <div class="list list-items list-items--bordered list-items--cols-{{block.columnsCount}} {% if block.iconsType == 'letters' %} list-features--type-letters {% endif %}">
+            {% assign lastItemsCount = block.columns.size | modulo: block.columnsCount %}
+            {% if lastItemsCount == 0 %}
+                {% assign lastItemsCount = block.columnsCount %}
+            {% endif %}
+            <style>
+                #list-{{block.__id}} .list__item:nth-last-child(-n+{{lastItemsCount}}) {
+                    padding-bottom: 0;
+                }
+                @media (max-width: 768px) {
+                    #list-{{block.__id}} .list__item:nth-last-child(-n+{{lastItemsCount | minus: 1}}) {
+                        padding-top: 2.5rem;
+                    }
+                }
+            </style>
+
+            <div id="list-{{block.__id}}" class="list list-items list-items--bordered list-items--cols-{{block.columnsCount}} {% if block.iconsType == 'letters' %} list-features--type-letters {% endif %}">
                 {% for column in block.columns %}
                     <div class="list__item">
                         <div class="list__inner">

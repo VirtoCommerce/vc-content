@@ -402,7 +402,14 @@
         "type": "string",
         "default": null,
         "tab": "Settings"
-      }
+      },
+	  {
+		"id": "useDarkMode",
+		"label": "Use dark mode",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  }
     ],
     "namedSettings": {
       "cover-blocks": [

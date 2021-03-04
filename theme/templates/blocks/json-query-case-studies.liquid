@@ -1,7 +1,7 @@
 <div id="{{ block.__id }}" class="block {{block.topPadding}} {{block.bottomPadding}}
     {% if block.topDivider == 'True' %} block--divider-top {% endif %}
     {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
-    {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
+    {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %} {% if block.useDarkMode == 'True' %}block--dark{% endif %}"
     {% include 'block-background-style' %}>
     <div class="block__inner container">
         <div class="row">
