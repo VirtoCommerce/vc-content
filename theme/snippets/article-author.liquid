@@ -1,29 +1,23 @@
 {%- if article_author.id -%}
     <div class="block block--align-left block--padding-top-none block--padding-bottom-none block--bg-white">
         <div class="block__inner container">
-            <div class="row ">
-                <div class="block__text col-lg">
-                    <div class="block__t">
-                        <h2 class="block__t">About the author of this article</h2>
-                    </div>
-                </div>
-            </div>
             <div class="list list-items list-items--cols-1 list-items--reviews">
                 <div class="list__item">
-                    <div id="block-11-item-0" class="list__img ">
-                        <img src="{{ article_author.photoUrl }}" title="" class="list__pic ">
+                    <div class="list__img ">
+                        <img src="{{ article_author.photoUrl }}" title="" class="list__pic d-flex ml-auto mr-auto">
                     </div>
-                    <div class="list__t">
+                    <div class="list__t ml-auto mr-auto">
                         {{ article_author.firstName }} {{ article_author.lastName }}
                     </div>
-                    <div class="list__pos list__pos--with-profile">
+                    <div class="list__pos list__pos--with-profile ml-auto mr-auto">
                         <a rel="nofollow" href="{{article_author.linkedinLink}}" target="_blank">
                             <img src="{{'images/icons/linkedin.svg' | asset_url}}" />
                         </a>
                         <span class="pos">{{article_author.jobTitle}}</span>
                     </div>
-                    <div class="list__descr">
-                        <p>{{ article_author.biography }}</p>
+                    <div class="show-bio btn btn--orange ml-auto mr-auto">Show bio</div>
+                    <div class="bio d-none text-center">
+                        {{ article_author.biography }}
                     </div>
                 </div>
             </div>

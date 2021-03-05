@@ -381,6 +381,12 @@ $(function () {
         });
     });
 
+    $('.show-bio').one('click', function () {
+        var showBio = $(this);
+        showBio.next('.bio').removeClass('d-none');
+        showBio.remove();
+    });
+
     var subscribeNewsButtons = $('#subscribe_news, #subscribe_news_footer').children('[type="submit"]');
     subscribeNewsButtons.on('click', function (e) {
         var form = $(e.target.form);
