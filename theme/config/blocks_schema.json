@@ -94,6 +94,12 @@
 			"type": "color",
 			"label": "Article title background color"
 		},
+		{
+			"id": "articleTitleBackgroundHeight",
+			"type": "number",
+			"label": "Article title background height",
+			"default": "400"
+		},
         {
             "id": "date",
             "label": "Date",

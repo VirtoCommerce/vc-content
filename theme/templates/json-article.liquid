@@ -13,21 +13,31 @@
     </div>
     <!-- Blog main -->
     <div class="blog-main">
-        <div class="blog-content">
-            <div class="block blog--cover">
-                <div class="block__inner container">
-                    <h1 class="blog__t d-flex justify-content-center">
-                        {{ article.meta_fields.articleTitle }}
-                    </h1>
-                </div>
-                {% if article.meta_fields.articleTitleBackgroundColor != blank and article.meta_fields.articleTitleBackgroundColor != '' %}
-                <style>
-                    .blog--cover:after {
-                        background: {{article.meta_fields.articleTitleBackgroundColor}};
-                    }
-                </style>
-                {% endif %}
+        <div class="block blog--cover">
+            <div class="block__inner container">
+                <h1 class="blog__t d-flex justify-content-center">
+                    {{ article.meta_fields.articleTitle }}
+                </h1>
             </div>
+            {% assign cover_style = '' %}
+            {% if article.meta_fields.articleTitleBackgroundColor != blank and article.meta_fields.articleTitleBackgroundColor != '' %}
+                {% assign cover_style = cover_style | append: 'background: {{article.meta_fields.articleTitleBackgroundColor}};' %}
+            {% endif %}
+            {% if article.meta_fields.articleTitleBackgroundHeight != blank and article.meta_fields.articleTitleBackgroundHeight != '' %}
+                {% assign cover_style = cover_style | append: 'height: {{article.meta_fields.articleTitleBackgroundHeight}}px;' %}
+            {% endif %}
+            {% if cover_style != '' %}
+            <style>
+                .blog--cover {
+                    height: {{article.meta_fields.articleTitleBackgroundHeight}}px;
+                }
+                .blog--cover:after {
+                    {{cover_style | render}}
+                }
+            </style>
+            {% endif %}
+        </div>
+        <div class="blog-content ml-auto mr-auto">
             {% include 'json-blocks' page: article -%}
             <div class="block__inner container">
                 <div class="block__t">Share. Spread tech knowledge & news:</div>

@@ -116,6 +116,10 @@
     &-content {
         flex: 1 0 0;
 
+        @include media-breakpoint-up(md) {
+            width: 55rem;
+        }
+
         h2 {
             font-size: 2rem;
             font-weight: 900;

@@ -10091,6 +10091,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
     flex: 1 0 0;
 }
 
+@media (min-width: 768px) {
+    .blog-content {
+        width: 55rem;
+    }
+}
+
 .blog-content h2 {
     font-size: 2rem;
     font-weight: 900;
