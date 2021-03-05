@@ -167,6 +167,20 @@
                 }
             ]
         },
+		{
+			"id": "subscribeFormTitle",
+			"label": "Subscribe form title",
+			"type": "string",
+			"multiline": true,
+			"default": "Sign up for Virto Commerce news and updates"
+		},
+		{
+			"id": "subscribeFormSubtitle",
+			"label": "Subscribe form subtitle",
+			"type": "string",
+			"multiline": true,
+			"default": "Share. Spread tech knowledge & news"
+		},
         {
             "id": "is-sticked",
             "label": "Sticked",

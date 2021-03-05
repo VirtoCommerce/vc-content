@@ -141,7 +141,7 @@
 
         .list--socials {
             justify-content: left;
-            padding: 2rem .5rem;
+            padding: 1rem .5rem 2rem;
         }
     }
 
@@ -355,6 +355,18 @@
             .btn {
                 justify-content: center;
                 margin-bottom: 0.9375rem;
+            }
+
+            @include media-breakpoint-up(xs) {
+                .form-control {
+                    max-width: 23.5625rem;
+                }
+            }
+
+            @include media-breakpoint-down(xs) {
+                .btn {
+                    width: 100%;
+                }
             }
         }
 

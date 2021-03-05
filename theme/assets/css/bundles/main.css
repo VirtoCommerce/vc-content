@@ -10116,7 +10116,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog-content .list--socials {
     justify-content: left;
-    padding: 2rem .5rem;
+    padding: 1rem .5rem 2rem;
 }
 
 .blog-post {
@@ -10347,6 +10347,16 @@ input.ng-touched.ng-invalid, .input-validation-error {
       .blog-sidebar .form .btn {
     justify-content: center;
     margin-bottom: 0.9375rem;
+}
+
+.blog-sidebar .form .form-control {
+    max-width: 23.5625rem;
+}
+
+@media (max-width: 575.98px) {
+    .blog-sidebar .form .btn {
+        width: 100%;
+    }
 }
 
 .blog-sidebar p {

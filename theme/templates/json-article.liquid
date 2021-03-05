@@ -39,12 +39,6 @@
         </div>
         <div class="blog-content ml-auto mr-auto">
             {% include 'json-blocks' page: article -%}
-            <div class="block__inner container">
-                <div class="block__t">Share. Spread tech knowledge & news:</div>
-            </div>
-            <div class="list list--socials">
-                {% include 'blog-socials' article: article %}
-            </div>
             {% include 'article-author' article_author: page_settings.author -%}
             <div class="blog__meta">
                 <div class="list list--tags list--tags-small">
