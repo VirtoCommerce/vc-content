@@ -5759,6 +5759,14 @@ code {
     color: white;
 }
 
+#layout .pl-6 {
+    padding-left: 5rem;
+}
+
+#layout .pr-6 {
+    padding-right: 5rem;
+}
+
 .cookie-bar {
     background: #f0f0f0;
     bottom: 0;
@@ -10044,7 +10052,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog--cover {
     position: relative;
-    height: 25rem;
+    height: 21.875rem;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -10093,7 +10101,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 @media (min-width: 768px) {
     .blog-content {
-        width: 55rem;
+        width: 47.5rem;
     }
 }
 
@@ -10119,6 +10127,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
     padding: 1rem .5rem 2rem;
 }
 
+.blog-content .show-bio {
+    font-family: 'CircularStd';
+}
+
 .blog .read-more {
     font-size: 20px;
 }
@@ -10130,12 +10142,31 @@ input.ng-touched.ng-invalid, .input-validation-error {
     height: 1px;
 }
 
+.blog .sticked-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+    .blog .sticked-title {
+        font-size: 28px;
+    }
+}
+
+.blog-older {
+    display: block;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+}
+
 .blog-post {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     flex: 0 0 60%;
-    height: 35rem;
+    height: 31.5rem;
     position: relative;
 }
 
@@ -10483,7 +10514,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog .list--posts .list__bg {
-    border-radius: 0.5rem 0.5rem 0 0;
     display: block;
     min-height: 10rem;
     background-size: cover;
@@ -10527,7 +10557,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog .list--posts .list__info {
     background: #fff;
-    border-radius: 0 0 0.5rem 0.5rem;
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
@@ -10559,6 +10588,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog .list--posts .list__descr .article-date {
     font-size: 13px;
+    color: darkgray;
 }
 
 .blog .list--posts .list--tags .list__item {
@@ -10622,10 +10652,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 }
 
-@media (min-width: 1200px) {
-    .blog .list--posts > .list__item {
-        flex: 0 0 20%;
-        max-width: 20%;
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .blog .list--posts .list__item {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 }
 
