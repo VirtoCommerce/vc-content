@@ -62,20 +62,24 @@
             "type": "select",
             "options": [
                 {
-                    "value": "technical",
-                    "label": "Technical"
+                    "value": "business",
+                    "label": "Business"
                 },
                 {
                     "value": "events",
                     "label": "Events"
                 },
-                {
-                    "value": "blogs",
-                    "label": "Blogs"
+				{
+                    "value": "headless",
+                    "label": "Headless"
                 },
                 {
                     "value": "pressreleases",
                     "label": "Press Releases"
+                },
+                {
+                    "value": "tech",
+                    "label": "Tech"
                 }
             ]
         },
