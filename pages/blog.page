@@ -20,22 +20,27 @@
                 "category": null
             },
             {
-                "label": "Technical",
-                "category": "technical"
+                "label": "Business",
+                "category": "business"
+            },
+            {
+                "label": "Tech",
+                "category": "tech"
+            },
+            {
+                "label": "Press releases",
+                "category": "pressreleases"
             },
             {
                 "label": "Events",
                 "category": "events"
             },
             {
-                "label": "Blogs",
-                "category": "blogs"
-            },
-            {
-                "label": "Press releases",
-                "category": "pressreleases"
+                "label": "Headless",
+                "category": "headless"
             }
-        ]
+        ],
+        "useDarkMode": null
     },
     {
         "id": 2,
@@ -54,14 +59,16 @@
         "bottomPadding": "block--padding-bottom-half",
         "topDivider": false,
         "bottomDivider": false,
-        "backgroundColorHex": null,
-        "borderColor": null,
+        "backgroundColorHex": "rgb(255,255,255)",
+        "borderColor": "rgb(225,225,225)",
         "useShadow": null,
         "shadowColor": null,
         "shadowHorizontalDirection": null,
         "shadowVerticalDirection": null,
         "hideDateAndName": false,
         "descriptionStyle": "blog",
-        "showOlderButton": true
+        "showOlderButton": true,
+        "useDarkMode": null,
+        "background": null
     }
 ]

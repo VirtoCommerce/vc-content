@@ -1,4 +1,10 @@
-<div class="blog-content">
+<div class="d-xl-flex mt-3 mt-xl-5">
+    <div class="d-flex flex-column pr-xl-5">
+        <div style="font-size:48px;font-weight:700">{{article.meta_fields.articleTitle}}</div>
+        {% assign stickedFontColorApplied = article.meta_fields.stickedFontColor != null and article.meta_fields.stickedFontColor != '' %}
+        <a href="{{ article.url | absolute_url }}" class="read-more mt-4 mt-xl-auto mb-3 align-self-start" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>Read More</a>
+        <hr class="mb-3 mb-xl-0"></hr>
+    </div>
     <div class="blog-post">
         {% if article.meta_fields.stickedOverlayColor != null and article.meta_fields.stickedOverlayColor != '' %}
         <style>
@@ -12,14 +18,6 @@
             }
         </style>
         {% endif %}
-        {% assign stickedFontColorApplied = article.meta_fields.stickedFontColor != null and article.meta_fields.stickedFontColor != '' %}
         <div class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800, 560 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
-        <div class="blog-post__text">
-            <div class="blog-post__t"><a href="{{article.url | absolute_url }}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{ article.meta_fields.articleTitle }}</a></div>
-            <div class="blog-post__descr">
-                <a href="{{article.url | absolute_url}}" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>{{article.excerpt}}</a>
-            </div>
-            <a href="{{ article.url | absolute_url }}" class="btn btn--white">Read</a>
-        </div>
     </div>
 </div>

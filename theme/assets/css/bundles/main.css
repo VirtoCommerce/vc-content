@@ -10119,11 +10119,22 @@ input.ng-touched.ng-invalid, .input-validation-error {
     padding: 1rem .5rem 2rem;
 }
 
+.blog .read-more {
+    font-size: 20px;
+}
+
+.blog hr {
+    border: none;
+    color: #ff9a05;
+    background-color: #ff9a05;
+    height: 1px;
+}
+
 .blog-post {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    flex: 0 0 35rem;
+    flex: 0 0 60%;
     height: 35rem;
     position: relative;
 }
@@ -10546,6 +10557,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
     color: black;
 }
 
+.blog .list--posts .list__descr .article-date {
+    font-size: 13px;
+}
+
 .blog .list--posts .list--tags .list__item {
     font-size: 0.75rem;
     height: 1.5rem;
@@ -10604,6 +10619,13 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
     .blog .list--posts .list__info {
         padding: 1.875rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog .list--posts > .list__item {
+        flex: 0 0 20%;
+        max-width: 20%;
     }
 }
 

@@ -145,11 +145,22 @@
         }
     }
 
+    .read-more {
+        font-size: 20px;
+    }
+
+    hr {
+        border: none;
+        color: $orange;
+        background-color: $orange;
+        height: 1px;
+    }
+
     &-post {
         align-items: flex-start;
         display: flex;
         flex-direction: column;
-        flex: 0 0 35rem;
+        flex: 0 0 60%;
         height: 35rem;
         position: relative;
 
@@ -557,6 +568,10 @@
                     color: black;
                 }
             }
+
+            .article-date {
+                font-size: 13px;
+            }
         }
 
         .list--tags .list__item {
@@ -615,6 +630,13 @@
 
             .list__info {
                 padding: 1.875rem;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            > .list__item {
+                flex: 0 0 20%;
+                max-width: 20%;
             }
         }
     }
