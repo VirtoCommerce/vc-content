@@ -1,5 +1,5 @@
 <div id="{{block.__id}}">
-    <div class="block block--window-height">
+    <div class="block block--window-height{% if block.useDarkMode == 'True' %} block--dark{% endif %}">
         <div class="pictures">
             {% if block.pictures.size > 0 %}
                 {% for picture in block.pictures %}

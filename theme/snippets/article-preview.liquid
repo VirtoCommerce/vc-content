@@ -7,49 +7,31 @@
         <a class="list__bg lazyload" href="{{ article.url }}" data-bg="{{ 'blue-abstract-background.jpg' | image_url }}"></a>
     {% endif %}
     <div class="list__info">
-        <div class="list__t">
-            <a href="{{ article.url }}" class="list__t">{{ article.title }}</a>
-        </div>
-        <div class="list__descr">
-            {% if article.excerpt and article.excerpt != '' %}
-                <a class="list__descr{% if block.descriptionStyle == 'block' %} list__descr--block{% endif %}" href="{{ article.url }}">{{ article.excerpt }}</a>
-            {% else %}
-                <a class="list__descr{% if block.descriptionStyle == 'block' %} list__descr--block{% endif %}" href="{{ article.url }}">{{ article.description }}</a>
-            {% endif %}
-            <div class="block__space"></div>
-        </div>
         {% if block.hideDateAndName != 'True' %}
             {% if article.permalink contains 'blog/' or article.permalink contains 'glossary/' %}
                 <div class="list__descr">
-                {% if article.meta_info.date %}
-                    <div>{{ article.meta_info.date | date: "d MMMM yyyy" }}</div>
-                {% else %}
-                    <div>{{ article.meta_info.markup_webpage_date_created | date: "d MMMM yyyy" }}</div>
-                {% endif %}
-                </div>
-                <div class="list list--tags">
-                    {% for tag in article.tags limit:3 %}
-                        {% assign tag_url = '/blog/tag/' | append: tag  %}
-                        <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
-                    {% endfor %}
-                </div>
-                <div class="list__author">
-                    <div class="list__author-logo">
-                    {% if article.meta_info.author.photoUrl %}
-                        <img data-src="{{ article.meta_info.author.photoUrl }}" title="" style="max-height: 100%; border-radius: 100%;" class="lazyload" />
+                    {% assign article_date = '' %}
+                    {% if article.meta_info.date %}
+                        {% assign article_date = article.meta_info.date %}
                     {% else %}
-                        <img data-src="/themes/assets/logo-mobile.svg" title="" style="max-height: 100%;" class="lazyload" />
+                        {% assign article_date = article.meta_info.markup_webpage_date_created %}
                     {% endif %}
-                    </div>
-                    <div class="list__author-text">
-                    {% if article.meta_info.author.firstName %}
-                        <div class="list__author-name">{{ article.meta_info.author.firstName }} {{ article.meta_info.author.lastName }}</div>
+                    
+                    {% assign days_difference = article_date | date_days_difference %}
+                    {% if days_difference > 7 %}
+                        <div class="article-date">{{article.meta_info.markup_webpage_date_created | date: "d MMM"}} • 5 min</div>
                     {% else %}
-                        <div class="list__author-name">VirtoCommerce</div>
+                        {% if days_difference == 0 %}
+                            <div class="article-date">Today • 5 min</div>
+                        {% else %}
+                            <div class="article-date">{{days_difference}} days ago • 5 min</div>
+                        {% endif %}
                     {% endif %}
-                    </div>
                 </div>
             {% endif %}
+            <div class="list__t">
+                <a href="{{ article.url }}" class="list__t">{{ article.meta_fields.articleTitle }}</a>
+            </div>
         {% endif %}
     </div>
 </div>

@@ -72,12 +72,26 @@
         }
     }
 
-    &-main {
-        display: flex;
-        margin-top: 2.1875rem;
+    &--cover {
+        position: relative;
+        height: 25rem;
+        text-align: center;
+        margin-bottom: 2rem;
 
-        @include media-breakpoint-down(md) {
-            margin-top: 0.3125rem;
+        .blog__t {
+            color: white;
+            font-weight: 600;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #ff9a05;
+            z-index: -10;
         }
     }
 
@@ -102,6 +116,10 @@
     &-content {
         flex: 1 0 0;
 
+        @include media-breakpoint-up(md) {
+            width: 55rem;
+        }
+
         h2 {
             font-size: 2rem;
             font-weight: 900;
@@ -123,15 +141,26 @@
 
         .list--socials {
             justify-content: left;
-            padding: 2rem .5rem;
+            padding: 1rem .5rem 2rem;
         }
+    }
+
+    .read-more {
+        font-size: 20px;
+    }
+
+    hr {
+        border: none;
+        color: $orange;
+        background-color: $orange;
+        height: 1px;
     }
 
     &-post {
         align-items: flex-start;
         display: flex;
         flex-direction: column;
-        flex: 0 0 35rem;
+        flex: 0 0 60%;
         height: 35rem;
         position: relative;
 
@@ -312,7 +341,8 @@
         }
 
         &__inner {
-            width: 13.125rem;
+            background: #f8f8f8;
+            padding: 3rem 4rem 0;
         }
 
         &__pic {
@@ -336,8 +366,18 @@
             .btn {
                 justify-content: center;
                 margin-bottom: 0.9375rem;
-                text-align: center;
-                width: 100%;
+            }
+
+            @include media-breakpoint-up(xs) {
+                .form-control {
+                    max-width: 23.5625rem;
+                }
+            }
+
+            @include media-breakpoint-down(xs) {
+                .btn {
+                    width: 100%;
+                }
             }
         }
 
@@ -348,7 +388,6 @@
         }
 
         .list--socials {
-            margin-top: 1.25rem;
             justify-content: center;
         }
     }
@@ -366,8 +405,6 @@
     @include media-breakpoint-up(lg) {
         &-sidebar {
             flex: 0 0 16.875rem;
-            margin-left: 2.5rem;
-            max-width: 16.875rem;
         }
     }
 
@@ -531,6 +568,10 @@
                     color: black;
                 }
             }
+
+            .article-date {
+                font-size: 13px;
+            }
         }
 
         .list--tags .list__item {
@@ -589,6 +630,13 @@
 
             .list__info {
                 padding: 1.875rem;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            > .list__item {
+                flex: 0 0 20%;
+                max-width: 20%;
             }
         }
     }

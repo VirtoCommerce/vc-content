@@ -80,10 +80,26 @@
             ]
         },
         {
-            "id": "title",
-            "label": "Title",
-            "type": "string"
+            "id": "articleTitle",
+            "label": "Article title",
+            "type": "text",
+			"settings": [
+				"TextColor",
+				"FontSize",
+				"EnterModeBr"
+			]
         },
+		{
+			"id": "articleTitleBackgroundColor",
+			"type": "color",
+			"label": "Article title background color"
+		},
+		{
+			"id": "articleTitleBackgroundHeight",
+			"type": "number",
+			"label": "Article title background height",
+			"default": "400"
+		},
         {
             "id": "date",
             "label": "Date",
@@ -151,6 +167,20 @@
                 }
             ]
         },
+		{
+			"id": "subscribeFormTitle",
+			"label": "Subscribe form title",
+			"type": "string",
+			"multiline": true,
+			"default": "Sign up for Virto Commerce news and updates"
+		},
+		{
+			"id": "subscribeFormSubtitle",
+			"label": "Subscribe form subtitle",
+			"type": "string",
+			"multiline": true,
+			"default": "Share. Spread tech knowledge & news"
+		},
         {
             "id": "is-sticked",
             "label": "Sticked",
@@ -392,7 +422,14 @@
         "type": "string",
         "default": null,
         "tab": "Settings"
-      }
+      },
+	  {
+		"id": "useDarkMode",
+		"label": "Use dark mode",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  }
     ],
     "namedSettings": {
       "cover-blocks": [

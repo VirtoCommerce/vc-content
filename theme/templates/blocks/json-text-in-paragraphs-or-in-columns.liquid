@@ -5,7 +5,7 @@
     {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
     {% if block.backgroundColorHex != '' %}style="background-color:{{block.backgroundColorHex}}"{% endif %}>
     <div class="block__inner container">
-        <div class="row justity-content-center">
+        <div class="row justify-content-center">
             <div class="{{block.textAreaWidth}}">
             {% if block.title != '' %}
                 {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}

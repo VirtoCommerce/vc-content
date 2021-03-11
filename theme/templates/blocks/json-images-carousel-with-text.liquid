@@ -58,7 +58,7 @@
                         <div class="row">
                             <div class="col-md-5 col-lg-5 align-self-center">
                                 {% if item.image.url != '' %}
-                                    <img class="review-image" src="{{item.image.url | image_url}}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} />
+                                    <img class="review-image lazyload" src="{{item.image.url | image_url}}" {% if item.image.altText != '' %}title="{{item.image.altText}}"{% endif %} />
                                 {% endif %}
                             </div>
                             <div class="col-lg-7 align-self-center">

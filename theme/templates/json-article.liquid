@@ -1,41 +1,55 @@
 <div class="blog">
     <div class="container">
         {% include 'breadcrumb' %}
-        <h1 class="blog__t">
-            {{ article.title }}
-        </h1>
-        <div class="blog__meta">
-            <div class="blog__date">{{ article.created_at | date: "%b %d, %Y" }}</div>
-            <div class="list list--tags list--tags-small ml-auto">
-                {% for tag in article.tags %}
-                    {% assign tag_url = '/blog/tag/' | append: tag  %}
-                    <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
-                {% endfor %}
-            </div>
+    </div>
+    <div class="blog__meta">
+        <div class="blog__date">{{ article.created_at | date: "%b %d, %Y" }}</div>
+        <div class="list list--tags list--tags-small ml-auto">
+            {% for tag in article.tags %}
+                {% assign tag_url = '/blog/tag/' | append: tag  %}
+                <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
+            {% endfor %}
         </div>
-        <!-- Blog main -->
-        <div class="blog-main">
-            <div class="blog-content">
-                <div class="blog-hero lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800 352 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
-                {% include 'json-blocks' page: article -%}
-                <div class="block__inner container">
-                    <div class="block__t">Share. Spread tech knowledge & news:</div>
-                </div>
-                <div class="list list--socials">
-                    {% include 'blog-socials' article: article %}
-                </div>
-                {% include 'article-author' article_author: page_settings.author -%}
-                <div class="blog__meta">
-                    <div class="list list--tags list--tags-small">
-                        {% for tag in article.tags %}
-                            {% assign tag_url = '/blog/tag/' | append: tag  %}
-                            <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
-                        {% endfor %}
-                    </div>
+    </div>
+    <!-- Blog main -->
+    <div class="blog-main">
+        <div class="block blog--cover">
+            <div class="block__inner container">
+                <h1 class="blog__t d-flex justify-content-center">
+                    {{ article.meta_fields.articleTitle }}
+                </h1>
+            </div>
+            {% assign cover_style = '' %}
+            {% if article.meta_fields.articleTitleBackgroundColor != blank and article.meta_fields.articleTitleBackgroundColor != '' %}
+                {% assign cover_style = cover_style | append: 'background: {{article.meta_fields.articleTitleBackgroundColor}};' %}
+            {% endif %}
+            {% if article.meta_fields.articleTitleBackgroundHeight != blank and article.meta_fields.articleTitleBackgroundHeight != '' %}
+                {% assign cover_style = cover_style | append: 'height: {{article.meta_fields.articleTitleBackgroundHeight}}px;' %}
+            {% endif %}
+            {% if cover_style != '' %}
+            <style>
+                .blog--cover {
+                    height: {{article.meta_fields.articleTitleBackgroundHeight}}px;
+                }
+                .blog--cover:after {
+                    {{cover_style | render}}
+                }
+            </style>
+            {% endif %}
+        </div>
+        <div class="blog-content ml-auto mr-auto">
+            {% include 'json-blocks' page: article -%}
+            {% include 'article-author' article_author: page_settings.author -%}
+            <div class="blog__meta">
+                <div class="list list--tags list--tags-small">
+                    {% for tag in article.tags %}
+                        {% assign tag_url = '/blog/tag/' | append: tag  %}
+                        <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
+                    {% endfor %}
                 </div>
             </div>
             {% include 'blog-subscribe' cssClass: 'collapsed', article: article %}
         </div>
-        <!-- End Blog main -->
     </div>
+    <!-- End Blog main -->
 </div>

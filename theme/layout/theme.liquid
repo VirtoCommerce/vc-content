@@ -74,10 +74,7 @@
     {% include 'gdpr-cookie-compliance' %}
     {% endif %}
 
-    <div id="layout">
-        {% if page == 'index' or template == 'index' %}
-        <script>var l=document.getElementById('layout');if(l){var h=new Date().getHours();if(h<=7||h>=19)l.classList.value+='layout--dark';}</script>
-        {% endif %}
+    <div id="layout" {% if page == 'index' or template == 'index' %}class="layout--dark"{% endif %}>
         <div class="layout-canvas">
             <div class="swipe">
                 <!-- TODO: Fix main-menu for mobile -->
@@ -86,13 +83,6 @@
             <!-- TODO: getting started is main menu, must be renamed -->
             {% include 'getting-started' %}
             <article class="main" role="main">
-                {% if template == 'page' or template == 'json-page' %}
-                <div class="container">
-                    {% comment %}
-                    {% include 'breadcrumb' %}
-                    {% endcomment %}
-                </div>
-                {% endif %}
                 {{ content_for_layout }}
             </article>
             {% include 'footer' %}

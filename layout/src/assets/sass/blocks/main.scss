@@ -15,9 +15,7 @@
     {
         .header,
         .btn-gradient-shape,
-        .swipe,
-        .page,
-        .footer
+        .swipe
         {
             background-color: black;
         }
@@ -79,61 +77,56 @@
 
         .page
         {
-            position: relative;
-            z-index: 10;
-
             &__t
             {
                 color: white;
             }
-        }
 
-        .block
-        {
-            position: relative;
-            z-index: -6;
-            background-color: black;
-
-            &__note,
-            &__t,
-            &__descr
+            .block
             {
-                color: white;
-            }
-
-            &__inner
-            {
-                color: white;
-            }
-
-            &--window-height
-            {
-                .pictures
+                &--dark
                 {
-                    .pic
+                    background-color: black;
+
+                    .block__note,
+                    .block__t,
+                    .block__descr
                     {
-                        &--mode-opacity
+                        color: white;
+                    }
+
+                    .block__inner
+                    {
+                        color: white;
+                    }
+
+                    .pictures
+                    {
+                        .pic
                         {
-                            opacity: .8;
+                            &--mode-opacity
+                            {
+                                opacity: .8;
+                            }
                         }
                     }
-                }
-            }
 
-            .hexagon,
-            .hexagon-empty
-            {
-                background-color: white;
-                color: white;
+                    .hexagon,
+                    .hexagon-empty
+                    {
+                        background-color: white;
+                        color: white;
 
-                &:after
-                {
-                    background: black;
-                }
+                        &:after
+                        {
+                            background: black;
+                        }
 
-                a
-                {
-                    color: white;
+                        a
+                        {
+                            color: white;
+                        }
+                    }
                 }
             }
         }
