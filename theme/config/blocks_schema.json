@@ -6225,6 +6225,12 @@
         "type": "number",
 		"tab": "Settings"
 	  },
+	  {
+		"id": "imageHeightMobile",
+		"label": "Image height on mobile",
+        "type": "number",
+		"tab": "Settings"
+	  },
       {
         "id": "topPadding",
         "label": "Top padding",

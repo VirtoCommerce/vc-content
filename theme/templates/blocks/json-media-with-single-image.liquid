@@ -41,6 +41,15 @@
 	                z-index: 5;
                     {% if block.fixedImageHeight != 'True' %}height: {{block.imageHeight}}px;{% endif %}
                 }
+
+                {% if block.imageHeightMobile != '' %}
+                    @media (max-width: 767px) {
+                        #block-{{block.__id}},
+                        #block-{{block.__id}} img {
+                            height: {{block.imageHeightMobile}}px;
+                        }
+                    }
+                {% endif %}
             </style>
 
             {% if block.fixedImageWidth == 'True' %}
