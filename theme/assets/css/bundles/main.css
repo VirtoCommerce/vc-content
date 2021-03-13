@@ -10131,6 +10131,30 @@ input.ng-touched.ng-invalid, .input-validation-error {
     font-family: 'CircularStd';
 }
 
+.blog-content .block--quote {
+    position: relative;
+    margin: 0 -10rem;
+}
+
+.blog-content .block--quote:before, .blog-content .block--quote:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 9rem;
+    background-color: #000;
+    left: 6.25rem;
+    right: 6.25rem;
+    margin: 0 auto;
+}
+
+.blog-content .block--quote:before {
+    top: 0;
+}
+
+.blog-content .block--quote:after {
+    bottom: 0;
+}
+
 .blog .read-more {
     font-size: 20px;
 }

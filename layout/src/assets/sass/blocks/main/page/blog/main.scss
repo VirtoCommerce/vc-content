@@ -147,6 +147,31 @@
         .show-bio {
             font-family: 'CircularStd';
         }
+
+        .block--quote {
+            position: relative;
+            margin: 0 -10rem;
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                height: 2px;
+                width: 9rem;
+                background-color: #000;
+                left: 6.25rem;
+                right: 6.25rem;
+                margin: 0 auto;
+            }
+
+            &:before {
+                top: 0;
+            }
+
+            &:after {
+                bottom: 0;
+            }
+        }
     }
 
     .read-more {

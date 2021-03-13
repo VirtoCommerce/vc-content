@@ -9640,6 +9640,7 @@
 	"includeShared": [
 		"seo-title"
 	],
+	"category": "Blog",
     "settings": [
 		{
 			"id": "title",
@@ -9684,6 +9685,35 @@
 		{
 			"id": "backgroundColor",
 			"label": "Background color",
+			"type": "color",
+			"tab": "Settings"
+		}
+	]
+  },
+  "blog-quote": {
+	"name": "Blog quote",
+    "icon": "image-text",
+    "displayField": "name",
+	"includeShared": [
+		"paddings"
+	],
+	"category": "Blog",
+    "settings": [
+		{
+			"id": "text",
+			"label": "Text",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"FontSize",
+				"Source",
+				"EnterModeBr"
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "linesColor",
+			"label": "Lines color",
 			"type": "color",
 			"tab": "Settings"
 		}
