@@ -9719,6 +9719,89 @@
 		}
 	]
   },
+  "table": {
+	"name": "Table",
+    "icon": "image-text",
+    "displayField": "name",
+	"includeShared": [
+		"paddings"
+	],
+	"settings": [
+		{
+			"id": "columns",
+			"label": "Columns",
+			"type": "list",
+			"addText": "Add column",
+			"removeText": "Remove column",
+			"displayField": "title",
+			"element": [
+				{
+					"id": "title",
+					"label": "Title",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "width",
+					"label": "Width",
+					"type": "string"
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "rows",
+			"label": "Rows",
+			"type": "popup-list",
+			"options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
+			"addText": "Add row",
+			"removeText": "Remove row",
+			"displayField": "text",
+			"element": [
+				{
+					"id": "col1",
+					"label": "Col 1",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col2",
+					"label": "Col 2",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col3",
+					"label": "Col 3",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col4",
+					"label": "Col 4",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col5",
+					"label": "Col 5",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col6",
+					"label": "Col 6",
+					"type": "string",
+					"multiline": true
+				}
+			],
+			"tab": "Content"
+		}
+	]
+  },
   "form-case-study": {
     "name": "Form Case Study",
     "icon": "image-text",

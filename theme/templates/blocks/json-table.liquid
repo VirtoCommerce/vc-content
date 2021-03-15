@@ -1,0 +1,43 @@
+<div id="{{block.__id}}">
+    <div class="block {{block.topPadding}} {{block.bottomPadding}}">
+        <div class="block__inner container">
+            {% if block.columns.size > 0 %}
+                <div class="d-block overflow-auto">
+                    <table>
+                        <thead>
+                            {% for column in block.columns %}
+                                <th{% if column.width != '' %} style="width:{{column.width}}"{% endif %}>{{column.title}}</th>
+                            {% endfor %}
+                        </thead>
+                        {% if block.rows.size > 0 %}
+                            <tbody>
+                                {% for row in block.rows %}
+                                    <tr>
+                                        {% if row.col1 != '' %}
+                                            <td>{{row.col1}}</td>
+                                        {% endif %}
+                                        {% if row.col2 != '' %}
+                                            <td>{{row.col2}}</td>
+                                        {% endif %}
+                                        {% if row.col3 != '' %}
+                                            <td>{{row.col3}}</td>
+                                        {% endif %}
+                                        {% if row.col4 != '' %}
+                                            <td>{{row.col4}}</td>
+                                        {% endif %}
+                                        {% if row.col5 != '' %}
+                                            <td>{{row.col5}}</td>
+                                        {% endif %}
+                                        {% if row.col6 != '' %}
+                                            <td>{{row.col6}}</td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        {% endif %}
+                    </table>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -5767,6 +5767,10 @@ code {
     padding-right: 5rem;
 }
 
+#layout .overflow-auto {
+    overflow: auto;
+}
+
 .cookie-bar {
     background: #f0f0f0;
     bottom: 0;
@@ -8974,6 +8978,32 @@ code {
 
 .block .morph-show:after {
     animation: morph-show .75s forwards;
+}
+
+.block table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.block table thead th {
+    vertical-align: top;
+    border-bottom: 1px solid black;
+    padding: 1rem 1rem 2rem;
+}
+
+.block table tbody tr {
+    vertical-align: top;
+}
+
+.block table tbody tr:nth-child(even) {
+    background-color: #e8e8e8;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.block table tbody tr td {
+    padding: 1rem;
 }
 
 .block--cover {

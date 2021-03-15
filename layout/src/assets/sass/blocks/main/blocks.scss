@@ -1573,6 +1573,43 @@
     {
         animation: morph-show .75s forwards;
     }
+
+    table
+    {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: left;
+
+        thead
+        {
+            th
+            {
+                vertical-align: top;
+                border-bottom: 1px solid black;
+                padding: 1rem 1rem 2rem;
+            }
+        }
+
+        tbody
+        {
+            tr
+            {
+                vertical-align: top;
+
+                &:nth-child(even)
+                {
+                    background-color: #e8e8e8;
+                    border-top: 1px solid #d0d0d0;
+                    border-bottom: 1px solid #d0d0d0;
+                }
+
+                td
+                {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
 }
 
 
