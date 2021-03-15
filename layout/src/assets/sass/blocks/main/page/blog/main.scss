@@ -150,7 +150,10 @@
 
         .block--quote {
             position: relative;
-            margin: 0 -10rem;
+
+            @media (min-width: 1065px) {
+                margin: 0 -9rem;
+            }
 
             &:before,
             &:after {

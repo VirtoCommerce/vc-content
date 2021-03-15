@@ -10163,7 +10163,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog-content .block--quote {
     position: relative;
-    margin: 0 -10rem;
+}
+
+@media (min-width: 1065px) {
+    .blog-content .block--quote {
+        margin: 0 -9rem;
+    }
 }
 
 .blog-content .block--quote:before, .blog-content .block--quote:after {
