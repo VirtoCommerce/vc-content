@@ -10220,7 +10220,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     display: flex;
     flex-direction: column;
     flex: 0 0 60%;
-    height: 31.5rem;
+    height: 27.5rem;
     position: relative;
 }
 
@@ -10363,8 +10363,8 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 @media (max-width: 991.98px) {
     .blog-post {
-        flex: 1 0 30rem;
-        height: 30rem;
+        flex: 1 0 27rem;
+        height: 27rem;
     }
 
     .blog-post__category {

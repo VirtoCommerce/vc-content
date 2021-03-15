@@ -207,7 +207,7 @@
         display: flex;
         flex-direction: column;
         flex: 0 0 60%;
-        height: 31.5rem;
+        height: 27.5rem;
         position: relative;
 
         &__bg {
@@ -336,8 +336,8 @@
         }
 
         @include media-breakpoint-down(md) {
-            flex: 1 0 30rem;
-            height: 30rem;
+            flex: 1 0 27rem;
+            height: 27rem;
 
             &__category {
                 display: table-cell;
