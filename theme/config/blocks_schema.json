@@ -5649,6 +5649,8 @@
     "displayField": "title",
     "category": "Media and Logotypes",
     "includeShared": [
+	  "paddings",
+	  "dividers",
 	  "seo-title",
       "seo-subtitle",
       "headings",
@@ -5674,6 +5676,13 @@
         "tab": "Settings",
         "group": "Main block settings"
       },
+	  {
+		"id": "inlineOnMobile",
+		"label": "Inline on mobile",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
       {
         "id": "textAreaWidth",
         "label": "Text area width",
@@ -5699,66 +5708,6 @@
         ],
         "tab": "Settings",
         "group": "Main block settings"
-      },
-      {
-        "id": "topPadding",
-        "label": "Top padding",
-        "type": "select",
-        "default": "block--padding-top-large",
-        "options": [
-          {
-            "value": "block--padding-top-none",
-            "label": "None"
-          },
-          {
-            "value": "block--padding-top-half",
-            "label": "Small"
-          },
-          {
-            "value": "block--padding-top-large",
-            "label": "Medium"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Paddings"
-      },
-      {
-        "id": "bottomPadding",
-        "label": "Bottom padding",
-        "type": "select",
-        "default": "block--padding-bottom-large",
-        "options": [
-          {
-            "value": "block--padding-bottom-none",
-            "label": "None"
-          },
-          {
-            "value": "block--padding-bottom-half",
-            "label": "Small"
-          },
-          {
-            "value": "block--padding-bottom-large",
-            "label": "Medium"
-          }
-        ],
-        "tab": "Settings",
-        "group": "Paddings"
-      },
-      {
-        "id": "topDivider",
-        "label": "Top divider",
-        "type": "checkbox",
-        "default": false,
-        "tab": "Settings",
-        "group": "Dividers"
-      },
-      {
-        "id": "bottomDivider",
-        "label": "Bottom divider",
-        "type": "checkbox",
-        "default": false,
-        "tab": "Settings",
-        "group": "Dividers"
       },
       {
         "id": "backgroundColor",

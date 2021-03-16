@@ -4884,6 +4884,16 @@ code {
 }
 
 @media (max-width: 991.98px) {
+    .block .list-partners--inline.list-partners .list__item {
+        flex: 0 0 auto;
+    }
+}
+
+.block .list-partners--inline.list-partners .list__item:first-child {
+    padding-left: 1rem;
+}
+
+@media (max-width: 991.98px) {
     .block .list-partners {
         margin-bottom: -1.25rem;
     }

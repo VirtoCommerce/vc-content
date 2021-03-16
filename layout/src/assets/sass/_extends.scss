@@ -788,6 +788,21 @@
     	}
     }
 
+    &.list-partners--inline
+    {
+        .list__item
+        {
+            @include media-breakpoint-down(md) {
+                flex: 0 0 auto;
+            }
+
+            &:first-child
+            {
+                padding-left: 1rem;
+            }
+        }
+    }
+
     @include media-breakpoint-down(md) {
     	margin-bottom: -1.25rem;
 
