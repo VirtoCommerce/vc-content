@@ -4297,7 +4297,7 @@ code {
     font-size: 1rem;
     line-height: 1.5;
     min-height: 1.75rem;
-    padding-left: 2.5rem;
+    padding-left: 2.25rem;
     position: relative;
 }
 
@@ -4305,13 +4305,14 @@ code {
     .page ol li::before,
     [class*='-page'] ol li::before,
     .blog-content ol li::before {
-    background: url("../../images/redesign/icons/icon-list.svg") no-repeat scroll 0 0;
+    background: url("../../images/redesign/icons/tick.svg") no-repeat scroll 0 0;
     content: ' ';
-    height: 1.75rem;
+    height: .75rem;
     left: 0;
     position: absolute;
     top: 0;
-    width: 1.75rem;
+    width: .75rem;
+    margin-top: .3rem;
 }
 
 .page ul li ~ li, [class*='-page'] ul li ~ li, .blog-content ul li ~ li,
@@ -4327,17 +4328,25 @@ code {
     counter-reset: num;
 }
 
+.page ol li,
+  [class*='-page'] ol li,
+  .blog-content ol li {
+    padding-left: 2rem;
+}
+
 .page ol li::before,
-  [class*='-page'] ol li::before,
-  .blog-content ol li::before {
+    [class*='-page'] ol li::before,
+    .blog-content ol li::before {
+    font-family: 'CircularStd';
     align-items: center;
-    background: #FFB608;
+    background: none;
     border-radius: 1.75rem;
-    content: counter(num);
+    content: counter(num) ".";
     counter-increment: num;
     display: flex;
     justify-content: center;
-    font-size: .875rem;
+    font-size: 1rem;
+    margin-top: .5rem;
 }
 
 .page ul.custom li::before, [class*='-page'] ul.custom li::before, .blog-content ul.custom li::before {
