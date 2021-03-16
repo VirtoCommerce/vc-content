@@ -99,7 +99,9 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <a class="{% if block.showOlderButton != 'True' %}d-none {% endif %}blog-older d-flex justify-content-center">See more</a>
+            {% if block.showOlderButton == 'True' %}
+            	<a class="blog-older d-flex justify-content-center">See more</a>
+          	{% endif %}
         </div>
     </div>
 </div>
