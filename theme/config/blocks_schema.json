@@ -62,20 +62,24 @@
             "type": "select",
             "options": [
                 {
-                    "value": "technical",
-                    "label": "Technical"
+                    "value": "business",
+                    "label": "Business"
                 },
                 {
                     "value": "events",
                     "label": "Events"
                 },
-                {
-                    "value": "blogs",
-                    "label": "Blogs"
+				{
+                    "value": "headless",
+                    "label": "Headless"
                 },
                 {
                     "value": "pressreleases",
                     "label": "Press Releases"
+                },
+                {
+                    "value": "tech",
+                    "label": "Tech"
                 }
             ]
         },
@@ -896,6 +900,10 @@
 			  {
 				"value": "btn btn--black",
 				"label": "Black button"
+			  },
+			  {
+				"value": "btn btn--cta",
+				"label": "CTA button"
 			  },
 			  {
 				"value": "btn-gradient",
@@ -5851,6 +5859,7 @@
           {
             "id": "url",
             "type": "string",
+			"multiline": true,
             "label": "URL"
           },
           {
@@ -6218,6 +6227,12 @@
 	  {
 		"id": "imageHeight",
 		"label": "Image height",
+        "type": "number",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageHeightMobile",
+		"label": "Image height on mobile",
         "type": "number",
 		"tab": "Settings"
 	  },
@@ -8190,6 +8205,142 @@
       }
     ]
   },
+  "call-to-action-with-background": {
+    "id": "call-to-action-with-background",
+    "name": "Call-to-action with background",
+    "icon": "image-text",
+    "displayField": "title",
+    "category": "Promotions and CTAs",
+	"includeShared": [
+		"title",
+		"background-image",
+		"buttons",
+		"dividers",
+		"paddings",
+		"seo-title"
+	],
+    "settings": [
+	  {
+		"id": "title",
+		"default": "",
+		"settings": [
+			"TextColor",
+			"Link",
+			"Unlink",
+			"Font",
+			"FontSize",
+			"Maximize",
+			"Source",
+			"EnterModeBr"
+		]
+	  },
+	  {
+		"id": "titleFontFamily",
+		"label": "Title font family",
+		"type": "string",
+		"multiline": true,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageHeight",
+		"label": "Image height",
+		"type": "number",
+		"min": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageHeightMobile",
+		"label": "Image height mobile",
+		"type": "number",
+		"min": "0",
+		"tab": "Settings"
+	  },
+      {
+        "id": "buttonAlignment",
+        "label": "Button alignment",
+        "type": "select",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
+	  {
+		"id": "backgroundTopPadding",
+		"label": "Background top padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "backgroundRightPadding",
+		"label": "Background right padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "backgroundBottomPadding",
+		"label": "Background bottom padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "backgroundLeftPadding",
+		"label": "Background left padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+      {
+        "id": "backgroundColor",
+        "label": "Colour",
+        "type": "select",
+        "default": "block--bg-white",
+        "options": [
+          {
+            "value": "block--bg-white",
+            "label": "White"
+          },
+          {
+            "value": "block--bg-light",
+            "label": "Gray"
+          },
+          {
+            "value": "block--bg-orange",
+            "label": "Orange"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundColorHex",
+        "label": "Colour HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
+      }
+    ]
+  },
   "query-case-studies": {
     "id": "query-case-studies",
     "name": "Query case studies",
@@ -9630,6 +9781,7 @@
 	"includeShared": [
 		"seo-title"
 	],
+	"category": "Blog",
     "settings": [
 		{
 			"id": "title",
@@ -9676,6 +9828,118 @@
 			"label": "Background color",
 			"type": "color",
 			"tab": "Settings"
+		}
+	]
+  },
+  "blog-quote": {
+	"name": "Blog quote",
+    "icon": "image-text",
+    "displayField": "name",
+	"includeShared": [
+		"paddings"
+	],
+	"category": "Blog",
+    "settings": [
+		{
+			"id": "text",
+			"label": "Text",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"FontSize",
+				"Source",
+				"EnterModeBr"
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "linesColor",
+			"label": "Lines color",
+			"type": "color",
+			"tab": "Settings"
+		}
+	]
+  },
+  "table": {
+	"name": "Table",
+    "icon": "image-text",
+    "displayField": "name",
+	"includeShared": [
+		"paddings"
+	],
+	"settings": [
+		{
+			"id": "columns",
+			"label": "Columns",
+			"type": "list",
+			"addText": "Add column",
+			"removeText": "Remove column",
+			"displayField": "title",
+			"element": [
+				{
+					"id": "title",
+					"label": "Title",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "width",
+					"label": "Width",
+					"type": "string"
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "rows",
+			"label": "Rows",
+			"type": "popup-list",
+			"options": {
+              "width": "70%",
+              "max-height": "70%"
+            },
+			"addText": "Add row",
+			"removeText": "Remove row",
+			"displayField": "text",
+			"element": [
+				{
+					"id": "col1",
+					"label": "Col 1",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col2",
+					"label": "Col 2",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col3",
+					"label": "Col 3",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col4",
+					"label": "Col 4",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col5",
+					"label": "Col 5",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "col6",
+					"label": "Col 6",
+					"type": "string",
+					"multiline": true
+				}
+			],
+			"tab": "Content"
 		}
 	]
   },

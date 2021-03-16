@@ -133,6 +133,7 @@ $(function () {
         });
 
         blockForms.submit(function (e) {
+            e.preventDefault();
             if ($(e.target).valid()) {
                 switch (e.target.id) {
                     case 'request_demo_form':
@@ -158,7 +159,7 @@ $(function () {
                 var form = $(this);
                 var submitBtn = form.children('[type=submit]');
 
-                var request = $.ajax({
+                $.ajax({
                     method: 'POST',
                     url: `/${shopId}/${cultureName}/call`,
                     data: {
@@ -168,6 +169,12 @@ $(function () {
                     },
                     headers: { 'X-XSRF-TOKEN': token, service: 'GateLA' },
                     beforeSend: () => submitBtn.attr('disabled', true),
+                    success: function () {
+                        var redirectUrl = form.data('targetUrl');
+                        if (redirectUrl && redirectUrl !== '') {
+                            document.location.href = redirectUrl;
+                        }
+                    },
                     error: function (jqXHR) {
                         var error = 'An error occurred at sending form. Please refresh the page and fill in the form again or try again later.';
                         if (jqXHR.status === 400) {
@@ -203,18 +210,6 @@ $(function () {
                         headers: { 'X-XSRF-TOKEN': token, service: 'SurveyCollector' }
                     });
                 }
-
-                setTimeout(function () {
-                    var requestIsSent = !request.status;
-                    if (requestIsSent || (request.status && request.status >= 200 && request.status < 400)) {
-                        var redirectUrl = form.data('targetUrl');
-                        if (redirectUrl && redirectUrl !== '') {
-                            document.location.href = redirectUrl;
-                        }
-                    }
-                }, 2500);
-
-                return true;
             } else {
                 switch (e.target.id) {
                     case 'request_demo_form':

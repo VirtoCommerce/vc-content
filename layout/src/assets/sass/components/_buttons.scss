@@ -1,5 +1,4 @@
-.btn
-{
+.btn {
     align-items: center;
     background: $gray-600;
     border: 1px solid $gray-600;
@@ -12,131 +11,110 @@
     height: 2.5rem;
     padding: 0 1.875rem;
 
-    &:hover
-    {
+    &:hover {
         background: darken($gray-600, 2%);
         color: $white;
     }
 
-	&--block
-	{
-		justify-content: center;
-		width: 100%;
-	}
+    &--block {
+        justify-content: center;
+        width: 100%;
+    }
 
-    &--round
-    {
+    &--round {
         border-radius: 4rem;
     }
 
-    &--expand
-    {
+    &--expand {
         display: flex;
         justify-content: center;
         width: 100%;
     }
 
-    &--lg
-    {
+    &--lg {
         font-size: 1rem;
         height: 3.75rem;
         padding: 0 2.5rem;
     }
 
-    &--orange
-    {
+    &--orange {
         background: $orange;
         border-color: $orange;
         color: $white;
 
-        &:hover
-        {
+        &:hover {
             background: darken($orange, 2%);
             color: $white;
         }
 
-        &.btn--outline
-        {
+        &.btn--outline {
             border-color: $orange;
             color: $orange;
 
-            &:hover
-            {
+            &:hover {
                 color: $white;
             }
         }
     }
 
-	&--red
-	{
+    &--red {
         background: $red;
         border-color: $red;
         color: $white;
 
-        &:hover
-        {
+        &:hover {
             background: darken($red, 2%);
             color: $white;
         }
 
-        &.btn--outline
-        {
+        &.btn--outline {
             border-color: $red;
             color: $red;
 
-            &:hover
-            {
+            &:hover {
                 color: $white;
             }
         }
     }
 
-    &--white
-    {
+    &--white {
         background: $white;
         border-color: $white;
         color: $black;
 
-        &:hover
-        {
+        &:hover {
             background: darken($white, 5%);
             color: $black;
         }
     }
 
-    &--black
-    {
+    &--black {
         background: $black;
         border-color: $black;
         color: $white;
 
-        &:hover
-        {
+        &:hover {
             background: lighten($black, 4%);
             color: $white;
         }
 
-        &.btn--outline
-        {
+        &.btn--outline {
             border-color: $black;
             color: $black;
 
-            &:hover
-            {
+            &:hover {
                 color: $white;
             }
         }
     }
 
-    &[disabled]
-    {
+    &[disabled] {
         background: $gray-300;
         border-color: $gray-300;
     }
 
     @include media-breakpoint-down(sm) {
-        &--lg
-        {
+        &--lg {
             height: 2.5rem;
             padding: 0 1.25rem;
         }

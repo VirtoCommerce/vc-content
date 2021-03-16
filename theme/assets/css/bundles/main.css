@@ -5759,6 +5759,18 @@ code {
     color: white;
 }
 
+#layout .pl-6 {
+    padding-left: 5rem;
+}
+
+#layout .pr-6 {
+    padding-right: 5rem;
+}
+
+#layout .overflow-auto {
+    overflow: auto;
+}
+
 .cookie-bar {
     background: #f0f0f0;
     bottom: 0;
@@ -8200,6 +8212,23 @@ code {
     width: auto;
 }
 
+.block__actions .btn--cta {
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .9375rem;
+    padding: 1.5rem 1.875rem;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+    .block__actions .btn--cta {
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
+
 .block--align-center .block__inner {
     text-align: center;
 }
@@ -8966,6 +8995,36 @@ code {
 
 .block .morph-show:after {
     animation: morph-show .75s forwards;
+}
+
+.block table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+.block table thead th {
+    vertical-align: top;
+    border-bottom: 1px solid black;
+    padding: 1rem 1rem 2rem;
+}
+
+.block table tbody tr {
+    vertical-align: top;
+}
+
+.block table tbody tr:nth-child(even) {
+    background-color: #e8e8e8;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.block table tbody tr td {
+    padding: 1rem;
+}
+
+.block .cta-background {
+    background-size: 100% 100%;
 }
 
 .block--cover {
@@ -10044,7 +10103,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog--cover {
     position: relative;
-    height: 25rem;
+    height: 21.875rem;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -10093,7 +10152,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 @media (min-width: 768px) {
     .blog-content {
-        width: 55rem;
+        width: 47.5rem;
     }
 }
 
@@ -10119,6 +10178,39 @@ input.ng-touched.ng-invalid, .input-validation-error {
     padding: 1rem .5rem 2rem;
 }
 
+.blog-content .show-bio {
+    font-family: 'CircularStd';
+}
+
+.blog-content .block--quote {
+    position: relative;
+}
+
+@media (min-width: 1065px) {
+    .blog-content .block--quote {
+        margin: 0 -9rem;
+    }
+}
+
+.blog-content .block--quote:before, .blog-content .block--quote:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 9rem;
+    background-color: #000;
+    left: 6.25rem;
+    right: 6.25rem;
+    margin: 0 auto;
+}
+
+.blog-content .block--quote:before {
+    top: 0;
+}
+
+.blog-content .block--quote:after {
+    bottom: 0;
+}
+
 .blog .read-more {
     font-size: 20px;
 }
@@ -10130,12 +10222,31 @@ input.ng-touched.ng-invalid, .input-validation-error {
     height: 1px;
 }
 
+.blog .sticked-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+    .blog .sticked-title {
+        font-size: 28px;
+    }
+}
+
+.blog-older {
+    display: block;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+}
+
 .blog-post {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     flex: 0 0 60%;
-    height: 35rem;
+    height: 27.5rem;
     position: relative;
 }
 
@@ -10278,8 +10389,8 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 @media (max-width: 991.98px) {
     .blog-post {
-        flex: 1 0 30rem;
-        height: 30rem;
+        flex: 1 0 27rem;
+        height: 27rem;
     }
 
     .blog-post__category {
@@ -10483,7 +10594,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog .list--posts .list__bg {
-    border-radius: 0.5rem 0.5rem 0 0;
     display: block;
     min-height: 10rem;
     background-size: cover;
@@ -10527,7 +10637,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog .list--posts .list__info {
     background: #fff;
-    border-radius: 0 0 0.5rem 0.5rem;
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
@@ -10559,6 +10668,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog .list--posts .list__descr .article-date {
     font-size: 13px;
+    color: darkgray;
 }
 
 .blog .list--posts .list--tags .list__item {
@@ -10622,10 +10732,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 }
 
-@media (min-width: 1200px) {
-    .blog .list--posts > .list__item {
-        flex: 0 0 20%;
-        max-width: 20%;
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .blog .list--posts .list__item {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 }
 

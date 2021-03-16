@@ -4,7 +4,7 @@
     {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}"
     {% include 'block-background-style' %}>
     <div class="blog">
-        <div class="posts __responsive pl-5 pr-5">
+        <div class="posts __responsive container">
             {% if block.title != '' %}
             <h2>{{ block.title }}</h2>
             {% endif %}
@@ -99,7 +99,9 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <a class="{% if block.showOlderButton != 'True' %}d-none {% endif %}btn btn--lg blog-older justify-content-center mt-5" style="width: 100%;">Older</a>
+            {% if block.showOlderButton == 'True' %}
+            	<a class="blog-older d-flex justify-content-center">See more</a>
+          	{% endif %}
         </div>
     </div>
 </div>

@@ -74,7 +74,7 @@
 
     &--cover {
         position: relative;
-        height: 25rem;
+        height: 21.875rem;
         text-align: center;
         margin-bottom: 2rem;
 
@@ -117,7 +117,7 @@
         flex: 1 0 0;
 
         @include media-breakpoint-up(md) {
-            width: 55rem;
+            width: 47.5rem;
         }
 
         h2 {
@@ -143,6 +143,38 @@
             justify-content: left;
             padding: 1rem .5rem 2rem;
         }
+
+        .show-bio {
+            font-family: 'CircularStd';
+        }
+
+        .block--quote {
+            position: relative;
+
+            @media (min-width: 1065px) {
+                margin: 0 -9rem;
+            }
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                height: 2px;
+                width: 9rem;
+                background-color: #000;
+                left: 6.25rem;
+                right: 6.25rem;
+                margin: 0 auto;
+            }
+
+            &:before {
+                top: 0;
+            }
+
+            &:after {
+                bottom: 0;
+            }
+        }
     }
 
     .read-more {
@@ -156,12 +188,29 @@
         height: 1px;
     }
 
+    .sticked-title {
+        font-size: 48px;
+        font-weight: 700;
+
+        @include media-breakpoint-down(md) {
+            font-size: 28px;
+        }
+    }
+
+    &-older {
+        display: block;
+        cursor: pointer;
+        margin-top: 2.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.125rem;
+    }
+
     &-post {
         align-items: flex-start;
         display: flex;
         flex-direction: column;
         flex: 0 0 60%;
-        height: 35rem;
+        height: 27.5rem;
         position: relative;
 
         &__bg {
@@ -290,8 +339,8 @@
         }
 
         @include media-breakpoint-down(md) {
-            flex: 1 0 30rem;
-            height: 30rem;
+            flex: 1 0 27rem;
+            height: 27rem;
 
             &__category {
                 display: table-cell;
@@ -496,7 +545,6 @@
         }
 
         .list__bg {
-            border-radius: 0.5rem 0.5rem 0 0;
             display: block;
             min-height: 10rem;
             background-size: cover;
@@ -538,7 +586,6 @@
 
         .list__info {
             background: $white;
-            border-radius: 0 0 0.5rem 0.5rem;
             display: flex;
             flex-direction: column;
             flex: 1 0 auto;
@@ -571,6 +618,7 @@
 
             .article-date {
                 font-size: 13px;
+                color: darkgray;
             }
         }
 
@@ -633,10 +681,10 @@
             }
         }
 
-        @include media-breakpoint-up(xl) {
-            > .list__item {
-                flex: 0 0 20%;
-                max-width: 20%;
+        @include media-breakpoint-between(sm, md) {
+            .list__item {
+                flex: 0 0 50%;
+                max-width: 50%;
             }
         }
     }
