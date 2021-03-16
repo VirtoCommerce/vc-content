@@ -8212,6 +8212,23 @@ code {
     width: auto;
 }
 
+.block__actions .btn--cta {
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .9375rem;
+    padding: 1.5rem 1.875rem;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+    .block__actions .btn--cta {
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
+
 .block--align-center .block__inner {
     text-align: center;
 }
@@ -9004,6 +9021,10 @@ code {
 
 .block table tbody tr td {
     padding: 1rem;
+}
+
+.block .cta-background {
+    background-size: 100% 100%;
 }
 
 .block--cover {

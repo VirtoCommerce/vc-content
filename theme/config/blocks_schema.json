@@ -902,6 +902,10 @@
 				"label": "Black button"
 			  },
 			  {
+				"value": "btn btn--cta",
+				"label": "CTA button"
+			  },
+			  {
 				"value": "btn-gradient",
 				"label": "Gradient button"
 			  },
@@ -5855,6 +5859,7 @@
           {
             "id": "url",
             "type": "string",
+			"multiline": true,
             "label": "URL"
           },
           {
@@ -8197,6 +8202,142 @@
           "style": "btn btn--orange"
         },
         "tab": "Content"
+      }
+    ]
+  },
+  "call-to-action-with-background": {
+    "id": "call-to-action-with-background",
+    "name": "Call-to-action with background",
+    "icon": "image-text",
+    "displayField": "title",
+    "category": "Promotions and CTAs",
+	"includeShared": [
+		"title",
+		"background-image",
+		"buttons",
+		"dividers",
+		"paddings",
+		"seo-title"
+	],
+    "settings": [
+	  {
+		"id": "title",
+		"default": "",
+		"settings": [
+			"TextColor",
+			"Link",
+			"Unlink",
+			"Font",
+			"FontSize",
+			"Maximize",
+			"Source",
+			"EnterModeBr"
+		]
+	  },
+	  {
+		"id": "titleFontFamily",
+		"label": "Title font family",
+		"type": "string",
+		"multiline": true,
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageHeight",
+		"label": "Image height",
+		"type": "number",
+		"min": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "imageHeightMobile",
+		"label": "Image height mobile",
+		"type": "number",
+		"min": "0",
+		"tab": "Settings"
+	  },
+      {
+        "id": "buttonAlignment",
+        "label": "Button alignment",
+        "type": "select",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Main block settings"
+      },
+	  {
+		"id": "backgroundTopPadding",
+		"label": "Background top padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "backgroundRightPadding",
+		"label": "Background right padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "backgroundBottomPadding",
+		"label": "Background bottom padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+	  {
+		"id": "backgroundLeftPadding",
+		"label": "Background left padding",
+		"type": "number",
+		"min": "0",
+		"default": "0",
+		"tab": "Settings"
+	  },
+      {
+        "id": "backgroundColor",
+        "label": "Colour",
+        "type": "select",
+        "default": "block--bg-white",
+        "options": [
+          {
+            "value": "block--bg-white",
+            "label": "White"
+          },
+          {
+            "value": "block--bg-light",
+            "label": "Gray"
+          },
+          {
+            "value": "block--bg-orange",
+            "label": "Orange"
+          }
+        ],
+        "tab": "Settings",
+        "group": "Background"
+      },
+      {
+        "id": "backgroundColorHex",
+        "label": "Colour HEX",
+        "type": "color",
+        "default": "",
+        "tab": "Settings",
+        "group": "Background"
       }
     ]
   },
