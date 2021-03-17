@@ -625,13 +625,12 @@
             }
 
             &--cta {
-                font-weight: 500;
+                font-weight: 600;
                 text-transform: uppercase;
                 text-align: center;
                 font-size: .9375rem;
                 padding: 1.5rem 1.875rem;
                 border-radius: 0;
-                font-weight: 500;
 
                 @include media-breakpoint-down(xs) {
                     margin-bottom: 0;
@@ -1629,6 +1628,11 @@
     .cta-background
     {
         background-size: 100% 100%;
+
+        .block__t
+        {
+            font-weight: 600;
+        }
     }
 }
 

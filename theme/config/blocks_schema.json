@@ -8194,13 +8194,6 @@
 		]
 	  },
 	  {
-		"id": "titleFontFamily",
-		"label": "Title font family",
-		"type": "string",
-		"multiline": true,
-		"tab": "Settings"
-	  },
-	  {
 		"id": "imageHeight",
 		"label": "Image height",
 		"type": "number",
