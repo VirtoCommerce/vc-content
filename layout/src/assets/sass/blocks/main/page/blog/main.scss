@@ -1,7 +1,6 @@
 .blog {
     box-sizing: border-box;
     height: 100%;
-    padding: 0 0 3.125rem 0;
 
     &__heading {
         font-weight: 900;
@@ -496,7 +495,7 @@
                 font-size: 0.75rem;
                 margin-bottom: 0.625rem;
                 margin-right: 0.625rem;
-                padding: 0 0.375rem;
+                padding: 0 .5rem;
             }
         }
 

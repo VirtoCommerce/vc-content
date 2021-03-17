@@ -5779,11 +5779,21 @@ code {
 }
 
 #layout .pl-6 {
-    padding-left: 5rem;
+    padding-left: 5rem !important;
 }
 
 #layout .pr-6 {
-    padding-right: 5rem;
+    padding-right: 5rem !important;
+}
+
+@media (min-width: 992px) {
+    #layout .pl-lg-6 {
+        padding-left: 5rem !important;
+    }
+
+    #layout .pr-lg-6 {
+        padding-right: 5rem !important;
+    }
 }
 
 #layout .overflow-auto {
@@ -10046,7 +10056,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
 .blog {
     box-sizing: border-box;
     height: 100%;
-    padding: 0 0 3.125rem 0;
 }
 
 .blog__heading {
@@ -10568,7 +10577,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
         font-size: 0.75rem;
         margin-bottom: 0.625rem;
         margin-right: 0.625rem;
-        padding: 0 0.375rem;
+        padding: 0 .5rem;
     }
 }
 
