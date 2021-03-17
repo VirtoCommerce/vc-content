@@ -215,30 +215,9 @@
         &__bg {
             background-size: cover;
             background-position: 50%;
-            border-radius: 0.625rem;
             height: 100%;
             position: absolute;
             width: 100%;
-
-            $gradient-from: rgba(0,0,0,0);
-            $gradient-to: rgba(0,0,0,.45);
-
-            &::after {
-                background: -moz-linear-gradient(top, $gradient-from, $gradient-to);
-                background: -webkit-gradient(left top, left bottom, color-stop($gradient-from, color-stop($gradient-to)));
-                background: -webkit-linear-gradient(top, $gradient-from, $gradient-to);
-                background: -o-linear-gradient(top, $gradient-from, $gradient-to);
-                background: -ms-linear-gradient(top, $gradient-from, $gradient-to);
-                background: linear-gradient(to bottom, $gradient-from, $gradient-to);
-                background: linear-gradient(to bottom, $gradient-from, $gradient-to);
-                border-radius: 0.625rem;
-                bottom: 0;
-                content: " ";
-                left: 0;
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
         }
 
         &__category {
@@ -390,7 +369,7 @@
 
         &__inner {
             background: #f8f8f8;
-            padding: 3rem 4rem 0;
+            padding: 3rem 4rem;
         }
 
         &__pic {
@@ -408,12 +387,9 @@
         }
 
         .form {
-            margin-bottom: 1rem;
-
             .form-control,
             .btn {
                 justify-content: center;
-                margin-bottom: 0.9375rem;
             }
 
             @include media-breakpoint-up(xs) {
