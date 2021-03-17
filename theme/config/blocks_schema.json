@@ -725,6 +725,16 @@
 			"group": "Paddings"
 	    }
 	  ],
+	  "reduced-paddings": [
+		{
+		"id": "useReducedPaddings",
+		"label": "Use reduced paddings",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings",
+		"group": "Paddings"
+		}
+	  ],
 	  "dividers": [
 		{
 			"id": "topDivider",
@@ -2356,6 +2366,7 @@
     "displayField": "title",
     "category": "Headlines and Forms",
     "includeShared": [
+	  "reduced-paddings",
       "seo-title",
       "seo-subtitle",
       "seo-note",
@@ -2462,14 +2473,6 @@
         "tab": "Settings",
         "group": "Paddings"
       },
-	  {
-		"id": "useReducedPaddings",
-		"label": "Use reduced paddings",
-		"type": "checkbox",
-		"default": false,
-		"tab": "Settings",
-		"group": "Paddings"
-	  },
       {
         "id": "topDivider",
         "label": "Top divider",
@@ -8191,13 +8194,6 @@
 		]
 	  },
 	  {
-		"id": "titleFontFamily",
-		"label": "Title font family",
-		"type": "string",
-		"multiline": true,
-		"tab": "Settings"
-	  },
-	  {
 		"id": "imageHeight",
 		"label": "Image height",
 		"type": "number",
@@ -13468,7 +13464,8 @@
     "name": "Dynamic content",
     "icon": "text-columns",
     "category": "Queries and Other",
-	"includeShared":[
+	"includeShared": [
+		"reduced-paddings",
 		"paddings",
 		"dividers",
 		"items-borders",

@@ -26,20 +26,17 @@
                     }
                 }
             {% endif %}
-
-            {% if block.titleFontFamily != '' %}
-                #{{block.__id}} .cta-background {
-                    font-family: {{block.titleFontFamily}};
-                }
-            {% endif %}
         </style>
 
         {% assign background_padding = 'padding:{{block.backgroundTopPadding}}px {{block.backgroundRightPadding}}px {{block.backgroundBottomPadding}}px {{block.backgroundLeftPadding}}px;' | render %}
-        <div class="block__inner container cta-background d-flex flex-column" style="background-image:url({{block.background.url}});{{image_height}}{{background_padding}}">
-            {% if block.title != '' %}
-                {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
-            {% endif %}
-            {% include 'block-buttons' blockClass: justify_content, firstBtn: block.firstButton, secondBtn: block.secondButton %}
+        <div class="block__inner container">
+            <div class="cta-background d-flex flex-column" style="background-image:url({{block.background.url}});{{image_height}}{{background_padding}}">
+                {% if block.title != '' %}
+                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                    <div class="block__space"></div>
+                {% endif %}
+                {% include 'block-buttons' blockClass: justify_content, firstBtn: block.firstButton, secondBtn: block.secondButton %}
+            </div>
         </div>
     </div>
 </div>
