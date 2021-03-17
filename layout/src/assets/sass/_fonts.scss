@@ -17,6 +17,14 @@
 @font-face {
     font-family: 'CircularStd';
     font-style: normal;
+    font-weight: 500;
+    src: local('Circular Std Medium'), url('../../fonts/CircularStd-Medium.woff') format('woff'), url('../../fonts/CircularStd-Medium.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    font-style: normal;
     font-weight: 900;
     src: local('Circular Std Black'), url('../../fonts/CircularStd-Black.woff') format('woff'), url('../../fonts/CircularStd-Black.otf');
     font-display: swap;

@@ -6,18 +6,9 @@
     {% endif %}
 {% endif %}
 
-{% if tag == 'h1' %}
-    <h1 class="{{class}}">{{text}}</h1>
-{% elsif tag == 'h2' %}
-    <h2 class="{{class}}">{{text}}</h2>
-{% elsif tag == 'h3' %}
-    <h3 class="{{class}}">{{text}}</h3>
-{% elsif tag == 'h4' %}
-    <h4 class="{{class}}">{{text}}</h4>
-{% elsif tag == 'h5' %}
-    <h5 class="{{class}}">{{text}}</h5>
-{% elsif tag == 'h6' %}
-    <h6 class="{{class}}">{{text}}</h6>
+{% if tag == 'none' or tag == 'div' %}
+    <div class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</div>
 {% else %}
-    <div class="{{class}}">{{text}}</div>
+    <{{tag}} class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</{{tag}}>
 {% endif %}
+{% assign style = '' %}

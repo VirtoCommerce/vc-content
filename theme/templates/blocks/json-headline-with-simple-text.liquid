@@ -14,7 +14,11 @@
                     {% endif %}
 
                     {% if block.title != '' %}
-                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                        {% if block.titleFontWeightMedium == 'True' %}
+                            {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t', style: 'font-weight:500' %}
+                        {% else %}
+                            {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                        {% endif %}
                         <div class="block__space"></div>
                     {% endif %}
 
@@ -22,11 +26,9 @@
 
                     {% if block.subtitle != '' %}
                         {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
-                    {% endif %}
-
-                    {% if block.firstButton.urlText != '' %}
                         <div class="block__space"></div>
                     {% endif %}
+
                     {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
                 </div>
             </div>

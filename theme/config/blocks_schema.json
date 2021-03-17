@@ -2363,6 +2363,13 @@
 	  "buttons"
     ],
     "settings": [
+	  {
+		"id": "titleFontWeightMedium",
+		"label": "Title font weight medium",
+		"type": "checkbox",
+		"default": false,
+		"tab": "Settings"
+	  },
       {
         "id": "containerAlignment",
         "label": "Container alignment",
@@ -13577,6 +13584,13 @@
             ],
 			"tab": "Content"
         },
+		{
+			"id": "skipStickedArticle",
+			"label": "Skip sticked article",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Content"
+		},
         {
             "id": "queryType",
             "label": "Query type",

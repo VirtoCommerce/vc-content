@@ -17,6 +17,14 @@
 @font-face {
     font-family: 'CircularStd';
   font-style: normal;
+  font-weight: 500;
+  src: local("Circular Std Medium"), url("../../fonts/CircularStd-Medium.woff") format("woff"), url("../../fonts/CircularStd-Medium.otf");
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+  font-style: normal;
   font-weight: 900;
   src: local("Circular Std Black"), url("../../fonts/CircularStd-Black.woff") format("woff"), url("../../fonts/CircularStd-Black.otf");
   font-display: swap;
@@ -4312,7 +4320,7 @@ code {
     position: absolute;
     top: 0;
     width: .75rem;
-    margin-top: .3rem;
+    margin-top: .4rem;
 }
 
 .page ul li ~ li, [class*='-page'] ul li ~ li, .blog-content ul li ~ li,
@@ -4337,7 +4345,7 @@ code {
 .page ol li::before,
     [class*='-page'] ol li::before,
     .blog-content ol li::before {
-    font-family: 'CircularStd';
+    font-family: Arial, Helvetica, sans-serif;
     align-items: center;
     background: none;
     border-radius: 1.75rem;
@@ -4346,7 +4354,7 @@ code {
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    margin-top: .5rem;
+    margin-top: .4rem;
 }
 
 .page ul.custom li::before, [class*='-page'] ul.custom li::before, .blog-content ul.custom li::before {
@@ -10281,27 +10289,9 @@ input.ng-touched.ng-invalid, .input-validation-error {
 .blog-post__bg {
     background-size: cover;
     background-position: 50%;
-    border-radius: 0.625rem;
     height: 100%;
     position: absolute;
     width: 100%;
-}
-
-.blog-post__bg::after {
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-    background: -webkit-gradient(left top, left bottom, color-stop(rgba(0, 0, 0, 0), color-stop(rgba(0, 0, 0, 0.45))));
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-    border-radius: 0.625rem;
-    bottom: 0;
-    content: " ";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 .blog-post__category {
@@ -10472,7 +10462,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog-sidebar__inner {
     background: #f8f8f8;
-    padding: 3rem 4rem 0;
+    padding: 3rem 4rem;
 }
 
 .blog-sidebar__pic {
@@ -10489,14 +10479,9 @@ input.ng-touched.ng-invalid, .input-validation-error {
     text-align: center;
 }
 
-.blog-sidebar .form {
-    margin-bottom: 1rem;
-}
-
 .blog-sidebar .form .form-control,
-      .blog-sidebar .form .btn {
+    .blog-sidebar .form .btn {
     justify-content: center;
-    margin-bottom: 0.9375rem;
 }
 
 .blog-sidebar .form .form-control {
