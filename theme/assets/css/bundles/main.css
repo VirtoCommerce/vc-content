@@ -4354,7 +4354,7 @@ code {
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    margin-top: .4rem;
+    margin-top: .45rem;
 }
 
 .page ul.custom li::before, [class*='-page'] ul.custom li::before, .blog-content ul.custom li::before {
@@ -10453,7 +10453,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
     border-radius: 0.625rem;
     display: flex;
     justify-content: center;
-    padding: 1.875rem;
 }
 
 .blog-sidebar.collapsed {
