@@ -4,24 +4,26 @@
     {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %}"
     {% include 'block-background-style' %}>
     <div class="block__inner container">
-        <div class="row">
-            <div class="block__text {{block.textAreaWidth}}">
-                {% if block.title != '' %}
-                    {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
-                {% endif %}
+        {% if block.title != '' or headings.size > 0 or block.subtitle != '' %}
+            <div class="row">
+                <div class="block__text {{block.textAreaWidth}}">
+                    {% if block.title != '' %}
+                        {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                        <div class="block__space"></div>
+                    {% endif %}
                 
-                {% include 'headings' headings: block.headings %}
+                    {% include 'headings' headings: block.headings %}
 
-                {% if block.subtitle != '' %}
-                    <div class="block__space"></div>
-                    {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
-                {% endif %}
-                <div class="block__space block__space--size-lg"></div>
+                    {% if block.subtitle != '' %}
+                        {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+                        <div class="block__space block__space--size-lg"></div>
+                    {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
         {% if block.logotypes.size > 0 %}
-            <div class="list list-partners {% if block.containerAlignment == 'block--align-center' %}list-partners--centered justify-content-center{% endif %}">
+            <div class="list list-partners{% if block.containerAlignment == 'block--align-center' %} list-partners--centered justify-content-center{% endif %}{% if block.inlineOnMobile == 'True' %} list-partners--inline{% endif %}">
                 {% for logotype in block.logotypes %}
                     <div class="list__item">
                         <div class="list__img">
@@ -42,7 +44,7 @@
                             {% endif %}
 
                             {% if logotype.url != '' %}
-                                <a href="{{logotype.url}}" {% if logotype.openInNewTab == 'True' %}target="_blank"{% endif %}>
+                                <a href="{{logotype.url | render}}" {% if logotype.openInNewTab == 'True' %}target="_blank"{% endif %}>
                                     {% if logotype.hoverImage != '' and logotype.hoverImage != blank %}
                                         <span id="{{logo_id}}" title="{{logotype.image.altText}}" class="list__pic list__pic-hover lazyload"></span>
                                     {% else %}

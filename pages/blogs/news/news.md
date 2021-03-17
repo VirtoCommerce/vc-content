@@ -7,6 +7,6 @@ categories:
 category: virtocommerce-news
 layout: blog-layout
 permalink: blog
-title: 'Virto Commerce news'
+title: 'Virto Commerce blog'
 
 ---

@@ -22,9 +22,11 @@
 
                     {% if block.subtitle != '' %}
                         {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
-                        <div class="block__space"></div>
                     {% endif %}
 
+                    {% if block.firstButton.urlText != '' %}
+                        <div class="block__space"></div>
+                    {% endif %}
                     {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
                 </div>
             </div>
