@@ -1,6 +1,6 @@
 <div id="{{ block.__id }}" class="{% if block.style == 'dark' %} section--gray {% endif %}
-    {{block.topPadding}}{% if block.useReducedPaddings == 'True' %}-reduced{% endif %}
-    {{block.bottomPadding}}{% if block.useReducedPaddings == 'True' %}-reduced{% endif %}
+    {% if block.useReducedPaddings == 'True' %}{{block.topPadding}}-reduced{% else %}{{block.topPadding}} {% endif %}
+    {% if block.useReducedPaddings == 'True' %}{{block.bottomPadding}}-reduced{% else %}{{block.bottomPadding}} {% endif %}
     {% if block.topDivider == 'True' %} block--divider-top {% endif %}
     {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}"
     {% include 'block-background-style' %}>

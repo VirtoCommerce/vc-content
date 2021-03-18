@@ -2,8 +2,8 @@
 
 <div id="{{ block.__id }}" class="{% if block.topDivider == 'True' %} block--divider-top {% endif %} {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}">
     <div class="block {{block.containerAlignment}}
-        {{block.topPadding}}{% if block.useReducedPaddings == 'True' %}-reduced{% endif %}
-        {{block.bottomPadding}}{% if block.useReducedPaddings == 'True' %}-reduced{% endif %}
+        {% if block.useReducedPaddings == 'True' %}{{block.topPadding}}-reduced{% else %}{{block.topPadding}} {% endif %}
+        {% if block.useReducedPaddings == 'True' %}{{block.bottomPadding}}-reduced{% else %}{{block.bottomPadding}} {% endif %}
         {% include 'background-settings' %}>
         <div class="block__inner container">
             <div class="row {% if block.containerAlignment == 'block--align-center' %} justify-content-center {% endif %} {% if block.containerAlignment == 'block--align-right' %} justify-content-end {% endif %}">
