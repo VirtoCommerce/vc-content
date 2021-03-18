@@ -6,7 +6,7 @@
     {% endif %}
 {% endif %}
 
-{% if tag == 'none' or tag == 'div' %}
+{% if tag != 'True' or tag == 'none' or tag == 'div' %}
     <div class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</div>
 {% else %}
     <{{tag}} class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</{{tag}}>
