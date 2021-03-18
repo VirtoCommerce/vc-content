@@ -8234,7 +8234,7 @@
 		"label": "Background top padding",
 		"type": "number",
 		"min": "0",
-		"default": "0",
+		"default": "24",
 		"tab": "Settings"
 	  },
 	  {
@@ -8242,7 +8242,7 @@
 		"label": "Background right padding",
 		"type": "number",
 		"min": "0",
-		"default": "0",
+		"default": "32",
 		"tab": "Settings"
 	  },
 	  {
@@ -8250,7 +8250,7 @@
 		"label": "Background bottom padding",
 		"type": "number",
 		"min": "0",
-		"default": "0",
+		"default": "24",
 		"tab": "Settings"
 	  },
 	  {
@@ -8258,7 +8258,7 @@
 		"label": "Background left padding",
 		"type": "number",
 		"min": "0",
-		"default": "0",
+		"default": "32",
 		"tab": "Settings"
 	  },
       {
@@ -9798,6 +9798,8 @@
 			"type": "text",
 			"settings": [
 				"TextColor",
+				"Bold",
+				"Italic",
 				"FontSize",
 				"Source",
 				"EnterModeBr"
