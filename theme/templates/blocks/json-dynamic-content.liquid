@@ -52,16 +52,20 @@
                             {% for blog in blogs %}
                                 {% assign articles = blog.articles | sort_list: 'publishedAt:desc' %}
                                 {% assign sticked_skipped = false %}
-                                {% for article in articles limit: block.count %}
-                                    {% if block.skipStickedArticle == 'True' %}
-                                        {% if sticked_skipped == false %}
-                                            {% if article.is_sticked == true %}
-                                                {% assign sticked_skipped = true %}
-                                                {% continue %}
-                                            {% endif %}
-                                        {% endif %}
-                                    {% endif %}
-                                    {% include 'article-preview' %}
+                                {% assign lim = block.count %}
+                                {% if block.skipStickedArticle == 'True' %}
+                                    {% assign lim = block.count | plus: 1 %}
+                                {% endif %}
+                                {% for article in articles limit: lim %}
+	                                {% if block.skipStickedArticle == 'True' %}
+		                                {% if sticked_skipped == false %}
+			                                {% if article.is_sticked == true %}
+				                                {% assign sticked_skipped = true %}
+				                                {% continue %}
+			                                {% endif %}
+		                                {% endif %}
+	                                {% endif %}
+	                                {% include 'article-preview' %}
                                 {% endfor %}
                             {% endfor %}
                         {% endif %}
