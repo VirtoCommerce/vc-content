@@ -10,11 +10,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Virto Commerce" />
+
     {% if page_description != '' %}
-    <meta name="description" content="{{ page_description | escape }}" />
-    {% else %}
-    <meta name="description" content="VirtoCommerce is the enterprise-level Microsoft .NET ecommerce platform for complex ecommerce. Virto Commerce is a flexible B2B ecommerce solution based on Microsoft.NET that offers powerful tools for enterprise business users." />
+        <meta name="description" content="{{ page_description | escape }}" />
+    {% elsif %}
+        {% assign meta_description = 'VirtoCommerce is the enterprise-level Microsoft .NET ecommerce platform for complex ecommerce. Virto Commerce is a flexible B2B ecommerce solution based on Microsoft.NET that offers powerful tools for enterprise business users.' %}
+        {% if page.meta_fields != blank %}
+            {% if page.meta_fields.markup_webpage_description != null and page.meta_fields.markup_webpage_description != '' %}
+                <meta name="description" content="{{page.meta_fields.markup_webpage_description}}" />
+            {% else %}
+                <meta name="description" content="{{meta_description}}" />
+            {% endif %}
+        {% else %}
+            <meta name="description" content="{{meta_description}}" />
+        {% endif %}
     {% endif %}
+
     {% include 'meta-noindex' %}
     {% include 'meta-nofollow' %}
     <meta itemprop="name" content="Virto Commerce" />
