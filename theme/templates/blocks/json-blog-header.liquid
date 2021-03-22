@@ -9,7 +9,7 @@
             </div>
         {% endif %}
         {% assign sticked_article = blog.articles | where: 'IsSticked', '==', true | sort_list: 'publishedAt:desc' | first %}
-        <div class="blog-main d-none d-sm-block">
+        <div class="blog-main">
             {% include 'blog-sticked-item' article: sticked_article %}
         </div>
     </div>

@@ -154,24 +154,19 @@
                 margin: 0 -9rem;
             }
 
-            &:before,
-            &:after {
-                position: absolute;
-                content: '';
-                height: 2px;
+            .quote-line {
+                background: black;
                 width: 9rem;
-                background-color: #000;
-                left: 6.25rem;
-                right: 6.25rem;
+                height: 2px;
                 margin: 0 auto;
-            }
 
-            &:before {
-                top: 0;
-            }
+                &--top {
+                    margin-bottom: 3.125rem;
+                }
 
-            &:after {
-                bottom: 0;
+                &--bottom {
+                    margin-top: 3.125rem;
+                }
             }
         }
     }

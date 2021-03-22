@@ -10231,23 +10231,19 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 }
 
-.blog-content .block--quote:before, .blog-content .block--quote:after {
-    position: absolute;
-    content: '';
-    height: 2px;
+.blog-content .block--quote .quote-line {
+    background: black;
     width: 9rem;
-    background-color: #000;
-    left: 6.25rem;
-    right: 6.25rem;
+    height: 2px;
     margin: 0 auto;
 }
 
-.blog-content .block--quote:before {
-    top: 0;
+.blog-content .block--quote .quote-line--top {
+    margin-bottom: 3.125rem;
 }
 
-.blog-content .block--quote:after {
-    bottom: 0;
+.blog-content .block--quote .quote-line--bottom {
+    margin-top: 3.125rem;
 }
 
 .blog .read-more {
