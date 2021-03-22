@@ -313,9 +313,11 @@ $(function () {
     function blogBtnToggleVisibility(length) {
         var olderBtn = $('.blog-older');
         if (length < blogSearchCriteria.pageSize) {
+            olderBtn.removeClass('d-flex');
             olderBtn.addClass('d-none');
         } else {
             olderBtn.removeClass('d-none');
+            olderBtn.addClass('d-flex');
         }
     }
 
@@ -349,6 +351,10 @@ $(function () {
                     posts.append(new BlogItem(item).toHTML());
                 }
                 blogSearchCriteria.pageNumber++;
+                var scrollTo = posts.children('.list__item').eq(0);
+                if (scrollTo.length > 0) {
+                    scrollBody(posts.children('.list__item').eq(0));
+                }
             },
             complete: () => items.removeAttr('disabled')
         });
@@ -376,9 +382,6 @@ $(function () {
                     scrollBody(list.children('.list__item').eq(indexOfFirstElementInTake));
                 }
                 blogSearchCriteria.pageNumber++;
-                if (data.length < blogSearchCriteria.pageSize) {
-                    blogOlderBtn.remove();
-                }
             }
         });
     });
