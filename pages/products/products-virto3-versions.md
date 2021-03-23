@@ -55,3 +55,23 @@ Current version of Virto Commerce platform version 3 integration pack includes t
    <li> vc-module-avatax v3.2.0 </li> 
    <li> vc-module-Authorize.Net v3.2.0 </li>
 </ul>
+
+
+<h1> Digital Catalog Application - Package <h1>
+
+<ul> 
+   <li> VirtoCommerce.Core (3.13.0)
+   <li> VirtoCommerce.Catalog (3.37.0)
+   <li> VirtoCommerce.Notifications (3.13.0)
+   <li> VirtoCommerce.BulkActionsModule (3.2.0)
+   <li> VirtoCommerce.Store (3.15.0)
+   <li> VirtoCommerce.Export (3.9.0)
+   <li> VirtoCommerce.Search (3.11.0)
+   <li> VirtoCommerce.Pricing (3.18.0)
+   <li> VirtoCommerce.Inventory (3.16.0)
+   <li> VirtoCommerce.ElasticSearch (3.6.0)
+   <li> VirtoCommerce.LuceneSearch (3.4.0)
+   <li> VirtoCommerce.AzureSearch (3.8.0) 
+   <li> VirtoCommerce.Customer (3.27.0)
+   <li> VirtoCommerce.ExperienceApi (1.0.0)
+<ul> 
