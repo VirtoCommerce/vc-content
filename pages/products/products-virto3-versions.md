@@ -57,7 +57,7 @@ Current version of Virto Commerce platform version 3 integration pack includes t
 </ul>
 
 
-<h1> Digital Catalog Application - Package <h1>
+<h1> Digital Catalog Application - Package </h1>
 
 <ul> 
    <li> VirtoCommerce.Core (3.13.0)
