@@ -13,7 +13,7 @@
 
     {% if page_description != '' %}
         <meta name="description" content="{{ page_description | escape }}" />
-    {% elsif %}
+    {% else %}
         {% assign meta_description = 'VirtoCommerce is the enterprise-level Microsoft .NET ecommerce platform for complex ecommerce. Virto Commerce is a flexible B2B ecommerce solution based on Microsoft.NET that offers powerful tools for enterprise business users.' %}
         {% if page.meta_fields != blank %}
             {% if page.meta_fields.markup_webpage_description != null and page.meta_fields.markup_webpage_description != '' %}
