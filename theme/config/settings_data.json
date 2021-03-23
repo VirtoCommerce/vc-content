@@ -21,7 +21,296 @@
         "markup_website_description": "VirtoCommerce is the enterprise-level Microsoft .NET ecommerce platform for complex ecommerce. Virto Commerce is a flexible B2B ecommerce solution based on Microsoft.NET that offers powerful tools for enterprise business users.",
         "markup_website_default_image": "https://virtocommerce.com/assets/images/logo.jpg",
         "footerText": "Virto Commerce is a .NET B2B and B2C e-commerce platform ideal for enterprise and complex e-commerce solutions.",
-        "footerCopyright": "Copyright © 2021. All rights reserved."
+        "footerCopyright": "Copyright © 2021. All rights reserved.",
+        "appsPagesMeta": [
+            {
+                "url": "apps",
+                "title": "Virto Commerce | Appstore",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Appstore"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Do more with your online store by accessing Virto Commerce appstore and extensions. Submit your virto commerce extension. Expand you ecommerce capabilities by using custom apps."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Do more with your online store by accessing Virto Commerce appstore and extensions. Submit your virto commerce extension. Expand you ecommerce capabilities by using custom apps."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Do more with your online store by accessing Virto Commerce appstore and extensions. Submit your virto commerce extension. Expand you ecommerce capabilities by using custom apps."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/nextopia-integration-module",
+                "title": "Virto Commerce | Nextopia Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Nextopia Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Integrate Nextopia Module from our Apps and Extensions section. It offers Site Search, Navigation & Merchandising Solutions for Internet Retailers."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Integrate Nextopia Module from our Apps and Extensions section. It offers Site Search, Navigation & Merchandising Solutions for Internet Retailers."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Integrate Nextopia Module from our Apps and Extensions section. It offers Site Search, Navigation & Merchandising Solutions for Internet Retailers."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/stripe-integration-module",
+                "title": "Virto Commerce | Stripe Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Stripe Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Stripe is the best software platform for running an internet business. Stripe integration module allows you to create beautiful payment flows, write less code and keep webstore transactions secure."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Stripe is the best software platform for running an internet business. Stripe integration module allows you to create beautiful payment flows, write less code and keep webstore transactions secure."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Stripe is the best software platform for running an internet business. Stripe integration module allows you to create beautiful payment flows, write less code and keep webstore transactions secure."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/sendgrid-email-marketing",
+                "title": "Virto Commerce | SendGrid Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | SendGrid Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Integrate Sendgrid from our apps and extensions posrtal. Provide email marketing campaigns using SendGrid innovative module."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Integrate Sendgrid from our apps and extensions posrtal. Provide email marketing campaigns using SendGrid innovative module."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Integrate Sendgrid from our apps and extensions posrtal. Provide email marketing campaigns using SendGrid innovative module."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/paypal",
+                "title": "Virto Commerce | PayPal Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | PayPal Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Paypal Express Checkout payment integration from our apps and extensions portal. Paypal Express Checkout payment gateway module provides integration with Paypal Express Checkout payment gateway."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Paypal Express Checkout payment integration from our apps and extensions portal. Paypal Express Checkout payment gateway module provides integration with Paypal Express Checkout payment gateway."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Paypal Express Checkout payment integration from our apps and extensions portal. Paypal Express Checkout payment gateway module provides integration with Paypal Express Checkout payment gateway."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/google-analytics-enhanced-ecommerce",
+                "title": "Virto Commerce | Google Analytics Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Google Analytics Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Google Ecommerce Analytics module allows you to use the newly launched feature of Google Analytics – Enhanced Ecommerce."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Google Ecommerce Analytics module allows you to use the newly launched feature of Google Analytics – Enhanced Ecommerce."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Google Ecommerce Analytics module allows you to use the newly launched feature of Google Analytics – Enhanced Ecommerce."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/import-from-shopify-to-virtocommerce-platform",
+                "title": "Virto Commerce | Shopify Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Shopify Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "That module allows you to import existing data from your Shopify. Easy and seamless integration with Shopify integration module. Shopify importer is an extension for Virto Commerce that allows you to completely migrate your shopify store to the Virto Commerce platform. Extension is available as an open source project, so anyone can contribute and improve it."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "That module allows you to import existing data from your Shopify. Easy and seamless integration with Shopify integration module. Shopify importer is an extension for Virto Commerce that allows you to completely migrate your shopify store to the Virto Commerce platform. Extension is available as an open source project, so anyone can contribute and improve it."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "That module allows you to import existing data from your Shopify. Easy and seamless integration with Shopify integration module. Shopify importer is an extension for Virto Commerce that allows you to completely migrate your shopify store to the Virto Commerce platform. Extension is available as an open source project, so anyone can contribute and improve it."
+                    }
+                ]
+            },
+            {
+                "url": "apps/featured",
+                "title": "Virto Commerce | Featured Integration",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Featured Integration"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Virto Commerce featured applications and extensions will allow to boost your ecommerce game and take it to the next level. Any integration is possible within Virto Commerce b2b platform."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Virto Commerce featured applications and extensions will allow to boost your ecommerce game and take it to the next level. Any integration is possible within Virto Commerce b2b platform."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Virto Commerce featured applications and extensions will allow to boost your ecommerce game and take it to the next level. Any integration is possible within Virto Commerce b2b platform."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/surveymonkey-integration-module-allows-you-to-easily-create-pre--and-post-order-polls-to-evaluate-webstore-customer-service-delivery-and-others",
+                "title": "Virto Commerce | Surveymonkey Integration module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Surveymonkey Integration module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Surveymonkey integration module allows you to easily create pre- and post-order polls to evaluate webstore customer service, delivery and others."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Surveymonkey integration module allows you to easily create pre- and post-order polls to evaluate webstore customer service, delivery and others."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Surveymonkey integration module allows you to easily create pre- and post-order polls to evaluate webstore customer service, delivery and others."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions",
+                "title": "Virto Commerce | Extensions",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Extensions"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Numerous free extensions in the Virto Commerce apps and extensions catalogue. Add any extension easily with semaless integration process."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Numerous free extensions in the Virto Commerce apps and extensions catalogue. Add any extension easily with semaless integration process."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Numerous free extensions in the Virto Commerce apps and extensions catalogue. Add any extension easily with semaless integration process."
+                    }
+                ]
+            },
+            {
+                "url": "apps/extensions/marketo-marketing-automation",
+                "title": "Virto Commerce | Marketo Integration Module",
+                "tags": [
+                    {
+                        "type": "property",
+                        "typeValue": "og:title",
+                        "content": "Virto Commerce | Marketo Integration Module"
+                    },
+                    {
+                        "type": "property",
+                        "typeValue": "og:description",
+                        "content": "Attract more buyers, nurture leads, identify opportunities and deliver sales orders with Marketo integration. Seamless and easy integration with Marketo."
+                    },
+                    {
+                        "type": "name",
+                        "typeValue": "description",
+                        "content": "Attract more buyers, nurture leads, identify opportunities and deliver sales orders with Marketo integration. Seamless and easy integration with Marketo."
+                    },
+                    {
+                        "type": "itemprop",
+                        "typeValue": "description",
+                        "content": "Attract more buyers, nurture leads, identify opportunities and deliver sales orders with Marketo integration. Seamless and easy integration with Marketo."
+                    }
+                ]
+            }
+        ],
+        "appsTitle": "Virto Commerce | Appstore"
     },
     "presets": {
         "Default": {
