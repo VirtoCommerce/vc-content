@@ -310,6 +310,10 @@ $(function () {
         pageNumber: 2
     };
 
+    if (stickedArticleUrl && stickedArticleUrl !== '') {
+        blogSearchCriteria.excludedArticleHandles = [stickedArticleUrl];
+    }
+
     function blogBtnToggleVisibility(length) {
         var olderBtn = $('.blog-older');
         if (length < blogSearchCriteria.pageSize) {
@@ -353,7 +357,7 @@ $(function () {
                 blogSearchCriteria.pageNumber++;
                 var scrollTo = posts.children('.list__item').eq(0);
                 if (scrollTo.length > 0) {
-                    scrollBody(posts.children('.list__item').eq(0));
+                    scrollBody(scrollTo);
                 }
             },
             complete: () => items.removeAttr('disabled')
@@ -379,7 +383,7 @@ $(function () {
                 var indexOfFirstElementInTake = (blogSearchCriteria.pageNumber - 1) * blogSearchCriteria.pageSize;
                 var scrollTo = list.children('.list__item').eq(indexOfFirstElementInTake);
                 if (scrollTo.length > 0) {
-                    scrollBody(list.children('.list__item').eq(indexOfFirstElementInTake));
+                    scrollBody(scrollTo);
                 }
                 blogSearchCriteria.pageNumber++;
             }
