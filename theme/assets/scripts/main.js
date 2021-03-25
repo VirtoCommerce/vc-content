@@ -158,15 +158,29 @@ $(function () {
 
                 var form = $(this);
                 var submitBtn = form.children('[type=submit]');
+                var data = {
+                    formId: form.attr('id'),
+                    ip: currentIp,
+                    parameters: form.serialize()
+                };
+
+                var utmMarks = ['utm_source', 'utm_campaign'];
+
+                var splittedParams = window.location.search.substring(1).split('&');
+                for (var param of splittedParams) {
+                    for (var mark of utmMarks) {
+                        var indexOfUtmCampaign = param.indexOf(mark);
+                        if (indexOfUtmCampaign > -1) {
+                            var splittedMark = param.split('=');
+                            data.parameters += `&${mark}=${splittedMark[1]}`;
+                        }
+                    }
+                }
 
                 $.ajax({
                     method: 'POST',
                     url: `/${shopId}/${cultureName}/call`,
-                    data: {
-                        formId: form.attr('id'),
-                        ip: currentIp,
-                        parameters: form.serialize()
-                    },
+                    data: data,
                     headers: { 'X-XSRF-TOKEN': token, service: 'GateLA' },
                     beforeSend: () => submitBtn.attr('disabled', true),
                     success: function () {
@@ -310,7 +324,7 @@ $(function () {
         pageNumber: 2
     };
 
-    if (stickedArticleUrl && stickedArticleUrl !== '') {
+    if (window.stickedArticleUrl && window.stickedArticleUrl !== '') {
         blogSearchCriteria.excludedArticleHandles = [stickedArticleUrl];
     }
 
