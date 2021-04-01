@@ -1181,8 +1181,8 @@
           "Unlink",
 		  "FontSize",
           "Maximize",
-          "Source",
-		  "EnterModeBr"
+            "Source",
+            "EnterModeBr"
         ]
       },
 	  {
@@ -9894,6 +9894,65 @@
 				}
 			],
 			"tab": "Content"
+		}
+	]
+  },
+  "blog-image": {
+	"id": "blog-image",
+	"name": "Blog image",
+	"icon": "image-text",
+	"displayField": "name",
+	"includeShared": [
+		"paddings",
+		"reduced-paddings",
+		"dividers"
+	],
+	"category": "Blog",
+	"settings": [
+		{
+			"id": "image",
+			"label": "Image",
+			"type": "image"
+		},
+		{
+			"id": "imageDescription",
+			"label": "Image description",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Maximize",
+				"Source"
+			]
+		},
+		{
+			"id": "imageAreaWidth",
+			"label": "Image area width",
+			"type": "select",
+			"default": "full",
+			"options": [
+			  {
+				"value": "full",
+				"label": "Full width"
+			  },
+			  {
+				"value": "ten",
+				"label": "10 cols"
+			  },
+			  {
+				"value": "eight",
+				"label": "8 cols"
+			  },
+			  {
+				"value": "six",
+				"label": "6 cols"
+			  }
+			],
+			"tab": "Settings"
 		}
 	]
   },

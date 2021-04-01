@@ -10212,6 +10212,11 @@ input.ng-touched.ng-invalid, .input-validation-error {
     margin-bottom: 1.25rem;
 }
 
+.blog-content .blog-img {
+    max-width: 100%;
+    height: auto;
+}
+
 .blog-content .list--socials {
     justify-content: left;
     padding: 1rem .5rem 2rem;
