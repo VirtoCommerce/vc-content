@@ -61,6 +61,9 @@
 		                                {% if sticked_skipped == false %}
 			                                {% if article.is_sticked == true %}
 				                                {% assign sticked_skipped = true %}
+                                                <script>
+                                                    var stickedArticleUrl = '{{article.url}}';
+                                                </script>
 				                                {% continue %}
 			                                {% endif %}
 		                                {% endif %}

@@ -1,0 +1,21 @@
+<div id="{{block.__id}}" class="{% include 'block-dividers-classes' %}">
+    <div class="block {% include 'block-paddings-classes' %}">
+        {% if block.imageAreaWidth == 'ten' %}
+            {% assign imageAreaWidth = 'col-sm-10' %}
+        {% elsif block.imageAreaWidth == 'eight' %}
+            {% assign imageAreaWidth = 'col-sm-8' %}
+        {% elsif block.imageAreaWidth == 'six' %}
+            {% assign imageAreaWidth = 'col-sm-6' %}
+        {% else %}
+            {% assign imageAreaWidth = 'col-lg' %}
+        {% endif %}
+        <div class="block__inner container text-center">
+            <div class="row justify-content-center">
+                <div class="{{imageAreaWidth}}">
+                    <img class="blog-img" src="{{block.image.url}}" alt="{{block.image.altText}}" />
+                </div>
+            </div>
+            <div class="image-description">{{block.imageDescription}}</div>
+        </div>
+    </div>
+</div>

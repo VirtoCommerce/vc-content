@@ -1,6 +1,6 @@
 <div class="d-xl-flex mt-3 mt-xl-5">
     <div class="d-flex flex-column pr-xl-5">
-        <div class="sticked-title">{{article.meta_fields.articleTitle}}</div>
+        <a href="{{ article.url | absolute_url }}" class="sticked-title" style="color:black">{{article.meta_fields.articleTitle}}</a>
         {% assign stickedFontColorApplied = article.meta_fields.stickedFontColor != null and article.meta_fields.stickedFontColor != '' %}
         <a href="{{ article.url | absolute_url }}" class="read-more mt-4 mt-xl-auto mb-3 align-self-start" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>Read More</a>
         <hr class="mb-3 mb-xl-0"></hr>
@@ -18,6 +18,6 @@
             }
         </style>
         {% endif %}
-        <div class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800, 560 }}{% else %}blue-abstract-background.jpg{% endif %}"></div>
+        <a href="{{ article.url | absolute_url }}" class="blog-post__bg lazyload" data-bg="{% if article.image_url != '' %}{{ article.image_url | image_url: 800, 560 }}{% else %}blue-abstract-background.jpg{% endif %}"></a>
     </div>
 </div>

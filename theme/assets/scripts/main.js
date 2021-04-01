@@ -158,15 +158,29 @@ $(function () {
 
                 var form = $(this);
                 var submitBtn = form.children('[type=submit]');
+                var data = {
+                    formId: form.attr('id'),
+                    ip: currentIp,
+                    parameters: form.serialize()
+                };
+
+                var utmMarks = ['utm_source', 'utm_campaign'];
+
+                var splittedParams = window.location.search.substring(1).split('&');
+                for (var param of splittedParams) {
+                    for (var mark of utmMarks) {
+                        var indexOfUtmCampaign = param.indexOf(mark);
+                        if (indexOfUtmCampaign > -1) {
+                            var splittedMark = param.split('=');
+                            data.parameters += `&${mark}=${splittedMark[1]}`;
+                        }
+                    }
+                }
 
                 $.ajax({
                     method: 'POST',
                     url: `/${shopId}/${cultureName}/call`,
-                    data: {
-                        formId: form.attr('id'),
-                        ip: currentIp,
-                        parameters: form.serialize()
-                    },
+                    data: data,
                     headers: { 'X-XSRF-TOKEN': token, service: 'GateLA' },
                     beforeSend: () => submitBtn.attr('disabled', true),
                     success: function () {
@@ -310,12 +324,18 @@ $(function () {
         pageNumber: 2
     };
 
+    if (window.stickedArticleUrl && window.stickedArticleUrl !== '') {
+        blogSearchCriteria.excludedArticleHandles = [stickedArticleUrl];
+    }
+
     function blogBtnToggleVisibility(length) {
         var olderBtn = $('.blog-older');
         if (length < blogSearchCriteria.pageSize) {
+            olderBtn.removeClass('d-flex');
             olderBtn.addClass('d-none');
         } else {
             olderBtn.removeClass('d-none');
+            olderBtn.addClass('d-flex');
         }
     }
 
@@ -349,6 +369,10 @@ $(function () {
                     posts.append(new BlogItem(item).toHTML());
                 }
                 blogSearchCriteria.pageNumber++;
+                var scrollTo = posts.children('.list__item').eq(0);
+                if (scrollTo.length > 0) {
+                    scrollBody(scrollTo);
+                }
             },
             complete: () => items.removeAttr('disabled')
         });
@@ -373,12 +397,9 @@ $(function () {
                 var indexOfFirstElementInTake = (blogSearchCriteria.pageNumber - 1) * blogSearchCriteria.pageSize;
                 var scrollTo = list.children('.list__item').eq(indexOfFirstElementInTake);
                 if (scrollTo.length > 0) {
-                    scrollBody(list.children('.list__item').eq(indexOfFirstElementInTake));
+                    scrollBody(scrollTo);
                 }
                 blogSearchCriteria.pageNumber++;
-                if (data.length < blogSearchCriteria.pageSize) {
-                    blogOlderBtn.remove();
-                }
             }
         });
     });
