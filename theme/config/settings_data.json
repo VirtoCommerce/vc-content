@@ -310,7 +310,9 @@
                 ]
             }
         ],
-        "appsTitle": "Virto Commerce | Appstore"
+        "appsTitle": "Virto Commerce | Appstore",
+        "subscribeFormSubtitleInArticles": "I confirm that I have read and agree to the&nbsp;<a href=\"/terms\">Terms</a>&nbsp;and&nbsp;<a href=\"/privacy\">Privacy Policy</a>, which explains how Virto Commerce collects, processes and shares my personal data.",
+        "subscribeFormTitleInArticles": "Sign up for Virto Commerce news and updates"
     },
     "presets": {
         "Default": {

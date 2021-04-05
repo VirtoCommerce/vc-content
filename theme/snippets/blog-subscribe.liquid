@@ -1,14 +1,19 @@
 <div class="blog-sidebar {{ cssClass }} mb-5">
-    <div class="blog-sidebar__inner">
-        {% assign subscribe_form_title = 'Sign up for Virto Commerce news and updates' %}
+    <div class="blog-sidebar__inner container">
+        {% assign subscribe_form_title = settings.subscribeFormTitleInArticles %}
         {% if article.meta_fields.subscribeFormTitle != blank and article.meta_fields.subscribeFormTitle != '' %}
             {% assign subscribe_form_title = article.meta_fields.subscribeFormTitle %}
         {% endif %}
         <div class="blog-sidebar__t">{{subscribe_form_title}}</div>
         <form id="subscribe_news" class="form d-sm-flex justify-content-center" name="blogSubscribeForm">
             <input type="text" class="form-control" placeholder="Enter your email" data-val="true" data-val-required="" data-val-email="email" id="blog_email" name="blog_email"/>
-            <button class="btn btn--orange ml-sm-3" type="submit">Subscribe</button>
+            <button class="btn btn--orange mt-3 mt-sm-0 ml-sm-3" type="submit">Subscribe</button>
         </form>
+        {% assign subscribe_form_subtitle = settings.subscribeFormSubtitleInArticles %}
+        {% if article.meta_fields.subscribeFormSubtitle == 'True' and article.meta_fields.subscribeFormSubtitle != '' %}
+            {% assign subscribe_form_subtitle = article.meta_fields.subscribeFormSubtitle %}
+        {% endif %}
+        <div class="blog-sidebar__descr text-center mt-4">{{subscribe_form_subtitle}}</div>
     </div>
     <script type="text/javascript">(function(o){var b="https://fastgull.io/anywhere/",t="826b5c2a62d44b678c87131c7774abef2599dcd397ae42c0a88136863a6ab76e",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script>
 </div>

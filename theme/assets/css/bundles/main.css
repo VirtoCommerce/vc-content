@@ -5786,28 +5786,6 @@ code {
     color: white;
 }
 
-#layout .pl-6 {
-    padding-left: 5rem !important;
-}
-
-#layout .pr-6 {
-    padding-right: 5rem !important;
-}
-
-@media (min-width: 992px) {
-    #layout .pl-lg-6 {
-        padding-left: 5rem !important;
-    }
-
-    #layout .pr-lg-6 {
-        padding-right: 5rem !important;
-    }
-}
-
-#layout .overflow-auto {
-    overflow: auto;
-}
-
 .cookie-bar {
     background: #f0f0f0;
     bottom: 0;
@@ -5886,6 +5864,32 @@ code {
     to {
         opacity: 1;
     }
+}
+
+.pl-6 {
+    padding-left: 5rem !important;
+}
+
+.pr-6 {
+    padding-right: 5rem !important;
+}
+
+@media (min-width: 992px) {
+    .pl-lg-6 {
+        padding-left: 5rem !important;
+    }
+
+    .pr-lg-6 {
+        padding-right: 5rem !important;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overflow-auto {
+    overflow: auto;
 }
 
 .section {
@@ -7700,10 +7704,6 @@ code {
     display: flex;
     font-family: Helvetica, sans-serif;
     padding: 3.75rem 0;
-}
-
-.block .text-center {
-    text-align: center;
 }
 
 .block .invisible {
@@ -10457,6 +10457,19 @@ input.ng-touched.ng-invalid, .input-validation-error {
     border-radius: 0.625rem;
     display: flex;
     justify-content: center;
+    padding: 14px;
+}
+
+@media (max-width: 767.98px) {
+    .blog-sidebar {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .blog-sidebar {
+        padding: 34px;
+    }
 }
 
 .blog-sidebar.collapsed {
@@ -10466,6 +10479,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
 .blog-sidebar__inner {
     background: #f8f8f8;
     padding: 3rem 4rem;
+}
+
+@media (max-width: 575.98px) {
+    .blog-sidebar__inner {
+        padding: 3rem 2rem;
+    }
 }
 
 .blog-sidebar__pic {
@@ -10482,6 +10501,11 @@ input.ng-touched.ng-invalid, .input-validation-error {
     text-align: center;
 }
 
+.blog-sidebar__descr {
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .blog-sidebar .form .form-control,
     .blog-sidebar .form .btn {
     justify-content: center;
@@ -10494,6 +10518,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
 @media (max-width: 575.98px) {
     .blog-sidebar .form .btn {
         width: 100%;
+    }
+
+    .blog-sidebar .form .form-control {
+        max-width: 100%;
     }
 }
 

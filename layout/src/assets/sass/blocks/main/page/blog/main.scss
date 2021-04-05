@@ -361,6 +361,15 @@
         border-radius: 0.625rem;
         display: flex;
         justify-content: center;
+        padding: 14px;
+
+        @include media-breakpoint-down(sm) {
+            padding: 1.25rem;
+        }
+
+        @include media-breakpoint-only(md) {
+            padding: 34px;
+        }
 
         &.collapsed {
             align-self: flex-start;
@@ -369,6 +378,10 @@
         &__inner {
             background: #f8f8f8;
             padding: 3rem 4rem;
+
+            @include media-breakpoint-down(xs) {
+                padding: 3rem 2rem;
+            }
         }
 
         &__pic {
@@ -383,6 +396,11 @@
             line-height: 1.1;
             margin-bottom: 1.875rem;
             text-align: center;
+        }
+
+        &__descr {
+            font-size: 14px;
+            font-weight: 300;
         }
 
         .form {
@@ -400,6 +418,10 @@
             @include media-breakpoint-down(xs) {
                 .btn {
                     width: 100%;
+                }
+
+                .form-control {
+                    max-width: 100%;
                 }
             }
         }
