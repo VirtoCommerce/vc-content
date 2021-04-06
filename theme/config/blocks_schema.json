@@ -9841,6 +9841,8 @@
 				"TextColor",
 				"Bold",
 				"Italic",
+				"Link",
+				"Unlink",
 				"FontSize",
 				"Source",
 				"EnterModeBr"
