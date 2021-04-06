@@ -10713,6 +10713,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 .blog .list--posts .list__descr .article-date {
     font-size: 13px;
     color: darkgray;
+    font-weight: 100;
 }
 
 .blog .list--posts .list--tags .list__item {
