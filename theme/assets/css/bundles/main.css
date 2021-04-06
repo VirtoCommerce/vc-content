@@ -10101,7 +10101,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     margin-top: 1.5rem;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1501px) {
     .blog .posts--wide .list--posts .list__item {
         flex: 0 0 25%;
         max-width: 25%;
@@ -10464,7 +10464,6 @@ input.ng-touched.ng-invalid, .input-validation-error {
     border-radius: 0.625rem;
     display: flex;
     justify-content: center;
-    padding: 14px;
 }
 
 @media (max-width: 767.98px) {
@@ -10649,6 +10648,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     min-height: 10rem;
     background-size: cover;
     background-position: 50%;
+    height: 220px;
 }
 
 .blog .list--posts .list__category {

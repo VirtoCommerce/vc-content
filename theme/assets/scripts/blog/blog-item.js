@@ -39,7 +39,7 @@ function BlogItem(item) {
             <a class="list__bg lazyload" href="${this.url}" data-bg="${this.imageUrl}?tr=w-343,h-160" style="background-image: url('${this.imageUrl}?tr=w-343,h-160');"></a>
             <div class="list__info">
                 <div class="list__descr">
-                    <div>${dateInfo}</div>
+                    <div class="article-date">${dateInfo}</div>
                 </div>
                 <div class="list__t">
                     <a href="${this.url}">${this.title}</a>
