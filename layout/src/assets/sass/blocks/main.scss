@@ -131,33 +131,6 @@
             }
         }
     }
-
-    .pl-6
-    {
-        padding-left: 5rem!important;
-    }
-
-    .pr-6
-    {
-        padding-right: 5rem!important;
-    }
-
-    @include media-breakpoint-up(lg) {
-        .pl-lg-6
-        {
-            padding-left: 5rem!important;
-        }
-
-        .pr-lg-6
-        {
-            padding-right: 5rem!important;
-        }
-    }
-
-    .overflow-auto
-    {
-        overflow: auto;
-    }
 }
 
 .cookie-bar
@@ -257,6 +230,38 @@
     {
         opacity: 1;
     }
+}
+
+.pl-6
+{
+    padding-left: 5rem!important;
+}
+
+.pr-6
+{
+    padding-right: 5rem!important;
+}
+
+@include media-breakpoint-up(lg) {
+    .pl-lg-6
+    {
+        padding-left: 5rem!important;
+    }
+
+    .pr-lg-6
+    {
+        padding-right: 5rem!important;
+    }
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+.overflow-auto
+{
+    overflow: auto;
 }
 
 /* Sections */

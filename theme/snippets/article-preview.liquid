@@ -9,25 +9,30 @@
     <div class="list__info">
         {% if block.hideDateAndName != 'True' %}
             {% if article.permalink contains 'blog/' or article.permalink contains 'glossary/' %}
-                <div class="list__descr">
-                    {% assign article_date = '' %}
-                    {% if article.meta_info.date %}
-                        {% assign article_date = article.meta_info.date %}
-                    {% else %}
-                        {% assign article_date = article.meta_info.markup_webpage_date_created %}
-                    {% endif %}
-                    
-                    {% assign days_difference = article_date | date_days_difference %}
-                    {% if days_difference > 7 %}
-                        <div class="article-date">{{article.meta_info.markup_webpage_date_created | date: "d MMM"}} • 5 min</div>
-                    {% else %}
-                        {% if days_difference == 0 %}
-                            <div class="article-date">Today • 5 min</div>
+                {% if hide_reading_time == null or hide_reading_time == false %}
+                    <div class="list__descr">
+                        {% assign article_date = '' %}
+                        {% if article.meta_info.date %}
+                            {% assign article_date = article.meta_info.date %}
                         {% else %}
-                            <div class="article-date">{{days_difference}} days ago • 5 min</div>
+                            {% assign article_date = article.meta_info.markup_webpage_date_created %}
                         {% endif %}
-                    {% endif %}
-                </div>
+                    
+                        {% assign days_difference = article_date | date_days_difference %}
+                        {% if days_difference > 7 %}
+                            <div class="article-date">{{article.meta_info.markup_webpage_date_created | date: "d MMM"}} • 5 min</div>
+                        {% else %}
+                            {% if days_difference == 0 %}
+                                <div class="article-date">Today • 5 min</div>
+                            {% else %}
+                                <div class="article-date">{{days_difference}} days ago • 5 min</div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% if category != null %}
+                <div class="list__category">{{article.category | capitalize}}</div>
             {% endif %}
             <div class="list__t">
                 <a href="{{ article.url }}" class="list__t">{{ article.meta_fields.articleTitle }}</a>

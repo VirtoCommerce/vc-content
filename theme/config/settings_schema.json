@@ -1221,6 +1221,55 @@
     ]
   },
   {
+	"name": "Blogs",
+	"icon": "image",
+	"settings": [
+		{
+			"id": "subscribeFormTitleInArticles",
+			"label": "Subscribe form title in articles",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"Source",
+				"EnterModeBr"
+			]
+		},
+		{
+			"id": "subscribeFormSubtitleInArticles",
+			"label": "Subscribe form subtitle in articles",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"Source",
+				"EnterModeBr"
+			]
+		},
+		{
+			"id": "recommendedSectionTitle",
+			"label": "Recommended section title",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Source",
+				"EnterModeBr"
+			]
+		}
+	]
+  },
+  {
     "name": "Collection page",
     "icon": "clipboard",
     "settings": [

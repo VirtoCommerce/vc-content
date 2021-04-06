@@ -30,6 +30,17 @@
         margin-top: 1.5rem;
     }
 
+    .posts {
+        @media (min-width: 1400px) {
+            .list--posts {
+                .list__item {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+            }
+        }
+    }
+
     .blog__t {
         align-items: center;
         display: flex;
@@ -361,6 +372,15 @@
         border-radius: 0.625rem;
         display: flex;
         justify-content: center;
+        padding: 14px;
+
+        @include media-breakpoint-down(sm) {
+            padding: 1.25rem;
+        }
+
+        @include media-breakpoint-only(md) {
+            padding: 34px;
+        }
 
         &.collapsed {
             align-self: flex-start;
@@ -369,6 +389,10 @@
         &__inner {
             background: #f8f8f8;
             padding: 3rem 4rem;
+
+            @include media-breakpoint-down(xs) {
+                padding: 3rem 2rem;
+            }
         }
 
         &__pic {
@@ -383,6 +407,11 @@
             line-height: 1.1;
             margin-bottom: 1.875rem;
             text-align: center;
+        }
+
+        &__descr {
+            font-size: 14px;
+            font-weight: 300;
         }
 
         .form {
@@ -400,6 +429,10 @@
             @include media-breakpoint-down(xs) {
                 .btn {
                     width: 100%;
+                }
+
+                .form-control {
+                    max-width: 100%;
                 }
             }
         }
@@ -593,6 +626,7 @@
             .article-date {
                 font-size: 13px;
                 color: darkgray;
+                font-weight: 100;
             }
         }
 
@@ -659,6 +693,60 @@
             .list__item {
                 flex: 0 0 50%;
                 max-width: 50%;
+            }
+        }
+    }
+
+    & ~ .recommended {
+        .recommended__t {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .list__item {
+            max-width: 100%;
+            padding-top: 1.5rem;
+
+            @include media-breakpoint-down(lg) {
+                flex: 0 0 100%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 50%;
+
+                &:nth-child(1) {
+                    padding-right: 1rem;
+                }
+
+                &:nth-child(2) {
+                    padding-left: 1rem;
+                }
+            }
+
+            .list {
+                &__t {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: black;
+                }
+
+                &__bg {
+                    display: block;
+                    background-size: cover;
+                    background-position: 50%;
+                    min-height: 25rem;
+                }
+
+                &__info {
+                    padding-top: 1.875rem;
+                }
+
+                &__category {
+                    color: #a9a9a9;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-bottom: 1rem;
+                }
             }
         }
     }

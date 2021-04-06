@@ -1,0 +1,48 @@
+<div class="recommended pl-3 pr-3 pl-lg-6 pr-lg-6 mb-5">
+    {% assign recommended_section_title = settings.recommendedSectionTitle %}
+    {% if article.meta_fields.recommendedSectionTitle != blank and article.meta_fields.recommendedSectionTitle != '' %}
+        {% assign recommended_section_title = article.meta_fields.recommendedSectionTitle %}
+    {% endif %}
+    <div class="recommended__t mb-4">{{recommended_section_title}}</div>
+    <div class="d-flex flex-column flex-lg-row">
+        {% if article.meta_fields.recommendedSection == 'customUrls' %}
+            {% assign first_page = pages | where: 'url', '==', article.meta_fields.recommendedSectionLinkFirst %}
+            {% if first_page != blank %}
+                {% assign first_page = first_page | first %}
+                {% assign first_page_url_starts_with_blog = (first_page.url | slice: 0, 5) == 'blog/' %}
+                {% if first_page_url_starts_with_blog == true %}
+                    {% assign article = first_page %}
+                    {% include 'article-preview' hide_reading_time: true, category: article.category %}
+                {% else %}
+                    {% include 'recommended-page' asset: first_page %}
+                {% endif %}
+            {% endif %}
+
+            {% assign second_page = pages | where: 'url', '==', article.meta_fields.recommendedSectionLinkSecond %}
+            {% if second_page != blank %}
+                {% assign second_page = second_page | first %}
+                {% assign second_page_url_starts_with_blog = (second_page.url | slice: 0, 5) == 'blog/' %}
+                {% if second_page_url_starts_with_blog == true %}
+                    {% assign article = second_page %}
+                    {% include 'article-preview' hide_reading_time: true, category: article.category %}
+                {% else %}
+                    {% include 'recommended-page' asset: second_page %}
+                {% endif %}
+            {% endif %}
+        {% else %}
+            {% assign current_article = article %}
+            {% assign recommended_articles = (blog.articles | where: 'category', '==', article.category) | sort_list: 'publishedAt:desc' %}
+            {% assign recommended_articles_index = 0 %}
+            {% for article in recommended_articles %}
+                {% if recommended_articles_index < 2 %}
+                    {% if article.url != current_article.url %}
+                        {% include 'article-preview' hide_reading_time: true, category: article.category %}
+                        {% assign recommended_articles_index = recommended_articles_index | plus: 1 %}
+                    {% endif %}
+                {% else %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

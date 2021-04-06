@@ -6,9 +6,20 @@
     {% endif %}
 {% endif %}
 
-{% if tag != 'True' or tag == 'none' or tag == 'div' %}
-    <div class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</div>
+{% if tag == 'h1' %}
+    <h1 class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</h1>
+{% elsif tag == 'h2' %}
+    <h2 class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</h2>
+{% elsif tag == 'h3' %}
+    <h3 class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</h3>
+{% elsif tag == 'h4' %}
+    <h4 class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</h4>
+{% elsif tag == 'h5' %}
+    <h5 class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</h5>
+{% elsif tag == 'h6' %}
+    <h6 class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</h6>
 {% else %}
-    <{{tag}} class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</{{tag}}>
+    <div class="{{class}}"{% if style != '' %} style="{{style}}"{% endif %}>{{text}}</div>
 {% endif %}
+
 {% assign style = '' %}

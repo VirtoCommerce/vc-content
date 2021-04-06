@@ -5786,28 +5786,6 @@ code {
     color: white;
 }
 
-#layout .pl-6 {
-    padding-left: 5rem !important;
-}
-
-#layout .pr-6 {
-    padding-right: 5rem !important;
-}
-
-@media (min-width: 992px) {
-    #layout .pl-lg-6 {
-        padding-left: 5rem !important;
-    }
-
-    #layout .pr-lg-6 {
-        padding-right: 5rem !important;
-    }
-}
-
-#layout .overflow-auto {
-    overflow: auto;
-}
-
 .cookie-bar {
     background: #f0f0f0;
     bottom: 0;
@@ -5886,6 +5864,32 @@ code {
     to {
         opacity: 1;
     }
+}
+
+.pl-6 {
+    padding-left: 5rem !important;
+}
+
+.pr-6 {
+    padding-right: 5rem !important;
+}
+
+@media (min-width: 992px) {
+    .pl-lg-6 {
+        padding-left: 5rem !important;
+    }
+
+    .pr-lg-6 {
+        padding-right: 5rem !important;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overflow-auto {
+    overflow: auto;
 }
 
 .section {
@@ -7700,10 +7704,6 @@ code {
     display: flex;
     font-family: Helvetica, sans-serif;
     padding: 3.75rem 0;
-}
-
-.block .text-center {
-    text-align: center;
 }
 
 .block .invisible {
@@ -10101,6 +10101,13 @@ input.ng-touched.ng-invalid, .input-validation-error {
     margin-top: 1.5rem;
 }
 
+@media (min-width: 1400px) {
+    .blog .posts .list--posts .list__item {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
 .blog .blog__t {
     align-items: center;
     display: flex;
@@ -10457,6 +10464,19 @@ input.ng-touched.ng-invalid, .input-validation-error {
     border-radius: 0.625rem;
     display: flex;
     justify-content: center;
+    padding: 14px;
+}
+
+@media (max-width: 767.98px) {
+    .blog-sidebar {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .blog-sidebar {
+        padding: 34px;
+    }
 }
 
 .blog-sidebar.collapsed {
@@ -10466,6 +10486,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
 .blog-sidebar__inner {
     background: #f8f8f8;
     padding: 3rem 4rem;
+}
+
+@media (max-width: 575.98px) {
+    .blog-sidebar__inner {
+        padding: 3rem 2rem;
+    }
 }
 
 .blog-sidebar__pic {
@@ -10482,6 +10508,11 @@ input.ng-touched.ng-invalid, .input-validation-error {
     text-align: center;
 }
 
+.blog-sidebar__descr {
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .blog-sidebar .form .form-control,
     .blog-sidebar .form .btn {
     justify-content: center;
@@ -10494,6 +10525,10 @@ input.ng-touched.ng-invalid, .input-validation-error {
 @media (max-width: 575.98px) {
     .blog-sidebar .form .btn {
         width: 100%;
+    }
+
+    .blog-sidebar .form .form-control {
+        max-width: 100%;
     }
 }
 
@@ -10685,6 +10720,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 .blog .list--posts .list__descr .article-date {
     font-size: 13px;
     color: darkgray;
+    font-weight: 100;
 }
 
 .blog .list--posts .list--tags .list__item {
@@ -10753,6 +10789,60 @@ input.ng-touched.ng-invalid, .input-validation-error {
         flex: 0 0 50%;
         max-width: 50%;
     }
+}
+
+.blog ~ .recommended .recommended__t {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.blog ~ .recommended .list__item {
+    max-width: 100%;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 1199.98px) {
+    .blog ~ .recommended .list__item {
+        flex: 0 0 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .blog ~ .recommended .list__item {
+        flex: 0 0 50%;
+    }
+
+    .blog ~ .recommended .list__item:nth-child(1) {
+        padding-right: 1rem;
+    }
+
+    .blog ~ .recommended .list__item:nth-child(2) {
+        padding-left: 1rem;
+    }
+}
+
+.blog ~ .recommended .list__item .list__t {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+.blog ~ .recommended .list__item .list__bg {
+    display: block;
+    background-size: cover;
+    background-position: 50%;
+    min-height: 25rem;
+}
+
+.blog ~ .recommended .list__item .list__info {
+    padding-top: 1.875rem;
+}
+
+.blog ~ .recommended .list__item .list__category {
+    color: #a9a9a9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
 .apps {
