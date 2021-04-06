@@ -10843,6 +10843,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .apps {
