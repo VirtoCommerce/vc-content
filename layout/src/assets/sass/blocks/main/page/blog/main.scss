@@ -30,6 +30,17 @@
         margin-top: 1.5rem;
     }
 
+    .posts {
+        @media (min-width: 1400px) {
+            .list--posts {
+                .list__item {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+            }
+        }
+    }
+
     .blog__t {
         align-items: center;
         display: flex;
