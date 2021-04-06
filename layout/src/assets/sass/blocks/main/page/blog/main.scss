@@ -684,4 +684,58 @@
             }
         }
     }
+
+    & ~ .recommended {
+        .recommended__t {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .list__item {
+            max-width: 100%;
+            padding-top: 1.5rem;
+
+            @include media-breakpoint-down(lg) {
+                flex: 0 0 100%;
+            }
+
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 50%;
+
+                &:nth-child(1) {
+                    padding-right: 1rem;
+                }
+
+                &:nth-child(2) {
+                    padding-left: 1rem;
+                }
+            }
+
+            .list {
+                &__t {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: black;
+                }
+
+                &__bg {
+                    display: block;
+                    background-size: cover;
+                    background-position: 50%;
+                    min-height: 25rem;
+                }
+
+                &__info {
+                    padding-top: 1.875rem;
+                }
+
+                &__category {
+                    color: #a9a9a9;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
 }

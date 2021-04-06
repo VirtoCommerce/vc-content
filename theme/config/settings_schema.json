@@ -1251,6 +1251,21 @@
 				"Source",
 				"EnterModeBr"
 			]
+		},
+		{
+			"id": "recommendedSectionTitle",
+			"label": "Recommended section title",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Source",
+				"EnterModeBr"
+			]
 		}
 	]
   },

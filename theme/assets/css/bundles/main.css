@@ -10783,6 +10783,60 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 }
 
+.blog ~ .recommended .recommended__t {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.blog ~ .recommended .list__item {
+    max-width: 100%;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 1199.98px) {
+    .blog ~ .recommended .list__item {
+        flex: 0 0 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .blog ~ .recommended .list__item {
+        flex: 0 0 50%;
+    }
+
+    .blog ~ .recommended .list__item:nth-child(1) {
+        padding-right: 1rem;
+    }
+
+    .blog ~ .recommended .list__item:nth-child(2) {
+        padding-left: 1rem;
+    }
+}
+
+.blog ~ .recommended .list__item .list__t {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+.blog ~ .recommended .list__item .list__bg {
+    display: block;
+    background-size: cover;
+    background-position: 50%;
+    min-height: 25rem;
+}
+
+.blog ~ .recommended .list__item .list__info {
+    padding-top: 1.875rem;
+}
+
+.blog ~ .recommended .list__item .list__category {
+    color: #a9a9a9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
 .apps {
     padding-bottom: 4.375rem;
     padding-top: 4.375rem;

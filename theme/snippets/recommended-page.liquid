@@ -1,0 +1,12 @@
+<div class="list__item">
+    {% if asset.meta_info.markup_webpage_image and asset.meta_info.markup_webpage_image != '' %}
+        <a class="list__bg lazyload" href="{{ asset.url }}" data-bg="{{ asset.meta_info.markup_webpage_image[0][0] | image_url }}"></a>
+    {% else %}
+        <a class="list__bg lazyload" href="{{ asset.url }}" data-bg="{{ 'blue-abstract-background.jpg' | image_url }}"></a>
+    {% endif %}
+    <div class="list__info">
+        <div class="list__t">
+            <a href="{{asset.meta_fields.header}}" class="list__t">{{asset.meta_fields.header}}</a>
+        </div>
+    </div>
+</div>
