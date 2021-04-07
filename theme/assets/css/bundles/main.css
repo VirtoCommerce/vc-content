@@ -8172,6 +8172,10 @@ code {
     margin-top: 1.875rem;
 }
 
+.block__descr + .block__actions {
+    margin-top: 1.25rem;
+}
+
 .block__t {
     font-weight: 900;
 }

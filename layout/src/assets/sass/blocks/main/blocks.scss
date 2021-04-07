@@ -530,6 +530,11 @@
                 margin-top: 1.875rem;
             }
         }
+
+        & + .block__actions
+        {
+            margin-top: 1.25rem;
+        }
     }
 
 	&__t
