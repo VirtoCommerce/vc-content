@@ -1,6 +1,6 @@
 <div class="d-xl-flex mt-3 mt-xl-5">
     <div class="d-flex flex-column pr-xl-5">
-        <a href="{{ article.url | absolute_url }}" class="sticked-title" style="color:black">{{article.meta_fields.articleTitle}}</a>
+        <a href="{{ article.url | absolute_url }}" class="sticked-title" style="color:black">{{article.meta_fields.articleTitle | replace: '&nbsp;', ' '}}</a>
         {% assign stickedFontColorApplied = article.meta_fields.stickedFontColor != null and article.meta_fields.stickedFontColor != '' %}
         <a href="{{ article.url | absolute_url }}" class="read-more mt-4 mt-xl-auto mb-3 align-self-start" {% if stickedFontColorApplied %}style="color:{{article.meta_fields.stickedFontColor}}"{% endif %}>Read More</a>
         <hr class="mb-3 mb-xl-0"></hr>
