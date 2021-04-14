@@ -1266,6 +1266,26 @@
 				"Source",
 				"EnterModeBr"
 			]
+		},
+		{
+			"id": "blogRibbonText",
+			"label": "Ribbon text",
+			"type": "text",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Source",
+				"EnterModeBr"
+			]
+		},
+		{
+			"id": "blogRibbonButtonText",
+			"label": "Ribbon button text",
+			"type": "string"
 		}
 	]
   },
