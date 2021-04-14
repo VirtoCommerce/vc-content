@@ -5,8 +5,9 @@
     {% endif %}
     <div class="recommended__t mb-4">{{recommended_section_title}}</div>
     <div class="d-flex flex-column flex-lg-row">
+        {% assign current_article = article %}
         {% if article.meta_fields.recommendedSection == 'customUrls' %}
-            {% assign first_page = pages | where: 'url', '==', article.meta_fields.recommendedSectionLinkFirst %}
+            {% assign first_page = pages | where: 'url', '==', current_article.meta_fields.recommendedSectionLinkFirst %}
             {% if first_page != blank %}
                 {% assign first_page = first_page | first %}
                 {% assign first_page_url_starts_with_blog = (first_page.url | slice: 0, 5) == 'blog/' %}
@@ -17,8 +18,8 @@
                     {% include 'recommended-page' asset: first_page %}
                 {% endif %}
             {% endif %}
-
-            {% assign second_page = pages | where: 'url', '==', article.meta_fields.recommendedSectionLinkSecond %}
+            
+            {% assign second_page = pages | where: 'url', '==', current_article.meta_fields.recommendedSectionLinkSecond %}
             {% if second_page != blank %}
                 {% assign second_page = second_page | first %}
                 {% assign second_page_url_starts_with_blog = (second_page.url | slice: 0, 5) == 'blog/' %}
@@ -30,8 +31,7 @@
                 {% endif %}
             {% endif %}
         {% else %}
-            {% assign current_article = article %}
-            {% assign recommended_articles = (blog.articles | where: 'category', '==', article.category) | sort_list: 'publishedAt:desc' %}
+            {% assign recommended_articles = (blog.articles | where: 'category', '==', current_article.category) | sort_list: 'publishedAt:desc' %}
             {% assign recommended_articles_index = 0 %}
             {% for article in recommended_articles %}
                 {% if recommended_articles_index < 2 %}
