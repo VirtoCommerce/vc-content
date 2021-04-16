@@ -27,7 +27,6 @@
 	{{ '//fonts.googleapis.com/css?family=Roboto:400,100,300,700' | stylesheet_tag }}
 	{{ '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' | stylesheet_tag }}
 	{{ 'styles.min.css?v=' | append css_version | asset_url | stylesheet_tag }}
-    {{ 'jquery.fancybox.min.css' | asset_url | stylesheet_tag }}
     <script type="text/javascript">
         var appInsights=window.appInsights||function(config){
             function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i) }) }}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
@@ -55,9 +54,7 @@
 </head>
 <body>
     {% include 'google-tag-manager-body' %}
-    {% if can_track %}
-    {% include 'gdpr-cookie-compliance' %}
-    {% endif %}
+    {% include 'footer-ribbon' %}
     <div class="google-like">
         <div class="g-plusone" data-href="https://virtocommerce.com" data-size="tall"></div>
     </div>
@@ -80,11 +77,10 @@
             </div>
 
             <article class="main" role="main">
-                <div class="container" ng-controller="glossaryController">
-                    <div class="glossary" ng-init="initGlossary()">
+                <div class="container">
+                    <div class="glossary">
                         <div style="width:100%; min-width:100%;">
                             {% include 'breadcrumb' %}
-                            {% include 'tags-selector' %}
                         </div>
                         {% include 'glossary-left-menu' %}
                         <div class="glossary__content">
@@ -115,7 +111,7 @@
         };
     </script>
     <script>
-            var BASE_URL = '{{ "/" | full_url }}';
+        var BASE_URL = '{{ "/" | full_url }}';
     </script>
     {{ 'main.min.js?v=' | append main_min_js_version | asset_url | script_tag }}
     {% include 'slider-asset' %}
@@ -128,8 +124,6 @@
             });
         });
     </script>
-    {{ 'segment-form-handler.js' | asset_url | script_tag }}
-    {{ 'angular-bundle-glossary.min.js' | asset_url | script_tag }}
     {{ '//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js' | script_tag }}
 </body>
 </html>

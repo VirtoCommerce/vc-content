@@ -97,29 +97,46 @@
     {% endif %}
 
   {% elsif template contains 'page' %}
-    {%- assign menu_tabs = linklists['main-menu'] -%}
-    {%- for tab in menu_tabs.links -%}
-      <!--blocks-->
-      {%- assign tab_blocks = linklists[tab.url].links -%}
-      {%- for current_block in tab_blocks -%}
-        {%- assign current_links = linklists[current_block.url].links -%}
-        {% if current_links contains page.url %}
-          <div class="list__item">
-            <a href="{{ current_links[0].url | absolute_url }}" class="list__link">{{ tab.title }}</a>
-          </div>
-        {% endif %}
-      {%- endfor -%}
-    {%- endfor -%}
 
-    {%- assign glossary_links = linklists['Glossary'].links -%}
-    {% assign found_link = glossary_links | where: 'Url', 'contains', page.url | first %}
-    {% if found_link and page.url != 'glossary' %}
-      <div class="list__item">
-        <a href="{{ 'glossary' | absolute_url }}" class="list__link">Glossary</a>
-      </div>
+    {% assign page_url_starts_with_glossary = page.url | slice: 0, 8 %}
+    {% if page_url_starts_with_glossary != 'glossary' %}
+        {%- assign menu_tabs = linklists['main-menu'] -%}
+        {%- for tab in menu_tabs.links -%}
+          <!--blocks-->
+          {%- assign tab_blocks = linklists[tab.url].links -%}
+          {%- for current_block in tab_blocks -%}
+            {%- assign current_links = linklists[current_block.url].links -%}
+            {% if current_links contains page.url %}
+              <div class="list__item">
+                <a href="{{ current_links[0].url | absolute_url }}" class="list__link">{{ tab.title }}</a>
+              </div>
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    {% else %}
+        {%- assign glossary_links = linklists['Glossary'].links -%}
+        {% assign found_link = glossary_links | where: 'Url', 'contains', page.url | first %}
+        {% if found_link and page.url != 'glossary' %}
+            <div class="list__item">
+                <a href="{{ 'glossary' | absolute_url }}" class="list__link selected">Glossary</a>
+            </div>
+        {% endif %}
+
+        {% if page.url == 'glossary' %}
+            <div class="list__item">Glossary</div>
+        {% else %}
+            {% assign current_glossary_page = linklists['Glossary'].links | where: 'Url', '==', (page.url | prepend: '/') %}
+            {% if current_glossary_page != blank %}
+                <div class="list__item">{{(current_glossary_page | first).title}}</div>
+            {% else %}
+                {% if page.title != null %}
+                    <div class="list__item">{{page.title}}</div>
+                {% elsif page.meta_fields.header != null %}
+                    <div class="list__item">{{page.meta_fields.header}}</div>
+                {% endif %}
+            {% endif %}
+        {% endif %}
     {% endif %}
-      
-    <div class="list__item">{{ page.title }}</div>
   {% else %}
 
    <div class="list__item">{{ page_title }}</div>

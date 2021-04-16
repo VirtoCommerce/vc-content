@@ -1,0 +1,43 @@
+[
+    {
+        "type": "settings",
+        "title": "",
+        "permalink": "glossary",
+        "layout": "glossary",
+        "noindex": false,
+        "header": "eCommerce Glossary from A to Z. Terms, Definitions and Clarifications - Virto Commerce",
+        "author": null,
+        "markup_webpage_title": "Ecommerce Glossary from A to Z. Terms and definitions | Virto Commerce",
+        "markup_webpage_description": "Ecommerce Glossary from A to Z. Terms and definitions | Virto Commerce",
+        "markup_webpage_type": null,
+        "markup_webpage_image": {
+            "url": "https://virtocommerce.com/themes/assets/virtocommerce.png",
+            "altText": null
+        },
+        "backgroundImage": null,
+        "markup_webpage_date_created": null,
+        "isGenerateCanonicalTag": null,
+        "isGenerateNoFollowMeta": null
+    },
+    {
+        "id": 1,
+        "type": "glossary-main",
+        "__id": "glossarymain8jbK",
+        "name": null,
+        "useDarkMode": false,
+        "title": "E-Commerce Glossary",
+        "subtitle": "<p>Just like every business field e-commerce uses quite a bit of its own specific terminology and professional jargon. The further this space evolves, the more new terms it introduces. So if you&rsquo;re confused about what SaaS or B2B stands for or if you need some additional clarification on certain common words and phrases you keep coming across in e-commerce-related articles and documents, we&rsquo;re here to help!</p>\n",
+        "firstButton": {
+            "url": "contact-us",
+            "urlText": "Try It Now",
+            "style": "btn btn--orange",
+            "openInNewTab": false
+        },
+        "secondButton": {
+            "url": "request-demo",
+            "urlText": "Request Information & Personal Demo",
+            "style": "btn btn--orange",
+            "openInNewTab": false
+        }
+    }
+]

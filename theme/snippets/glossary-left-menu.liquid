@@ -1,24 +1,22 @@
-<script>
-var glossaries = '{{ linklists['Glossary'].links | json }}';
-</script>
-<div class="glossary__sidebar" ng-cloak ng-if="glossaries || glossaries.length">
+{% assign glossaries = linklists['Glossary'].links %}
+<div class="glossary__sidebar">
     <ul class="nav flex-column">
-      {% raw %}
-        <li class="nav__item" ng-repeat="glossary in glossaries">
-          <a href="{{ glossary.url }}" class="nav__link">
-            <svg class="nav__icon" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Documentation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g transform="translate(-133.000000, -115.000000)" >
-                        <g>
-                            <path class="path" stroke-width="1" d="M133.50025,128.00025 C133.37225,128.00025 133.24425,127.95125 133.14625,127.85425 C132.95125,127.65825 132.95125,127.34225 133.14625,127.14625 L138.43725,121.85625 C138.63325,121.66025 138.63325,121.34025 138.43725,121.14425 L133.14625,115.85425 C132.95125,115.65825 132.95125,115.34225 133.14625,115.14625 C133.34225,114.95125 133.65825,114.95125 133.85425,115.14625 L139.14425,120.43725 C139.72925,121.02325 139.72925,121.97725 139.14525,122.56325 L133.85425,127.85425 C133.75625,127.95125 133.62825,128.00025 133.50025,128.00025" id="Fill-1" transform="translate(136.291563, 121.500125) rotate(-360.000000) translate(-136.291563, -121.500125) "></path>
+        {% for glossary in glossaries %}
+            <li class="nav__item">
+                <a href="{{ glossary.url }}" class="nav__link {% if glossary.url == page.url or glossary.url == (page.url | prepend: '/') %}selected{% endif %}">
+                    <svg class="nav__icon" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Documentation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-133.000000, -115.000000)" >
+                                <g>
+                                    <path class="path" stroke-width="1" d="M133.50025,128.00025 C133.37225,128.00025 133.24425,127.95125 133.14625,127.85425 C132.95125,127.65825 132.95125,127.34225 133.14625,127.14625 L138.43725,121.85625 C138.63325,121.66025 138.63325,121.34025 138.43725,121.14425 L133.14625,115.85425 C132.95125,115.65825 132.95125,115.34225 133.14625,115.14625 C133.34225,114.95125 133.65825,114.95125 133.85425,115.14625 L139.14425,120.43725 C139.72925,121.02325 139.72925,121.97725 139.14525,122.56325 L133.85425,127.85425 C133.75625,127.95125 133.62825,128.00025 133.50025,128.00025" id="Fill-1" transform="translate(136.291563, 121.500125) rotate(-360.000000) translate(-136.291563, -121.500125) "></path>
+                                </g>
+                            </g>
                         </g>
-                    </g>
-                </g>
-            </svg>
-          {{ glossary.title }}
-          </a>
-        </li>
-      {% endraw %}
-      {% include 'vc-vertical-banners' %}
+                    </svg>
+                    {{glossary.title}}
+                </a>
+            </li>
+        {% endfor %}
+        {% include 'vc-vertical-banners' %}
     </ul>
 </div>

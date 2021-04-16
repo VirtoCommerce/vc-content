@@ -10023,6 +10023,53 @@
 		}
 	]
   },
+  "glossary-main": {
+	"id": "glossary-main",
+	"name": "Glossary main",
+	"icon": "image-text",
+	"displayField": "name",
+	"includeShared": [
+		"buttons"
+	],
+	"category": "Glossary",
+	"settings": [
+		{
+			"id": "title",
+			"label": "Title",
+			"type": "text",
+			"default": "Glossary title",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Maximize",
+				"Source",
+				"EnterModeBr"
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "subtitle",
+			"label": "Subtitle",
+			"type": "text",
+			"default": "Glossary subtitle",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Maximize",
+				"Source"
+			],
+			"tab": "Content"
+		}
+	]
+  },
   "form-case-study": {
     "name": "Form Case Study",
     "icon": "image-text",
