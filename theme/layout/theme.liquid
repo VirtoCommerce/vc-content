@@ -82,51 +82,7 @@
 </head>
 <body>
     {% include 'google-tag-manager-body' %}
-    <div class="footer-ribbon w-100">
-        {% if current_article.meta_fields.ribbonCTAVisibility == 'True' %}
-            {% assign page_url_starts_with_blog = (page.url | slice: 0, 5) == 'blog/' %}
-            {% if page_url_starts_with_blog == true %}
-                {% assign blog_ribbon_text = '' %}
-                {% if settings.blogRibbonText != '' %}
-                    {% assign blog_ribbon_text = settings.blogRibbonText %}
-                {% endif %}
-
-                {% if current_article.meta_fields.ribbonCTAText != blank %}
-                    {% if current_article.meta_fields.ribbonCTAText != '' %}
-                        {% assign blog_ribbon_text = current_article.meta_fields.ribbonCTAText %}
-                    {% endif %}
-                {% endif %}
-
-                <div class="blog-ribbon">
-                    <div class="pt-3 pb-3 pl-4 pl-lg-5 pr-4 pr-lg-5 d-sm-flex justify-content-center align-items-center">
-                        <div>{{blog_ribbon_text}}</div>
-
-                        {% assign blog_ribbon_button_text = '' %}
-                        {% if settings.blogRibbonButtonText != '' %}
-                            {% assign blog_ribbon_button_text = settings.blogRibbonButtonText %}
-                        {% endif %}
-
-                        {% if current_article.meta_fields.ribbonCTAButtonText != blank %}
-                            {% if current_article.meta_fields.ribbonCTAButtonText != '' %}
-                                {% assign blog_ribbon_button_text = current_article.meta_fields.ribbonCTAButtonText %}
-                            {% endif %}
-                        {% endif %}
-
-                        {% assign blog_ribbon_button_minwidth = '' %}
-                        {% if current_article.meta_fields.ribbonCTAButtonMinWidth != blank %}
-                            {% if current_article.meta_fields.ribbonCTAButtonMinWidth != '' %}
-                                {% assign blog_ribbon_button_minwidth = current_article.meta_fields.ribbonCTAButtonMinWidth %}
-                            {% endif %}
-                        {% endif %}
-                        <a class="btn w-100 w-sm-auto mt-2 mt-sm-0 ml-sm-3 justify-content-center" {% if blog_ribbon_button_minwidth != '' %}style="min-width:{{blog_ribbon_button_minwidth}}px"{% endif %}>{{blog_ribbon_button_text}}</a>
-                    </div>
-                </div>
-            {% endif %}
-        {% endif %}
-        {% if can_track %}
-            {% include 'gdpr-cookie-compliance' %}
-        {% endif %}
-    </div>
+    {% include 'footer-ribbon' %}
 
     <div id="layout" {% if page == 'index' or template == 'index' %}class="layout--dark"{% endif %}>
         <div class="layout-canvas">
