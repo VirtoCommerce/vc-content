@@ -11235,7 +11235,14 @@ input.ng-touched.ng-invalid, .input-validation-error {
     background: url("../../images/redesign/microsoft.png") center center/contain no-repeat;
     font-size: 0;
     height: 53px;
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-left: -50px;
+}
+
+@media (max-width: 767.98px) {
+    .footer .partner a {
+        margin-left: 0;
+    }
 }
 
 .footer .nav__link {
