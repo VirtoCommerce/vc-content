@@ -241,6 +241,30 @@
 			"label": "Recommended section link second",
 			"type": "string",
 			"multiline": true
+		},
+		{
+			"id": "ribbonCTAVisibility",
+			"label": "Ribbon CTA visibility",
+			"type": "checkbox",
+			"default": false
+		},
+		{
+			"id": "ribbonCTAText",
+			"label": "Ribbon CTA text",
+			"type": "string",
+			"multiline": true
+		},
+		{
+			"id": "ribbonCTAButtonText",
+			"label": "Ribbon CTA button text",
+			"type": "string",
+			"multiline": true
+		},
+		{
+			"id": "ribbonCTAButtonMinWidth",
+			"label": "Ribbon CTA button min width",
+			"type": "string",
+			"multiline": true
 		}
     ]
   },
@@ -9996,6 +10020,53 @@
 			  }
 			],
 			"tab": "Settings"
+		}
+	]
+  },
+  "glossary-main": {
+	"id": "glossary-main",
+	"name": "Glossary main",
+	"icon": "image-text",
+	"displayField": "name",
+	"includeShared": [
+		"buttons"
+	],
+	"category": "Glossary",
+	"settings": [
+		{
+			"id": "title",
+			"label": "Title",
+			"type": "text",
+			"default": "Glossary title",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Maximize",
+				"Source",
+				"EnterModeBr"
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "subtitle",
+			"label": "Subtitle",
+			"type": "text",
+			"default": "Glossary subtitle",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"Maximize",
+				"Source"
+			],
+			"tab": "Content"
 		}
 	]
   },

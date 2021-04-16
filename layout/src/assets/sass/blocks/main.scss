@@ -133,16 +133,23 @@
     }
 }
 
+.footer-ribbon
+{
+    position: fixed;
+    bottom: 0;
+    z-index: 5000;
+}
+
+.blog-ribbon
+{
+    background-color: #F5F5F5;
+    font-weight: 300;
+}
+
 .cookie-bar
 {
     background: $gray-200;
-    bottom: 0;
     font-size: .875rem;
-    left: 0;
-    padding: .625rem;
-    position: fixed;
-    right: 0;
-    z-index: 5000;
 
     a[href]
     {
@@ -262,6 +269,18 @@
 .overflow-auto
 {
     overflow: auto;
+}
+
+.w-100
+{
+    width: 100%!important;
+}
+
+@include media-breakpoint-up(sm) {
+    .w-sm-auto
+    {
+        width: auto!important;
+    }
 }
 
 /* Sections */

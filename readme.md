@@ -1,1 +1,1 @@
-Hello World!1
+At update qa and prod environments need to ignore file theme\config\settings_data.json. He should stay immutable.
