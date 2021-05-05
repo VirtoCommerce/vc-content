@@ -1,0 +1,26 @@
+[
+    {
+        "type": "settings",
+        "title": "",
+        "permalink": "about-us",
+        "layout": "theme",
+        "noindex": false,
+        "header": "About Virto Commerce - Top Enterprise ASP.NET Enterprise Ecommerce Platform",
+        "author": null,
+        "markup_webpage_title": "About Virto Commerce - Top Enterprise ASP.NET Enterprise Ecommerce Platform",
+        "markup_webpage_description": "",
+        "markup_webpage_type": null,
+        "markup_webpage_image": null,
+        "backgroundImage": null,
+        "markup_webpage_date_created": null,
+        "isGenerateCanonicalTag": null,
+        "isGenerateNoFollowMeta": null
+    },
+    {
+        "id": 1,
+        "type": "about-us",
+        "__id": "aboutusJfS",
+        "name": null,
+        "useDarkMode": false
+    }
+]

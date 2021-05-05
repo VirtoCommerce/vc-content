@@ -10070,6 +10070,13 @@
 		}
 	]
   },
+  "about-us": {
+	"id": "about-us",
+	"name": "About us",
+	"icon": "image-text",
+	"displayField": "name",
+	"settings": []
+  },
   "form-case-study": {
     "name": "Form Case Study",
     "icon": "image-text",
