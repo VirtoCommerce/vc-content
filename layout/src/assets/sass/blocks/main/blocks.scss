@@ -1634,6 +1634,45 @@
             font-weight: 600;
         }
     }
+
+    .cta
+    {
+        max-width: 730px;
+        min-height: 200px;
+        font-size: 26px;
+        
+        .half-colored:before
+        {
+            position: absolute;
+            content: '';
+            background-color: black;
+            top: 0;
+            left: 0;
+            right: 50%;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .half-colored:after
+        {
+            position: absolute;
+            content: '';
+            background-color: white;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            border: 1px #ececec solid;
+        }
+    }
+
+    @media (min-width: 575.98px) and (max-width: 767px) {
+        .cta a.btn
+        {
+            font-size: 11px;
+        }
+    }
 }
 
 

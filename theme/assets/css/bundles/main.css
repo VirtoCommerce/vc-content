@@ -5890,11 +5890,11 @@ code {
 }
 
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 
 .overflow-auto {
-    overflow: auto;
+    overflow: auto !important;
 }
 
 .w-100 {
@@ -5905,6 +5905,39 @@ code {
     .w-sm-auto {
         width: auto !important;
     }
+
+    .text-sm-left {
+        text-align: left !important;
+    }
+
+    .border-lightgray-wl {
+        border: 1px #ECECEC solid;
+        border-left: none;
+    }
+}
+
+.bg-gradient {
+    background: linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%) !important;
+}
+
+.font-circular {
+    font-family: CircularStd;
+}
+
+.pattern-inner-img {
+    position: absolute;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-black {
+    background-color: black;
 }
 
 .section {
@@ -9084,6 +9117,41 @@ code {
 
 .block .cta-background .block__t {
     font-weight: 600;
+}
+
+.block .cta {
+    max-width: 730px;
+    min-height: 200px;
+    font-size: 26px;
+}
+
+.block .cta .half-colored:before {
+    position: absolute;
+    content: '';
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    z-index: 0;
+}
+
+.block .cta .half-colored:after {
+    position: absolute;
+    content: '';
+    background-color: white;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    border: 1px #ececec solid;
+}
+
+@media (min-width: 575.98px) and (max-width: 767px) {
+    .block .cta a.btn {
+        font-size: 11px;
+    }
 }
 
 .block--cover {

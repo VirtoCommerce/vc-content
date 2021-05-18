@@ -8358,6 +8358,136 @@
       }
     ]
   },
+  "call-to-action-with-pattern-background": {
+	"id": "call-to-action-with-pattern-background",
+	"name": "Call to action with pattern background",
+	"icon": "image-text",
+	"displayField": "name",
+	"category": "Promotions and CTAs",
+	"includeShared": [
+		"paddings",
+		"dividers",
+		"title",
+		"buttons"
+	],
+	"settings": [
+		{
+			"id": "pattern",
+			"label": "Pattern",
+			"type": "select",
+			"default": "pattern1",
+			"options": [
+				{
+					"value": "pattern1",
+					"label": "Pattern 1"
+				},
+				{
+					"value": "pattern2",
+					"label": "Pattern 2"
+				},
+				{
+					"value": "pattern3",
+					"label": "Pattern 3"
+				},
+				{
+					"value": "pattern4",
+					"label": "Pattern 4"
+				},
+				{
+					"value": "pattern5",
+					"label": "Pattern 5"
+				},
+				{
+					"value": "pattern6",
+					"label": "Pattern 6"
+				},
+				{
+					"value": "pattern7",
+					"label": "Pattern 7"
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "textAreaWidth",
+			"label": "Text area width",
+			"type": "select",
+			"default": "none",
+			"options": [
+				{
+					"value": "none",
+					"label": "None"
+				},
+				{
+					"value": "1",
+					"label": "1 col"
+				},
+				{
+					"value": "2",
+					"label": "2 cols"
+				},
+				{
+					"value": "3",
+					"label": "3 cols"
+				},
+				{
+					"value": "4",
+					"label": "4 cols"
+				},
+				{
+					"value": "5",
+					"label": "5 cols"
+				},
+				{
+					"value": "6",
+					"label": "6 cols"
+				},
+				{
+					"value": "7",
+					"label": "7 cols"
+				},
+				{
+					"value": "8",
+					"label": "8 cols"
+				},
+				{
+					"value": "9",
+					"label": "9 cols"
+				},
+				{
+					"value": "10",
+					"label": "10 cols"
+				},
+				{
+					"value": "11",
+					"label": "11 cols"
+				},
+				{
+					"value": "12",
+					"label": "12 cols"
+				}
+			],
+			"tab": "Content"
+		},
+		{
+			"id": "textAlignment",
+			"label": "Text alignment",
+			"type": "select",
+			"default": "center",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				}
+			],
+			"tab": "Content"
+		}
+	]
+  },
   "query-case-studies": {
     "id": "query-case-studies",
     "name": "Query case studies",
