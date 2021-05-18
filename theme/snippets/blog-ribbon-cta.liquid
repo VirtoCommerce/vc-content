@@ -1,4 +1,4 @@
-{% if current_article.meta_fields.ribbonCTAVisibility == 'True' %}
+{% if current_article.meta_fields.ribbonCTAVisibility == true or current_article.meta_fields.ribbonCTAVisibility == 'True' %}
     {% assign page_url_starts_with_blog = (page.url | slice: 0, 5) == 'blog/' %}
     {% if page_url_starts_with_blog == true %}
         {% assign blog_ribbon_text = '' %}
@@ -33,7 +33,7 @@
                         {% assign blog_ribbon_button_minwidth = current_article.meta_fields.ribbonCTAButtonMinWidth %}
                     {% endif %}
                 {% endif %}
-                <a class="btn w-100 w-sm-auto mt-2 mt-sm-0 ml-sm-3 justify-content-center" {% if blog_ribbon_button_minwidth != '' %}style="min-width:{{blog_ribbon_button_minwidth}}px"{% endif %}>{{blog_ribbon_button_text}}</a>
+                <a href="{{current_article.meta_fields.ribbonCTAButtonLink}}" class="btn w-100 w-sm-auto mt-2 mt-sm-0 ml-sm-3 justify-content-center" {% if blog_ribbon_button_minwidth != '' %}style="min-width:{{blog_ribbon_button_minwidth}}px"{% endif %}>{{blog_ribbon_button_text}}</a>
             </div>
         </div>
     {% endif %}

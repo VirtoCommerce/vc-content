@@ -261,6 +261,12 @@
 			"multiline": true
 		},
 		{
+			"id": "ribbonCTAButtonLink",
+			"label": "Ribbon CTA button link",
+			"type": "string",
+			"multiline": true
+		},
+		{
 			"id": "ribbonCTAButtonMinWidth",
 			"label": "Ribbon CTA button min width",
 			"type": "string",
