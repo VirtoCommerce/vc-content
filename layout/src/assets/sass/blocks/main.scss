@@ -263,12 +263,12 @@
 
 .text-center
 {
-    text-align: center;
+    text-align: center!important;
 }
 
 .overflow-auto
 {
-    overflow: auto;
+    overflow: auto!important;
 }
 
 .w-100
@@ -280,6 +280,53 @@
     .w-sm-auto
     {
         width: auto!important;
+    }
+
+    .text-sm
+    {
+        &-left
+        {
+            text-align: left!important;
+        }
+    }
+    
+    .border-lightgray-wl
+    {
+        border: 1px #ECECEC solid;
+        border-left: none;
+    }
+}
+
+.bg-gradient
+{
+    background: linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%)!important;
+}
+
+.font-circular
+{
+    font-family: CircularStd;
+}
+
+.pattern-inner-img
+{
+    position: absolute;
+}
+
+.z-index-1
+{
+    z-index: 1;
+}
+
+.bg
+{
+    &-white
+        {
+        background-color: white;
+    }
+
+    &-black
+    {
+        background-color: black;
     }
 }
 
