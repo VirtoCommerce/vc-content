@@ -13787,6 +13787,8 @@
     "icon": "text-columns",
     "category": "Queries and Other",
 	"includeShared": [
+		"title",
+		"seo-title",
 		"reduced-paddings",
 		"paddings",
 		"dividers",
@@ -13794,6 +13796,18 @@
 		"background-image"
 	],
     "settings": [
+		{
+			"id": "title",
+			"settings": [
+			  "TextColor",
+			  "Link",
+			  "Unlink",
+			  "FontSize",
+			  "Maximize",
+			  "Source",
+			  "EnterModeBr"
+			]
+		},
         {
             "id": "style",
             "label": "Block style",
@@ -13850,12 +13864,6 @@
 			"default": false,
 			"tab": "Settings"
 		},
-        {
-            "id": "title",
-            "label": "Title",
-            "type": "string",
-			"tab": "Content"
-        },
         {
             "id": "itemsType",
             "label": "Items type",
