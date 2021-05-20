@@ -249,6 +249,11 @@
     padding-right: 5rem!important;
 }
 
+.pt-6
+{
+    padding-top: 5rem!important;
+}
+
 @include media-breakpoint-up(lg) {
     .pl-lg-6
     {
@@ -289,12 +294,11 @@
             text-align: left!important;
         }
     }
-    
-    .border-lightgray-wl
-    {
-        border: 1px #ECECEC solid;
-        border-left: none;
-    }
+}
+
+.border-h-ec
+{
+    border: 1px #ECECEC solid;
 }
 
 .bg-gradient

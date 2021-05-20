@@ -5879,6 +5879,10 @@ code {
     padding-right: 5rem !important;
 }
 
+.pt-6 {
+    padding-top: 5rem !important;
+}
+
 @media (min-width: 992px) {
     .pl-lg-6 {
         padding-left: 5rem !important;
@@ -5909,11 +5913,10 @@ code {
     .text-sm-left {
         text-align: left !important;
     }
+}
 
-    .border-lightgray-wl {
-        border: 1px #ECECEC solid;
-        border-left: none;
-    }
+.border-h-ec {
+    border: 1px #ECECEC solid;
 }
 
 .bg-gradient {
@@ -9151,6 +9154,12 @@ code {
 @media (min-width: 575.98px) and (max-width: 767px) {
     .block .cta a.btn {
         font-size: 11px;
+    }
+}
+
+@media (min-width: 768px) {
+    .block .cta a.btn {
+        font-size: 15px;
     }
 }
 

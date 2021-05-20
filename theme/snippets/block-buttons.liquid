@@ -11,8 +11,21 @@
 
         {% if firstBtn.fillColor != '' %}
             {% assign first_btn_style = first_btn_style | append: 'background-color:' | append: firstBtn.fillColor | append: ';' %}
-            {% assign first_btn_style = first_btn_style | append: 'border-color:' | append: firstBtn.fillColor | append: ';' %}
+            {% if firstBtn.borderColor == null or firstBtn.borderColor == '' %}
+                {% assign first_btn_style = first_btn_style | append: 'border-color:' | append: firstBtn.fillColor | append: ';' %}
+            {% endif %}
         {% endif %}
+
+        {% if firstBtn.borderColor == true %}
+            {% if firstBtn.borderColor != '' %}
+                {% assign first_btn_style = first_btn_style | append: 'border-color:' | append: firstBtn.borderColor | append: ';' %}
+            {% endif %}
+        {% endif %}
+
+        {% if firstBtn.borderWidth == true and firstBtn.borderWidth != '' %}
+            {% assign first_btn_style = first_btn_style | append: 'border-width:' | append: firstBtn.borderWidth | append: 'px;' %}
+        {% endif %}
+
         {% if firstBtn.textColor != '' %}
             {% assign first_btn_style = first_btn_style | append: 'color:' | append: firstBtn.textColor | append: ';' %}
         {% endif %}
@@ -33,39 +46,41 @@
         {% else %}
             <a href="{{firstBtn.url}}" class="{{firstBtn.style}}" {{first_btn_attributes}}>{{firstBtn.urlText}}</a>
         {% endif %}
-        {% if secondBtn != '' and secondBtn.urlText != '' %}
-            {% assign second_btn_style = '' %}
-            {% if block.secondButtonColor != '' %}
-                {% assign second_btn_style = second_btn_style | append: 'background-color:' | append: block.secondButtonColor | append: ';' %}
-                {% assign second_btn_style = second_btn_style | append: 'border-color:' | append: block.secondButtonColor | append: ';' %}
-            {% endif %}
-            {% if block.secondButtonColorText != '' %}
-                {% assign second_btn_style = second_btn_style | append: 'color:' | append: block.secondButtonColorText | append: ';' %}
-            {% endif %}
+        {% if secondBtn == true %}
+            {% if secondBtn != '' and secondBtn.urlText != '' %}
+                {% assign second_btn_style = '' %}
+                {% if block.secondButtonColor != '' %}
+                    {% assign second_btn_style = second_btn_style | append: 'background-color:' | append: block.secondButtonColor | append: ';' %}
+                    {% assign second_btn_style = second_btn_style | append: 'border-color:' | append: block.secondButtonColor | append: ';' %}
+                {% endif %}
+                {% if block.secondButtonColorText != '' %}
+                    {% assign second_btn_style = second_btn_style | append: 'color:' | append: block.secondButtonColorText | append: ';' %}
+                {% endif %}
 
-            {% if secondBtn.fillColor != '' %}
-                {% assign second_btn_style = second_btn_style | append: 'background-color:' | append: secondBtn.fillColor | append: ';' %}
-                {% assign second_btn_style = second_btn_style | append: 'border-color:' | append: secondBtn.fillColor | append: ';' %}
-            {% endif %}
-            {% if secondBtn.textColor != '' %}
-                {% assign second_btn_style = second_btn_style | append: 'color:' | append: secondBtn.textColor | append: ';' %}
-            {% endif %}
+                {% if secondBtn.fillColor != '' %}
+                    {% assign second_btn_style = second_btn_style | append: 'background-color:' | append: secondBtn.fillColor | append: ';' %}
+                    {% assign second_btn_style = second_btn_style | append: 'border-color:' | append: secondBtn.fillColor | append: ';' %}
+                {% endif %}
+                {% if secondBtn.textColor != '' %}
+                    {% assign second_btn_style = second_btn_style | append: 'color:' | append: secondBtn.textColor | append: ';' %}
+                {% endif %}
 
-            {% assign second_btn_attributes = '' %}
-            {% if secondBtn.openInNewTab == 'True' %}
-                {% assign second_btn_attributes = second_btn_attributes | append: 'target="_blank"' %}
-            {% endif %}
-            {% if secondBtn.noFollow == 'True' %}
-                {% assign second_btn_attributes = second_btn_attributes | append: ' rel="nofollow"' %}
-            {% endif %}
-            {% if second_btn_style != '' %}
-                {% assign second_btn_attributes = second_btn_attributes | append: ' style="{{second_btn_style}}"' | render %}
-            {% endif %}
+                {% assign second_btn_attributes = '' %}
+                {% if secondBtn.openInNewTab == 'True' %}
+                    {% assign second_btn_attributes = second_btn_attributes | append: 'target="_blank"' %}
+                {% endif %}
+                {% if secondBtn.noFollow == 'True' %}
+                    {% assign second_btn_attributes = second_btn_attributes | append: ' rel="nofollow"' %}
+                {% endif %}
+                {% if second_btn_style != '' %}
+                    {% assign second_btn_attributes = second_btn_attributes | append: ' style="{{second_btn_style}}"' | render %}
+                {% endif %}
 
-            {% if secondBtn.style == 'btn-gradient' %}
-                {% include 'gradient-button' url: secondBtn.url, text: secondBtn.urlText, background: block.backgroundColorHex %}
-            {% else %}
-                <a href="{{secondBtn.url}}" class="{{secondBtn.style}}" {{second_btn_attributes}}>{{secondBtn.urlText}}</a>
+                {% if secondBtn.style == 'btn-gradient' %}
+                    {% include 'gradient-button' url: secondBtn.url, text: secondBtn.urlText, background: block.backgroundColorHex %}
+                {% else %}
+                    <a href="{{secondBtn.url}}" class="{{secondBtn.style}}" {{second_btn_attributes}}>{{secondBtn.urlText}}</a>
+                {% endif %}
             {% endif %}
         {% endif %}
     </div>

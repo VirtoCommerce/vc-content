@@ -995,6 +995,10 @@
 				"label": "Orange button"
 			  },
 			  {
+				"value": "btn btn--round bg-gradient",
+				"label": "Orange gradient"
+			  },
+			  {
 				"value": "btn btn--round",
 				"label": "Round button"
 			  },
