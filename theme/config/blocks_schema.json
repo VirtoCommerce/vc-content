@@ -8376,7 +8376,6 @@
 	"category": "Promotions and CTAs",
 	"includeShared": [
 		"paddings",
-		"dividers",
 		"title",
 		"buttons"
 	],
