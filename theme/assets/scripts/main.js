@@ -1,3 +1,6 @@
+var isMozillaBrowser = /Firefox/i.test(navigator.userAgent);
+var mozillaMouseWheelEventName = 'DOMMouseScroll';
+
 (function ($) {
     if (!!$.validator) {
         $.validator.unobtrusive.adapters.addBool("mandatory", "required");
@@ -5,22 +8,22 @@
 }(jQuery));
 
 $(function () {
-    var cookies = document.cookie.split(';');
+    var cookies = document.cookie.split(';').map(c => c.trim());
     var currentIpCookie = null;
     var token = null;
 
     for (var cookie of cookies) {
-        if (cookie.startsWith(' current_ip=')) {
+        if (cookie.startsWith('current_ip=')) {
             currentIpCookie = cookie;
         }
-        if (cookie.startsWith(' XSRF-TOKEN=')) {
-            token = cookie.replace(' XSRF-TOKEN=', '');
+        if (cookie.startsWith('XSRF-TOKEN=')) {
+            token = cookie.replace('XSRF-TOKEN=', '');
         }
     }
 
     var currentIp = null;
     if (currentIpCookie) {
-        currentIp = currentIpCookie.replace(' current_ip=', '');
+        currentIp = currentIpCookie.replace('current_ip=', '');
     } else {
         $.ajax({
             url: `https://api.ipdata.co?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip`,
@@ -435,5 +438,23 @@ $(function () {
         } else {
             e.preventDefault();
         }
+    });
+
+    var showUsefulLinksAndBanner = () => $('.blog-content .useful-links, .blog-content .banner').animate({ opacity: 1 }, 1250);
+
+    if (isMozillaBrowser) {
+        window.addEventListener(mozillaMouseWheelEventName, function () {
+            showUsefulLinksAndBanner();
+            window.removeEventListener(mozillaMouseWheelEventName);
+        });
+    } else {
+        $(window)[0].onmousewheel = function () {
+            showUsefulLinksAndBanner();
+            this.onmousewheel = null;
+        };
+    }
+
+    $(window).one('swipeup swipedown', function () {
+        showUsefulLinksAndBanner();
     });
 });

@@ -37,18 +37,46 @@
             </style>
             {% endif %}
         </div>
+        {% assign need_tocca = true %}
         <div class="blog-content ml-auto mr-auto">
-            {% include 'json-blocks' page: article -%}
-            {% include 'article-author' article_author: page_settings.author -%}
-            <div class="blog__meta">
-                <div class="list list--tags list--tags-small">
-                    {% for tag in article.tags %}
-                        {% assign tag_url = '/blog/tag/' | append: tag  %}
-                        <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
-                    {% endfor %}
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="col col-lg-4 col-xl-2 d-none d-xl-block">
+                    {% if article.meta_fields.usefulLinks != blank and article.meta_fields.usefulLinks.size > 0 %}
+                        {% assign need_tocca = true %}
+                        <div class="useful-links position-sticky row justify-content-center ml-auto mr-auto" style="opacity:0">
+                            <div class="useful-links__inner ml-auto mr-auto font-helvetica font-weight-normal break-word">
+                                <div class="pb-4">Useful links:</div>
+                                {% for link in article.meta_fields.usefulLinks %}
+                                    <div>
+                                        <a href="{{link.url}}">{{link.title}}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col col-lg col-xl-8">
+                    {% include 'json-blocks' page: article -%}
+                    {% include 'article-author' article_author: page_settings.author -%}
+                    <div class="blog__meta">
+                        <div class="list list--tags list--tags-small">
+                            {% for tag in article.tags %}
+                                {% assign tag_url = '/blog/tag/' | append: tag  %}
+                                <a class="list__item" href="{{ tag_url | absolute_url }}">{{ "blogs.tags." | append: tag | t }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% include 'blog-subscribe' cssClass: 'collapsed', article: article %}
+                </div>
+                <div class="col col-lg-3 col-xl-2 d-none d-xl-block">
+                    {% if article.meta_fields.articleRightSideBanner != blank and article.meta_fields.articleRightSideBanner and article.meta_fields.articleRightSideBanner.url  != '' %}
+                    {% assign need_tocca = true %}
+                    <div class="position-sticky banner" style="opacity:0">
+                            <img src="{{article.meta_fields.articleRightSideBanner.url}}" />
+                        </div>
+                    {% endif %}
                 </div>
             </div>
-            {% include 'blog-subscribe' cssClass: 'collapsed', article: article %}
         </div>
     </div>
     <!-- End Blog main -->

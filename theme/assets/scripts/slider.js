@@ -109,9 +109,6 @@ $(function () {
             }
         };
 
-        var isMozillaBrowser = /Firefox/i.test(navigator.userAgent);
-        var mozillaMouseEventName = 'DOMMouseScroll';
-
         coverItems.on('swipedown', function () {
             var block = $(this);
             var lastScrolled = block.find('.cover-item--scrolled:last');
