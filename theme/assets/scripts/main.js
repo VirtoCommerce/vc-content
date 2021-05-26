@@ -1,3 +1,6 @@
+var isMozillaBrowser = /Firefox/i.test(navigator.userAgent);
+var mozillaMouseWheelEventName = 'DOMMouseScroll';
+
 (function ($) {
     if (!!$.validator) {
         $.validator.unobtrusive.adapters.addBool("mandatory", "required");
@@ -124,10 +127,6 @@ $(function () {
     $('.modal-close').click(function () {
         $('.modal').css('display', 'none');
         $('body').removeClass('modal-open');
-    });
-
-    $('a, button').click(function () {
-        //window.location.search
     });
 
     var blockForms = $('.block .form');
@@ -439,5 +438,23 @@ $(function () {
         } else {
             e.preventDefault();
         }
+    });
+
+    var showUsefulLinksAndBanner = () => $('.blog-content .useful-links, .blog-content .banner').animate({ opacity: 1 }, 1250);
+
+    if (isMozillaBrowser) {
+        window.addEventListener(mozillaMouseWheelEventName, function () {
+            showUsefulLinksAndBanner();
+            window.removeEventListener(mozillaMouseWheelEventName);
+        });
+    } else {
+        $(window)[0].onmousewheel = function () {
+            showUsefulLinksAndBanner();
+            this.onmousewheel = null;
+        };
+    }
+
+    $(window).one('swipeup swipedown', function () {
+        showUsefulLinksAndBanner();
     });
 });

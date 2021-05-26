@@ -311,6 +311,16 @@
     font-family: CircularStd;
 }
 
+.font-helvetica
+{
+    font-family: Helvetica,sans-serif;
+}
+
+.font-weight-normal
+{
+    font-weight: 400 !important;
+}
+
 .pattern-inner-img
 {
     position: absolute;
@@ -332,6 +342,16 @@
     {
         background-color: black;
     }
+}
+
+.position-sticky
+{
+    position: sticky;
+}
+
+.break-word
+{
+    word-break: break-word;
 }
 
 /* Sections */

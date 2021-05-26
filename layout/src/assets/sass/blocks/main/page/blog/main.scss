@@ -128,10 +128,6 @@
     &-content {
         flex: 1 0 0;
 
-        @include media-breakpoint-up(md) {
-            width: 47.5rem;
-        }
-
         h2 {
             font-size: 2rem;
             font-weight: 900;
@@ -185,6 +181,29 @@
                 &--bottom {
                     margin-top: 3.125rem;
                 }
+            }
+        }
+
+        .useful-links,
+        .banner {
+            top: 100px;
+            bottom: auto;
+        }
+
+        .useful-links {
+            &__inner {
+                font-size: 18px;
+
+                a {
+                    color: darkgray;
+                }
+            }
+        }
+
+        .banner {
+            .img {
+                max-width: 100%;
+                height: auto;
             }
         }
     }
