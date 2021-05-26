@@ -5,22 +5,22 @@
 }(jQuery));
 
 $(function () {
-    var cookies = document.cookie.split(';');
+    var cookies = document.cookie.split(';').map(c => c.trim());
     var currentIpCookie = null;
     var token = null;
 
     for (var cookie of cookies) {
-        if (cookie.startsWith(' current_ip=')) {
+        if (cookie.startsWith('current_ip=')) {
             currentIpCookie = cookie;
         }
-        if (cookie.startsWith(' XSRF-TOKEN=')) {
-            token = cookie.replace(' XSRF-TOKEN=', '');
+        if (cookie.startsWith('XSRF-TOKEN=')) {
+            token = cookie.replace('XSRF-TOKEN=', '');
         }
     }
 
     var currentIp = null;
     if (currentIpCookie) {
-        currentIp = currentIpCookie.replace(' current_ip=', '');
+        currentIp = currentIpCookie.replace('current_ip=', '');
     } else {
         $.ajax({
             url: `https://api.ipdata.co?api-key=d55d3413982d00ce1d4ef0008d06578d74f3a96deed0ae2f0f6f10da&fields=ip`,
@@ -124,6 +124,10 @@ $(function () {
     $('.modal-close').click(function () {
         $('.modal').css('display', 'none');
         $('body').removeClass('modal-open');
+    });
+
+    $('a, button').click(function () {
+        //window.location.search
     });
 
     var blockForms = $('.block .form');
