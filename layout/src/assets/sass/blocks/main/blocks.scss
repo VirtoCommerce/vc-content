@@ -1667,16 +1667,18 @@
         }
     }
 
-    @media (min-width: 575.98px) and (max-width: 767px) {
-        .cta a.btn
-        {
+    
+    .cta a.btn
+    {
+        @media (min-width: 575.98px) and (max-width: 767px) {
             font-size: 11px;
         }
-    }
 
-    @include media-breakpoint-up(md) {
-        .cta a.btn
-        {
+        @include media-breakpoint-only(md) {
+            font-size: 13px;
+        }
+
+        @include media-breakpoint-up(lg) {
             font-size: 15px;
         }
     }
