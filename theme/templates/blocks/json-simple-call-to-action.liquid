@@ -8,7 +8,9 @@
             
             {% if block.button != '' and block.button.urlText != '' %}
                 {% if block.button.style == 'btn-gradient' %}
-                    {% include 'gradient-button' url: block.button.url, text: block.button.urlText, background: block.backgroundColorHex, additionalClasses: 'text-center ml-4 mt-4 mt-sm-0' %}
+                    <a class="d-block gradient-btn" href="{{block.button.url}}">
+                        <span class="d-flex align-items-center justify-content-center text-center w-100 bg-white" style="background-color:{{block.backgroundColorHex}}">{{block.button.urlText}}</span>
+                    </a>
                 {% else %}
                     <a href="{{block.button.url}}" class="{{block.button.style}}" {% if block.button.openInNewTab == 'True' %} target="_blank" {% endif %}>{{block.button.urlText}}</a>
                 {% endif %}

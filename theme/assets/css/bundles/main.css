@@ -11575,6 +11575,29 @@ input.ng-touched.ng-invalid, .input-validation-error {
     }
 }
 
+.gradient-btn {
+    background-image: linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%);
+    border-radius: 40px;
+    box-sizing: border-box;
+    background: linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%);
+    font-size: .875rem;
+    margin: 0 auto;
+    padding: 3px;
+    position: relative;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.gradient-btn:hover {
+    color: #f77000;
+}
+
+.gradient-btn span {
+    border-radius: 40px;
+    height: 100%;
+    padding: .5rem 1.875rem;
+}
+
 .dropdown-menu {
     background: #fff;
     border: 1px solid #d3d3d3;
