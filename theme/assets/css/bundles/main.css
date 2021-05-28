@@ -11581,11 +11581,15 @@ input.ng-touched.ng-invalid, .input-validation-error {
     box-sizing: border-box;
     background: linear-gradient(153.24deg, #FF453D -345.15%, #FF9304 -230.66%, #FF483B 12.34%, #FF7E13 103.42%, #FF9800 103.46%);
     font-size: .875rem;
-    margin: 0 auto;
-    padding: 3px;
+    padding: 2px;
     position: relative;
     text-decoration: none;
     z-index: 2;
+}
+
+.gradient-btn ~ .gradient-btn,
+  .gradient-btn ~ .btn {
+    margin-left: 1.25rem;
 }
 
 .gradient-btn:hover {
