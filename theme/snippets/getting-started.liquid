@@ -44,7 +44,15 @@
                 </ul>
             </div>
             <div class="mr-lg-5 mr-sm-3">
-                {% include 'gradient-button' url: '/request-demo', text: 'Request Demo' %}
+                {% if page == 'index' %}
+                    <a class="d-block gradient-btn" href="request-demo">
+                        <span class="d-flex align-items-center justify-content-center text-center w-100 bg-black">Request Demo</span>
+                    </a>
+                {% else %}
+                    <a class="d-block gradient-btn" href="request-demo">
+                        <span class="d-flex align-items-center justify-content-center text-center w-100 bg-white">Request Demo</span>
+                    </a>
+                {% endif %}
             </div>
             <div class="d-lg-none mb-3 mr-5">
                 <a class="header-toggle"></a>
