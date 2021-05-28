@@ -6,8 +6,8 @@
         {% endif %}
         <div class="blog-sidebar__t">{{subscribe_form_title}}</div>
         <form id="subscribe_news" class="form d-sm-flex justify-content-center" name="blogSubscribeForm">
-            <input type="text" class="form-control" placeholder="Enter your email" data-val="true" data-val-required="" data-val-email="email" id="blog_email" name="blog_email"/>
-            <button class="btn btn--orange mt-3 mt-sm-0 ml-sm-3" type="submit">Subscribe</button>
+            <input type="text" class="form-control form-control--round p-3" placeholder="Enter your email" data-val="true" data-val-required="" data-val-email="email" id="blog_email" name="blog_email"/>
+            <button class="btn btn--round bg-gradient mt-3 mt-sm-0 ml-sm-3" type="submit" style="border:none">Subscribe</button>
         </form>
         {% assign subscribe_form_subtitle = settings.subscribeFormSubtitleInArticles %}
         {% if article.meta_fields.subscribeFormSubtitle == 'True' and article.meta_fields.subscribeFormSubtitle != '' %}
