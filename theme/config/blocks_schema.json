@@ -1992,8 +1992,19 @@
           {
             "value": "btn btn--white btn--block",
             "label": "White"
+          },
+          {
+            "value": "btn btn--block btn--round",
+            "label": "Round"
           }
         ],
+        "tab": "Settings",
+        "group": "Form"
+      },
+	  {
+        "id": "formSubmitButtonColor",
+        "label": "Submit button color",
+        "type": "color",
         "tab": "Settings",
         "group": "Form"
       },
