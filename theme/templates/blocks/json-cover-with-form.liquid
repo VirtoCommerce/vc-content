@@ -107,7 +107,7 @@
                                         {% include 'form-validation-message' inputItem: item %}
                                     </fieldset>
                                 {% elsif item.fieldType == 'button' %}
-                                    <input type="submit" class="{{block.formSubmitButtonStyle}}" value="{{item.labelText}}" />
+                                    <input type="submit" class="{{block.formSubmitButtonStyle}}" value="{{item.labelText}}" {% if block.formSubmitButtonColor == true and block.formSubmitButtonColor != '' %}style="background-color:{{block.formSubmitButtonColor}};border-color:{{block.formSubmitButtonColor}}"{% endif %} />
                                 {% elsif item.fieldType == 'textarea' %}
                                     <div class="form-group">
                                         {% if block.showFormLabels == 'True' %}

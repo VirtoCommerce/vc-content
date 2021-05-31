@@ -17,6 +17,8 @@
 <style>
     #{{block.__id}} > .block:after {
         {% if second_side_background != '' %}background: {{second_side_background}}; {% endif %}
+        background-size: contain;
+        background-repeat: no-repeat;
         opacity: 1;
         bottom: 0;
 	    content: ' ';
@@ -163,6 +165,9 @@
                                 {% assign subtitle_class = 'block__descr' %}
                             {% endif %}
                             {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: subtitle_class %}
+                            {% if block.firstButton != '' %}
+                                <div class="block__space"></div>
+                            {% endif %}
                         {% endif %}
 
                         {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}

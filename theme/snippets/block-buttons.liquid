@@ -59,6 +59,20 @@
                 {% if block.secondButtonColorText != '' %}
                     {% assign second_btn_style = second_btn_style | append: 'color:' | append: block.secondButtonColorText | append: ';' %}
                 {% endif %}
+                
+                {% if secondBtn.borderColor == true %}
+                    {% if secondBtn.borderColor != '' %}
+                        {% assign second_btn_style = second_btn_style | append: 'border-color:' | append: secondBtn.borderColor | append: ';' %}
+                    {% endif %}
+                {% endif %}
+
+                {% if secondBtn.borderWidth == true and secondBtn.borderWidth != '' %}
+                    {% assign second_btn_style = second_btn_style | append: 'border-width:' | append: secondBtn.borderWidth | append: 'px;' %}
+                {% endif %}
+
+                {% if second_btn_style.textColor != '' %}
+                    {% assign second_btn_style = second_btn_style | append: 'color:' | append: second_btn_style.textColor | append: ';' %}
+                {% endif %}
 
                 {% if secondBtn.fillColor != '' %}
                     {% assign second_btn_style = second_btn_style | append: 'background-color:' | append: secondBtn.fillColor | append: ';' %}
@@ -80,11 +94,14 @@
                 {% endif %}
 
                 {% if secondBtn.style == 'btn-gradient' %}
-                    {% include 'gradient-button' url: secondBtn.url, text: secondBtn.urlText, background: block.backgroundColorHex %}
+                    <a class="d-block gradient-btn" href="{{secondBtn.url}}">
+                        <span class="d-flex align-items-center justify-content-center text-center w-100 bg-white" {{second_btn_attributes}}>{{secondBtn.urlText}}</span>
+                    </a>
                 {% else %}
                     <a href="{{secondBtn.url}}" class="{{secondBtn.style}}" {{second_btn_attributes}}>{{secondBtn.urlText}}</a>
                 {% endif %}
             {% endif %}
+            {% assign secondBtn = '' %}
         {% endif %}
     </div>
 {% endif %}
