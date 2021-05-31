@@ -200,6 +200,12 @@
             }
         }
 
+        @include media-breakpoint-up(md) {
+            .article-col {
+                flex: 0 0 47.5rem;
+            }
+        }
+
         .banner {
             .img {
                 max-width: 100%;

@@ -39,13 +39,13 @@
         </div>
         <div class="blog-content ml-auto mr-auto">
             <div class="d-flex flex-wrap justify-content-center">
-                <div class="col col-lg-4 col-xl-2 d-none d-xl-block">
-                    {% if article.meta_fields.usefulLinks != blank and article.meta_fields.usefulLinks.size > 0 %}
+                <div class="col col-lg-4 col-xl-2 d-none d-xl-block ml-auto mr-auto">
+                    {% if article.meta_fields.articleUsefulLinks != blank and article.meta_fields.articleUsefulLinks.size > 0 %}
                         {% assign need_tocca = true %}
                         <div class="useful-links position-sticky row justify-content-center ml-auto mr-auto" style="opacity:0">
                             <div class="useful-links__inner ml-auto mr-auto font-helvetica font-weight-normal break-word">
                                 <div class="pb-4">Useful links:</div>
-                                {% for link in article.meta_fields.usefulLinks %}
+                                {% for link in article.meta_fields.articleUsefulLinks %}
                                     <div>
                                         <a href="{{link.url}}">{{link.title}}</a>
                                     </div>
@@ -54,7 +54,7 @@
                         </div>
                     {% endif %}
                 </div>
-                <div class="col col-lg col-xl-8">
+                <div class="col article-col col-lg col-xl-8">
                     {% include 'json-blocks' page: article -%}
                     {% include 'article-author' article_author: page_settings.author -%}
                     <div class="blog__meta">
@@ -67,12 +67,14 @@
                     </div>
                     {% include 'blog-subscribe' cssClass: 'collapsed', article: article %}
                 </div>
-                <div class="col col-lg-3 col-xl-2 d-none d-xl-block">
+                <div class="col col-lg-3 col-xl-2 d-none d-xl-block ml-auto mr-auto">
                     {% if article.meta_fields.articleRightSideBanner != blank and article.meta_fields.articleRightSideBanner and article.meta_fields.articleRightSideBanner.url  != '' %}
                     {% assign need_tocca = true %}
                     <div class="position-sticky banner" style="opacity:0">
-                            <img src="{{article.meta_fields.articleRightSideBanner.url}}" />
-                        </div>
+                        <a href="{{article.meta_fields.articleRightSideBannerLink}}">
+                            <img src="{{article.meta_fields.articleRightSideBanner.url}}" class="mw-100" />
+                        </a>
+                    </div>
                     {% endif %}
                 </div>
             </div>

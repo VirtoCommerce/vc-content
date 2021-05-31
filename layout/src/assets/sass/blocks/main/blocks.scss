@@ -1668,18 +1668,14 @@
     }
 
     
-    .cta a.btn
+    .cta .block__actions a
     {
         @media (min-width: 575.98px) and (max-width: 767px) {
             font-size: 11px;
         }
 
-        @include media-breakpoint-only(md) {
+        @include media-breakpoint-up(md) {
             font-size: 13px;
-        }
-
-        @include media-breakpoint-up(lg) {
-            font-size: 15px;
         }
     }
 }

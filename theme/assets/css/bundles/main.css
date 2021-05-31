@@ -5905,6 +5905,10 @@ code {
     width: 100% !important;
 }
 
+.mw-100 {
+    max-width: 100%;
+}
+
 @media (min-width: 576px) {
     .w-sm-auto {
         width: auto !important;
@@ -9168,20 +9172,14 @@ code {
 }
 
 @media (min-width: 575.98px) and (max-width: 767px) {
-    .block .cta a.btn {
+    .block .cta .block__actions a {
         font-size: 11px;
     }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .block .cta a.btn {
+@media (min-width: 768px) {
+    .block .cta .block__actions a {
         font-size: 13px;
-    }
-}
-
-@media (min-width: 992px) {
-    .block .cta a.btn {
-        font-size: 15px;
     }
 }
 
@@ -10382,6 +10380,12 @@ input.ng-touched.ng-invalid, .input-validation-error {
 
 .blog-content .useful-links__inner a {
     color: darkgray;
+}
+
+@media (min-width: 768px) {
+    .blog-content .article-col {
+        flex: 0 0 47.5rem;
+    }
 }
 
 .blog-content .banner .img {
