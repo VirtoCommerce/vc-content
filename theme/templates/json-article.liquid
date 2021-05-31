@@ -45,11 +45,13 @@
                         <div class="useful-links position-sticky row justify-content-center ml-auto mr-auto" style="opacity:0">
                             <div class="useful-links__inner ml-auto mr-auto font-helvetica font-weight-normal break-word">
                                 <div class="pb-4">Useful links:</div>
-                                {% for link in article.meta_fields.articleUsefulLinks %}
-                                    <div>
-                                        <a href="{{link.url}}">{{link.title}}</a>
-                                    </div>
-                                {% endfor %}
+                                <ul>
+                                    {% for link in article.meta_fields.articleUsefulLinks %}
+                                        <li>
+                                            <a href="{{link.url}}">{{link.title}}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
                     {% endif %}
