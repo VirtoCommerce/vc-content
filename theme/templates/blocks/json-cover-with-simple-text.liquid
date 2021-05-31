@@ -17,6 +17,8 @@
 <style>
     #{{block.__id}} > .block:after {
         {% if second_side_background != '' %}background: {{second_side_background}}; {% endif %}
+        background-size: contain;
+        background-repeat: no-repeat;
         opacity: 1;
         bottom: 0;
 	    content: ' ';
