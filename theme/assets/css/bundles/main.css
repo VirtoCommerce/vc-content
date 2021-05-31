@@ -10379,7 +10379,7 @@ input.ng-touched.ng-invalid, .input-validation-error {
 }
 
 .blog-content .useful-links__inner a {
-    color: darkgray;
+    color: #707C80;
 }
 
 @media (min-width: 768px) {
