@@ -8311,11 +8311,9 @@ code {
 }
 
 @media (min-width: 576px) {
-    .block__actions .btn ~ .btn {
-        margin-left: 1.25rem;
-    }
-
-    .block__actions .btn ~ .btn-gradient {
+    .block__actions .btn ~ .btn,
+        .block__actions .btn ~ .btn-gradient,
+        .block__actions .btn ~ .gradient-btn {
         margin-left: 1.5rem;
     }
 }

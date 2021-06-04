@@ -608,12 +608,9 @@
 			}
 
 			@include media-breakpoint-up(sm) {
-                & ~ .btn
-                {
-				    margin-left: 1.25rem;
-                }
-
-                & ~ .btn-gradient
+                & ~ .btn,
+                & ~ .btn-gradient,
+                & ~ .gradient-btn
                 {
                     margin-left: 1.5rem;
                 }
