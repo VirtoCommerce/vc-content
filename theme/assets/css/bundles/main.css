@@ -8591,7 +8591,6 @@ code {
 .block .block__form .form-checkbox__label {
     font-size: 0.875rem;
     line-height: 1.15;
-    padding-top: 0.25rem;
 }
 
 .block .block__form,
@@ -11811,7 +11810,6 @@ textarea {
     font-size: .875rem;
     position: relative;
     padding-left: 2rem;
-    padding-top: 0.125rem;
 }
 
 .form-checkbox__label::after, .form-checkbox__label::before {
