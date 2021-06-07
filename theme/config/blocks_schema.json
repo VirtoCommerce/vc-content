@@ -8838,25 +8838,29 @@
             "styleLabel": "Link style",
             "styles": [
               {
-                "value": "btn btn--black",
-                "label": "Black button"
-              },
+				"value": "btn btn--black",
+				"label": "Black button"
+			  },
 			  {
 				"value": "btn-gradient",
 				"label": "Gradient button"
 			  },
 			  {
+				"value": "btn btn--orange",
+				"label": "Orange button"
+			  },
+			  {
+				"value": "btn btn--round bg-gradient",
+				"label": "Orange gradient"
+			  },
+			  {
 				"value": "btn btn--round",
 				"label": "Round button"
 			  },
-              {
-                "value": "btn btn--orange",
-                "label": "Orange button"
-              },
-              {
-                "value": "btn btn--white",
-                "label": "White button"
-              }
+			  {
+				"value": "btn btn--white",
+				"label": "White button"
+			  }
             ]
           }
         ],
@@ -10269,6 +10273,187 @@
 	"icon": "image-text",
 	"displayField": "name",
 	"settings": []
+  },
+  "price-plans": {
+	"id": "price-plans",
+	"name": "Price plans",
+	"icon": "image-text",
+	"displayField": "name",
+	"includeShared": [
+		"paddings",
+		"dividers"
+	],
+	"settings": [
+	{
+        "id": "items",
+        "label": "Items",
+        "type": "list",
+        "addText": "Add item",
+        "removeText": "Remove item",
+        "displayField": "title",
+        "element": [
+          {
+            "id": "image",
+            "type": "image",
+            "label": "Item image"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "settings": [
+              "TextColor",
+              "Link",
+              "Unlink",
+			  "FontSize",
+			  "Source"
+            ]
+          },
+          {
+            "id": "description",
+            "type": "text",
+            "label": "Subtitle",
+            "settings": [
+              "TextColor",
+              "NumberedList",
+              "BulletedList",
+              "Bold",
+              "Italic",
+              "Link",
+              "Unlink",
+			  "FontSize",
+              "Maximize",
+              "Source"
+            ]
+          },
+		  {
+			  "id": "price",
+			  "label": "Price",
+			  "type": "text",
+			  "settings": [
+				  "TextColor",
+				  "NumberedList",
+				  "BulletedList",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Maximize",
+				  "Source"
+				]
+		  },
+          {
+            "id": "button",
+            "label": "Button",
+            "type": "url",
+            "urlLabel": "Url",
+            "textLabel": "Button text",
+            "styleLabel": "Link style",
+            "styles": [
+              {
+				"value": "btn btn--black",
+				"label": "Black button"
+			  },
+			  {
+				"value": "btn-gradient",
+				"label": "Gradient button"
+			  },
+			  {
+				"value": "btn btn--orange",
+				"label": "Orange button"
+			  },
+			  {
+				"value": "btn btn--round bg-gradient",
+				"label": "Orange gradient"
+			  },
+			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
+			  {
+				"value": "btn btn--white",
+				"label": "White button"
+			  }
+            ]
+          },
+		  {
+			  "id": "details",
+			  "label": "Details",
+			  "type": "text",
+			  "settings": [
+				  "TextColor",
+				  "NumberedList",
+				  "BulletedList",
+				  "Bold",
+				  "Italic",
+				  "Link",
+				  "Unlink",
+				  "FontSize",
+				  "Maximize",
+				  "Source"
+				]
+		  },
+		  {
+			  "id": "borderColorMobile",
+			  "label": "Border color (mobile)",
+			  "type": "color"
+		  }
+        ],
+        "default": [
+          {
+            "image": {
+              "url": "/assets/pages/lavazza-logo.svg"
+            },
+            "title": "Plan one",
+            "description": "Plan one description.",
+			"price": "<p><span style=\"font-size:48px\"><strong>$100</strong></span></p>",
+            "button": {
+              "url": "",
+              "urlText": "Call to action",
+              "style": "btn btn--orange"
+            },
+			"details": "Plan one details"
+          },
+          {
+            "image": {
+              "url": "/assets/pages/lavazza-logo.svg"
+            },
+            "title": "Plan two",
+            "description": "Plan two description.",
+			"price": "<p><span style=\"font-size:48px\"><strong>$200</strong></span></p>",
+            "button": {
+              "url": "",
+              "urlText": "Call to action",
+              "style": "btn btn--orange"
+            },
+			"details": "Plan two details"
+          },
+          {
+            "image": {
+              "url": "/assets/pages/lavazza-logo.svg"
+            },
+            "title": "Plan three",
+            "description": "Plan three description.",
+			"price": "<p><span style=\"font-size:48px\"><strong>$300</strong></span></p>",
+            "button": {
+              "url": "",
+              "urlText": "Call to action",
+              "style": "btn btn--orange"
+            },
+			"details": "Plan three details"
+          }
+        ],
+        "tab": "Content"
+      },
+	  {
+		"id": "borderColor",
+		"label": "Border color",
+		"type": "color",
+		"default": "",
+		"tab": "Settings"
+	  }
+	]
   },
   "form-case-study": {
     "name": "Form Case Study",

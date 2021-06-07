@@ -4819,6 +4819,18 @@ code {
     }
 }
 
+@media (max-width: 991.98px) {
+    .block .price-plans.list-cards .list__item {
+        max-width: 33%;
+    }
+}
+
+@media (min-width: 768px) {
+    .block .price-plans.list-cards .list__inner {
+        border: 1px solid #e1e1e1 !important;
+    }
+}
+
 .block .list-partners {
     display: flex;
     flex-wrap: wrap;
@@ -5961,6 +5973,10 @@ code {
 
 .break-word {
     word-break: break-word;
+}
+
+.border-none {
+    border: none !important;
 }
 
 .section {
@@ -8311,11 +8327,9 @@ code {
 }
 
 @media (min-width: 576px) {
-    .block__actions .btn ~ .btn {
-        margin-left: 1.25rem;
-    }
-
-    .block__actions .btn ~ .btn-gradient {
+    .block__actions .btn ~ .btn,
+        .block__actions .btn ~ .btn-gradient,
+        .block__actions .btn ~ .gradient-btn {
         margin-left: 1.5rem;
     }
 }
@@ -8593,7 +8607,6 @@ code {
 .block .block__form .form-checkbox__label {
     font-size: 0.875rem;
     line-height: 1.15;
-    padding-top: 0.25rem;
 }
 
 .block .block__form,
@@ -11813,7 +11826,6 @@ textarea {
     font-size: .875rem;
     position: relative;
     padding-left: 2rem;
-    padding-top: 0.125rem;
 }
 
 .form-checkbox__label::after, .form-checkbox__label::before {

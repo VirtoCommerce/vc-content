@@ -457,4 +457,26 @@ $(function () {
     $(window).one('swipeup swipedown', function () {
         showUsefulLinksAndBanner();
     });
+
+    $('.price-plans .list__inner').on('click', function () {
+        var listInner = $(this);
+        var pricePlans = listInner.closest('.price-plans');
+
+        for (var plan of pricePlans.find('.list__inner')) {
+            if (!$(plan).hasClass('border-none')) {
+                $(plan).addClass('border-none');
+            }
+        }
+
+        listInner.removeClass('border-none');
+        var index = pricePlans.find('.list__inner').index(listInner);
+        var detailItems = pricePlans.find('.details-mobile').children('.detail-item');
+
+        for (var detailItem of detailItems) {
+            if (!$(detailItem).hasClass('d-none')) {
+                $(detailItem).addClass('d-none');
+            }
+        }
+        detailItems.eq(index).removeClass('d-none');
+    });
 });

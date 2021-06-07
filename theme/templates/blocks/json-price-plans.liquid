@@ -1,0 +1,117 @@
+<div id="{{ block.__id }}" class="block {{block.topPadding}} {{block.bottomPadding}}
+    {% if block.topDivider == 'True' %} block--divider-top {% endif %}
+    {% if block.bottomDivider == 'True' %} block--divider-bottom {% endif %}
+    {% if block.backgroundColorHex == '' %}{{block.backgroundColor}}{% endif %} {% if block.useDarkMode == 'True' %}block--dark{% endif %}"
+    {% include 'block-background-style' %}>
+    <div class="block__inner container">
+        {% if block.title != '' or block.headings.size > 0 or block.subtitle != '' %}
+        <div class="row">
+            <div class="block__text {{block.textAreaWidth}}">
+                {% include 'seo-text' tag: block.titleSeoTag, text: block.title, class: 'block__t' %}
+                
+                {% include 'headings' headings: block.headings %}
+
+                {% if block.subtitle != '' %}
+                    <div class="block__space"></div>
+                    {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
+                    <div class="block__space block__space--size-lg"></div>
+                {% else %}
+                <div class="block__space block__space--size-lg"></div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if block.items.size > 0 %}
+            {% if block.borderColor != '' %}
+                <style>
+                    #{{block.__id}} .list-cards .list__item .list__inner {
+                        border: 1px solid {{block.borderColor}};
+                    }
+                </style>
+            {% endif %}
+            {% if block.useShadow == 'True' %}
+                {% assign shadowHorizontal = '2px' %}
+                {% if block.shadowHorizontalDirection == 'left' %}
+                    {% assign shadowHorizontal = '-2px' %}
+                {% endif %}
+
+                {% assign shadowVertical = '-2px' %}
+                {% if block.shadowVerticalDirection == 'bottom' %}
+                    {% assign shadowVertical = '2px' %}
+            {% endif %}
+
+            <style>
+                #{{block.__id}} .list-cards .list__item .list__inner {
+                    box-shadow: {{shadowHorizontal}} {{shadowVertical}} 2px 2px {{block.shadowColor}};
+                }
+            </style>
+        {% endif %}
+
+        <div class="list list-cards price-plans pl-3 pr-3">
+            {% for item in block.items %}
+                
+                <style>
+                    @media (max-width: 767px) {
+                        #{{block.__id}} .list-cards.price-plans .list__item-{{forloop.index | plus: 1}} .list__inner {
+                            border-color: {{item.borderColorMobile}};
+                            border-width: 2px;
+                            color: {{item.borderColorMobile}};
+                        }
+                    }
+                </style>
+                
+                <div class="list__item list__item-{{forloop.index | plus: 1}} p-0 pl-sm-2 pl-lg-3">
+                    <div class="list__inner p-1 p-sm-3 {% if forloop.index > 0 %}border-none{% endif %}">
+                        {% if item.title != '' %}
+                            <div class="list__t d-block d-md-none ml-auto mr-auto" style="font-size:14px">{{item.title}}</div>
+                        {% endif %}
+
+                        {% if item.image != '' and item.image.url != '' %}
+                            <div class="list__img">
+                                <img data-src="{{ item.image.url | image_url }}" title="{{item.image.altText}}" class="list__pic lazyload" />
+                            </div>
+                        {% endif %}
+
+                        {% if item.price != '' %}
+                            <div class="list__t d-block d-md-none ml-auto mr-auto" style="font-size:18px">{{item.price | strip_html}}</div>
+                        {% endif %}
+
+                        {% if item.title != '' %}
+                            <div class="list__t d-none d-md-block">{{item.title}}</div>
+                        {% endif %}
+
+                        {% if item.description != '' %}
+                            <div class="list__descr d-none d-md-block">{{item.description}}</div>
+                        {% endif %}
+
+                        {% if item.price != '' %}
+                            <div class="list__t d-none d-md-block">{{item.price}}</div>
+                        {% endif %}
+
+                        {% include 'block-buttons' firstBtn: item.button, blockClass: 'd-none d-md-block mt-0 mb-4' %}
+                        {% if item.details == true %}
+                            <div class="d-none d-md-block">
+                                {{item.details}}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if block.items.size > 0 %}
+                <div class="details-mobile d-block d-md-none w-100">
+                    {% for item in block.items %}
+                        <div class="detail-item {% if forloop.index > 0 %}d-none{% endif %}">
+                            <div class="d-block d-md-none pt-4 pb-4">{{item.description}}</div>
+                            <div>{{item.details}}</div>
+                            {% include 'block-buttons' firstBtn: item.button, firstBtnAdditionalClass: 'w-100 d-flex justify-content-center', blockClass: 'mt-5' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+</div>
