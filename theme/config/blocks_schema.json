@@ -8838,25 +8838,29 @@
             "styleLabel": "Link style",
             "styles": [
               {
-                "value": "btn btn--black",
-                "label": "Black button"
-              },
+				"value": "btn btn--black",
+				"label": "Black button"
+			  },
 			  {
 				"value": "btn-gradient",
 				"label": "Gradient button"
 			  },
 			  {
+				"value": "btn btn--orange",
+				"label": "Orange button"
+			  },
+			  {
+				"value": "btn btn--round bg-gradient",
+				"label": "Orange gradient"
+			  },
+			  {
 				"value": "btn btn--round",
 				"label": "Round button"
 			  },
-              {
-                "value": "btn btn--orange",
-                "label": "Orange button"
-              },
-              {
-                "value": "btn btn--white",
-                "label": "White button"
-              }
+			  {
+				"value": "btn btn--white",
+				"label": "White button"
+			  }
             ]
           }
         ],
