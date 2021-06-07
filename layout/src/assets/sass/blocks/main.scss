@@ -359,6 +359,11 @@
     word-break: break-word;
 }
 
+.border-none
+{
+    border: none !important;
+}
+
 /* Sections */
 @import "main/sections";
 

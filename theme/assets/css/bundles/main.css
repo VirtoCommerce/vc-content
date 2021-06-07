@@ -4819,6 +4819,18 @@ code {
     }
 }
 
+@media (max-width: 991.98px) {
+    .block .price-plans.list-cards .list__item {
+        max-width: 33%;
+    }
+}
+
+@media (min-width: 768px) {
+    .block .price-plans.list-cards .list__inner {
+        border: 1px solid #e1e1e1 !important;
+    }
+}
+
 .block .list-partners {
     display: flex;
     flex-wrap: wrap;
@@ -5961,6 +5973,10 @@ code {
 
 .break-word {
     word-break: break-word;
+}
+
+.border-none {
+    border: none !important;
 }
 
 .section {

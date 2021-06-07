@@ -692,6 +692,24 @@
             max-width: 100%;   
         }
     }
+
+    &.price-plans
+    {
+        @include media-breakpoint-down(md) {
+            .list__item
+            {
+                max-width: 33%;   
+            }
+        }
+
+        @include media-breakpoint-up(md)
+        {
+            .list__inner
+            {
+                border: 1px solid #e1e1e1 !important;
+            }
+        }
+    }
 }
 
 %list-partners

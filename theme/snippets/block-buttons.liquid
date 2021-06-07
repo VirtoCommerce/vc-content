@@ -1,6 +1,9 @@
 {% if firstBtn != '' and firstBtn.urlText != '' %}
     <div class="block__actions {{blockClass}} align-items-center">
+        {% assign blockClass = '' %}
+
         {% assign first_btn_style = '' %}
+
         {% if block.firstButtonColor != '' %}
             {% assign first_btn_style = first_btn_style | append: 'background-color:' | append: block.firstButtonColor | append: ';' %}
             {% assign first_btn_style = first_btn_style | append: 'border-color:' | append: block.firstButtonColor | append: ';' %}
@@ -42,12 +45,14 @@
         {% endif %}
         
         {% if firstBtn.style == 'btn-gradient' %}
-            <a class="d-block gradient-btn" href="{{firstBtn.url}}">
+            <a class="d-block gradient-btn {{firstBtnAdditionalClass}}" href="{{firstBtn.url}}">
                 <span class="d-flex align-items-center justify-content-center text-center w-100 bg-white" {{first_btn_attributes}}>{{firstBtn.urlText}}</span>
             </a>
         {% else %}
-            <a href="{{firstBtn.url}}" class="{{firstBtn.style}}" {{first_btn_attributes}}>{{firstBtn.urlText}}</a>
+            <a href="{{firstBtn.url}}" class="{{firstBtn.style}} {{firstBtnAdditionalClass}}" {{first_btn_attributes}}>{{firstBtn.urlText}}</a>
         {% endif %}
+
+        {% assign firstBtnAdditionalClass = '' %}
 
         {% if secondBtn == true %}
             {% if secondBtn != '' and secondBtn.urlText != '' %}
