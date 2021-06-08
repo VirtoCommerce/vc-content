@@ -845,7 +845,6 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		margin-bottom: 1rem;
-		max-width: 36rem;
 		min-width: 20rem;
 
         &--in-list
@@ -957,6 +956,26 @@
 			line-height: 1.15;
 		}
 	}
+
+    .advanced-section
+    {
+        padding: 1.875rem;
+
+        @include media-breakpoint-up(md) {
+            width: 25rem;
+        }
+
+        &--shape
+        {
+            color: white;
+            background-color: #7d8d9e;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            margin-top: -45px;
+            line-height: 2.35rem;
+        }
+    }
 
 	.block__form,
 	.block__media

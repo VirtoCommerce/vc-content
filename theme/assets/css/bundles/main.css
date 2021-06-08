@@ -5951,6 +5951,10 @@ code {
     font-weight: 400 !important;
 }
 
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
 .pattern-inner-img {
     position: absolute;
 }
@@ -8517,7 +8521,6 @@ code {
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-    max-width: 36rem;
     min-width: 20rem;
 }
 
@@ -8607,6 +8610,26 @@ code {
 .block .block__form .form-checkbox__label {
     font-size: 0.875rem;
     line-height: 1.15;
+}
+
+.block .advanced-section {
+    padding: 1.875rem;
+}
+
+@media (min-width: 768px) {
+    .block .advanced-section {
+        width: 25rem;
+    }
+}
+
+.block .advanced-section--shape {
+    color: white;
+    background-color: #7d8d9e;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -45px;
+    line-height: 2.35rem;
 }
 
 .block .block__form,
