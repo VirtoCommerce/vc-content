@@ -1129,6 +1129,73 @@
 			"type": "image",
 			"tab": "Content"
 		}
+	  ],
+	  "shadow": [
+		  {
+			"id": "useShadow",
+			"label": "Use shadow",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings"
+		  },
+		  {
+			  "id": "shadowType",
+			  "label": "Shadow type",
+			  "type": "select",
+			  "default": "standard",
+			  "options": [
+				  {
+					  "value": "standard",
+					  "label": "Standard"
+				  },
+				  {
+					  "value": "blurry",
+					  "label": "Blurry"
+				  }
+			  ],
+			  "tab": "Settings"
+		  },
+		  {
+			"id": "shadowColor",
+			"label": "Shadow color",
+			"type": "color",
+			"default": "",
+			"tab": "Settings"
+		  },
+		  {
+			"id": "shadowHorizontalDirection",
+			"label": "Shadow horizontal direction",
+			"type": "select",
+			"default": "left",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"tab": "Settings"
+		  },
+		  {
+			"id": "shadowVerticalDirection",
+			"label": "Shadow vertical direction",
+			"type": "select",
+			"default": "bottom",
+			"options": [
+				{
+					"value": "bottom",
+					"label": "Bottom"
+				},
+				{
+					"value": "top",
+					"label": "Top"
+				}
+			],
+			"tab": "Settings"
+		  }
 	  ]
     }
   },
@@ -8561,7 +8628,8 @@
 	  "seo-title",
       "seo-subtitle",
       "headings",
-	  "background-image"
+	  "background-image",
+	  "shadow"
     ],
     "settings": [
       {
@@ -8706,54 +8774,6 @@
 		"label": "Border color",
 		"type": "color",
 		"default": "",
-		"tab": "Settings"
-	  },
-	  {
-		"id": "useShadow",
-		"label": "Use shadow",
-		"type": "checkbox",
-		"default": false,
-		"tab": "Settings"
-	  },
-	  {
-		"id": "shadowColor",
-		"label": "Shadow color",
-		"type": "color",
-		"default": "",
-		"tab": "Settings"
-	  },
-	  {
-		"id": "shadowHorizontalDirection",
-		"label": "Shadow horizontal direction",
-		"type": "select",
-		"default": "left",
-		"options": [
-			{
-				"value": "left",
-				"label": "Left"
-			},
-			{
-				"value": "right",
-				"label": "Right"
-			}
-		],
-		"tab": "Settings"
-	  },
-	  {
-		"id": "shadowVerticalDirection",
-		"label": "Shadow vertical direction",
-		"type": "select",
-		"default": "bottom",
-		"options": [
-			{
-				"value": "bottom",
-				"label": "Bottom"
-			},
-			{
-				"value": "top",
-				"label": "Top"
-			}
-		],
 		"tab": "Settings"
 	  },
       {
@@ -10281,7 +10301,8 @@
 	"displayField": "name",
 	"includeShared": [
 		"paddings",
-		"dividers"
+		"dividers",
+		"shadow"
 	],
 	"settings": [
 	{

@@ -41,7 +41,11 @@
 
                 <style>
                     #{{block.__id}} .list-cards .list__item .list__inner {
-                        box-shadow: {{shadowHorizontal}} {{shadowVertical}} 2px 2px {{block.shadowColor}};
+                        {% if block.shadowType == 'blurry' %}
+                            box-shadow: 4px 4px 16px 2px {{block.shadowColor}};
+                        {% else %}
+                            box-shadow: {{shadowHorizontal}} {{shadowVertical}} 2px 2px {{block.shadowColor}};
+                        {% endif %}
                     }
                 </style>
             {% endif %}
