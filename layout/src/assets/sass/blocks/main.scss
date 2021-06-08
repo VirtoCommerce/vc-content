@@ -321,9 +321,17 @@
     font-family: Helvetica,sans-serif;
 }
 
-.font-weight-normal
+.font-weight
 {
-    font-weight: 400 !important;
+    &-normal
+    {
+        font-weight: 400!important;
+    }
+
+    &-bold
+    {
+        font-weight: 700!important;
+    }
 }
 
 .pattern-inner-img

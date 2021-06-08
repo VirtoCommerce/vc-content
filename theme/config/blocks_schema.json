@@ -1196,6 +1196,87 @@
 			],
 			"tab": "Settings"
 		  }
+	  ],
+	  "advanced-section": [
+		  {
+			"id": "advancedSection",
+			"label": "Advanced section",
+			"type": "checkbox",
+			"default": false,
+			"tab": "Settings"
+		  },
+		  {
+			"id": "advancedSectionBackgroundColor",
+			"label": "Advanced section background color",
+			"type": "color",
+			"tab": "Settings"
+		  },
+		  {
+			"id": "advancedSectionItems",
+			"label": "Advanced section items",
+			"type": "list",
+			"addText": "Add item",
+			"removeText": "Remove item",
+			"displayField": "value",
+			"element": [
+				{
+					"id": "type",
+					"label": "Type",
+					"type": "select",
+					"default": "text",
+					"options": [
+					  {
+						"value": "button",
+						"label": "Button"
+					  },
+					  {
+						"value": "label",
+						"label": "Label"
+					  }
+					]
+				},
+				{
+					"id": "value",
+					"label": "Value",
+					"type": "text",
+					"settings": [
+					  "TextColor",
+					  "NumberedList",
+					  "BulletedList",
+					  "Bold",
+					  "Italic",
+					  "Link",
+					  "Unlink",
+					  "FontSize",
+					  "Maximize",
+					  "Source",
+					  "EnterModeBr"
+					]
+				},
+				{
+					"id": "buttonUrl",
+					"label": "Button url",
+					"type": "string",
+					"multiline": true
+				},
+				{
+					"id": "buttonImage",
+					"label": "Button image",
+					"type": "image"
+				},
+				{
+					"id": "buttonFillColor",
+					"label": "Button fill color",
+					"type": "color"
+				},
+				{
+					"id": "buttonTextColor",
+					"label": "Button text color",
+					"type": "color"
+				}
+			],
+			"tab": "Settings"
+		  }
 	  ]
     }
   },
@@ -1962,7 +2043,8 @@
       "seo-subtitle",
       "seo-note",
       "headings",
-	  "buttons"
+	  "buttons",
+	  "advanced-section"
     ],
     "settings": [
       {
