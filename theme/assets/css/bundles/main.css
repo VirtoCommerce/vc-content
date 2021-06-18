@@ -5729,10 +5729,9 @@ code {
     color: white;
 }
 
-#layout.layout--dark .header .nav__item .dropdown-menu,
-    #layout.layout--dark .header .nav__item .dropdown-menu__t,
+#layout.layout--dark .header .nav__item .dropdown-menu__t,
     #layout.layout--dark .header .nav__item .dropdown-menu__item {
-    background-color: black;
+    color: black;
 }
 
 #layout.layout--dark .header .header-toggle {
