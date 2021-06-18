@@ -5983,6 +5983,12 @@ code {
     border: none !important;
 }
 
+@media (min-width: 992px) {
+    .order-lg-none {
+        order: unset;
+    }
+}
+
 .section {
     padding: 6.25rem 0;
     text-align: center;

@@ -372,6 +372,13 @@
     border: none !important;
 }
 
+@include media-breakpoint-up(lg) {
+    .order-lg-none
+    {
+        order: unset;
+    }
+}
+
 /* Sections */
 @import "main/sections";
 

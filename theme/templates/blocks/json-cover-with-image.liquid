@@ -5,7 +5,7 @@
         <div class="block__inner container">
             <div class="row align-items-center">
                 {% if block.horizontalAlignment == 'left' %}
-                    <div class="col-lg-auto">
+                    <div class="col-lg-auto order-0 order-lg-none">
                         <div class="block__media">
                             {% if block.containerImage != '' %}
                                 {% if block.containerImage.url != '' %}
@@ -16,7 +16,7 @@
                     </div>
                 {% endif %}
                 
-                <div class="col-lg {{block.verticalAlignment}}">
+                <div class="col-lg {{block.verticalAlignment}} order-1 order-lg-none">
                     {% if block.note != '' %}
                         {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
                         <div class="block__space"></div>
@@ -37,7 +37,7 @@
                 </div>
                 
                 {% if block.horizontalAlignment == 'right' %}
-                    <div class="col-lg-auto">
+                    <div class="col-lg-auto order-0 order-lg-none">
                         <div class="block__media">
                             {% if block.containerImage != '' %}
                                 {% if block.containerImage.url != '' %}
