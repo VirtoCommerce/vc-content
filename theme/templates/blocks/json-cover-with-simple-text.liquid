@@ -64,10 +64,14 @@
 {% include 'overlay-color-hex-style-with-counter' predefinedColor: block.backgroundOverlayColor, customColor: block.backgroundOverlayColorHex %}
 {% endif %}
 
+{% assign background_position = '0% 25%' %}
+{% if block.backgroundPositionX != '' %}
+    {% assign background_position = block.backgroundPositionX | append: '% 25%' %}
+{% endif %}
 <style>
     @media (max-width: 543px) {
         #{{block.__id}} .block--cover {
-            background-position: {% if block.backgroundPositionX == null %}0%{% else %}{{block.backgroundPositionX}}%{% endif %} 25%;
+            background-position: {{background_position}};
         }
     }
 </style>

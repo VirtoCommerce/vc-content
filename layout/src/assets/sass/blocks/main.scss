@@ -31,11 +31,10 @@
             {
                 color: white;
 
-                .dropdown-menu,
                 .dropdown-menu__t,
                 .dropdown-menu__item
                 {
-                    background-color: black;
+                    color: black;
                 }
             }
 
@@ -370,6 +369,13 @@
 .border-none
 {
     border: none !important;
+}
+
+@include media-breakpoint-up(lg) {
+    .order-lg-none
+    {
+        order: unset;
+    }
 }
 
 /* Sections */

@@ -6,7 +6,7 @@
     <div class="block__inner container">
         <div class="row align-items-center">
             {% capture image_container %}
-                <div class="col-lg-auto">
+                <div class="col-lg-auto order-0 order-lg-none">
                     {% if block.containerImage.url != '' %}
                         <div class="block__media {% if block.fixedImageSize == 'True' %}block__media--auto{% endif %}">
                             {% if block.fixedImageSize == 'True' %}
@@ -23,7 +23,7 @@
                 {{image_container}}
             {% endif %}
 
-            <div class="col-lg">
+            <div class="col-lg order-1 order-lg-none">
                 {% if block.logoImage.url != '' %}
                     <img class="headline-logo lazyload" width="auto" height="auto" src="{{block.logoImage.url | image_url}}" />
                 {% endif %}

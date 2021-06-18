@@ -2163,6 +2163,13 @@
         "tab": "Settings",
         "group": "Form"
       },
+	  {
+		"id": "formOrderFirstInMobile",
+		"label": "Form order first in mobile",
+		"type": "checkbox",
+		"tab": "Settings",
+		"group": "Form"
+	  },
       {
         "id": "title",
         "label": "Title",
