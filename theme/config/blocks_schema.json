@@ -9175,6 +9175,10 @@
 				"label": "Gradient button"
 			  },
 			  {
+				"value": "btn btn--round",
+				"label": "Round button"
+			  },
+			  {
 				"value": "btn btn--orange",
 				"label": "Orange button"
 			  },
