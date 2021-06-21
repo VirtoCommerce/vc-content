@@ -2219,6 +2219,23 @@
         "tab": "Content",
         "group": "Background"
       },
+	  {
+		"id": "formNoteMobile",
+		"label": "Form note (mobile)",
+		"type": "text",
+        "settings": [
+          "TextColor",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+		  "FontSize",
+          "Maximize",
+          "Source"
+        ],
+		"tab": "Content",
+		"group": "Form"
+	  },
       {
         "id": "formFields",
         "label": "Fields list",

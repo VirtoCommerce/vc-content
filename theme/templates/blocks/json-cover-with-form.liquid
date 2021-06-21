@@ -7,7 +7,14 @@
                 {% if block.horizontalAlignment == 'right' %}
                     <div class="col-lg {{block.verticalAlignment}} {% if block.formOrderFirstInMobile == 'True' %}order-1 order-lg-none{% endif %}">
                         {% if block.note != '' %}
-                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                            {% assign block_note_adaptive_class = '' %}
+                            {% if block.formNoteMobile == true %}
+                                {% if block.formNoteMobile != '' %}
+                                    {% assign block_note_adaptive_class = ' d-none d-lg-block' %}
+                                {% endif %}
+                            {% endif %}
+                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: ('block__note' | append: block_note_adaptive_class) %}
+                            {% assign block_note_adaptive_class = '' %}
                             <div class="block__space"></div>
                         {% endif %}
 
@@ -27,6 +34,11 @@
                 {% endif %}
                 
                 <div class="col-lg-auto {% if block.formOrderFirstInMobile == 'True' %}order-0 order-lg-none pt-md-0 pb-5 pb-lg-0{% endif %}">
+                    {% if block.formNoteMobile == true %}
+                        {% if block.formNoteMobile != '' %}
+                            <div class="block__note pb-3 d-block d-lg-none">{{block.formNoteMobile}}</div>
+                        {% endif %}
+                    {% endif %}
                     <div class="block__form">
                         <form class="form w-100" {% if block.formId != '' %}id="{{block.formId}}" data-segment-name="{{block.formId}}"{% endif %}
                         {% if block.formName != '' %}name="{{block.formName}}"{% endif %}
@@ -153,7 +165,14 @@
                 {% if block.horizontalAlignment == 'left' %}
                     <div class="col-lg {{block.verticalAlignment}} {% if block.formOrderFirstInMobile == 'True' %}order-1 order-lg-none{% endif %}">
                         {% if block.note != '' %}
-                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                            {% assign block_note_adaptive_class = '' %}
+                            {% if block.formNoteMobile == true %}
+                                {% if block.formNoteMobile != '' %}
+                                    {% assign block_note_adaptive_class = ' d-none d-lg-block' %}
+                                {% endif %}
+                            {% endif %}
+                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: ('block__note' | append: block_note_adaptive_class) %}
+                            {% assign block_note_adaptive_class = '' %}
                             <div class="block__space"></div>
                         {% endif %}
 
