@@ -7,7 +7,14 @@
                 {% if block.horizontalAlignment == 'right' %}
                     <div class="col-lg {{block.verticalAlignment}} {% if block.formOrderFirstInMobile == 'True' %}order-1 order-lg-none{% endif %}">
                         {% if block.note != '' %}
-                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                            {% assign block_note_adaptive_class = '' %}
+                            {% if block.formNoteMobile == true %}
+                                {% if block.formNoteMobile != '' %}
+                                    {% assign block_note_adaptive_class = ' d-none d-lg-block' %}
+                                {% endif %}
+                            {% endif %}
+                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: ('block__note' | append: block_note_adaptive_class) %}
+                            {% assign block_note_adaptive_class = '' %}
                             <div class="block__space"></div>
                         {% endif %}
 
@@ -27,6 +34,11 @@
                 {% endif %}
                 
                 <div class="col-lg-auto {% if block.formOrderFirstInMobile == 'True' %}order-0 order-lg-none pt-md-0 pb-5 pb-lg-0{% endif %}">
+                    {% if block.formNoteMobile == true %}
+                        {% if block.formNoteMobile != '' %}
+                            <div class="block__note pb-3 d-block d-lg-none">{{block.formNoteMobile}}</div>
+                        {% endif %}
+                    {% endif %}
                     <div class="block__form">
                         <form class="form w-100" {% if block.formId != '' %}id="{{block.formId}}" data-segment-name="{{block.formId}}"{% endif %}
                         {% if block.formName != '' %}name="{{block.formName}}"{% endif %}
@@ -136,7 +148,7 @@
                                         {% assign item_button_style = (item_button_style | append: ';color:') | append: item.buttonTextColor %}
                                     {% endif %}
 
-                                    <a href="{{item.buttonUrl}}" class="btn btn--block {% if (forloop.index | plus: 1) < block.advancedSectionItems.size %}mb-3{% endif %} font-helvetica font-weight-bold" {% if item_button_style != '' %}style="{{item_button_style}}"{% endif %}>
+                                    <a href="{{item.buttonUrl}}" class="btn btn--block {% if item.buttonIsRound == 'True' %}btn--round{% endif %} {% if (forloop.index | plus: 1) < block.advancedSectionItems.size %}mb-3{% endif %} font-helvetica font-weight-bold" {% if item_button_style != '' %}style="{{item_button_style}}"{% endif %}>
                                         {% if item.buttonImage != '' and item.buttonImage.url != '' %}<img src="{{item.buttonImage.url}}" width="42" height="28" class="mr-1" />{% endif %}
                                         <span>{{item.value}}</span>
                                     </a>
@@ -153,7 +165,14 @@
                 {% if block.horizontalAlignment == 'left' %}
                     <div class="col-lg {{block.verticalAlignment}} {% if block.formOrderFirstInMobile == 'True' %}order-1 order-lg-none{% endif %}">
                         {% if block.note != '' %}
-                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: 'block__note' %}
+                            {% assign block_note_adaptive_class = '' %}
+                            {% if block.formNoteMobile == true %}
+                                {% if block.formNoteMobile != '' %}
+                                    {% assign block_note_adaptive_class = ' d-none d-lg-block' %}
+                                {% endif %}
+                            {% endif %}
+                            {% include 'seo-text' tag: block.noteSeoTag, text: block.note, class: ('block__note' | append: block_note_adaptive_class) %}
+                            {% assign block_note_adaptive_class = '' %}
                             <div class="block__space"></div>
                         {% endif %}
 

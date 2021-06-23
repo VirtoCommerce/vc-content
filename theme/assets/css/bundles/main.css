@@ -8525,7 +8525,6 @@ code {
     display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
     min-width: 20rem;
 }
 
@@ -8560,7 +8559,6 @@ code {
 
 .block .form .btn {
     font-weight: bold;
-    margin-bottom: 0.625rem;
 }
 
 .block .form--inline {
@@ -8619,6 +8617,8 @@ code {
 
 .block .advanced-section {
     padding: 1.875rem;
+    border-bottom-left-radius: .3125rem;
+    border-bottom-right-radius: .3125rem;
 }
 
 @media (min-width: 768px) {

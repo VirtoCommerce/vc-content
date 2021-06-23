@@ -1273,6 +1273,11 @@
 					"id": "buttonTextColor",
 					"label": "Button text color",
 					"type": "color"
+				},
+				{
+					"id": "buttonIsRound",
+					"label": "Button is round",
+					"type": "checkbox"
 				}
 			],
 			"tab": "Settings"
@@ -2219,6 +2224,23 @@
         "tab": "Content",
         "group": "Background"
       },
+	  {
+		"id": "formNoteMobile",
+		"label": "Form note (mobile)",
+		"type": "text",
+        "settings": [
+          "TextColor",
+          "Bold",
+          "Italic",
+          "Link",
+          "Unlink",
+		  "FontSize",
+          "Maximize",
+          "Source"
+        ],
+		"tab": "Content",
+		"group": "Form"
+	  },
       {
         "id": "formFields",
         "label": "Fields list",
@@ -9173,6 +9195,10 @@
 			  {
 				"value": "btn-gradient",
 				"label": "Gradient button"
+			  },
+			  {
+				"value": "btn btn--round",
+				"label": "Round button"
 			  },
 			  {
 				"value": "btn btn--orange",
