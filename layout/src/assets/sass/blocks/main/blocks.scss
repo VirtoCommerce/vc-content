@@ -844,7 +844,6 @@
 		display: inline-flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		margin-bottom: 1rem;
 		min-width: 20rem;
 
         &--in-list
@@ -892,7 +891,6 @@
 		.btn
 		{
             font-weight: bold;
-			margin-bottom: 0.625rem;
 		}
 
 		&--inline
@@ -960,6 +958,8 @@
     .advanced-section
     {
         padding: 1.875rem;
+        border-bottom-left-radius: .3125rem;
+        border-bottom-right-radius: .3125rem;
 
         @include media-breakpoint-up(md) {
             width: 25rem;

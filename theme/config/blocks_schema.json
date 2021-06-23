@@ -1273,6 +1273,11 @@
 					"id": "buttonTextColor",
 					"label": "Button text color",
 					"type": "color"
+				},
+				{
+					"id": "buttonIsRound",
+					"label": "Button is round",
+					"type": "checkbox"
 				}
 			],
 			"tab": "Settings"

@@ -148,7 +148,7 @@
                                         {% assign item_button_style = (item_button_style | append: ';color:') | append: item.buttonTextColor %}
                                     {% endif %}
 
-                                    <a href="{{item.buttonUrl}}" class="btn btn--block {% if (forloop.index | plus: 1) < block.advancedSectionItems.size %}mb-3{% endif %} font-helvetica font-weight-bold" {% if item_button_style != '' %}style="{{item_button_style}}"{% endif %}>
+                                    <a href="{{item.buttonUrl}}" class="btn btn--block {% if item.buttonIsRound == 'True' %}btn--round{% endif %} {% if (forloop.index | plus: 1) < block.advancedSectionItems.size %}mb-3{% endif %} font-helvetica font-weight-bold" {% if item_button_style != '' %}style="{{item_button_style}}"{% endif %}>
                                         {% if item.buttonImage != '' and item.buttonImage.url != '' %}<img src="{{item.buttonImage.url}}" width="42" height="28" class="mr-1" />{% endif %}
                                         <span>{{item.value}}</span>
                                     </a>
