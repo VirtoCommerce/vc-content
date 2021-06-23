@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://virtocommerce.com/sitemap/apps_partner_sitemap.xml</loc>
-  </sitemap>
-  <sitemap>
     <loc>https://virtocommerce.com/sitemap/main_sitemap.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://virtocommerce.com/sitemap/docs_sitemap.xml</loc>
+    <loc>https://virtocommerce.com/docs/2.0/sitemap.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://virtocommerce.com/docs/latest/sitemap.xml</loc>
   </sitemap>
   <sitemap>
     <loc>https://virtocommerce.com/sitemap/blog_sitemap.xml</loc>
