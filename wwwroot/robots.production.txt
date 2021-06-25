@@ -1,8 +1,15 @@
 User-agent: *
-Disallow: /js/*.js$
-Disallow: /our-offers/agile-b2b-ecommerce
-Disallow: /static/b2b.htm
-Disallow: /products/*
+Allow:*.woff
+Allow:*.ttf
+Allow:*.woff
+Allow:*.css
+Allow:*.js
+Allow:*.jpg
+Allow:*.png
+Allow:*.tiff
+Allow:*.webp
+Allow:*.svg
+Disallow: *utm_source=
+Disallow: /search?q=
 
-Host: https://virtocommerce.com
 Sitemap: https://virtocommerce.com/sitemap.xml
