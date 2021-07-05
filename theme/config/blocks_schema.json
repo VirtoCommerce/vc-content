@@ -2213,8 +2213,11 @@
         "tab": "Content",
         "settings": [
           "TextColor",
+		  "Bold",
+		  "Italic",
           "Link",
-          "Unlink"
+          "Unlink",
+		  "FontSize"
         ]
       },
       {
@@ -2224,6 +2227,12 @@
         "tab": "Content",
         "group": "Background"
       },
+	  {
+		  "id": "image",
+		  "label": "Image",
+		  "type": "image",
+		  "tab": "Content"
+	  },
 	  {
 		"id": "formNoteMobile",
 		"label": "Form note (mobile)",
@@ -2292,6 +2301,10 @@
                 "label": "Text"
               },
               {
+                "value": "textLabel",
+                "label": "Text label"
+              },
+              {
                 "value": "textarea",
                 "label": "Textarea"
               }
@@ -2326,8 +2339,17 @@
           {
             "id": "fieldValue",
             "label": "Value",
-            "type": "string",
+            "type": "text",
             "default": "",
+			"settings": [
+				"TextColor",
+				"Bold",
+				"Italic",
+				"Link",
+				"Unlink",
+				"FontSize",
+				"EnterModeBr"
+			],
             "group": "Field name settings"
           },
           {
@@ -2481,7 +2503,24 @@
         "default": true,
         "tab": "Content",
         "group": "Form"
-      }
+      },
+	  {
+		  "id": "pattern",
+		  "label": "Pattern",
+		  "type": "select",
+		  "default": "default",
+		  "options": [
+			  {
+				  "id": "default",
+				  "label": "Default"
+			  },
+			  {
+				  "id": "pattern1",
+				  "label": "Pattern 1"
+			  }
+		  ],
+		  "tab": "Settings"
+	  }
     ]
   },
   "cover-with-branded-pattern": {

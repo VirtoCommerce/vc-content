@@ -2,6 +2,11 @@
 
 <div id="{{ block.__id }}">
     <div class="block {{block.topPadding}} {{block.bottomPadding}} {% include 'cover-background-settings' %}>
+        {% if block.pattern == 'pattern1' %}
+            <img src="../../images/redesign/blocks/cover-with-form/strokes_and_dots_left.png" class="pattern-inner-img d-none d-sm-block" style="top:0;left:0" />
+            <img src="../../images/redesign/blocks/cover-with-form/strokes_right.png" class="pattern-inner-img d-none d-sm-block" style="bottom:0;right:0" />
+            <img src="../../images/redesign/blocks/cover-with-form/dots_left.png" class="pattern-inner-img d-none d-sm-block" style="bottom:0;left:0" />
+        {% endif %}
         <div class="block__inner container">
             <div class="row align-items-center">
                 {% if block.horizontalAlignment == 'right' %}
@@ -23,13 +28,19 @@
                         {% endif %}
 
                         {% include 'headings' headings: block.headings %}
-                        <div class="block__space"></div>
 
                         {% if block.subtitle != '' %}
+                            <div class="block__space"></div>
                             {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                         {% endif %}
 
                         {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
+
+                        {% if block.image == true %}
+                            {% if block.image != '' and block.image.url != '' %}
+                                <img class="w-100 ml-auto mr-auto d-none d-lg-block" data-bg="{{block.image.url | image_url}}" src="{{block.image.url | image_url}}" />
+                            {% endif %}
+                        {% endif %}
                     </div>
                 {% endif %}
                 
@@ -39,7 +50,7 @@
                             <div class="block__note pb-3 d-block d-lg-none">{{block.formNoteMobile}}</div>
                         {% endif %}
                     {% endif %}
-                    <div class="block__form">
+                    <div class="block__form {% if block.pattern == 'pattern1' %}form--pattern-1{% endif %}">
                         <form class="form w-100" {% if block.formId != '' %}id="{{block.formId}}" data-segment-name="{{block.formId}}"{% endif %}
                         {% if block.formName != '' %}name="{{block.formName}}"{% endif %}
                         {% if block.formSubmitRedirectUrl != '' %} data-target-url="{{block.formSubmitRedirectUrl}}" {% endif %}>
@@ -118,6 +129,10 @@
                                         {% endfor %}
                                         {% include 'form-validation-message' inputItem: item %}
                                     </fieldset>
+                                {% elsif item.fieldType == 'textLabel' %}
+                                    <div class="form-group pt-4 pb-4">
+                                        <label>{{item.fieldValue}}</label>
+                                    </div>
                                 {% elsif item.fieldType == 'button' %}
                                     <input type="submit" class="{{block.formSubmitButtonStyle}}" value="{{item.labelText}}" {% if block.formSubmitButtonColor == true and block.formSubmitButtonColor != '' %}style="background-color:{{block.formSubmitButtonColor}};border-color:{{block.formSubmitButtonColor}}"{% endif %} />
                                 {% elsif item.fieldType == 'textarea' %}
@@ -181,13 +196,19 @@
                         {% endif %}
 
                         {% include 'headings' headings: block.headings %}
-                        <div class="block__space"></div>
 
                         {% if block.subtitle != '' %}
+                            <div class="block__space"></div>
                             {% include 'seo-text' tag: block.subtitleSeoTag, text: block.subtitle, class: 'block__descr' %}
                         {% endif %}
 
                         {% include 'block-buttons' firstBtn: block.firstButton, secondBtn: block.secondButton %}
+                        
+                        {% if block.image == true %}
+                            {% if block.image != '' and block.image.url != '' %}
+                                <img class="w-100 ml-auto mr-auto order-0 order-lg-none" data-bg="{{block.image.url | image_url}}" src="{{block.image.url | image_url}}" />
+                            {% endif %}
+                        {% endif %}
                     </div>
                 {% endif %}
             </div>

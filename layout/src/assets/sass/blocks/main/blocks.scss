@@ -931,6 +931,36 @@
         {
             border: none;
         }
+
+        &--pattern-1
+        {
+            background-color: white!important;
+            border-radius: 0!important;
+            box-shadow: rgba(55, 56, 60, .1) 0px -2px 16px 0px;
+            border-top: 10px solid;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to right, #F89D1B, #DB3A35);
+
+            .form-control
+            {
+                border: none;
+                border-bottom: 1px solid #CFD2E6;
+                border-radius: 0;
+                padding: 0;
+
+                @include placeholder {
+                    color: #0C1015;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 400;
+                }
+            }
+
+            input[type="submit"]
+            {
+                align-self: start;
+                width: auto;
+            }
+        }
 	}
 
 	.block__note2
