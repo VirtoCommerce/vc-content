@@ -8639,6 +8639,51 @@ code {
     border: none;
 }
 
+.block .form--pattern-1 {
+    background-color: white !important;
+    border-radius: 0 !important;
+    box-shadow: rgba(55, 56, 60, 0.1) 0px -2px 16px 0px;
+    border-top: 10px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #F89D1B, #DB3A35);
+}
+
+.block .form--pattern-1 .form-control {
+    border: none;
+    border-bottom: 1px solid #CFD2E6;
+    border-radius: 0;
+    padding: 0;
+}
+
+.block .form--pattern-1 .form-control::-webkit-input-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 .form-control:-moz-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 .form-control::-moz-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 .form-control:-ms-input-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 input[type="submit"] {
+    align-self: start;
+    width: auto;
+}
+
 .block .block__note2 {
     font-size: 0.875rem;
     max-width: 18.75rem;
