@@ -5838,6 +5838,7 @@ code {
 
 .cookie-bar .btn {
     min-width: fit-content;
+    min-width: -moz-fit-content;
     background-color: #ef5916;
     border: 1px solid #ef5916;
 }
