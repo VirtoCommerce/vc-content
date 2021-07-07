@@ -1,7 +1,6 @@
 User-agent: *
 Allow:*.woff
 Allow:*.ttf
-Allow:*.woff
 Allow:*.css
 Allow:*.js
 Allow:*.jpg
@@ -9,7 +8,6 @@ Allow:*.png
 Allow:*.tiff
 Allow:*.webp
 Allow:*.svg
-Disallow: *utm_source=
 Disallow: /search?q=
 
 Sitemap: https://virtocommerce.com/sitemap.xml
