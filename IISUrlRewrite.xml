@@ -225,13 +225,6 @@
             </conditions>
             <action type="Redirect" redirectType="Permanent" url="https://{HTTP_HOST}/{R:1}" />
         </rule>
-        <rule name="Enforce lowercase rule" enabled="true" stopProcessing="true">
-            <match url="[A-Z]" ignoreCase="false" />
-            <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
-                <add input="{REQUEST_METHOD}" pattern="GET" ignoreCase="true" />
-            </conditions>
-            <action type="Redirect" url="{ToLower:{URL}}" />
-        </rule>
         <rule name="redirect demo" stopProcessing="true">
             <match url="^demo$" />
             <action type="Redirect" url="https://demo.virtocommerce.com" redirectType="Permanent"/>
