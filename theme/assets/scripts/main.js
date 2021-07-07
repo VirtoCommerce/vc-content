@@ -161,11 +161,16 @@ $(function () {
 
                 var form = $(this);
                 var submitBtn = form.children('[type=submit]');
+
+                var formSerializedArray = form.serializeArray();
                 var data = {
                     formId: form.attr('id'),
-                    ip: currentIp,
-                    parameters: form.serialize()
+                    ip: currentIp
                 };
+
+                for (var element of formSerializedArray) {
+                    data[element.name] = element.value;
+                }
 
                 var utmMarks = ['utm_source', 'utm_campaign'];
 
@@ -175,7 +180,7 @@ $(function () {
                         var indexOfUtmCampaign = param.indexOf(mark);
                         if (indexOfUtmCampaign > -1) {
                             var splittedMark = param.split('=');
-                            data.parameters += `&${mark}=${splittedMark[1]}`;
+                            data[mark] = splittedMark[1];
                         }
                     }
                 }

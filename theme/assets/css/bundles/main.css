@@ -5809,8 +5809,9 @@ code {
 }
 
 .cookie-bar {
-    background: #f0f0f0;
+    background: #FFF;
     font-size: .875rem;
+    box-shadow: 0px -2px 16px 0px rgba(55, 56, 60, 0.1);
 }
 
 .cookie-bar a[href] {
@@ -5818,19 +5819,61 @@ code {
 }
 
 .cookie-bar__inner {
-    align-items: center;
-    display: flex;
+    padding: 2rem 0;
+}
+
+.cookie-bar--title {
+    font-size: 2rem;
+}
+
+.cookie-bar--subtitle {
+    font-size: 1rem;
+}
+
+@media (min-width: 992px) {
+    .cookie-bar--text {
+        width: 600px;
+    }
 }
 
 .cookie-bar .btn {
-    margin-left: auto;
-    margin-top: .625rem;
+    min-width: fit-content;
+    min-width: -moz-fit-content;
+    background-color: #ef5916;
+    border: 1px solid #ef5916;
+}
+
+.cookie-bar .btn:hover {
+    background-color: #f16a2e;
+}
+
+@media (max-width: 575.98px) {
+    .cookie-bar .btn {
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .cookie-bar .btn {
+        margin-left: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .cookie-bar .btn {
+        margin-left: 4rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .cookie-bar .btn {
+        margin-left: 8rem;
+    }
 }
 
 @media (max-width: 575.98px) {
     .cookie-bar .btn {
         justify-content: center;
-        width: 100%;
     }
 }
 
@@ -8595,6 +8638,51 @@ code {
 
 .block .form fieldset {
     border: none;
+}
+
+.block .form--pattern-1 {
+    background-color: white !important;
+    border-radius: 0 !important;
+    box-shadow: rgba(55, 56, 60, 0.1) 0px -2px 16px 0px;
+    border-top: 10px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #F89D1B, #DB3A35);
+}
+
+.block .form--pattern-1 .form-control {
+    border: none;
+    border-bottom: 1px solid #CFD2E6;
+    border-radius: 0;
+    padding: 0;
+}
+
+.block .form--pattern-1 .form-control::-webkit-input-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 .form-control:-moz-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 .form-control::-moz-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 .form-control:-ms-input-placeholder {
+    color: #0C1015;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.block .form--pattern-1 input[type="submit"] {
+    align-self: start;
+    width: auto;
 }
 
 .block .block__note2 {

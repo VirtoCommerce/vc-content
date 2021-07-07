@@ -214,9 +214,17 @@
             <add key="/ecosystem/erp-integrations" value="integrations/ecommerce-erp-integrations" />
             <add key="/ecosystem/key-ecommerce-integrations" value="integrations/key-ecommerce-integrations" />
             <add key="/enterprise-ecommerce-architecture" value="platform-architecture" />
+            <add key="/index.html" value="/" />
         </rewriteMap>
     </rewriteMaps>
     <rules>
+        <rule name="HTTP to HTTPS redirect" enabled="true" stopProcessing="true">
+            <match url="(.*)" />
+            <conditions>
+                <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+            </conditions>
+            <action type="Redirect" redirectType="Permanent" url="https://{HTTP_HOST}/{R:1}" />
+        </rule>
         <rule name="redirect demo" stopProcessing="true">
             <match url="^demo$" />
             <action type="Redirect" url="https://demo.virtocommerce.com" redirectType="Permanent"/>

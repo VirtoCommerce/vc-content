@@ -147,8 +147,9 @@
 
 .cookie-bar
 {
-    background: $gray-200;
+    background: #FFF;
     font-size: .875rem;
+    box-shadow: 0px -2px 16px 0px rgba(55, 56, 60, 0.1);
 
     a[href]
     {
@@ -157,21 +158,59 @@
 
     &__inner
     {
-        align-items: center;
-        display: flex;
+        padding: 2rem 0;
+    }
+
+    &--title
+    {
+        font-size: 2rem;
+    }
+
+    &--subtitle
+    {
+        font-size: 1rem;
+    }
+
+    &--text
+    {
+        @include media-breakpoint-up(lg) {
+            width: 600px;
+        }
     }
 
     .btn
     {
-        margin-left: auto;
-        margin-top: .625rem;
+        min-width: fit-content;
+        min-width: -moz-fit-content;
+        background-color: rgb(239,89,22);
+        border: 1px solid rgb(239,89,22);
+
+        &:hover
+        {
+            background-color: lighten(rgb(239,89,22), 5%);
+        }
+
+        @include media-breakpoint-down(xs) {
+            margin-top: 2rem;
+        }
+
+        @include media-breakpoint-up(sm) {
+            margin-left: 2rem;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-left: 4rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 8rem;
+        }
     }
 
     @include media-breakpoint-down(xs) {
         .btn
         {
             justify-content: center;
-            width: 100%;
         }
     }
 }
