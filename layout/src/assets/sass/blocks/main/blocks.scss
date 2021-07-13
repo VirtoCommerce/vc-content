@@ -955,10 +955,21 @@
                 }
             }
 
+            input.form-control
+            {
+                padding: 0 0 0 3px!important;
+            }
+
+            textarea.form-control
+            {
+                padding: 0 0 0 5px!important;
+            }
+
             input[type="submit"]
             {
                 align-self: start;
                 width: auto;
+                -webkit-appearance: none;
             }
         }
 	}

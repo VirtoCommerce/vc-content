@@ -102,10 +102,12 @@
 
     @include optional-at-root(':-moz-placeholder') {
         @content;
+        opacity: 1;
     }
 
     @include optional-at-root('::-moz-placeholder') {
         @content;
+        opacity: 1;
     }
 
     @include optional-at-root(':-ms-input-placeholder') {
