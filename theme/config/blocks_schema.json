@@ -2511,11 +2511,11 @@
 		  "default": "default",
 		  "options": [
 			  {
-				  "id": "default",
+				  "value": "default",
 				  "label": "Default"
 			  },
 			  {
-				  "id": "pattern1",
+				  "value": "pattern1",
 				  "label": "Pattern 1"
 			  }
 		  ],
