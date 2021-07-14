@@ -8666,12 +8666,14 @@ code {
     color: #0C1015;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    opacity: 1;
 }
 
 .block .form--pattern-1 .form-control::-moz-placeholder {
     color: #0C1015;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    opacity: 1;
 }
 
 .block .form--pattern-1 .form-control:-ms-input-placeholder {
@@ -8680,9 +8682,18 @@ code {
     font-weight: 400;
 }
 
+.block .form--pattern-1 input.form-control {
+    padding: 0 0 0 3px !important;
+}
+
+.block .form--pattern-1 textarea.form-control {
+    padding: 0 0 0 5px !important;
+}
+
 .block .form--pattern-1 input[type="submit"] {
     align-self: start;
     width: auto;
+    -webkit-appearance: none;
 }
 
 .block .block__note2 {
